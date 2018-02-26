@@ -17,6 +17,7 @@ WORKDIR /project
 
 # Download and install gradle
 ADD gradlew ./
+RUN chmod +x gradlew
 ADD gradle ./gradle
 RUN ./gradlew --no-daemon --version
 
