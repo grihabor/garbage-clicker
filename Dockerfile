@@ -9,7 +9,7 @@ RUN apt update \
 WORKDIR /sdk
 
 # Download and extract sdk tools
-RUN wget -O sdk-tools.zip $SDKMANAGER_URL \
+RUN wget --quiet -O sdk-tools.zip $SDKMANAGER_URL \
  && unzip sdk-tools.zip \
  && rm sdk-tools.zip
 
