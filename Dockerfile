@@ -10,7 +10,7 @@ WORKDIR /sdk
 
 # Download and extract sdk tools
 RUN wget --quiet -O sdk-tools.zip $SDKMANAGER_URL \
- && unzip sdk-tools.zip \
+ && unzip -q sdk-tools.zip \
  && rm sdk-tools.zip
 
 WORKDIR /project
