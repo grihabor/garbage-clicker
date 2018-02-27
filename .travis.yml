@@ -22,4 +22,5 @@ deploy:
   on:
     branch:
       - master
+      - test-releases-deploy
  
