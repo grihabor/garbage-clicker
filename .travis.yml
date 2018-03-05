@@ -11,12 +11,14 @@ script:
 before_deploy:
   - git config --local user.name "Borodin Gregory"
   - git config --local user.email "grihabor@gmail.com"
-  - git tag "$(date +'%Y-%m-%d_%H-%M-%S')_$(git log --format=%h -1)"
+  - export GIT_COMMIT=$(git log --format=%h -1)
+  - mv debug.apk "$GIT_COMMIT.apk"
+  - git tag "$(date +'%Y-%m-%d_%H-%M-%S')_$GIT_COMMIT"
 
 deploy:
   provider: releases
   api_key: ${DEPLOY_TOKEN}
-  file: app-debug.apk
+  file: ${GIT_COMMIT}.apk
   skip_cleanup: true 
   prerelease: true
   on:
