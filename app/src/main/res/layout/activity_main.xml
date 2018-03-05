@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context="com.example.user.garbagecollector.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/mainFutureFragment"
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.user.garbagecollector.UpgradeShopFragmentActivity"
         android:layout_width="match_parent"
-        android:layout_height="346dp"
-        android:layout_weight="0.7"
-        android:background="@drawable/ic_launcher_background"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_height="315dp"
+        android:layout_weight="0.7" />
 
     <LinearLayout
         android:id="@+id/mainLinearButtonLayout"
