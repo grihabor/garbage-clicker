@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GarbageCollector</string>
+    <string name="intro_string">Нажмите, чтобы продолжить</string>
 </resources>
