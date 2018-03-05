@@ -12,7 +12,7 @@ before_deploy:
   - git config --local user.name "Borodin Gregory"
   - git config --local user.email "grihabor@gmail.com"
   - export GIT_COMMIT=$(git log --format=%h -1)
-  - mv debug.apk "$GIT_COMMIT.apk"
+  - mv app-debug.apk "$GIT_COMMIT.apk"
   - git tag "$(date +'%Y-%m-%d_%H-%M-%S')_$GIT_COMMIT"
 
 deploy:
