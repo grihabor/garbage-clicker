@@ -7,5 +7,6 @@ import android.app.Fragment;
  *
  */
 
-public class ShopGragmentActivity extends Fragment {
+public class UpgradeShopFragmentActivity extends Fragment {
+
 }
