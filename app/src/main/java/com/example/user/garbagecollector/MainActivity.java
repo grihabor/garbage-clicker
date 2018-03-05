@@ -19,12 +19,4 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-    public void switchToUpgradeShopFragment(View view) {
-    }
-
-    public void switchAutomationShopFragment(View view) {
-    }
-
-    public void switchToGarbageRecyclingFragment(View view) {
-    }
 }
