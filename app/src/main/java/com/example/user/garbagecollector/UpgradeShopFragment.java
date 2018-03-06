@@ -15,7 +15,7 @@ import android.widget.ListView;
  *
  */
 
-public class UpgradeShopFragmentActivity extends Fragment {
+public class UpgradeShopFragment extends Fragment {
 
 
     public void onAttach (Activity activity){
