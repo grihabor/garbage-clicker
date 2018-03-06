@@ -8,9 +8,11 @@
     tools:context="com.example.user.garbagecollector.MainActivity">
 
     <fragment
-        android:id="@+id/fragment2"
+        android:id="@+id/fragment"
+        android:name="com.example.user.garbagecollector.GarbageRecyclingFragment"
         android:layout_width="match_parent"
-        android:layout_height="315dp"
+        android:layout_height="336dp"
+
         android:layout_weight="0.7" />
 
     <LinearLayout
@@ -44,6 +46,7 @@
             android:layout_weight="1"
             android:onClick="switchToUpgradeShopFragment"
             android:text="Button" />
+
     </LinearLayout>
 
 </LinearLayout>
