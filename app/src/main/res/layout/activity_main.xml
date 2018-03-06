@@ -12,7 +12,8 @@
         android:name="com.example.user.garbagecollector.UpgradeShopFragmentActivity"
         android:layout_width="match_parent"
         android:layout_height="315dp"
-        android:layout_weight="0.7"></fragment>
+        automation_shop_fragment
+        android:layout_weight="0.7" />
 
     <LinearLayout
         android:id="@+id/mainLinearButtonLayout"
