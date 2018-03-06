@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(MY_PREF, MODE_PRIVATE);
 
-        SiburikiImage = new TextView(this);
         SiburikiImage = findViewById(R.id.siburiksNum);
         setSiburiki();
     }

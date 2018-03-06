@@ -31,7 +31,6 @@ public class GarbageRecyclingFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        baffer = new Button(this.getActivity());
         baffer = getView().findViewById(R.id.button);
 
         sharedPreferences = MainActivity.sharedPreferences;
