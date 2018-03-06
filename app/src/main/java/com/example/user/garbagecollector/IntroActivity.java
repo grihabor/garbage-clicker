@@ -1,6 +1,7 @@
 package com.example.user.garbagecollector;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         if(getSupportActionBar() != null) getSupportActionBar().hide();
 
         setContentView(R.layout.activity_intro);
