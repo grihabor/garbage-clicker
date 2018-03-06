@@ -7,10 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by User on 05.03.2018.
- *
- */
 
 public class GarbageRecyclingFragment extends Fragment{
     public void onAttach (Activity activity){
