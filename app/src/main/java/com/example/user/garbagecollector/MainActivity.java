@@ -1,12 +1,14 @@
 package com.example.user.garbagecollector;
 
 
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
     GarbageRecyclingFragment garbageRecyclingFragment;
     //UpgradeShopFragment upgradeShopFragmentActivity;
     FragmentTransaction fTrans;
+
+    static TextView SiburikiImage;
+    final static String MY_PREF = "my_pref";
+    public final static String SIBURIKI = "siburiki";
+    protected static SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
+
+        sharedPreferences = getSharedPreferences(MY_PREF, MODE_PRIVATE);
+
+        SiburikiImage = new TextView(this);
+        SiburikiImage = findViewById(R.id.siburiksNum);
+        setSiburiki();
     }
 
     public void switchToUpgradeShopFragment(View view) {
@@ -42,5 +55,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
+    }
+
+    protected static void setSiburiki () {
+        SiburikiImage.setText("Сибурики: " + sharedPreferences.getInt(SIBURIKI, 0));
     }
 }
