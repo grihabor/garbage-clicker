@@ -8,10 +8,10 @@
     tools:context="com.example.user.garbagecollector.MainActivity">
 
     <fragment
-        android:id="@+id/automationShopFragment"
-        android:name="com.example.user.garbagecollector.AutomationShopFragment"
+        android:id="@+id/fragment2"
+        android:name="com.example.user.garbagecollector.UpgradeShopFragmentActivity"
         android:layout_width="match_parent"
-        android:layout_height="404dp"
+        android:layout_height="315dp"
         android:layout_weight="0.7"></fragment>
 
     <LinearLayout
