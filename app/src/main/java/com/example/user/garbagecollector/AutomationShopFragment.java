@@ -8,9 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Олег on 05.03.2018.
- */
 
 public class AutomationShopFragment extends Fragment {
     @Override
