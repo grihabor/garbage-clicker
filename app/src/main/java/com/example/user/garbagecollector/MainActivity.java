@@ -1,7 +1,7 @@
 package com.example.user.garbagecollector;
 
-
 import android.content.SharedPreferences;
+import android.app.Fragment;
 import android.content.pm.ActivityInfo;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +11,10 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    //AutomationShopFragment automationShopFragment;
-    GarbageRecyclingFragment garbageRecyclingFragment;
-    //UpgradeShopFragment upgradeShopFragmentActivity;
-    FragmentTransaction fTrans;
-
     static TextView SiburikiImage;
     final static String MY_PREF = "my_pref";
     public final static String SIBURIKI = "siburiki";
     protected static SharedPreferences sharedPreferences;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //инициализация игрового фрагмента
-        garbageRecyclingFragment = new GarbageRecyclingFragment();
-        fTrans = getFragmentManager().beginTransaction();
+        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
+        FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
 
@@ -48,13 +41,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        
+        switchTo(new UpgradeShopFragment());
     }
 
-    public void switchAutomationShopFragment(View view) {
+    public void switchToAutomationShopFragment(View view) {
+        switchTo(new AutomationShopFragment());
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
+        switchTo( new GarbageRecyclingFragment());
+    }
+
+    public void switchTo(Fragment fragment){
+        FragmentTransaction fTrans = getFragmentManager().beginTransaction();
+        fTrans.replace(R.id.fragmentMainLayout, fragment);
+        fTrans.commit();
     }
 
     protected static void setSiburiki () {
