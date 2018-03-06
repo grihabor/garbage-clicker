@@ -11,8 +11,6 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    FragmentTransaction fTrans;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         //инициализация игрового фрагмента
         GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        fTrans = getFragmentManager().beginTransaction();
+        FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
     }
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchTo(Fragment fragment){
-        fTrans = getFragmentManager().beginTransaction();
+        FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.replace(R.id.fragmentMainLayout, fragment);
         fTrans.commit();
     }
