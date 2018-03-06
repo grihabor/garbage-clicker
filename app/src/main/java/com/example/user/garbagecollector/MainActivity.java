@@ -10,9 +10,10 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    //AutomationShopFragment automationShopFragment;
+    AutomationShopFragment automationShopFragment;
     GarbageRecyclingFragment garbageRecyclingFragment;
-    //UpgradeShopFragment upgradeShopFragmentActivity;
+    UpgradeShopFragment upgradeShopFragment;
+
     FragmentTransaction fTrans;
 
     @Override
@@ -35,12 +36,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        
+        upgradeShopFragment = new UpgradeShopFragment();
+        fTrans = getFragmentManager().beginTransaction();
+        fTrans.replace(R.id.fragmentMainLayout,upgradeShopFragment);
+        fTrans.commit();
     }
 
-    public void switchAutomationShopFragment(View view) {
+    public void switchToAutomationShopFragment(View view) {
+        automationShopFragment = new AutomationShopFragment();
+        fTrans = getFragmentManager().beginTransaction();
+        fTrans.replace(R.id.fragmentMainLayout, automationShopFragment);
+        fTrans.commit();
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
+        garbageRecyclingFragment = new GarbageRecyclingFragment();
+        fTrans = getFragmentManager().beginTransaction();
+        fTrans.replace(R.id.fragmentMainLayout, garbageRecyclingFragment);
+        fTrans.commit();
     }
 }
