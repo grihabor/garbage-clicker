@@ -11,9 +11,8 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    static TextView SiburikiImage;
-    static String MY_PREF;
-    public static String SIBURIKI;
+    static TextView moneyDisplay;
+    public static String MONEY_KEY;
     protected static SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
-        MY_PREF = getString(R.string.preferences_name);
-        SIBURIKI = getString(R.string.siburiki_name_in_shared_preferences);
+        MONEY_KEY = getString(R.string.money_key);
 
-        sharedPreferences = getSharedPreferences(MY_PREF, MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(getString(R.string.preferences_name), MODE_PRIVATE);
 
-        SiburikiImage = findViewById(R.id.siburiksNum);
-        setSiburiki();
+        moneyDisplay = findViewById(R.id.moneyDisplay);
+        setMoneyDisplay();
     }
 
     public void switchToUpgradeShopFragment(View view) {
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         fTrans.commit();
     }
 
-    protected static void setSiburiki () {
-        SiburikiImage.setText("Сибурики: " + sharedPreferences.getInt(SIBURIKI, 0));
+    protected static void setMoneyDisplay () {
+        moneyDisplay.setText("Сибурики: " + sharedPreferences.getInt(MONEY_KEY, 0));
     }
 }

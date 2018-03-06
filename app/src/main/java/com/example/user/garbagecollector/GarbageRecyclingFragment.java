@@ -34,11 +34,11 @@ public class GarbageRecyclingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = MainActivity.sharedPreferences.edit();
-                int CurrentSiburiki = MainActivity.sharedPreferences.getInt(getString(R.string.siburiki_name_in_shared_preferences), 0);
-                editor.putInt(getString(R.string.siburiki_name_in_shared_preferences), CurrentSiburiki + 1);
+                int CurrentMoney = MainActivity.sharedPreferences.getInt(getString(R.string.money_key), 0);
+                editor.putInt(getString(R.string.money_key), CurrentMoney + 1);
                 editor.apply();
 
-                MainActivity.setSiburiki();
+                MainActivity.setMoneyDisplay();
             }
         });
     }

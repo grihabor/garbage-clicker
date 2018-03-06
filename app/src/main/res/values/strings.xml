@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">GarbageCollector</string>
     <string name="intro_string">Нажмите, чтобы продолжить</string>
-    <string name="siburiki_name_in_shared_preferences">siburiki</string>
+    <string name="money_key">money</string>
     <string name="preferences_name">my_pref</string>
+    <string name="upgrade_shop_sign">магазин улучшений</string>
+    <string name="automation_shop_sign">магазин автоматов</string>
+    <string name="recycle_sign">переработка</string>
 </resources>
