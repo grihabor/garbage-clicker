@@ -1,6 +1,7 @@
 package com.example.user.garbagecollector;
 
 
+import android.app.Fragment;
 import android.content.pm.ActivityInfo;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -37,22 +38,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchToUpgradeShopFragment(View view) {
         upgradeShopFragment = new UpgradeShopFragment();
-        fTrans = getFragmentManager().beginTransaction();
-        fTrans.replace(R.id.fragmentMainLayout,upgradeShopFragment);
-        fTrans.commit();
+        switchTo(upgradeShopFragment);
     }
 
     public void switchToAutomationShopFragment(View view) {
         automationShopFragment = new AutomationShopFragment();
-        fTrans = getFragmentManager().beginTransaction();
-        fTrans.replace(R.id.fragmentMainLayout, automationShopFragment);
-        fTrans.commit();
+        switchTo(automationShopFragment);
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
         garbageRecyclingFragment = new GarbageRecyclingFragment();
+        switchTo(garbageRecyclingFragment);
+    }
+
+    public void switchTo(Fragment fragment){
         fTrans = getFragmentManager().beginTransaction();
-        fTrans.replace(R.id.fragmentMainLayout, garbageRecyclingFragment);
+        fTrans.replace(R.id.fragmentMainLayout, fragment);
         fTrans.commit();
     }
 }
