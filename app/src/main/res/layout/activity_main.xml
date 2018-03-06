@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/automationShopFragment"
-        android:name="com.example.user.garbagecollector.AutomationFragment"
+        android:name="com.example.user.garbagecollector.AutomationShopFragment"
         android:layout_width="match_parent"
         android:layout_height="404dp"
         android:layout_weight="0.7"></fragment>

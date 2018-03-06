@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  * Created by Олег on 05.03.2018.
  */
 
-public class AutomationFragment extends Fragment {
+public class AutomationShopFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle bundle) {
         return inflater.inflate(R.layout.automation_shop_fragment, group);
