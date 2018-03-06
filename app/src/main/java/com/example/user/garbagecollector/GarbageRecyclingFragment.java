@@ -11,7 +11,6 @@ import android.widget.Button;
 
 
 public class GarbageRecyclingFragment extends Fragment {
-    SharedPreferences sharedPreferences;
 
     @Override
     public void onAttach (Activity activity){
@@ -31,14 +30,11 @@ public class GarbageRecyclingFragment extends Fragment {
 
         Button baffer = getView().findViewById(R.id.button);
 
-        sharedPreferences = MainActivity.sharedPreferences;
-
-
         baffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                int CurrentSiburiki = sharedPreferences.getInt(getString(R.string.siburiki_name_in_shared_preferences), 0);
+                SharedPreferences.Editor editor = MainActivity.sharedPreferences.edit();
+                int CurrentSiburiki = MainActivity.sharedPreferences.getInt(getString(R.string.siburiki_name_in_shared_preferences), 0);
                 editor.putInt(getString(R.string.siburiki_name_in_shared_preferences), CurrentSiburiki + 1);
                 editor.apply();
 
