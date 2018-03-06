@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  *
  */
 
-public class GarbageRecyclingFragmentActivity  extends Fragment{
+public class GarbageRecyclingFragment extends Fragment{
     public void onAttach (Activity activity){
 
         super.onAttach(activity);
