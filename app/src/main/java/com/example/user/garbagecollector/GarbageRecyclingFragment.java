@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 public class GarbageRecyclingFragment extends Fragment {
@@ -39,8 +38,8 @@ public class GarbageRecyclingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                int CurrentSiburiki = sharedPreferences.getInt(MainActivity.SIBURIKI, 0);
-                editor.putInt(MainActivity.SIBURIKI, CurrentSiburiki + 1);
+                int CurrentSiburiki = sharedPreferences.getInt(getString(R.string.siburiki_name_in_shared_preferences), 0);
+                editor.putInt(getString(R.string.siburiki_name_in_shared_preferences), CurrentSiburiki + 1);
                 editor.apply();
 
                 MainActivity.setSiburiki();

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">GarbageCollector</string>
     <string name="intro_string">Нажмите, чтобы продолжить</string>
+    <string name="siburiki_name_in_shared_preferences">siburiki</string>
+    <string name="preferences_name">my_pref</string>
 </resources>

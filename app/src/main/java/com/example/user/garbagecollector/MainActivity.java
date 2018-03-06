@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     static TextView SiburikiImage;
-    final static String MY_PREF = "my_pref";
-    public final static String SIBURIKI = "siburiki";
+    static String MY_PREF;
+    public static String SIBURIKI;
     protected static SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
+        MY_PREF = getString(R.string.preferences_name);
+        SIBURIKI = getString(R.string.siburiki_name_in_shared_preferences);
 
         sharedPreferences = getSharedPreferences(MY_PREF, MODE_PRIVATE);
 
