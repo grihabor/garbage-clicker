@@ -9,7 +9,6 @@
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.example.user.garbagecollector.AutomationShopFragment"
         android:layout_width="match_parent"
         android:layout_height="315dp"
         android:layout_weight="0.7"></fragment>
