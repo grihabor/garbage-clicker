@@ -7,6 +7,25 @@
     android:orientation="vertical"
     tools:context="com.example.user.garbagecollector.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/sibur"/>
+        <TextView
+            android:id="@+id/siburiksNum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text=": 0"/>
+    </LinearLayout>
+
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.user.garbagecollector.GarbageRecyclingFragment"
