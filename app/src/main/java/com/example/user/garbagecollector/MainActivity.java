@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     //AutomationShopFragment automationShopFragment;
     GarbageRecyclingFragment garbageRecyclingFragment;
-    //UpgradeShopFragmentActivity upgradeShopFragmentActivity;
+    //UpgradeShopFragment upgradeShopFragmentActivity;
     FragmentTransaction fTrans;
 
     @Override
