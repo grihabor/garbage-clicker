@@ -11,10 +11,6 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    AutomationShopFragment automationShopFragment;
-    GarbageRecyclingFragment garbageRecyclingFragment;
-    UpgradeShopFragment upgradeShopFragment;
-
     FragmentTransaction fTrans;
 
     @Override
@@ -30,25 +26,22 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //инициализация игрового фрагмента
-        garbageRecyclingFragment = new GarbageRecyclingFragment();
+        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        upgradeShopFragment = new UpgradeShopFragment();
-        switchTo(upgradeShopFragment);
+        switchTo(new UpgradeShopFragment());
     }
 
     public void switchToAutomationShopFragment(View view) {
-        automationShopFragment = new AutomationShopFragment();
-        switchTo(automationShopFragment);
+        switchTo(new AutomationShopFragment());
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
-        garbageRecyclingFragment = new GarbageRecyclingFragment();
-        switchTo(garbageRecyclingFragment);
+        switchTo( new GarbageRecyclingFragment());
     }
 
     public void switchTo(Fragment fragment){
