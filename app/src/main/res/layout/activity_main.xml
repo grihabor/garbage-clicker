@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.user.garbagecollector.MainActivity">
 
+
     <FrameLayout
         android:id="@+id/fragmentMainLayout"
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         android:layout_weight="0.8">
 
     </FrameLayout>
+
 
     <LinearLayout
         android:id="@+id/mainLinearButtonLayout"
@@ -46,6 +48,7 @@
             android:layout_weight="1"
             android:onClick="switchToUpgradeShopFragment"
             android:text="Button" />
+
     </LinearLayout>
 
 </LinearLayout>
