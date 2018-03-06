@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //инициализация игрового фрагмента
         garbageRecyclingFragment = new GarbageRecyclingFragment();
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
