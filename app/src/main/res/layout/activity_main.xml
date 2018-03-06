@@ -7,19 +7,21 @@
     android:orientation="vertical"
     tools:context="com.example.user.garbagecollector.MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.user.garbagecollector.GarbageRecyclingFragment"
-        android:layout_width="match_parent"
-        android:layout_height="336dp"
 
-        android:layout_weight="0.7" />
+    <FrameLayout
+        android:id="@+id/fragmentMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8">
+
+    </FrameLayout>
+
 
     <LinearLayout
         android:id="@+id/mainLinearButtonLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.7"
+        android:layout_weight="0.2"
         android:gravity="bottom"
         android:orientation="horizontal">
 
