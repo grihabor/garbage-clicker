@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 
 public class GarbageRecyclingFragment extends Fragment {
-    Button baffer;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -31,7 +30,7 @@ public class GarbageRecyclingFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        baffer = getView().findViewById(R.id.button);
+        Button baffer = getView().findViewById(R.id.button);
 
         sharedPreferences = MainActivity.sharedPreferences;
 
