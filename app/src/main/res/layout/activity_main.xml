@@ -12,6 +12,7 @@
         android:name="com.example.user.garbagecollector.GarbageRecyclingFragment"
         android:layout_width="match_parent"
         android:layout_height="336dp"
+
         android:layout_weight="0.7" />
 
     <LinearLayout
