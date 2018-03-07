@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,35 +34,37 @@
     </FrameLayout>
 
 
-    <LinearLayout
-        android:id="@+id/mainLinearButtonLayout"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ButtonsLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:gravity="bottom"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="bottom">
 
         <Button
             android:id="@+id/buttonAutomationShopFragment"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
             android:onClick="switchToAutomationShopFragment"
             android:text="@string/automation_shop_sign" />
 
         <Button
             android:id="@+id/buttonGarbageRecyclingFragment"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:onClick="switchToGarbageRecyclingFragment"
             android:text="@string/recycle_sign" />
 
         <Button
             android:id="@+id/buttonUpgradeShopFragment"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
             android:onClick="switchToUpgradeShopFragment"
             android:text="@string/upgrade_shop_sign" />
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
