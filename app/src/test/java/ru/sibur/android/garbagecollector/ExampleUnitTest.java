@@ -1,4 +1,4 @@
-package com.example.user.garbagecollector;
+package ru.sibur.android.garbagecollector;
 
 import org.junit.Test;
 
