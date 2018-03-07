@@ -14,10 +14,10 @@ import android.widget.Button;
 
 public class GarbageRecyclingFragment extends Fragment {
 
-    MoneyDisplayer displayer;
+    OnMoneyUpdateListener listener;
 
-    public void setMoneyDisplay (MoneyDisplayer display) {
-        this.displayer = display;
+    public void setMoneyUpdateListener (OnMoneyUpdateListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class GarbageRecyclingFragment extends Fragment {
                 editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
                 editor.apply();
 
-                displayer.OnMoneyUpdate();
+                listener.OnMoneyUpdate();
             }
         });
     }

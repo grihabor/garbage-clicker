@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity implements MoneyDisplayer {
+public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
     public final static String MONEY_KEY = "money_key";
     public final static String PREF_NAME = "my_pref";
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MoneyDisplayer {
 
         //инициализация игрового фрагмента
         GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        garbageRecyclingFragment.setMoneyDisplay(this);
+        garbageRecyclingFragment.setMoneyUpdateListener(this);
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements MoneyDisplayer {
 
     public void switchToGarbageRecyclingFragment(View view) {
         GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        garbageRecyclingFragment.setMoneyDisplay(this);
+        garbageRecyclingFragment.setMoneyUpdateListener(this);
         switchTo(garbageRecyclingFragment);
     }
 
