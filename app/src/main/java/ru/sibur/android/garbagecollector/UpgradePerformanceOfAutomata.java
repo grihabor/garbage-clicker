@@ -3,8 +3,8 @@ package ru.sibur.android.garbagecollector;
 
 import ru.sibur.android.garbagecollector.Upgrade;
 
-public class UpgradePerformanceOfAutomat extends Upgrade {
-    UpgradePerformanceOfAutomat(){
+public class UpgradePerformanceOfAutomata extends Upgrade {
+    UpgradePerformanceOfAutomata(){
         price = 4;
     }
 }

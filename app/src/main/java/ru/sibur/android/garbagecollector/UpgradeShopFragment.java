@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -46,9 +44,9 @@ public class UpgradeShopFragment extends Fragment {
         //инициализация апгрейдов
         UpgradeClick upgradeClick = new UpgradeClick();
         UpgradeTimeOfAutomat upgradeTimeOfAutomat = new UpgradeTimeOfAutomat();
-        UpgradeCostOfAutomat upgradeCostOfAutomat = new UpgradeCostOfAutomat();
-        UpgradeCostOfUpgrade upgradeCostOfUpgrade = new UpgradeCostOfUpgrade();
-        UpgradePerformanceOfAutomat upgradePerformanceOfAutomat = new UpgradePerformanceOfAutomat();
+        AutomataCostReduce automataCostReduce = new AutomataCostReduce();
+        UpgradeCostReduce upgradeCostReduce = new UpgradeCostReduce();
+        UpgradePerformanceOfAutomata upgradePerformanceOfAutomat = new UpgradePerformanceOfAutomata();
 
 
 
@@ -59,32 +57,19 @@ public class UpgradeShopFragment extends Fragment {
         //заполнение listView строками
 
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+
         HashMap<String, String> map;
 
         map = new HashMap<>();
-        map.put("Name", getString(R.string.Upgrade_1));
-        map.put("Price", "Стоимость : "+String.valueOf(upgradeClick.price));
-        arrayList.add(map);
 
-        map = new HashMap<>();
-        map.put("Name", getString(R.string.Upgrade_2));
-        map.put("Price", "Стоимость : "+String.valueOf(upgradeCostOfAutomat.price));
-        arrayList.add(map);
 
-        map = new HashMap<>();
-        map.put("Name", getString(R.string.Upgrade_3));
-        map.put("Price", "Стоимость : "+String.valueOf(upgradeCostOfUpgrade.price));
-        arrayList.add(map);
 
-        map = new HashMap<>();
-        map.put("Name", getString(R.string.Upgrade_4));
-        map.put("Price", "Стоимость : "+String.valueOf(upgradePerformanceOfAutomat.price));
-        arrayList.add(map);
+        addToHashMap(getString(R.string.Upgrade_1), upgradeClick.price, map, arrayList);
+        addToHashMap(getString(R.string.Upgrade_2), automataCostReduce.price, map, arrayList);
+        addToHashMap(getString(R.string.Upgrade_3), upgradeCostReduce.price, map, arrayList);
+        addToHashMap(getString(R.string.Upgrade_4), upgradePerformanceOfAutomat.price, map, arrayList);
+        addToHashMap(getString(R.string.Upgrade_5), upgradeTimeOfAutomat.price, map, arrayList);
 
-        map = new HashMap<>();
-        map.put("Name", getString(R.string.Upgrade_5));
-        map.put("Price", "Стоимость : "+String.valueOf(upgradeTimeOfAutomat.price));
-        arrayList.add(map);
 
         SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
@@ -96,6 +81,12 @@ public class UpgradeShopFragment extends Fragment {
     }
 
 
+    public void addToHashMap(String value, float price, HashMap<String, String> map, ArrayList<HashMap<String, String>> arrayList){
+        map = new HashMap<>();
+        map.put("Name", value);
+        map.put("Price", "Стоимость : "+String.valueOf(price));
+        arrayList.add(map);
+    }
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
