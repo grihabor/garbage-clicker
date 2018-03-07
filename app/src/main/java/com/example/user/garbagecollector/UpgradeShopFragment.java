@@ -24,6 +24,7 @@ public class UpgradeShopFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
+
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
