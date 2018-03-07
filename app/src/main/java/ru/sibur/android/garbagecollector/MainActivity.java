@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.example.user.garbagecollector.R;
 
 public class MainActivity extends AppCompatActivity {
     static TextView moneyDisplay;
