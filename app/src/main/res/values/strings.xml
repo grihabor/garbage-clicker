@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">GarbageCollector</string>
     <string name="intro_string">Нажмите, чтобы продолжить</string>
-    <string name="money_key">money</string>
-    <string name="preferences_name">my_pref</string>
-    <string name="upgrade_shop_sign">магазин улучшений</string>
-    <string name="automation_shop_sign">магазин автоматов</string>
+    <string name="upgrade_shop_sign">улучшения</string>
+    <string name="automation_shop_sign">автоматы</string>
     <string name="recycle_sign">переработка</string>
+    <string name="factory_sign">переработать</string>
+    <string name="displayed_vault_name">Сибурики:</string>
 </resources>

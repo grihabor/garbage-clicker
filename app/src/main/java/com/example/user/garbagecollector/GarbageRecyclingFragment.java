@@ -17,6 +17,7 @@ public class GarbageRecyclingFragment extends Fragment {
         super.onAttach(activity);
     }
 
+    @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -34,8 +35,8 @@ public class GarbageRecyclingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = MainActivity.sharedPreferences.edit();
-                int CurrentMoney = MainActivity.sharedPreferences.getInt(getString(R.string.money_key), 0);
-                editor.putInt(getString(R.string.money_key), CurrentMoney + 1);
+                int CurrentMoney = MainActivity.sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
+                editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
                 editor.apply();
 
                 MainActivity.setMoneyDisplay();

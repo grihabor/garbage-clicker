@@ -12,8 +12,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     static TextView moneyDisplay;
-    public static String MONEY_KEY;
+    public final static String MONEY_KEY = "money_key";
+    public final static String PREF_NAME = "my_pref";
     protected static SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
-        MONEY_KEY = getString(R.string.money_key);
 
-        sharedPreferences = getSharedPreferences(getString(R.string.preferences_name), MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
         setMoneyDisplay();
@@ -58,6 +59,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected static void setMoneyDisplay () {
-        moneyDisplay.setText("Сибурики: " + sharedPreferences.getInt(MONEY_KEY, 0));
+        moneyDisplay.setText(sharedPreferences.getInt(MONEY_KEY, 0) + "");
     }
 }
