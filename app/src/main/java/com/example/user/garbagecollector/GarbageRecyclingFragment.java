@@ -2,6 +2,7 @@ package com.example.user.garbagecollector;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,8 +35,9 @@ public class GarbageRecyclingFragment extends Fragment {
         baffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor editor = MainActivity.sharedPreferences.edit();
-                int CurrentMoney = MainActivity.sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                int CurrentMoney = sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
                 editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
                 editor.apply();
 
