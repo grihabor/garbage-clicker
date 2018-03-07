@@ -1,4 +1,4 @@
-package com.example.user.garbagecollector;
+package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
