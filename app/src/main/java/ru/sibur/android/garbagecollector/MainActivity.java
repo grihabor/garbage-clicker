@@ -11,11 +11,15 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
-    static TextView moneyDisplay;
+public class MainActivity extends AppCompatActivity implements MoneyDisplayer {
+    TextView moneyDisplay;
     public final static String MONEY_KEY = "money_key";
     public final static String PREF_NAME = "my_pref";
-    protected static SharedPreferences sharedPreferences;
+
+    public void OnMoneyUpdate() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        moneyDisplay.setText(sharedPreferences.getInt(MONEY_KEY, 0) + "");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
         //инициализация игрового фрагмента
         GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
+        garbageRecyclingFragment.setMoneyDisplay(this);
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
         fTrans.commit();
 
-        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-
         moneyDisplay = findViewById(R.id.moneyDisplay);
-        setMoneyDisplay();
+        OnMoneyUpdate();
     }
 
     public void switchToUpgradeShopFragment(View view) {
@@ -50,16 +53,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
-        switchTo( new GarbageRecyclingFragment());
+        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
+        garbageRecyclingFragment.setMoneyDisplay(this);
+        switchTo(garbageRecyclingFragment);
     }
 
     public void switchTo(Fragment fragment){
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.replace(R.id.fragmentMainLayout, fragment);
         fTrans.commit();
-    }
-
-    protected static void setMoneyDisplay () {
-        moneyDisplay.setText(sharedPreferences.getInt(MONEY_KEY, 0) + "");
     }
 }

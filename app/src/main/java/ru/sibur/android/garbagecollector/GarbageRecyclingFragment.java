@@ -14,6 +14,12 @@ import android.widget.Button;
 
 public class GarbageRecyclingFragment extends Fragment {
 
+    MoneyDisplayer displayer;
+
+    public void setMoneyDisplay (MoneyDisplayer display) {
+        this.displayer = display;
+    }
+
     @Override
     public void onAttach (Activity activity){
         super.onAttach(activity);
@@ -40,9 +46,9 @@ public class GarbageRecyclingFragment extends Fragment {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 int CurrentMoney = sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
                 editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
-                editor.apply();//wtf...
+                editor.apply();
 
-                MainActivity.setMoneyDisplay();
+                displayer.OnMoneyUpdate();
             }
         });
     }
