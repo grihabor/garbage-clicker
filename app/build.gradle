@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.user.garbagecollector"
+        applicationId "com.sibur.android.garbagecollector"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1

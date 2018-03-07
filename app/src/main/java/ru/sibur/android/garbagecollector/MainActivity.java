@@ -1,4 +1,4 @@
-package com.example.user.garbagecollector;
+package ru.sibur.android.garbagecollector;
 
 
 import android.app.Fragment;
@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+
+import com.example.user.garbagecollector.R;
 
 public class MainActivity extends AppCompatActivity {
 
