@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.example.user.garbagecollector.R;
 
 public class IntroActivity extends AppCompatActivity {
 
