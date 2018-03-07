@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">GarbageCollector</string>
 
-    <string name="Upgrade_1">Upgrade 1</string>
+    <string name="Upgrade_1">Улучшение 1</string>
 
-    <string name="Upgrade_2">Upgrade 2</string>
+    <string name="Upgrade_2">Улучшение 2</string>
 
-    <string name="Upgrade_3">Upgrade 3</string>
+    <string name="Upgrade_3">Улучшение 3</string>
 
-    <string name="Upgrade_4">Upgrade 4</string>
+    <string name="Upgrade_4">Улучшение 4</string>
 
-    <string name="Upgrade_5">Upgrade 5</string>
+    <string name="Upgrade_5">Улучшение 5</string>
+
+    <string name="intro_text">Нажмите, чтобы продолжить...</string>
 
 </resources>
