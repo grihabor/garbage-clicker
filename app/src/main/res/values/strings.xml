@@ -1,16 +1,20 @@
 <resources>
     <string name="app_name">GarbageCollector</string>
 
-    <string name="Upgrade_1">Улучшение клика</string>
+    <string name="Up_UpgradeManualClick">Улучшение клика</string>
 
-    <string name="Upgrade_2">Уменьшение стоимости автоматов</string>
+    <string name="Up_AutomataCostReduce">Уменьшение стоимости автоматов</string>
 
-    <string name="Upgrade_3">Уменьшение стоимости апгрейдов</string>
+    <string name="Up_UpgradeCostReduce">Уменьшение стоимости апгрейдов</string>
 
-    <string name="Upgrade_4">Улучшение производительности автоматов</string>
+    <string name="Up_AutomataPerfomanceUpgrade">Улучшение производительности автоматов</string>
 
-    <string name="Upgrade_5">Увеличение скорости автоматов</string>
+    <string name="Up_AutomataDelayReduce">Увеличение скорости автоматов</string>
 
     <string name="intro_text">Нажмите, чтобы продолжить...</string>
 
+    <string name="intro_string">Нажмите, чтобы продолжить</string>
+    <string name="Up_BigAutomata">Улучшение большого автомата</string>
+    <string name="Up_MediumAutomata">Улучшение среднего автомата </string>
+    <string name="Up_LittleAutomata">Улучшение малого автомата</string>
 </resources>

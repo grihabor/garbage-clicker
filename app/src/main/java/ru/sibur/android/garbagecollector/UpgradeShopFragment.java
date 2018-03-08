@@ -42,11 +42,11 @@ public class UpgradeShopFragment extends Fragment {
     private void initListView(Context context) {
 
         //инициализация апгрейдов
-        UpgradeClick upgradeClick = new UpgradeClick();
-        UpgradeTimeOfAutomat upgradeTimeOfAutomat = new UpgradeTimeOfAutomat();
+        UpgradeManualClick upgradeManualClick = new UpgradeManualClick();
+        AutomataDelayReduce automataDelayReduce = new AutomataDelayReduce();
         AutomataCostReduce automataCostReduce = new AutomataCostReduce();
         UpgradeCostReduce upgradeCostReduce = new UpgradeCostReduce();
-        UpgradePerformanceOfAutomata upgradePerformanceOfAutomat = new UpgradePerformanceOfAutomata();
+        AutomataPerfomanceUpgrade automataPerfomanceUpgrade = new AutomataPerfomanceUpgrade();
 
 
 
@@ -58,17 +58,15 @@ public class UpgradeShopFragment extends Fragment {
 
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
-        HashMap<String, String> map;
-
-        map = new HashMap<>();
 
 
 
-        addToHashMap(getString(R.string.Upgrade_1), upgradeClick.price, map, arrayList);
-        addToHashMap(getString(R.string.Upgrade_2), automataCostReduce.price, map, arrayList);
-        addToHashMap(getString(R.string.Upgrade_3), upgradeCostReduce.price, map, arrayList);
-        addToHashMap(getString(R.string.Upgrade_4), upgradePerformanceOfAutomat.price, map, arrayList);
-        addToHashMap(getString(R.string.Upgrade_5), upgradeTimeOfAutomat.price, map, arrayList);
+
+        addToHashMap(getString(R.string.Up_UpgradeManualClick), upgradeManualClick.price, arrayList);
+        addToHashMap(getString(R.string.Up_AutomataCostReduce), automataCostReduce.price, arrayList);
+        addToHashMap(getString(R.string.Up_UpgradeCostReduce), upgradeCostReduce.price, arrayList);
+        addToHashMap(getString(R.string.Up_AutomataPerfomanceUpgrade), automataPerfomanceUpgrade.price, arrayList);
+        addToHashMap(getString(R.string.Up_AutomataDelayReduce), automataDelayReduce.price, arrayList);
 
 
         SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
@@ -81,8 +79,8 @@ public class UpgradeShopFragment extends Fragment {
     }
 
 
-    public void addToHashMap(String value, float price, HashMap<String, String> map, ArrayList<HashMap<String, String>> arrayList){
-        map = new HashMap<>();
+    public void addToHashMap(String value, float price, ArrayList<HashMap<String, String>> arrayList){
+        HashMap<String, String> map = new HashMap<>();
         map.put("Name", value);
         map.put("Price", "Стоимость : "+String.valueOf(price));
         arrayList.add(map);
