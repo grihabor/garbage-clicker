@@ -26,7 +26,7 @@ public class AutomationShopFragment extends Fragment {
     }
   
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle bundle) {
-        return inflater.inflate(R.layout.automation_shop_fragment, null);
+        return inflater.inflate(R.layout.activity_automation_shop_fragment, null);
     }
 
     public void onStart(){
