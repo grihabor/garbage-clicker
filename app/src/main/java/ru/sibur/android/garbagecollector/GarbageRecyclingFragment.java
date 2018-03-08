@@ -12,7 +12,7 @@ import android.widget.Button;
 
 public class GarbageRecyclingFragment extends Fragment {
 
-    OnMoneyUpdateListener listener;
+    OnMoneyUpdateListener listener = null;
 
     public void setMoneyUpdateListener (OnMoneyUpdateListener listener) {
         this.listener = listener;
@@ -46,7 +46,7 @@ public class GarbageRecyclingFragment extends Fragment {
                 editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
                 editor.apply();
 
-                if (!(listener.equals(null))) {listener.OnMoneyUpdate();}
+                if (listener != null) {listener.OnMoneyUpdate();}
             }
         });
     }
