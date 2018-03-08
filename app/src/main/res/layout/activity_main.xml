@@ -34,17 +34,17 @@
     </FrameLayout>
 
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:id="@+id/ButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonAutomationShopFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
             android:onClick="switchToAutomationShopFragment"
             android:text="@string/automation_shop_sign" />
 
@@ -52,8 +52,6 @@
             android:id="@+id/buttonGarbageRecyclingFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:onClick="switchToGarbageRecyclingFragment"
             android:text="@string/recycle_sign" />
 
@@ -61,10 +59,9 @@
             android:id="@+id/buttonUpgradeShopFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
             android:onClick="switchToUpgradeShopFragment"
             android:text="@string/upgrade_shop_sign" />
 
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 
 </LinearLayout>
