@@ -19,62 +19,36 @@ public class UpgradeShopFragment extends Fragment {
 
 
     public void onAttach (Activity activity){
-
         super.onAttach(activity);
     }
 
     public void onStart (){
         super.onStart();
-
         Context context = getActivity();
         initListView(context);
-
-
-
-        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-         //       android.R.layout.simple_list_item_1, upgrades);
-
-        //listView.setAdapter(adapter);
-
-
     }
 
     private void initListView(Context context) {
-
         //инициализация апгрейдов
         UpgradeManualClick upgradeManualClick = new UpgradeManualClick();
         AutomataDelayReduce automataDelayReduce = new AutomataDelayReduce();
         AutomataCostReduce automataCostReduce = new AutomataCostReduce();
         UpgradeCostReduce upgradeCostReduce = new UpgradeCostReduce();
         AutomataPerfomanceUpgrade automataPerfomanceUpgrade = new AutomataPerfomanceUpgrade();
-
-
-
         //создание и инициализация listView
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
-
-
         //заполнение listView строками
-
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-
-
-
-
-
         addToHashMap(getString(R.string.Up_UpgradeManualClick), upgradeManualClick.price, arrayList);
         addToHashMap(getString(R.string.Up_AutomataCostReduce), automataCostReduce.price, arrayList);
         addToHashMap(getString(R.string.Up_UpgradeCostReduce), upgradeCostReduce.price, arrayList);
         addToHashMap(getString(R.string.Up_AutomataPerfomanceUpgrade), automataPerfomanceUpgrade.price, arrayList);
         addToHashMap(getString(R.string.Up_AutomataDelayReduce), automataDelayReduce.price, arrayList);
-
-
+        //добавление содержимого listView на экран
         SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
         listView.setAdapter(adapter);
-
-
 
     }
 

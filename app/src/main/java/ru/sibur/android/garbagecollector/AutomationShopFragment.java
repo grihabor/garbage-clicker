@@ -19,14 +19,11 @@ import java.util.HashMap;
 public class AutomationShopFragment extends Fragment {
     @Override
     public void onAttach (Activity activity){
-
         super.onAttach(activity);
     }
 
     public void onCreate( Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle bundle) {
@@ -35,41 +32,8 @@ public class AutomationShopFragment extends Fragment {
 
     public void onStart(){
         super.onStart();
-
-        Context context = getActivity();
-        initListView(context);
     }
 
-    private void initListView(Context context) {
-        //инициализация автоматов
-        BigAutomata bigAutomata = new BigAutomata();
-        MediumAutomata mediumAutomata = new MediumAutomata();
-        LittleAutomata littleAutomata = new LittleAutomata();
 
-        //создание и инициализация listView
-        ListView listView = getView().findViewById(R.id.automationShopListView);
-
-        //заполнение listView строками
-
-        ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-
-        addToHashMap(getString(R.string.Up_BigAutomata), bigAutomata.price, arrayList);
-        addToHashMap(getString(R.string.Up_MediumAutomata), mediumAutomata.price,  arrayList);
-        addToHashMap(getString(R.string.Up_LittleAutomata), littleAutomata.price, arrayList);
-
-        SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
-                new String[]{"Name", "Price"},
-                new int[]{android.R.id.text1, android.R.id.text2});
-        listView.setAdapter(adapter);
-
-
-    }
-
-    private void addToHashMap(String value, float price,  ArrayList<HashMap<String, String>> arrayList){
-        HashMap<String, String> map = new HashMap<>();
-        map.put("Name", value);
-        map.put("Price", "Стоимость : "+String.valueOf(price));
-        arrayList.add(map);
-    }
 
 }
