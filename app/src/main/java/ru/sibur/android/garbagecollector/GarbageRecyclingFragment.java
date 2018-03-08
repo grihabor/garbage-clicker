@@ -46,7 +46,7 @@ public class GarbageRecyclingFragment extends Fragment {
                 editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
                 editor.apply();
 
-                listener.OnMoneyUpdate();
+                if (!(listener.equals(null))) {listener.OnMoneyUpdate();}
             }
         });
     }
