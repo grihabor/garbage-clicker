@@ -7,13 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-
 
 public class UpgradeShopFragment extends Fragment {
 
@@ -45,7 +42,6 @@ public class UpgradeShopFragment extends Fragment {
                 new int[]{android.R.id.text1, android.R.id.text2});
 
         listView.setAdapter(adapter);
-
     }
 
 
@@ -66,9 +62,8 @@ public class UpgradeShopFragment extends Fragment {
         upgradeArray.add(new AutomataCostReduce(getString(R.string.Up_AutomataCostReduce), 5));
 
         return upgradeArray;
-
     }
-
+  
     @Override
     public void onCreate( Bundle savedInstanceState) {
 

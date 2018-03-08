@@ -21,11 +21,10 @@ public class AutomationShopFragment extends Fragment {
     public void onAttach (Activity activity){
         super.onAttach(activity);
     }
-
-    public void onCreate( Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
+  
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle bundle) {
         return inflater.inflate(R.layout.activity_automation_shop_fragment, null);
     }
@@ -33,7 +32,4 @@ public class AutomationShopFragment extends Fragment {
     public void onStart(){
         super.onStart();
     }
-
-
-
 }
