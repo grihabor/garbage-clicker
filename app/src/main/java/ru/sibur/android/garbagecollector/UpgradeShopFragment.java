@@ -30,7 +30,7 @@ public class UpgradeShopFragment extends Fragment {
 
     private void initListView(Context context) {
 
-        ArrayList <Upgrade> upgradeArray = getUpgradeList();
+        ArrayList <Upgrade> upgradeArray = getUpgradeArray();
 
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
 
@@ -56,7 +56,7 @@ public class UpgradeShopFragment extends Fragment {
         arrayList.add(map);
     }
 
-    private ArrayList<Upgrade> getUpgradeList(){
+    private ArrayList<Upgrade> getUpgradeArray(){
         ArrayList <Upgrade> upgradeArray = new ArrayList<Upgrade>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 1));
