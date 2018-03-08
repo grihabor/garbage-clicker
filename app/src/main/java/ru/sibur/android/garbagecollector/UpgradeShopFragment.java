@@ -29,35 +29,44 @@ public class UpgradeShopFragment extends Fragment {
     }
 
     private void initListView(Context context) {
-        //инициализация апгрейдов
-        UpgradeManualClick upgradeManualClick = new UpgradeManualClick();
-        AutomataDelayReduce automataDelayReduce = new AutomataDelayReduce();
-        AutomataCostReduce automataCostReduce = new AutomataCostReduce();
-        UpgradeCostReduce upgradeCostReduce = new UpgradeCostReduce();
-        AutomataPerfomanceUpgrade automataPerfomanceUpgrade = new AutomataPerfomanceUpgrade();
-        //создание и инициализация listView
+
+        ArrayList <Upgrade> upgradeArray = getUpgradeList();
+
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
-        //заполнение listView строками
+
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-        addToHashMap(getString(R.string.Up_UpgradeManualClick), upgradeManualClick.price, arrayList);
-        addToHashMap(getString(R.string.Up_AutomataCostReduce), automataCostReduce.price, arrayList);
-        addToHashMap(getString(R.string.Up_UpgradeCostReduce), upgradeCostReduce.price, arrayList);
-        addToHashMap(getString(R.string.Up_AutomataPerfomanceUpgrade), automataPerfomanceUpgrade.price, arrayList);
-        addToHashMap(getString(R.string.Up_AutomataDelayReduce), automataDelayReduce.price, arrayList);
-        //добавление содержимого listView на экран
+
+        for (int i = 0; i < upgradeArray.size(); i++){
+            addToHashMap(upgradeArray.get(i).name, upgradeArray.get(i).price, arrayList);
+        }
+
         SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
+
         listView.setAdapter(adapter);
 
     }
 
 
-    public void addToHashMap(String value, float price, ArrayList<HashMap<String, String>> arrayList){
+    private void addToHashMap(String value, float price, ArrayList<HashMap<String, String>> arrayList){
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", value);
         map.put("Price", "Стоимость : "+String.valueOf(price));
         arrayList.add(map);
+    }
+
+    private ArrayList<Upgrade> getUpgradeList(){
+        ArrayList <Upgrade> upgradeArray = new ArrayList<Upgrade>();
+
+        upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 1));
+        upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 2));
+        upgradeArray.add(new UpgradeManualClick(getString(R.string.Up_UpgradeManualClick), 3));
+        upgradeArray.add(new AutomataDelayReduce(getString(R.string.Up_AutomataDelayReduce), 4));
+        upgradeArray.add(new AutomataCostReduce(getString(R.string.Up_AutomataCostReduce), 5));
+
+        return upgradeArray;
+
     }
 
     @Override
