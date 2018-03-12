@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 
 
 public class IntroActivity extends AppCompatActivity {
@@ -27,8 +28,8 @@ public class IntroActivity extends AppCompatActivity {
 
 
 
-        ConstraintLayout introLayout = findViewById(R.id.introLayout);
-        introLayout.setOnClickListener((new View.OnClickListener() {
+        Button playButton = findViewById(R.id.play_button);
+        playButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(IntroActivity.this, MainActivity.class);
