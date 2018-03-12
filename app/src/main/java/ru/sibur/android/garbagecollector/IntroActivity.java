@@ -42,6 +42,17 @@ public class IntroActivity extends AppCompatActivity {
                 finish();
             }
         }));
+
+        Button achievementButton = findViewById(R.id.achievement_button);
+        achievementButton.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(IntroActivity.this, AchievementActivity.class);
+                startActivity(intent);
+
+            }
+        }));
+
     }
 
 
