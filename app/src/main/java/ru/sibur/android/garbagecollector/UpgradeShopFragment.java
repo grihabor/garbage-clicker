@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import java.util.ArrayList;
@@ -25,9 +26,9 @@ public class UpgradeShopFragment extends Fragment {
         initListView(context);
     }
 
-    private void initListView(Context context) {
+    private void initListView(final Context context) {
 
-        ArrayList <Upgrade> upgradeArray = getUpgradeList();
+        final ArrayList <Upgrade> upgradeArray = getUpgradeList();
 
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
 
@@ -42,6 +43,14 @@ public class UpgradeShopFragment extends Fragment {
                 new int[]{android.R.id.text1, android.R.id.text2});
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
+                                    long id) {
+                upgradeArray.get(position).Execute(context);
+            }
+        });
     }
 
 
