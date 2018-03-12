@@ -12,7 +12,11 @@ public class ShopItem {
     public HashMap<String, String> getViewData(){
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : "+String.valueOf(price));
+        map.put("Price", "Стоимость : " + getPrice());
         return map;
+    }
+
+    int getPrice () {
+        return Math.round(price);
     }
 }
