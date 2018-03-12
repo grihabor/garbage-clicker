@@ -34,7 +34,7 @@ public class UpgradeShopFragment extends Fragment {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
         for (int i = 0; i < upgradeArray.size(); i++){
-            addToHashMap(upgradeArray.get(i).name, upgradeArray.get(i).price, arrayList);
+            arrayList.add(upgradeArray.get(i).getViewData());
         }
 
         SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
@@ -45,12 +45,6 @@ public class UpgradeShopFragment extends Fragment {
     }
 
 
-    private void addToHashMap(String value, float price, ArrayList<HashMap<String, String>> arrayList){
-        HashMap<String, String> map = new HashMap<>();
-        map.put("Name", value);
-        map.put("Price", "Стоимость : "+String.valueOf(price));
-        arrayList.add(map);
-    }
 
     private ArrayList<Upgrade> getUpgradeList(){
         ArrayList <Upgrade> upgradeArray = new ArrayList<Upgrade>();
