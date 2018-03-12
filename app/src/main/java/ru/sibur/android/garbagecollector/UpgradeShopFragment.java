@@ -40,7 +40,6 @@ public class UpgradeShopFragment extends Fragment {
         SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
-
         listView.setAdapter(adapter);
     }
 
