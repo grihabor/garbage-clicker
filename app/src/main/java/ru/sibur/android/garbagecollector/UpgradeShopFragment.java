@@ -48,7 +48,7 @@ public class UpgradeShopFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
-                upgradeArray.get(position).Execute(context);
+                upgradeArray.get(position).Apply(context);
             }
         });
     }

@@ -14,7 +14,7 @@ public class Upgrade {
         name = nameIN;
     }
 
-    void Execute (Context context) {
+    void Apply (Context context) {
         Toast.makeText(context, "казнить нельзя помиловать", Toast.LENGTH_SHORT).show();
     }
 }
