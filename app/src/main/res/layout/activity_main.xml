@@ -13,12 +13,16 @@
         android:orientation="horizontal"
         android:gravity="end">
         <TextView
-            android:id="@+id/siburiksNum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:text="@string/displayed_vault_name"/>
+        <TextView
+            android:id="@+id/moneyDisplay"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:gravity="center"
-            android:textSize="20sp"
-            android:text="Сибурики: 0"/>
+            android:textSize="20sp" />
     </LinearLayout>
 
     <FrameLayout
@@ -31,10 +35,9 @@
 
 
     <LinearLayout
-        android:id="@+id/mainLinearButtonLayout"
+        android:id="@+id/ButtonsLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -42,25 +45,22 @@
             android:id="@+id/buttonAutomationShopFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:onClick="switchToAutomationShopFragment"
-            android:text="Button" />
+            android:text="@string/automation_shop_sign" />
 
         <Button
             android:id="@+id/buttonGarbageRecyclingFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:onClick="switchToGarbageRecyclingFragment"
-            android:text="Button" />
+            android:text="@string/recycle_sign" />
 
         <Button
             android:id="@+id/buttonUpgradeShopFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:onClick="switchToUpgradeShopFragment"
-            android:text="Button" />
+            android:text="@string/upgrade_shop_sign" />
 
     </LinearLayout>
 
