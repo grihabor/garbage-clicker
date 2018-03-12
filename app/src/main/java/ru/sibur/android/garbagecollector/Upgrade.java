@@ -10,8 +10,4 @@ public class Upgrade extends ShopItem {
     Upgrade(String nameIN, float priceIn){
        super(nameIN, priceIn);
     }
-
-    void Apply (Context context) {
-        Toast.makeText(context, "казнить нельзя помиловать", Toast.LENGTH_SHORT).show();
-    }
 }

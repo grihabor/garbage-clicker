@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UpgradeShopFragment extends Fragment {
+public class UpgradeShopFragment extends MoneyChangingFragment {
 
 
     public void onAttach (Activity activity){
@@ -51,19 +51,7 @@ public class UpgradeShopFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
                 Upgrade current = upgradeArray.get(position);
-
-                SharedPreferences preferences = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
-                int MoneyNow = preferences.getInt(MainActivity.MONEY_KEY, 0);
-                if (MoneyNow > current.getPrice()) {
-                    current.Apply(context);
-
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putInt(MainActivity.MONEY_KEY, MoneyNow - current.getPrice());
-                    editor.apply();
-                }
-                else {
-                    Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT);
-                }
+                current.Buy(context, listener);
             }
         });
     }

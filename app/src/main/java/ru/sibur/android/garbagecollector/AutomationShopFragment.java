@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class AutomationShopFragment extends Fragment {
+public class AutomationShopFragment extends MoneyChangingFragment {
     @Override
     public void onAttach (Activity activity){
         super.onAttach(activity);

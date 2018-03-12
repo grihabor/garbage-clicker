@@ -45,11 +45,15 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        switchTo(new UpgradeShopFragment());
+        UpgradeShopFragment fragment = new UpgradeShopFragment();
+        fragment.setMoneyUpdateListener(this);
+        switchTo(fragment);
     }
 
     public void switchToAutomationShopFragment(View view) {
-        switchTo(new AutomationShopFragment());
+        AutomationShopFragment fragment = new AutomationShopFragment();
+        fragment.setMoneyUpdateListener(this);
+        switchTo(fragment);
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
