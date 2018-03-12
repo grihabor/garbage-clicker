@@ -13,19 +13,16 @@ import android.widget.Button;
 public class IntroActivity extends AppCompatActivity {
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        if(getSupportActionBar() != null) getSupportActionBar().hide();
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
 
         setContentView(R.layout.activity_intro);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
 
 
         Button playButton = findViewById(R.id.play_button);
@@ -38,7 +35,13 @@ public class IntroActivity extends AppCompatActivity {
             }
         }));
 
-
+        Button exitButton = findViewById(R.id.exit_button);
+        exitButton.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        }));
     }
 
 
