@@ -12,7 +12,7 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UpgradeShopFragment extends Fragment {
+public class UpgradeShopFragment extends ShopFragment {
 
 
     public void onAttach (Activity activity){
@@ -27,26 +27,18 @@ public class UpgradeShopFragment extends Fragment {
 
     private void initListView(Context context) {
 
-        ArrayList <Upgrade> upgradeArray = getUpgradeList();
+        ArrayList <ShopItem> upgradeArray = getUpgradeList();
 
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
 
-        ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-
-        for (int i = 0; i < upgradeArray.size(); i++){
-            arrayList.add(upgradeArray.get(i).getViewData());
-        }
-
-        SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
-                new String[]{"Name", "Price"},
-                new int[]{android.R.id.text1, android.R.id.text2});
-        listView.setAdapter(adapter);
+        getListViewView(context, upgradeArray, listView);
     }
 
 
 
-    private ArrayList<Upgrade> getUpgradeList(){
-        ArrayList <Upgrade> upgradeArray = new ArrayList<Upgrade>();
+
+    private ArrayList<ShopItem> getUpgradeList(){
+        ArrayList <ShopItem> upgradeArray = new ArrayList<>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 1));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 2));
