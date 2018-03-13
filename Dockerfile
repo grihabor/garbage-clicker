@@ -24,11 +24,9 @@ ENV ANDROID_HOME /sdk
 ENV PATH $PATH:/sdk/tools/bin
 
 # Install dependencies
-RUN sdkmanager --list
 RUN yes | sdkmanager "build-tools;26.0.2"
 RUN yes | sdkmanager "platforms;android-26"
 RUN yes | sdkmanager --licenses
-# RUN exit 1
 
 ADD . .
 RUN ./gradlew --no-daemon lint
