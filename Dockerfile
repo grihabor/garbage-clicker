@@ -23,15 +23,23 @@ RUN ./gradlew --no-daemon --version
 ENV ANDROID_HOME /sdk
 ENV PATH $PATH:/sdk/tools/bin
 
-# Install dependencies
-echo -e "travis_fold:start:android-sdk\033[33;1msdk\033[0m"
+# Install android api and build tools
+RUN echo -e "travis_fold:start:android-sdk\033[33;1msdk\033[0m" \
+ && yes | sdkmanager "build-tools;26.0.2" \
+ && yes | sdkmanager "platforms;android-26" \
+ && yes | sdkmanager --licenses \
+ && echo -e "\ntravis_fold:end:android-sdk\r"
 
-RUN yes | sdkmanager "build-tools;26.0.2"
-RUN yes | sdkmanager "platforms;android-26"
-RUN yes | sdkmanager --licenses
-
-echo -e "\ntravis_fold:end:android-sdk\r"
-
+# Add project files
 ADD . .
-RUN ./gradlew --no-daemon lint
-RUN ./gradlew --no-daemon build
+
+# Execute lint tasks
+RUN echo -e "travis_fold:start:lint-task\033[33;1msdk\033[0m" \
+ && ./gradlew --no-daemon lint \
+ && echo -e "\ntravis_fold:end:lint-task\r"
+
+# Execute build task
+RUN echo -e "travis_fold:start:build-task\033[33;1msdk\033[0m" \
+ && ./gradlew --no-daemon build \
+ && echo -e "\ntravis_fold:end:build-task\r"
+ 
