@@ -20,11 +20,11 @@ public class ShopItem {
         return map;
     }
 
-    void Buy (Context context, OnMoneyUpdateListener listener) {
+    void buy (Context context, OnMoneyUpdateListener listener) {
         SharedPreferences preferences = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
         int MoneyNow = preferences.getInt(MainActivity.MONEY_KEY, 0);
         if (MoneyNow >= getPrice()) {
-            Apply(context);
+            apply(context);
 
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt(MainActivity.MONEY_KEY, MoneyNow - getPrice());
@@ -37,7 +37,7 @@ public class ShopItem {
         }
     }
 
-    void Apply (Context context) {
+    void apply (Context context) {
         Toast.makeText(context, "казнить нельзя помиловать", Toast.LENGTH_SHORT).show();
     }
 

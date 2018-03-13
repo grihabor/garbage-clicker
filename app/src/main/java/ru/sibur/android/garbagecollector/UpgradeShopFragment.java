@@ -51,7 +51,7 @@ public class UpgradeShopFragment extends MoneyChangingFragment {
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
                 Upgrade current = upgradeArray.get(position);
-                current.Buy(context, listener);
+                current.buy(context, listener);
             }
         });
     }

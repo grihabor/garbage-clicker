@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import android.app.Activity;
 import android.app.Fragment;
 
 /**
@@ -9,7 +10,10 @@ import android.app.Fragment;
 public class MoneyChangingFragment extends Fragment {
     OnMoneyUpdateListener listener = null;
 
-    public void setMoneyUpdateListener (OnMoneyUpdateListener listener) {
-        this.listener = listener;
+    @Override
+    public void onAttach (Activity activity) {
+        super.onAttach(activity);
+
+        listener = (OnMoneyUpdateListener) activity;
     }
 }

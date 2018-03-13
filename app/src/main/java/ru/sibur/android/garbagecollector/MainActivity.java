@@ -34,32 +34,22 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //инициализация игрового фрагмента
-        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        garbageRecyclingFragment.setMoneyUpdateListener(this);
-        FragmentTransaction fTrans = getFragmentManager().beginTransaction();
-        fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
-        fTrans.commit();
+        switchToGarbageRecyclingFragment(null);
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
         OnMoneyUpdate();
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        UpgradeShopFragment fragment = new UpgradeShopFragment();
-        fragment.setMoneyUpdateListener(this);
-        switchTo(fragment);
+        switchTo(new UpgradeShopFragment());
     }
 
     public void switchToAutomationShopFragment(View view) {
-        AutomationShopFragment fragment = new AutomationShopFragment();
-        fragment.setMoneyUpdateListener(this);
-        switchTo(fragment);
+        switchTo(new AutomationShopFragment());
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
-        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        garbageRecyclingFragment.setMoneyUpdateListener(this);
-        switchTo(garbageRecyclingFragment);
+        switchTo(new GarbageRecyclingFragment());
     }
 
     public void switchTo(Fragment fragment){
