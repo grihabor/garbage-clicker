@@ -1,4 +1,4 @@
-apply plugin: 'checkstyle'
+apply from: 'checkstyle-android/checkstyle.gradle'
 
 buildscript {
     
