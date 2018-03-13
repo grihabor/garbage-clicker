@@ -1,0 +1,3 @@
+[submodule "checkstyle-android"]
+	path = checkstyle-android
+	url = git@github.com:hypest/checkstyle-android.git
