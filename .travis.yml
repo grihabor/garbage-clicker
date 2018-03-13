@@ -12,10 +12,10 @@ script:
   - docker build . -t img
   - docker run --name build img
   - docker cp build:/project/app/build/outputs/apk/debug/app-debug.apk .
+  - docker cp build:/project/app/build/reports/lint-results.html .
 
-after_success:
-  - export LINT_RESULTS="/project/app/build/reports/lint-results.html"
-  - if [ -f $LINT_RESULTS ]; then lynx -dump $LINT_RESULTS; else echo "Reports not found: $LINT_RESULTS"; fi
+after_success:  
+  - lynx -dump lint-results.html
   
 before_deploy:
   - git config --local user.name "Borodin Gregory"
