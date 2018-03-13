@@ -38,6 +38,11 @@ RUN echo -e "travis_fold:start:lint-task\033[33;1mRunning lint task\033[0m" \
  && ./gradlew --no-daemon lint \
  && echo -e "\ntravis_fold:end:lint-task\r"
 
+# Execute checkstyle tasks
+RUN echo -e "travis_fold:start:check-task\033[33;1mRunning check task\033[0m" \
+ && ./gradlew --no-daemon check \
+ && echo -e "\ntravis_fold:end:check-task\r"
+
 # Execute build task
 RUN echo -e "travis_fold:start:build-task\033[33;1mRunning build task\033[0m" \
  && ./gradlew --no-daemon build \
