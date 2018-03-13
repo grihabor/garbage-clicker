@@ -32,5 +32,4 @@ RUN yes | sdkmanager --licenses
 
 ADD . .
 RUN ./gradlew --no-daemon lint
-RUN ./gradlew --no-daemon tasks
 RUN ./gradlew --no-daemon build
