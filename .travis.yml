@@ -14,7 +14,8 @@ script:
   - docker cp build:/project/app/build/outputs/apk/debug/app-debug.apk .
 
 after_success:
-  - if [ -f /project/app/build/reports/lint-results.html ]; then lynx -dump /project/app/build/reports/lint-results.html; fi
+  - export LINT_RESULTS="/project/app/build/reports/lint-results.html"
+  - if [ -f $LINT_RESULTS ]; then lynx -dump $LINT_RESULTS; else echo "Reports not found: $LINT_RESULTS"; fi
   
 before_deploy:
   - git config --local user.name "Borodin Gregory"
