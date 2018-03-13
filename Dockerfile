@@ -3,8 +3,10 @@ MAINTAINER Borodin Gregory <grihabor@gmail.com>
 
 ENV SDKMANAGER_URL https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
 
-RUN apt update \
- && apt install -y wget unzip
+RUN echo -e "travis_fold:start:apt-install-deps\033[33;1mInstalling apt packages\033[0m" \
+ && apt update \
+ && apt install -y wget unzip \
+ && echo -e "\ntravis_fold:end:apt-install-deps\r"
 
 WORKDIR /sdk
 
@@ -33,12 +35,12 @@ RUN echo -e "travis_fold:start:android-sdk\033[33;1mInstalling Android API and B
 # Add project files
 ADD . .
 
-# Execute lint tasks
+# Execute lint task
 RUN echo -e "travis_fold:start:lint-task\033[33;1mRunning lint task\033[0m" \
  && ./gradlew --no-daemon lint \
  && echo -e "\ntravis_fold:end:lint-task\r"
 
-# Execute checkstyle tasks
+# Execute checkstyle task
 RUN echo -e "travis_fold:start:check-task\033[33;1mRunning check task\033[0m" \
  && ./gradlew --no-daemon check \
  && echo -e "\ntravis_fold:end:check-task\r"
