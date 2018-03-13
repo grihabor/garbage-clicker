@@ -34,11 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //инициализация игрового фрагмента
-        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        garbageRecyclingFragment.setMoneyUpdateListener(this);
-        FragmentTransaction fTrans = getFragmentManager().beginTransaction();
-        fTrans.add(R.id.fragmentMainLayout, garbageRecyclingFragment);
-        fTrans.commit();
+        switchToGarbageRecyclingFragment(null);
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
         OnMoneyUpdate();
@@ -53,9 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
-        GarbageRecyclingFragment garbageRecyclingFragment = new GarbageRecyclingFragment();
-        garbageRecyclingFragment.setMoneyUpdateListener(this);
-        switchTo(garbageRecyclingFragment);
+        switchTo(new GarbageRecyclingFragment());
     }
 
     public void switchTo(Fragment fragment){

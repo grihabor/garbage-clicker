@@ -10,14 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class GarbageRecyclingFragment extends Fragment {
-
-    OnMoneyUpdateListener listener = null;
-
-    public void setMoneyUpdateListener (OnMoneyUpdateListener listener) {
-        this.listener = listener;
-    }
-
+public class GarbageRecyclingFragment extends MoneyChangingFragment {
     @Override
     public void onAttach (Activity activity){
         super.onAttach(activity);
