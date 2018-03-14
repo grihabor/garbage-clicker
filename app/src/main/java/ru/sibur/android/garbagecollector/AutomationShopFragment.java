@@ -41,7 +41,7 @@ public class AutomationShopFragment extends ShopFragment {
         ArrayList <ShopItem> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < stringsArray.length; i++){
-        automataArray.add(new Automata(stringsArray[i], 10*(i+1) ) );
+            automataArray.add(new Automata(stringsArray[i], 10*(i+1) ) );
         }
         return automataArray;
     }

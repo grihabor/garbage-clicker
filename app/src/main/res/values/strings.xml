@@ -17,9 +17,6 @@
     <string name="Up_AutomataPerfomanceUpgrade">Улучшение производительности автоматов</string>
     <string name="Up_AutomataDelayReduce">Увеличение скорости автоматов</string>
 
-    <string name="Automata_1">Мусоровоз</string>
-    <string name="Automata_2">Свалку</string>
-    <string name="Automata_3">Перерабатывающий завод</string>
     <string-array name="automata_array">
         <item>Мусоровоз</item>
         <item>Свалка</item>
