@@ -1,5 +1,7 @@
 apply plugin: 'checkstyle'
 
+// details: https://raw.githubusercontent.com/chrisdoyle/gradle-fury/v1.0.13/gradle/quality.gradle
+
 checkstyle {
     ignoreFailures = true
     configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
