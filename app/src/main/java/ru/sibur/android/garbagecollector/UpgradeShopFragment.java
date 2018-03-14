@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class UpgradeShopFragment extends ShopFragment {
 
@@ -26,12 +24,10 @@ public class UpgradeShopFragment extends ShopFragment {
     }
 
     private void initListView(Context context) {
-
         ArrayList <ShopItem> upgradeArray = getUpgradeList();
-
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
-
-        getListViewView(context, upgradeArray, listView);
+        SimpleAdapter adapter = getListViewAdapter(context, upgradeArray);
+        listView.setAdapter(adapter);
     }
 
 
