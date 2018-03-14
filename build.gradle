@@ -25,3 +25,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+checkstyle {
+    toolVersion '7.8.1'
+    configFile file(config/checkstyle/checkstyle.xml)
+}
+checkstyleMain {
+    source ='app/src/main/java'
+}
+checkstyleTest {
+    source ='app/src/test/java'
+}
