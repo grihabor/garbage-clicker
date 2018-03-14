@@ -1,18 +1,13 @@
 apply plugin: 'checkstyle'
 
 checkstyle {
-    toolVersion = '7.8.1'
-    configFile = file('config/checkstyle/checkstyle.xml')
-}
-
-checkstyle {
     ignoreFailures = true
-    configFile new File("${project.rootDir}/config/checkstyle/checkstyle.xml")
+    configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
 }
 
 task checkstyleAndroid(type: Checkstyle) {
     ignoreFailures = true
-    configFile new File("${project.rootDir}/config/checkstyle/checkstyle.xml")
+    configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
 
     source 'src'
     include '**/*.java'
