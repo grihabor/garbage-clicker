@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
     TextView moneyDisplay;
     public final static String MONEY_KEY = "money_key";
     public final static String PREF_NAME = "my_pref";
+    public final static float MONEY_DISPLAY_COEFFICENT = (float) 0.01;
 
     public void OnMoneyUpdate() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        moneyDisplay.setText(sharedPreferences.getInt(MONEY_KEY, 0) + "");
+        moneyDisplay.setText((sharedPreferences.getInt(MONEY_KEY, 0))*MONEY_DISPLAY_COEFFICENT + "");
     }
 
     @Override

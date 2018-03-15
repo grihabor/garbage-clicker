@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Upgrade extends ShopItem {
-    Upgrade(String nameIN, float priceIn){
+    Upgrade(String nameIN, int priceIn){
        super(nameIN, priceIn);
     }
 }

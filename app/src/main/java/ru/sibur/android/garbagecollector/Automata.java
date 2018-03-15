@@ -5,7 +5,7 @@ package ru.sibur.android.garbagecollector;
  */
 
 public class Automata extends ShopItem {
-    Automata(String nameIN, float priceIn){
+    Automata(String nameIN, int priceIn){
         super(nameIN, priceIn);
     }
 }

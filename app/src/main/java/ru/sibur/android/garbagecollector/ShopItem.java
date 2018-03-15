@@ -7,16 +7,16 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 public class ShopItem {
-    float price;
+    int price;
     String name;
-    ShopItem(String nameIN, float priceIn){
+    ShopItem(String nameIN, int priceIn){
         price = priceIn;
         name = nameIN;
     }
     public HashMap<String, String> getViewData(){
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice());
+        map.put("Price", "Стоимость : " + getPrice()*MainActivity.MONEY_DISPLAY_COEFFICENT);
         return map;
     }
 
@@ -42,6 +42,6 @@ public class ShopItem {
     }
 
     int getPrice () {
-        return Math.round(price);
+        return price;
     }
 }
