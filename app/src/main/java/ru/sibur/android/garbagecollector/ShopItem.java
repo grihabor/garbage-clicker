@@ -38,7 +38,7 @@ public class ShopItem {
     }
 
     void apply (Context context) {
-        Toast.makeText(context, "казнить нельзя помиловать", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
     }
 
     int getPrice () {

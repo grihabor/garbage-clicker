@@ -16,10 +16,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class AutomationShopFragment extends MoneyChangingFragment {
+public class AutomationShopFragment extends Fragment {
+    OnMoneyUpdateListener listener = null;
+
     @Override
-    public void onAttach (Activity activity){
+    public void onAttach (Activity activity)
+    {
         super.onAttach(activity);
+        listener = (OnMoneyUpdateListener) activity;
     }
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

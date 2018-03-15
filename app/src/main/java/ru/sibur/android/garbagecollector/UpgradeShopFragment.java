@@ -16,11 +16,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UpgradeShopFragment extends MoneyChangingFragment {
+public class UpgradeShopFragment extends Fragment {
+    OnMoneyUpdateListener listener = null;
 
-
-    public void onAttach (Activity activity){
+    public void onAttach (Activity activity)
+    {
         super.onAttach(activity);
+        listener = (OnMoneyUpdateListener) activity;
     }
 
     public void onStart (){
