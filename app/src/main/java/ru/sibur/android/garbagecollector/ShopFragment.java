@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 
 public class ShopFragment extends Fragment {
-    public SimpleAdapter getListViewAdapter(Context context, ArrayList<ShopItem> shopItems){
+    public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems){
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
         for (int i = 0; i < shopItems.size(); i++){

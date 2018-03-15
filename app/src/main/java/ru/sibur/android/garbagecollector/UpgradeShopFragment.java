@@ -29,8 +29,8 @@ public class UpgradeShopFragment extends ShopFragment {
     }
 
 
-    private void initListView(Context context) {
-        ArrayList <ShopItem> upgradeArray = getUpgradeList();
+    private void initListView(final Context context) {
+        final ArrayList <Upgrade> upgradeArray = getUpgradeList();
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
         SimpleAdapter adapter = getListViewAdapter(context, upgradeArray);
         listView.setAdapter(adapter);
@@ -48,8 +48,8 @@ public class UpgradeShopFragment extends ShopFragment {
 
 
 
-    private ArrayList<ShopItem> getUpgradeList(){
-        ArrayList <ShopItem> upgradeArray = new ArrayList<>();
+    private ArrayList<Upgrade> getUpgradeList(){
+        ArrayList <Upgrade> upgradeArray = new ArrayList<>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 1));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 2));
