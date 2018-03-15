@@ -1,8 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
-
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -13,12 +11,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-
-public class AutomationShopFragment extends Fragment {
+public class AutomationShopFragment extends ShopFragment {
     OnMoneyUpdateListener listener = null;
-
+    
     @Override
     public void onAttach (Activity activity)
     {
@@ -28,12 +24,27 @@ public class AutomationShopFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-  
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle bundle) {
         return inflater.inflate(R.layout.activity_automation_shop_fragment, null);
     }
 
     public void onStart(){
         super.onStart();
+        initListView(getActivity());
+    }
+
+    private void initListView(Context context) {
+        ArrayList <ShopItem> automataArray = getAutomataList();
+        ListView listView = getView().findViewById(R.id.automationShopListView);
+        SimpleAdapter adapter = getListViewAdapter(context, automataArray);
+        listView.setAdapter(adapter);
+    }
+    private ArrayList<ShopItem> getAutomataList(){
+        ArrayList <ShopItem> automataArray = new ArrayList<>();
+        String[] stringsArray = getResources().getStringArray(R.array.automata_array);
+        for (int i = 0; i < stringsArray.length; i++){
+            automataArray.add(new Automata(stringsArray[i], 10*(i+1) ) );
+        }
+        return automataArray;
     }
 }

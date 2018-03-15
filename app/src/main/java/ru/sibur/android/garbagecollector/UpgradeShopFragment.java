@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,11 +13,9 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class UpgradeShopFragment extends Fragment {
+public class UpgradeShopFragment extends ShopFragment {
     OnMoneyUpdateListener listener = null;
-
     public void onAttach (Activity activity)
     {
         super.onAttach(activity);
@@ -31,21 +28,11 @@ public class UpgradeShopFragment extends Fragment {
         initListView(context);
     }
 
-    private void initListView(final Context context) {
 
-        final ArrayList <Upgrade> upgradeArray = getUpgradeList();
-
+    private void initListView(Context context) {
+        ArrayList <ShopItem> upgradeArray = getUpgradeList();
         ListView listView = getView().findViewById(R.id.upgradeShopListView);
-
-        ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-
-        for (int i = 0; i < upgradeArray.size(); i++){
-            arrayList.add(upgradeArray.get(i).getViewData());
-        }
-
-        SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
-                new String[]{"Name", "Price"},
-                new int[]{android.R.id.text1, android.R.id.text2});
+        SimpleAdapter adapter = getListViewAdapter(context, upgradeArray);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -60,8 +47,9 @@ public class UpgradeShopFragment extends Fragment {
 
 
 
-    private ArrayList<Upgrade> getUpgradeList(){
-        ArrayList <Upgrade> upgradeArray = new ArrayList<Upgrade>();
+
+    private ArrayList<ShopItem> getUpgradeList(){
+        ArrayList <ShopItem> upgradeArray = new ArrayList<>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 1));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 2));
