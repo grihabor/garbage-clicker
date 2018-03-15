@@ -53,7 +53,7 @@ public class UpgradeShopFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
                 Upgrade current = upgradeArray.get(position);
-                current.buy(context, listener);
+                current.tryToBuy(context, listener);
             }
         });
     }

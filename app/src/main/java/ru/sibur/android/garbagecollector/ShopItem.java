@@ -20,11 +20,11 @@ public class ShopItem {
         return map;
     }
 
-    void buy (Context context, OnMoneyUpdateListener listener) {
+    void tryToBuy (Context context, OnMoneyUpdateListener listener) {
         SharedPreferences preferences = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
         int MoneyNow = preferences.getInt(MainActivity.MONEY_KEY, 0);
         if (MoneyNow >= getPrice()) {
-            apply(context);
+            buy(context);
 
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt(MainActivity.MONEY_KEY, MoneyNow - getPrice());
@@ -37,7 +37,7 @@ public class ShopItem {
         }
     }
 
-    void apply (Context context) {
+    void buy (Context context) {
         Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
     }
 
