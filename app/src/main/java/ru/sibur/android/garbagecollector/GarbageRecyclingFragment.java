@@ -14,8 +14,7 @@ public class GarbageRecyclingFragment extends Fragment {
     OnMoneyUpdateListener listener = null;
 
     @Override
-    public void onAttach (Activity activity)
-    {
+    public void onAttach (Activity activity) {
         super.onAttach(activity);
         listener = (OnMoneyUpdateListener) activity;
     }

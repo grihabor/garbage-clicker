@@ -14,13 +14,9 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 
 public class AutomationShopFragment extends ShopFragment {
-    OnMoneyUpdateListener listener = null;
-    
     @Override
-    public void onAttach (Activity activity)
-    {
+    public void onAttach (Activity activity) {
         super.onAttach(activity);
-        listener = (OnMoneyUpdateListener) activity;
     }
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,26 +27,11 @@ public class AutomationShopFragment extends ShopFragment {
 
     public void onStart(){
         super.onStart();
-        initListView(getActivity());
+        initListView(getActivity(), getAutomataList(), R.id.automationShopListView);
     }
 
-    private void initListView(final Context context) {
-        final ArrayList <Automata> automataArray = getAutomataList();
-        ListView listView = getView().findViewById(R.id.automationShopListView);
-        SimpleAdapter adapter = getListViewAdapter(context, automataArray);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
-                                    long id) {
-                Automata current = automataArray.get(position);
-                current.tryToBuy(context, listener);
-            }
-        });
-    }
-    private ArrayList<Automata> getAutomataList(){
-        ArrayList <Automata> automataArray = new ArrayList<>();
+    private ArrayList<ShopItem> getAutomataList(){
+        ArrayList <ShopItem> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < stringsArray.length; i++){
             automataArray.add(new Automata(stringsArray[i], 10*(i+1) ) );

@@ -15,41 +15,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class UpgradeShopFragment extends ShopFragment {
-    OnMoneyUpdateListener listener = null;
-    public void onAttach (Activity activity)
-    {
+    public void onAttach (Activity activity) {
         super.onAttach(activity);
-        listener = (OnMoneyUpdateListener) activity;
     }
 
     public void onStart (){
         super.onStart();
         Context context = getActivity();
-        initListView(context);
+        initListView(context, getUpgradeList(), R.id.upgradeShopListView);
     }
 
 
-    private void initListView(final Context context) {
-        final ArrayList <Upgrade> upgradeArray = getUpgradeList();
-        ListView listView = getView().findViewById(R.id.upgradeShopListView);
-        SimpleAdapter adapter = getListViewAdapter(context, upgradeArray);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
-                                    long id) {
-                Upgrade current = upgradeArray.get(position);
-                current.tryToBuy(context, listener);
-            }
-        });
-    }
-
-
-
-
-    private ArrayList<Upgrade> getUpgradeList(){
-        ArrayList <Upgrade> upgradeArray = new ArrayList<>();
+    private ArrayList<ShopItem> getUpgradeList(){
+        ArrayList <ShopItem> upgradeArray = new ArrayList<>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 1));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 2));
