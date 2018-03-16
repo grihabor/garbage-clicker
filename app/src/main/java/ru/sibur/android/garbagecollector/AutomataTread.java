@@ -13,14 +13,12 @@ import java.util.Date;
 public class AutomataTread extends AsyncTask<Void, Void, Void> {
     Context context;
     OnMoneyUpdateListener listener;
-    boolean TurnedOn;
     String LAST_UPDATE_NAME = "update";
     final static String POWER_NAME = "power";
 
     AutomataTread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
         this.listener = listener;
-        TurnedOn = false;
     }
 
     @Override
@@ -29,8 +27,7 @@ public class AutomataTread extends AsyncTask<Void, Void, Void> {
         SharedPreferences sPref = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
 
         Date Now = new Date();
-        Date lastUpdateTime = new Date(sPref.getLong(LAST_UPDATE_NAME, Now.getTime()));
-        int TimeDifference = Now.compareTo(lastUpdateTime);
+        int TimeDifference = (int) (Now.getTime() - (sPref.getLong(LAST_UPDATE_NAME, Now.getTime())));
         int DeltaMoney = sPref.getInt(POWER_NAME, 0)*TimeDifference/1000;
         int Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
 
