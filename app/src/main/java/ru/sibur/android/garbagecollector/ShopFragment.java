@@ -1,7 +1,11 @@
 package ru.sibur.android.garbagecollector;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -12,6 +16,14 @@ import java.util.HashMap;
  */
 
 public class ShopFragment extends Fragment {
+    OnMoneyUpdateListener listener;
+
+    @Override
+    public void onAttach (Activity activity) {
+        super.onAttach(activity);
+        listener = (OnMoneyUpdateListener) activity;
+    }
+
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<ShopItem> shopItems){
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
@@ -23,5 +35,20 @@ public class ShopFragment extends Fragment {
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
         return adapter;
+    }
+
+    protected void initListView(final Context context, final ArrayList<ShopItem> items, int listViewId) {
+        ListView listView = getView().findViewById(listViewId);
+        SimpleAdapter adapter = getListViewAdapter(context, items);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
+                                    long id) {
+                ShopItem current = items.get(position);
+                current.tryToBuy(context, listener);
+            }
+        });
     }
 }

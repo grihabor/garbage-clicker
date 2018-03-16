@@ -1,6 +1,5 @@
 package ru.sibur.android.garbagecollector;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,15 +7,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 
-
 public class AutomationShopFragment extends ShopFragment {
     @Override
-    public void onAttach (Activity activity){
+    public void onAttach (Activity activity) {
         super.onAttach(activity);
     }
     public void onCreate(Bundle savedInstanceState) {
@@ -28,20 +27,14 @@ public class AutomationShopFragment extends ShopFragment {
 
     public void onStart(){
         super.onStart();
-        initListView(getActivity());
+        initListView(getActivity(), getAutomataList(), R.id.automationShopListView);
     }
 
-    private void initListView(Context context) {
-        ArrayList <ShopItem> automataArray = getAutomataList();
-        ListView listView = getView().findViewById(R.id.automationShopListView);
-        SimpleAdapter adapter = getListViewAdapter(context, automataArray);
-        listView.setAdapter(adapter);
-    }
     private ArrayList<ShopItem> getAutomataList(){
         ArrayList <ShopItem> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < stringsArray.length; i++){
-            automataArray.add(new Automata(stringsArray[i], 10*(i+1) ) );
+            automataArray.add(new Automata(stringsArray[i], 1000*(i+1) ) );
         }
         return automataArray;
     }
