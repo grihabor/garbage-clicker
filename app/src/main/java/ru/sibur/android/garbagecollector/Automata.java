@@ -8,12 +8,10 @@ import android.content.SharedPreferences;
  */
 
 public class Automata extends ShopItem {
-    private int power;
 
-    Automata(String nameIN, int priceIn, int Power)
+    Automata(String nameIN, int priceIn)
     {
         super(nameIN, priceIn);
-        this.power = Power;
     }
 
     @Override
@@ -25,7 +23,9 @@ public class Automata extends ShopItem {
         int CurrentPower = sharedPreferences.getInt(AutomataThread.POWER_NAME, 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putInt(AutomataThread.POWER_NAME, CurrentPower + power);
+        editor.putInt(AutomataThread.POWER_NAME, CurrentPower + getMoneyPerTimeUnit());
         editor.apply();
     }
+
+    int getMoneyPerTimeUnit(){return 100;}
 }

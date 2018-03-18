@@ -15,7 +15,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
     OnMoneyUpdateListener listener;
     String LAST_UPDATE_NAME = "update";
     final static String POWER_NAME = "power";
-    final static int DELTA_TIME = 1000;
+    final static int TIME_UNIT = 1000;
 
     AutomataThread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
@@ -29,7 +29,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
 
         Date Now = new Date();
         int TimeDifference = (int) (Now.getTime() - (sPref.getLong(LAST_UPDATE_NAME, Now.getTime())));
-        int DeltaMoney = sPref.getInt(POWER_NAME, 0)*TimeDifference/DELTA_TIME;
+        int DeltaMoney = sPref.getInt(POWER_NAME, 0)*TimeDifference/TIME_UNIT;
         int Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
 
         SharedPreferences.Editor editor = sPref.edit();
@@ -39,7 +39,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
 
         while (!(isCancelled())) {
             try {
-                Thread.sleep(DELTA_TIME);
+                Thread.sleep(TIME_UNIT);
 
                 Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
                 editor.putInt(MainActivity.MONEY_KEY, Money + sPref.getInt(POWER_NAME, 0));
