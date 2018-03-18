@@ -40,12 +40,11 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
         OnMoneyUpdate();
-
-        automataThread = new AutomataThread(this, this);
     }
 
     protected void onResume() {
         super.onResume();
+        automataThread = new AutomataThread(this, this);
         automataThread.execute();
     }
 
