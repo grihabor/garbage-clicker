@@ -3,7 +3,9 @@ package ru.sibur.android.garbagecollector;
 import android.content.Context;
 
 /**
- * Created by User on 14.03.2018.
+ * Класс автомата
+ * 
+ * Этот класс позволяет создавать новые виды автоматов
  */
 
 public class Automata extends ShopItem {
