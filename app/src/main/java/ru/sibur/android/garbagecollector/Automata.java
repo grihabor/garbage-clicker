@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 /**
  * Created by User on 14.03.2018.
