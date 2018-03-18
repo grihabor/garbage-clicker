@@ -9,9 +9,15 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+/**
+ * Главное меню
+ *
+ * + Играть
+ * + Достижения
+ * + Выход
+ */
 
 public class IntroActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
