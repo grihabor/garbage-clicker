@@ -1,8 +1,16 @@
+language: python
+
+python:
+  - "3.6"
+  
 sudo: required
 
 services:
   - docker
 
+install:
+  - pip3 install -r requirements.txt
+  
 script:
   - docker build . -t img
   - docker run --name build img
@@ -11,8 +19,8 @@ script:
   - docker cp build:/project/app/build/reports/checkstyle/android.xml .
   
 after_success:  
-  - cat android.xml
-  - cat lint-results.xml
+  - python3 parse_report.py android.xml
+  - python3 parse_report.py lint-results.xml
   
 before_deploy:
   - git config --local user.name "Borodin Gregory"
