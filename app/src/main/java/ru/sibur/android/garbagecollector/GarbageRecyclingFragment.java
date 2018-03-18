@@ -11,16 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class GarbageRecyclingFragment extends Fragment {
-
     OnMoneyUpdateListener listener = null;
 
-    public void setMoneyUpdateListener (OnMoneyUpdateListener listener) {
-        this.listener = listener;
-    }
-
     @Override
-    public void onAttach (Activity activity){
+    public void onAttach (Activity activity) {
         super.onAttach(activity);
+        listener = (OnMoneyUpdateListener) activity;
     }
 
     @Override
@@ -43,7 +39,7 @@ public class GarbageRecyclingFragment extends Fragment {
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 int CurrentMoney = sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 1);
+                editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 100);
                 editor.apply();
 
                 if (listener != null) {listener.OnMoneyUpdate();}
