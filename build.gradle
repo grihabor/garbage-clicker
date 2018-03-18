@@ -1,8 +1,3 @@
-apply plugin: 'checkstyle'
-
-// details: https://raw.githubusercontent.com/chrisdoyle/gradle-fury/v1.0.13/gradle/quality.gradle
-
-
 buildscript {
     
     repositories {
