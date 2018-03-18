@@ -17,6 +17,13 @@ task checkstyleAndroid(type: Checkstyle) {
     classpath = files()
 }
 
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled true
+        html.enabled false 
+    }
+}
+
 tasks.withType(Checkstyle).each { checkstyleTask ->
     checkstyleTask.doLast {
         reports.all { report ->
