@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import java.util.Date;
 
 /**
- * Created by Олег on 16.03.2018.
+ * Поток для работы автоматов
  */
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> {
