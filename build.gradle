@@ -2,33 +2,6 @@ apply plugin: 'checkstyle'
 
 // details: https://raw.githubusercontent.com/chrisdoyle/gradle-fury/v1.0.13/gradle/quality.gradle
 
-checkstyle {
-    ignoreFailures = true
-    configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
-}
-
-task checkstyleAndroid(type: Checkstyle) {
-    ignoreFailures = true
-    configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
-
-    source 'src'
-    include '**/*.java'
-    exclude '**/gen/**', '**/test/**'
-
-    classpath = files()
-}
-
-
-tasks.withType(Checkstyle).each { checkstyleTask ->
-    checkstyleTask.doLast {
-        reports.all { report ->
-            def outputFile = report.destination
-            if (outputFile.exists() && outputFile.text.contains("<error ") && !checkstyleTask.ignoreFailures) {
-                throw new GradleException("There were checkstyle warnings! For more info check $outputFile")
-            }
-        }
-    }
-}
 
 buildscript {
     

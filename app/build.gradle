@@ -1,4 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'checkstyle'
+
+
+checkstyle {
+    ignoreFailures = true
+    configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+}
 
 android {
     compileSdkVersion 26
