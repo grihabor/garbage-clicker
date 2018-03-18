@@ -1,8 +1,3 @@
-addons:
-  apt:
-    packages:
-      - lynx
-
 sudo: required
 
 services:
@@ -12,10 +7,12 @@ script:
   - docker build . -t img
   - docker run --name build img
   - docker cp build:/project/app/build/outputs/apk/debug/app-debug.apk .
-  - docker cp build:/project/app/build/reports/lint-results.html .
-
+  - docker cp build:/project/app/build/reports/lint-results.xml .
+  - docker cp build:/project/app/build/reports/checkstyle/android.xml .
+  
 after_success:  
-  - lynx -dump lint-results.html
+  - cat android.xml
+  - cat lint-results.xml
   
 before_deploy:
   - git config --local user.name "Borodin Gregory"
