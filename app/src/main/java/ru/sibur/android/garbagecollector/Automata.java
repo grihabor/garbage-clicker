@@ -9,8 +9,7 @@ import android.content.SharedPreferences;
 
 public class Automata extends ShopItem {
 
-    Automata(String nameIN, int priceIn)
-    {
+    Automata(String nameIN, int priceIn) {
         super(nameIN, priceIn);
     }
 
