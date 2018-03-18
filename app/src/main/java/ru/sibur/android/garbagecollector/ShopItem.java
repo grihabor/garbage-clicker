@@ -16,7 +16,7 @@ public class ShopItem {
     public HashMap<String, String> getViewData(){
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice()*MainActivity.MONEY_DISPLAY_COEFFICENT);
+        map.put("Price", "Стоимость : " + getPrice()*MainActivity.MONEY_DISPLAY_COEFFICIENT);
         return map;
     }
 

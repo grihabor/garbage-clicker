@@ -24,7 +24,7 @@ public class ShopFragment extends Fragment {
         listener = (OnMoneyUpdateListener) activity;
     }
 
-    public SimpleAdapter getListViewAdapter(Context context, ArrayList<ShopItem> shopItems){
+    public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems){
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
         for (int i = 0; i < shopItems.size(); i++){
@@ -37,7 +37,7 @@ public class ShopFragment extends Fragment {
         return adapter;
     }
 
-    protected void initListView(final Context context, final ArrayList<ShopItem> items, int listViewId) {
+    protected void initListView(final Context context, final ArrayList<? extends ShopItem> items, int listViewId) {
         ListView listView = getView().findViewById(listViewId);
         SimpleAdapter adapter = getListViewAdapter(context, items);
         listView.setAdapter(adapter);
