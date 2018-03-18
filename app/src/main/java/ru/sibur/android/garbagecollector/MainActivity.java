@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
 
     protected void onPause() {
         super.onPause();
-        automataThread.cancel(true);
+        if (automataThread != null) automataThread.cancel(true);
     }
 
     public void switchToUpgradeShopFragment(View view) {
