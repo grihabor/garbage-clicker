@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
+    AutomataThread automataThread = null;
     public final static String MONEY_KEY = "money_key";
     public final static String PREF_NAME = "my_pref";
     public final static float MONEY_DISPLAY_COEFFICIENT = (float) 0.01;
@@ -40,8 +41,17 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
         moneyDisplay = findViewById(R.id.moneyDisplay);
         OnMoneyUpdate();
 
-        AutomataTread automataTread = new AutomataTread(this, this);
-        automataTread.execute();
+        automataThread = new AutomataThread(this, this);
+    }
+
+    protected void onResume() {
+        super.onResume();
+        automataThread.execute();
+    }
+
+    protected void onPause() {
+        super.onPause();
+        automataThread.cancel(true);
     }
 
     public void switchToUpgradeShopFragment(View view) {

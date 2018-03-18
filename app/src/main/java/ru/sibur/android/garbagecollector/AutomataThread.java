@@ -10,13 +10,14 @@ import java.util.Date;
  * Created by Олег on 16.03.2018.
  */
 
-public class AutomataTread extends AsyncTask<Void, Void, Void> {
+public class AutomataThread extends AsyncTask<Void, Void, Void> {
     Context context;
     OnMoneyUpdateListener listener;
     String LAST_UPDATE_NAME = "update";
     final static String POWER_NAME = "power";
+    final static int DELTA_TIME = 1000;
 
-    AutomataTread(Context context, OnMoneyUpdateListener listener) {
+    AutomataThread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
         this.listener = listener;
     }
@@ -28,7 +29,7 @@ public class AutomataTread extends AsyncTask<Void, Void, Void> {
 
         Date Now = new Date();
         int TimeDifference = (int) (Now.getTime() - (sPref.getLong(LAST_UPDATE_NAME, Now.getTime())));
-        int DeltaMoney = sPref.getInt(POWER_NAME, 0)*TimeDifference/1000;
+        int DeltaMoney = sPref.getInt(POWER_NAME, 0)*TimeDifference/DELTA_TIME;
         int Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
 
         SharedPreferences.Editor editor = sPref.edit();
@@ -36,9 +37,9 @@ public class AutomataTread extends AsyncTask<Void, Void, Void> {
         editor.putLong(LAST_UPDATE_NAME, Now.getTime());
         editor.apply();
 
-        while (true) {
+        while (!(isCancelled())) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(DELTA_TIME);
 
                 Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
                 editor.putInt(MainActivity.MONEY_KEY, Money + sPref.getInt(POWER_NAME, 0));
@@ -50,6 +51,8 @@ public class AutomataTread extends AsyncTask<Void, Void, Void> {
                 e.printStackTrace();
             }
         }
+
+        return null;
     }
 
     protected void onProgressUpdate(Void... voids) {

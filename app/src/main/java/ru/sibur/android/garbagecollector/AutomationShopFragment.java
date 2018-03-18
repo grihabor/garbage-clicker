@@ -1,16 +1,11 @@
 package ru.sibur.android.garbagecollector;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-
 import java.util.ArrayList;
 
 public class AutomationShopFragment extends ShopFragment {
@@ -34,7 +29,9 @@ public class AutomationShopFragment extends ShopFragment {
         ArrayList <Automata> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < stringsArray.length; i++){
-            automataArray.add(new Automata(stringsArray[i], 1000*(i+1), (i+1)*10));
+            int Price = 1000*(i+1);
+            int Power = (i+1)*10;
+            automataArray.add(new Automata(stringsArray[i], Price, Power));
         }
         return automataArray;
     }
