@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+/**
+ * Активити самой игры
+ */
 
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
