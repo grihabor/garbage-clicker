@@ -28,7 +28,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
 
         Date Now = new Date();
         int TimeDifference = (int) (Now.getTime() - (sPref.getLong(LAST_UPDATE_NAME, Now.getTime())));
-        int DeltaMoney = getPower()*TimeDifference/TIME_UNIT;
+        int DeltaMoney = getMoneyPerTimeUnit()*TimeDifference/TIME_UNIT;
         int Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
 
         SharedPreferences.Editor editor = sPref.edit();
@@ -41,7 +41,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
                 Thread.sleep(TIME_UNIT);
 
                 Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, Money + getPower());
+                editor.putInt(MainActivity.MONEY_KEY, Money + getMoneyPerTimeUnit());
                 editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
                 editor.apply();
 
@@ -58,7 +58,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
         listener.OnMoneyUpdate();
     }
 
-    int getPower() {
+    int getMoneyPerTimeUnit() {
         //копается в sPref, смотрит, кого сколько купили
         return 100;
     }
