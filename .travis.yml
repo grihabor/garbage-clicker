@@ -34,7 +34,7 @@ after_success:
   
 before_deploy:
   - mv app-dev-debug.apk "$GIT_COMMIT.apk"
-  - git tag "$GIT_COMMIT_$TRAVIS_BRANCH_(date +'%Y-%m-%d_%H-%M-%S')"
+  - git tag "$GIT_COMMIT_$TRAVIS_BRANCH_$(date +'%Y-%m-%d_%H-%M-%S')"
 
 deploy:
   provider: releases
