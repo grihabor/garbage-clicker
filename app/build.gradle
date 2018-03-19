@@ -35,6 +35,9 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
     }
 }
 
+int MILLIS_IN_MINUTE = 1000 * 60
+int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -46,11 +49,37 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        dev {
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        dev {
+            minSdkVersion 21
+            versionNameSuffix "-dev"
+            applicationIdSuffix '.dev'
+            resConfigs "en", "xxhdpi"
+        }
+
+        prod {
+        
+        }
+    }
+    
+        applicationVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+            variant.mergedFlavor.versionCode = minutesSinceEpoch;
+            variant.mergedFlavor.versionName = minutesSinceEpoch + "-" + variant.flavorName;
+        }
+    }
+}
+
+
+
     buildToolsVersion '26.0.2'
 }
 
