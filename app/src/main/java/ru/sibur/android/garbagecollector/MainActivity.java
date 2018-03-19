@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import java.lang.Float;
+
 /**
  * Активити самой игры
  */
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
     @Override
     public void OnMoneyUpdate() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        moneyDisplay.setText((sharedPreferences.getInt(MONEY_KEY, 0))*MONEY_DISPLAY_COEFFICIENT + "");
+        float money = sharedPreferences.getInt(MONEY_KEY, 0) * MONEY_DISPLAY_COEFFICIENT;
+        moneyDisplay.setText(Float.toString(money));
     }
 
     @Override
