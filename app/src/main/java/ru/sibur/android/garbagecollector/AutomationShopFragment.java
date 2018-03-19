@@ -13,23 +13,27 @@ public class AutomationShopFragment extends ShopFragment {
     public void onAttach (Activity activity) {
         super.onAttach(activity);
     }
+    
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+    
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle bundle) {
         return inflater.inflate(R.layout.activity_automation_shop_fragment, null);
     }
 
+    @Override
     public void onStart(){
         super.onStart();
         initListView(getActivity(), getAutomataList(), R.id.automationShopListView);
     }
 
     private ArrayList<Automata> getAutomataList(){
-        ArrayList <Automata> automataArray = new ArrayList<>();
+        ArrayList<Automata> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
-        for (int i = 0; i < stringsArray.length; i++){
-            int Price = 1000*(i+1);
+        for (int i = 0; i < stringsArray.length; i++) {
+            int Price = 1000 * (i + 1);
             automataArray.add(new Automata(stringsArray[i], Price));
         }
         return automataArray;
