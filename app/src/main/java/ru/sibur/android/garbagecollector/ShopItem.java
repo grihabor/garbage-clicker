@@ -22,18 +22,19 @@ public class ShopItem {
     public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice() * MainActivity.MONEY_DISPLAY_COEFFICIENT);
+        map.put("Price", "Стоимость : " + getPrice()*Constant.MONEY_DISPLAY_COEFFICIENT);
         return map;
     }
 
     void tryToBuy (Context context, OnMoneyUpdateListener listener) {
-        SharedPreferences preferences = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
-        int money = preferences.getInt(MainActivity.MONEY_KEY, 0);
-        if (money >= getPrice()) {
+        SharedPreferences preferences = context.getSharedPreferences(Constant.PREF_NAME, Context.MODE_PRIVATE);
+        int MoneyNow = preferences.getInt(Constant.MONEY_KEY, 0);
+        if (MoneyNow >= getPrice()) {
             buy(context);
 
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt(MainActivity.MONEY_KEY, money - getPrice());
+            editor.putInt(Constant.MONEY_KEY, MoneyNow - getPrice());
+
             editor.apply();
 
             listener.OnMoneyUpdate();
