@@ -1,6 +1,8 @@
 package ru.sibur.android.garbagecollector;
 
-import ru.sibur.android.garbagecollector.Upgrade;
+/**
+ * TODO: remove
+ */
 
 public class UpgradeCostReduce extends Upgrade {
     UpgradeCostReduce(String nameIn, int priceIn) {
