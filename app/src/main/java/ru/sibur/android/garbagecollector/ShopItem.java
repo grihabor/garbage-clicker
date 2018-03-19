@@ -33,8 +33,7 @@ public class ShopItem {
             editor.apply();
 
             listener.OnMoneyUpdate();
-        }
-        else {
+        } else {
             Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
         }
     }
