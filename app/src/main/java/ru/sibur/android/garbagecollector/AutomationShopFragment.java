@@ -33,12 +33,12 @@ public class AutomationShopFragment extends ShopFragment {
         initListView(getActivity(), getAutomataList(), R.id.automationShopListView);
     }
 
-    private ArrayList<Automata> getAutomataList(){
+    private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < stringsArray.length; i++) {
-            int Price = 1000 * (i + 1);
-            automataArray.add(new Automata(stringsArray[i], Price));
+            int price = 1000 * (i + 1);
+            automataArray.add(new Automata(stringsArray[i], price));
         }
         return automataArray;
     }
