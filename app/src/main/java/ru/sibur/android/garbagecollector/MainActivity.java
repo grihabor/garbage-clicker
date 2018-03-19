@@ -17,9 +17,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
-    public final static String MONEY_KEY = "money_key";
-    public final static String PREF_NAME = "my_pref";
-    public final static float MONEY_DISPLAY_COEFFICIENT = 0.01f;
+    public static final String MONEY_KEY = "money_key";
+    public static final String PREF_NAME = "my_pref";
+    public static final float MONEY_DISPLAY_COEFFICIENT = 0.01f;
 
     public void OnMoneyUpdate() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
