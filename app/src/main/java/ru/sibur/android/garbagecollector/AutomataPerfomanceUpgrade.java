@@ -5,7 +5,7 @@ package ru.sibur.android.garbagecollector;
  */
  
 public class AutomataPerfomanceUpgrade extends Upgrade {
-    AutomataPerfomanceUpgrade(String nameIn, int priceIn){
+    AutomataPerfomanceUpgrade(String nameIn, int priceIn) {
         super(nameIn, priceIn);
     }
 }
