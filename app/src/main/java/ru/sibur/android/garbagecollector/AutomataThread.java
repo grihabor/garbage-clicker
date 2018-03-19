@@ -7,13 +7,15 @@ import android.os.AsyncTask;
 import java.util.Date;
 
 /**
- * Created by Олег on 16.03.2018.
+ * Поток для работы автоматов
  */
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> {
     Context context;
     OnMoneyUpdateListener listener;
+  
     String LAST_UPDATE_NAME = "update";
+
 
     AutomataThread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
@@ -25,6 +27,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
 
         SharedPreferences sPref = context.getSharedPreferences(Constant.PREF_NAME, Context.MODE_PRIVATE);
 
+
         Date Now = new Date();
         int TimeDifference = (int) (Now.getTime() - (sPref.getLong(LAST_UPDATE_NAME, Now.getTime())));
         int DeltaMoney = getMoneyPerTimeUnit()*TimeDifference/Constant.TIME_UNIT;
@@ -33,6 +36,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
         SharedPreferences.Editor editor = sPref.edit();
         editor.putInt(Constant.MONEY_KEY, Money + DeltaMoney);
         editor.putLong(LAST_UPDATE_NAME, Now.getTime());
+
         editor.apply();
 
         while (!(isCancelled())) {
@@ -45,9 +49,21 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
                 editor.apply();
 
                 publishProgress();
+
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                break;
             }
+            
+            if (isCancelled()) {
+                break;
+            }
+            
+            money = sPref.getInt(MainActivity.MONEY_KEY, 0);
+            editor.putInt(MainActivity.MONEY_KEY, money + getMoneyPerTimeUnit());
+            editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
+            editor.apply();
+
+            publishProgress();
         }
 
         return null;

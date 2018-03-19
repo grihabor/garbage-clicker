@@ -1,10 +1,11 @@
 package ru.sibur.android.garbagecollector;
 
-
-import ru.sibur.android.garbagecollector.Upgrade;
+/**
+ * TODO: remove
+ */
 
 public class UpgradeManualClick extends Upgrade {
-    UpgradeManualClick(String nameIn, int priceIn){
+    UpgradeManualClick(String nameIn, int priceIn) {
         super(nameIn, priceIn);
     }
 }

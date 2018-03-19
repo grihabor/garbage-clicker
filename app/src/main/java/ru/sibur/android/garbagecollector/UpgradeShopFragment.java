@@ -2,32 +2,30 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Фрагмент магазина улучшений
+ */ 
+
 public class UpgradeShopFragment extends ShopFragment {
-    public void onAttach (Activity activity) {
+    public void onAttach(Activity activity) {
         super.onAttach(activity);
     }
 
-    public void onStart (){
+    public void onStart() {
         super.onStart();
         Context context = getActivity();
         initListView(context, getUpgradeList(), R.id.upgradeShopListView);
     }
 
-
-    private ArrayList<ShopItem> getUpgradeList(){
-        ArrayList <ShopItem> upgradeArray = new ArrayList<>();
+    private ArrayList<ShopItem> getUpgradeList() {
+        ArrayList<ShopItem> upgradeArray = new ArrayList<>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 100));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 200));
@@ -39,14 +37,11 @@ public class UpgradeShopFragment extends ShopFragment {
     }
   
     @Override
-    public void onCreate( Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_upgrade_shop_fragment, null);
     }
 

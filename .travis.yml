@@ -1,28 +1,40 @@
-addons:
-  apt:
-    packages:
-      - lynx
+language: python
 
+python:
+  - "3.6"
+  
 sudo: required
 
 services:
   - docker
 
-script:
-  - docker build . -t img
-  - docker run --name build img
-  - docker cp build:/project/app/build/outputs/apk/debug/app-debug.apk .
-  - docker cp build:/project/app/build/reports/lint-results.html .
-
-after_success:  
-  - lynx -dump lint-results.html
+install:
+  - pip3 install -r requirements.txt
   
-before_deploy:
+before_script:
   - git config --local user.name "Borodin Gregory"
   - git config --local user.email "grihabor@gmail.com"
   - export GIT_COMMIT=$(git log --format=%h -1)
-  - mv app-debug.apk "$GIT_COMMIT.apk"
-  - git tag "$(date +'%Y-%m-%d_%H-%M-%S')_$GIT_COMMIT"
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+ 
+script:
+  - export IMAGE=grihabor/garbage.clicker:$GIT_COMMIT
+  - docker build . -t $IMAGE
+  - echo -e "travis_fold:start:push.image\033[33;1mPushing docker image\033[0m"
+  - docker push $IMAGE
+  - docker run --name build $IMAGE
+  - docker cp build:/project/app/build/outputs/apk/dev/debug/app-dev-debug.apk .
+  - docker cp build:/project/app/build/reports/lint-results.xml .
+  - docker cp build:/project/app/build/reports/checkstyle/android.xml .
+  - echo -e "\ntravis_fold:end:push.image\r"
+  
+after_success:  
+  - python3 parse_report.py android.xml
+  - python3 parse_report.py lint-results.xml
+  
+before_deploy:
+  - mv app-dev-debug.apk "$GIT_COMMIT.apk"
+  - git tag "$GIT_COMMIT_$TRAVIS_BRANCH_$(date +'%Y-%m-%d_%H-%M-%S')"
 
 deploy:
   provider: releases
@@ -30,7 +42,4 @@ deploy:
   file: ${GIT_COMMIT}.apk
   skip_cleanup: true 
   prerelease: true
-  on:
-    branch:
-      - master
- 
+  all_branches: true

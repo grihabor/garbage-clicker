@@ -6,14 +6,20 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+/**
+ * Элемент списка в фрагменте магазина
+ */ 
+
 public class ShopItem {
     int price;
     String name;
-    ShopItem(String nameIN, int priceIn){
+    
+    ShopItem(String nameIN, int priceIn) {
         price = priceIn;
         name = nameIN;
     }
-    public HashMap<String, String> getViewData(){
+    
+    public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
         map.put("Price", "Стоимость : " + getPrice()*Constant.MONEY_DISPLAY_COEFFICIENT);
@@ -28,11 +34,11 @@ public class ShopItem {
 
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt(Constant.MONEY_KEY, MoneyNow - getPrice());
+
             editor.apply();
 
             listener.OnMoneyUpdate();
-        }
-        else {
+        } else {
             Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
         }
     }

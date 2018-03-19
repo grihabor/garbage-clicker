@@ -1,24 +1,30 @@
 package ru.sibur.android.garbagecollector;
 
-import android.content.SharedPreferences;
 import android.app.Fragment;
-import android.content.pm.ActivityInfo;
 import android.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+/**
+ * Активити самой игры
+ */
 
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
 
-
     public void OnMoneyUpdate() {
         SharedPreferences sharedPreferences = getSharedPreferences(Constant.PREF_NAME, MODE_PRIVATE);
         moneyDisplay.setText((sharedPreferences.getInt(Constant.MONEY_KEY, 0))*Constant.MONEY_DISPLAY_COEFFICIENT + "");
+
     }
 
     @Override
@@ -27,7 +33,9 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        if(getSupportActionBar() != null) getSupportActionBar().hide();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         setContentView(R.layout.activity_main);
 
@@ -48,7 +56,9 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
 
     protected void onPause() {
         super.onPause();
-        if (automataThread != null) automataThread.cancel(true);
+        if (automataThread != null) {
+            automataThread.cancel(true);
+        }
     }
 
     public void switchToUpgradeShopFragment(View view) {
@@ -63,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
         switchTo(new GarbageRecyclingFragment());
     }
 
-    public void switchTo(Fragment fragment){
+    public void switchTo(Fragment fragment) {
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.replace(R.id.fragmentMainLayout, fragment);
         fTrans.commit();
