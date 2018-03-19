@@ -6,6 +6,10 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+/**
+ * Элемент списка в фрагменте магазина
+ */ 
+
 public class ShopItem {
     int price;
     String name;
