@@ -15,19 +15,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class UpgradeShopFragment extends ShopFragment {
-    public void onAttach (Activity activity) {
+    public void onAttach(Activity activity) {
         super.onAttach(activity);
     }
 
-    public void onStart (){
+    public void onStart() {
         super.onStart();
         Context context = getActivity();
         initListView(context, getUpgradeList(), R.id.upgradeShopListView);
     }
 
-
     private ArrayList<ShopItem> getUpgradeList(){
-        ArrayList <ShopItem> upgradeArray = new ArrayList<>();
+        ArrayList<ShopItem> upgradeArray = new ArrayList<>();
 
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 100));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 200));
@@ -39,14 +38,11 @@ public class UpgradeShopFragment extends ShopFragment {
     }
   
     @Override
-    public void onCreate( Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-
         return inflater.inflate(R.layout.activity_upgrade_shop_fragment, null);
     }
 
