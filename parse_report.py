@@ -1,3 +1,4 @@
+import sys
 from xmljson import parker
 import yaml
 
