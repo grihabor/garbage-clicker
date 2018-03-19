@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
     public static final String MONEY_KEY = "money_key";
     public static final String PREF_NAME = "my_pref";
     public static final float MONEY_DISPLAY_COEFFICIENT = 0.01f;
-
+    
+    @Override
     public void OnMoneyUpdate() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         moneyDisplay.setText((sharedPreferences.getInt(MONEY_KEY, 0))*MONEY_DISPLAY_COEFFICIENT + "");
