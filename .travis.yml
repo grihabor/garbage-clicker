@@ -11,9 +11,17 @@ services:
 install:
   - pip3 install -r requirements.txt
   
+before_script:
+  - git config --local user.name "Borodin Gregory"
+  - git config --local user.email "grihabor@gmail.com"
+  - export GIT_COMMIT=$(git log --format=%h -1)
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+ 
 script:
-  - docker build . -t img
-  - docker run --name build img
+  - export IMAGE=grihabor/garbage.clicker:$GIT_COMMIT
+  - docker build . -t $IMAGE
+  - docker push $IMAGE
+  - docker run --name build $IMAGE
   - docker cp build:/project/app/build/outputs/apk/debug/app-debug.apk .
   - docker cp build:/project/app/build/reports/lint-results.xml .
   - docker cp build:/project/app/build/reports/checkstyle/android.xml .
@@ -23,9 +31,6 @@ after_success:
   - python3 parse_report.py lint-results.xml
   
 before_deploy:
-  - git config --local user.name "Borodin Gregory"
-  - git config --local user.email "grihabor@gmail.com"
-  - export GIT_COMMIT=$(git log --format=%h -1)
   - mv app-debug.apk "$GIT_COMMIT.apk"
   - git tag "$(date +'%Y-%m-%d_%H-%M-%S')_$GIT_COMMIT"
 
