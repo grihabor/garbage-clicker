@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by User on 12.03.2018.
+ * Базовый фрагмент для фрагментов магазинов
  */
 
 public class ShopFragment extends Fragment {
@@ -24,10 +24,10 @@ public class ShopFragment extends Fragment {
         listener = (OnMoneyUpdateListener) activity;
     }
 
-    public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems){
+    public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
-        for (int i = 0; i < shopItems.size(); i++){
+        for (int i = 0; i < shopItems.size(); i++) {
             arrayList.add(shopItems.get(i).getViewData());
         }
 
