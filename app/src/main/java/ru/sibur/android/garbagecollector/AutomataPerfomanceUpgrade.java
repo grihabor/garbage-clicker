@@ -1,10 +1,11 @@
 package ru.sibur.android.garbagecollector;
 
-
-import ru.sibur.android.garbagecollector.Upgrade;
-
+/**
+ * TODO: remove
+ */
+ 
 public class AutomataPerfomanceUpgrade extends Upgrade {
-    AutomataPerfomanceUpgrade(String nameIn, int priceIn){
+    AutomataPerfomanceUpgrade(String nameIn, int priceIn) {
         super(nameIn, priceIn);
     }
 }

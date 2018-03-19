@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+/**
+ * Фрагмент ручной переработки мусора
+ */
+ 
 public class GarbageRecyclingFragment extends Fragment {
     OnMoneyUpdateListener listener = null;
 
@@ -20,11 +24,11 @@ public class GarbageRecyclingFragment extends Fragment {
     }
 
     @Override
-    public void onCreate( Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_garbage_recycling_fragment, null);
     }
 
@@ -36,13 +40,20 @@ public class GarbageRecyclingFragment extends Fragment {
         baffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                int CurrentMoney = sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 100);
+                SharedPreferences sp = 
+                    getActivity()
+                    .getSharedPreferences(
+                        MainActivity.PREF_NAME, 
+                        Context.MODE_PRIVATE
+                    );
+                SharedPreferences.Editor editor = sp.edit();
+                int money = sp.getInt(MainActivity.MONEY_KEY, 0);
+                editor.putInt(MainActivity.MONEY_KEY, money + 100);
                 editor.apply();
 
-                if (listener != null) {listener.OnMoneyUpdate();}
+                if (listener != null) {
+                    listener.OnMoneyUpdate();
+                }
             }
         });
     }

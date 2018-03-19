@@ -1,9 +1,11 @@
 package ru.sibur.android.garbagecollector;
 
-import ru.sibur.android.garbagecollector.Upgrade;
+/**
+ * TODO: remove
+ */
 
 public class AutomataCostReduce extends Upgrade {
-    AutomataCostReduce(String nameIn, int priceIn){
+    AutomataCostReduce(String nameIn, int priceIn) {
         super(nameIn, priceIn);
     }
 }

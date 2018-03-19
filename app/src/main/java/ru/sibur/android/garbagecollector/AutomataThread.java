@@ -7,14 +7,14 @@ import android.os.AsyncTask;
 import java.util.Date;
 
 /**
- * Created by Олег on 16.03.2018.
+ * Поток для работы автоматов
  */
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> {
     Context context;
     OnMoneyUpdateListener listener;
-    String LAST_UPDATE_NAME = "update";
-    final static int TIME_UNIT = 1000;
+    static final String LAST_UPDATE_NAME = "update";
+    static final int TIME_UNIT = 1000;
 
     AutomataThread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
@@ -26,29 +26,33 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
 
         SharedPreferences sPref = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
 
-        Date Now = new Date();
-        int TimeDifference = (int) (Now.getTime() - (sPref.getLong(LAST_UPDATE_NAME, Now.getTime())));
-        int DeltaMoney = getMoneyPerTimeUnit()*TimeDifference/TIME_UNIT;
-        int Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
+        Date now = new Date();
+        long timeDelta = now.getTime() - sPref.getLong(LAST_UPDATE_NAME, now.getTime());
+        int moneyDelta = (int) (getMoneyPerTimeUnit() * timeDelta / TIME_UNIT);
+        int money = sPref.getInt(MainActivity.MONEY_KEY, 0);
 
         SharedPreferences.Editor editor = sPref.edit();
-        editor.putInt(MainActivity.MONEY_KEY, Money + DeltaMoney);
-        editor.putLong(LAST_UPDATE_NAME, Now.getTime());
+        editor.putInt(MainActivity.MONEY_KEY, money + moneyDelta);
+        editor.putLong(LAST_UPDATE_NAME, now.getTime());
         editor.apply();
 
         while (!(isCancelled())) {
             try {
                 Thread.sleep(TIME_UNIT);
-
-                Money = sPref.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, Money + getMoneyPerTimeUnit());
-                editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
-                editor.apply();
-
-                publishProgress();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                break;
             }
+            
+            if (isCancelled()) {
+                break;
+            }
+            
+            money = sPref.getInt(MainActivity.MONEY_KEY, 0);
+            editor.putInt(MainActivity.MONEY_KEY, money + getMoneyPerTimeUnit());
+            editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
+            editor.apply();
+
+            publishProgress();
         }
 
         return null;
