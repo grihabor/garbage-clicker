@@ -40,10 +40,15 @@ public class GarbageRecyclingFragment extends Fragment {
         baffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                int CurrentMoney = sharedPreferences.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, CurrentMoney + 100);
+                SharedPreferences sp = 
+                    getActivity()
+                    .getSharedPreferences(
+                        MainActivity.PREF_NAME, 
+                        Context.MODE_PRIVATE
+                    );
+                SharedPreferences.Editor editor = sp.edit();
+                int money = sp.getInt(MainActivity.MONEY_KEY, 0);
+                editor.putInt(MainActivity.MONEY_KEY, money + 100);
                 editor.apply();
 
                 if (listener != null) {
