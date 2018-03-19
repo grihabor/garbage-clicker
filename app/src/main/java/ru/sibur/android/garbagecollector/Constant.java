@@ -1,8 +1,5 @@
 package ru.sibur.android.garbagecollector;
 
-/**
- * Created by User on 19.03.2018.
- */
 
 public final class Constant {
     protected final static int TIME_UNIT = 1000;
