@@ -28,7 +28,7 @@ public class AutomationShopFragment extends ShopFragment {
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
         initListView(getActivity(), getAutomataList(), R.id.automationShopListView);
     }
