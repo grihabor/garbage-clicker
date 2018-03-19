@@ -70,15 +70,12 @@ android {
         }
     }
     
-        applicationVariants.all { variant ->
+    applicationVariants.all { variant ->
         if (variant.buildType.name == "release") {
             variant.mergedFlavor.versionCode = minutesSinceEpoch;
             variant.mergedFlavor.versionName = minutesSinceEpoch + "-" + variant.flavorName;
         }
     }
-}
-
-
 
     buildToolsVersion '26.0.2'
 }
