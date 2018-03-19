@@ -7,7 +7,7 @@ import yaml
 def main(path):
     root = ET.parse(path).getroot()
     data = parker.data(root)
-    print(yaml.dumps(data))
+    print(yaml.dump(data))
 
 
 if __name__ == '__main__':
