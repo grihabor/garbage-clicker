@@ -13,8 +13,8 @@ import java.util.Date;
 public class AutomataThread extends AsyncTask<Void, Void, Void> {
     Context context;
     OnMoneyUpdateListener listener;
-    final static String LAST_UPDATE_NAME = "update";
-    final static int TIME_UNIT = 1000;
+    static final String LAST_UPDATE_NAME = "update";
+    static final int TIME_UNIT = 1000;
 
     AutomataThread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
