@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
     public void OnMoneyUpdate() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         float money = sharedPreferences.getInt(MONEY_KEY, 0) * MONEY_DISPLAY_COEFFICIENT;
-        moneyDisplay.setText(Float.toString(money));
+        NumberFormat formatter = new DecimalFormat("#0.00");     
+        moneyDisplay.setText(formatter.format(money));
     }
 
     @Override
