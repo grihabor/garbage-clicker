@@ -40,6 +40,7 @@ int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 
 android {
     compileSdkVersion 26
+    
     defaultConfig {
         applicationId "ru.sibur.android.garbagecollector"
         minSdkVersion 21
@@ -48,12 +49,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    
+    flavorDimensions "default"
+    
     productFlavors {
         dev {
             minSdkVersion 21
