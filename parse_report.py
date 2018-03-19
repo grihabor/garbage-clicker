@@ -5,8 +5,8 @@ import yaml
 
 
 def main(path):
-    tree = ET.parse(path)
-    data = parker.data(tree)
+    root = ET.parse(path).root()
+    data = parker.data(root)
     print(yaml.dumps(data))
 
 
