@@ -39,16 +39,20 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
         while (!(isCancelled())) {
             try {
                 Thread.sleep(TIME_UNIT);
-
-                money = sPref.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, money + getMoneyPerTimeUnit());
-                editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
-                editor.apply();
-
-                publishProgress();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                break;
             }
+            
+            if (isCancelled()) {
+                break;
+            }
+            
+            money = sPref.getInt(MainActivity.MONEY_KEY, 0);
+            editor.putInt(MainActivity.MONEY_KEY, money + getMoneyPerTimeUnit());
+            editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
+            editor.apply();
+
+            publishProgress();
         }
 
         return null;
