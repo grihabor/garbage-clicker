@@ -43,12 +43,12 @@ public class GarbageRecyclingFragment extends Fragment {
                 SharedPreferences sp = 
                     getActivity()
                     .getSharedPreferences(
-                        MainActivity.PREF_NAME, 
+                            Constant.PREF_NAME,
                         Context.MODE_PRIVATE
                     );
                 SharedPreferences.Editor editor = sp.edit();
-                int money = sp.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, money + 100);
+                int money = sp.getInt(Constant.MONEY_KEY, 0);
+                editor.putInt(Constant.MONEY_KEY, money + 100);
                 editor.apply();
 
                 if (listener != null) {
