@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import java.lang.Float;
-
 /**
  * Активити самой игры
  */
@@ -59,7 +57,9 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
 
     protected void onPause() {
         super.onPause();
-        if (automataThread != null) automataThread.cancel(true);
+        if (automataThread != null) {
+            automataThread.cancel(true);
+        }
     }
 
     public void switchToUpgradeShopFragment(View view) {
