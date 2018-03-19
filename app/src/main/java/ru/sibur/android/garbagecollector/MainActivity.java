@@ -14,13 +14,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
-    public final static String MONEY_KEY = "money_key";
-    public final static String PREF_NAME = "my_pref";
-    public final static float MONEY_DISPLAY_COEFFICIENT = 0.01f;
+
 
     public void OnMoneyUpdate() {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        moneyDisplay.setText((sharedPreferences.getInt(MONEY_KEY, 0))*MONEY_DISPLAY_COEFFICIENT + "");
+        SharedPreferences sharedPreferences = getSharedPreferences(Constant.PREF_NAME, MODE_PRIVATE);
+        moneyDisplay.setText((sharedPreferences.getInt(Constant.MONEY_KEY, 0))*Constant.MONEY_DISPLAY_COEFFICIENT + "");
     }
 
     @Override
