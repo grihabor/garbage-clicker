@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
         switchTo(new GarbageRecyclingFragment());
     }
 
-    public void switchTo(Fragment fragment){
+    public void switchTo(Fragment fragment) {
         FragmentTransaction fTrans = getFragmentManager().beginTransaction();
         fTrans.replace(R.id.fragmentMainLayout, fragment);
         fTrans.commit();
