@@ -5,7 +5,7 @@ import yaml
 
 
 def main(path):
-    root = ET.parse(path).root()
+    root = ET.parse(path).getroot()
     data = parker.data(root)
     print(yaml.dumps(data))
 
