@@ -20,11 +20,13 @@ before_script:
 script:
   - export IMAGE=grihabor/garbage.clicker:$GIT_COMMIT
   - docker build . -t $IMAGE
+  - echo -e "travis_fold:start:push.image\033[33;1mPushing docker image\033[0m"
   - docker push $IMAGE
   - docker run --name build $IMAGE
-  - docker cp build:/project/app/build/outputs/apk/debug/app-dev-debug.apk .
+  - docker cp build:/project/app/build/outputs/apk/dev/debug/app-dev-debug.apk .
   - docker cp build:/project/app/build/reports/lint-results.xml .
   - docker cp build:/project/app/build/reports/checkstyle/android.xml .
+  - echo -e "\ntravis_fold:end:push.image\r"
   
 after_success:  
   - python3 parse_report.py android.xml
