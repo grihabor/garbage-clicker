@@ -28,7 +28,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
 
         Date now = new Date();
         long timeDelta = now.getTime() - sPref.getLong(LAST_UPDATE_NAME, now.getTime());
-        int moneyDelta = getMoneyPerTimeUnit() * timeDelta / TIME_UNIT;
+        int moneyDelta = (int)(getMoneyPerTimeUnit() * timeDelta / TIME_UNIT);
         int money = sPref.getInt(MainActivity.MONEY_KEY, 0);
 
         SharedPreferences.Editor editor = sPref.edit();
