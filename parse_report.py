@@ -1,4 +1,4 @@
-import xmljson import parker
+from xmljson import parker
 import yaml
 
 
