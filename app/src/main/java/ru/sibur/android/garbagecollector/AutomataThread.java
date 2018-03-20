@@ -13,8 +13,7 @@ import java.util.Date;
 public class AutomataThread extends AsyncTask<Void, Void, Void> {
     Context context;
     OnMoneyUpdateListener listener;
-    static final String LAST_UPDATE_NAME = "update";
-    static final int TIME_UNIT = 1000;
+
 
     AutomataThread(Context context, OnMoneyUpdateListener listener) {
         this.context = context;
@@ -24,21 +23,21 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... turningOn) {
 
-        SharedPreferences sPref = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sPref = context.getSharedPreferences(Constant.PREF_NAME, Context.MODE_PRIVATE);
 
         Date now = new Date();
-        long timeDelta = now.getTime() - sPref.getLong(LAST_UPDATE_NAME, now.getTime());
-        int moneyDelta = (int) (getMoneyPerTimeUnit() * timeDelta / TIME_UNIT);
-        int money = sPref.getInt(MainActivity.MONEY_KEY, 0);
+        long timeDelta = now.getTime() - sPref.getLong(Constant.LAST_UPDATE_NAME, now.getTime());
+        int moneyDelta = (int) (getMoneyPerTimeUnit() * timeDelta / Constant.TIME_UNIT);
+        int money = sPref.getInt(Constant.MONEY_KEY, 0);
 
         SharedPreferences.Editor editor = sPref.edit();
-        editor.putInt(MainActivity.MONEY_KEY, money + moneyDelta);
-        editor.putLong(LAST_UPDATE_NAME, now.getTime());
+        editor.putInt(Constant.MONEY_KEY, money + moneyDelta);
+        editor.putLong(Constant.LAST_UPDATE_NAME, now.getTime());
         editor.apply();
 
         while (!(isCancelled())) {
             try {
-                Thread.sleep(TIME_UNIT);
+                Thread.sleep(Constant.TIME_UNIT);
             } catch (InterruptedException e) {
                 break;
             }
@@ -47,9 +46,9 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
                 break;
             }
             
-            money = sPref.getInt(MainActivity.MONEY_KEY, 0);
-            editor.putInt(MainActivity.MONEY_KEY, money + getMoneyPerTimeUnit());
-            editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
+            money = sPref.getInt(Constant.MONEY_KEY, 0);
+            editor.putInt(Constant.MONEY_KEY, money + getMoneyPerTimeUnit());
+            editor.putLong(Constant.LAST_UPDATE_NAME, (new Date()).getTime());
             editor.apply();
 
             publishProgress();

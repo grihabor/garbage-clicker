@@ -20,14 +20,12 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
-    public static final String MONEY_KEY = "money_key";
-    public static final String PREF_NAME = "my_pref";
-    public static final float MONEY_DISPLAY_COEFFICIENT = 0.01f;
+
     
     @Override
     public void OnMoneyUpdate() {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        float money = sharedPreferences.getInt(MONEY_KEY, 0) * MONEY_DISPLAY_COEFFICIENT;
+        SharedPreferences sharedPreferences = getSharedPreferences(Constant.PREF_NAME, MODE_PRIVATE);
+        float money = sharedPreferences.getInt(Constant.MONEY_KEY, 0) * Constant.MONEY_DISPLAY_COEFFICIENT;
         NumberFormat formatter = new DecimalFormat("#0.00");     
         moneyDisplay.setText(formatter.format(money));
     }
