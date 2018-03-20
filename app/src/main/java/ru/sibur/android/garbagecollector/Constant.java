@@ -1,7 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
 /**
- * Created by User on 19.03.2018.
+ * Класс констант
  */
 
 public final class Constant {
