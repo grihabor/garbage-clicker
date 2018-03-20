@@ -1,9 +1,9 @@
 garbage-clicker
 ===============
 
-|build|
+|build| |docker-image|
 
-Аналог cookie clicker с мусоркой
+Garbage Clicker = Переработка мусора + Cookie Clicker
 
 .. |build| image:: https://travis-ci.org/grihabor/garbage-clicker.svg?branch=master
     :target: https://travis-ci.org/grihabor/garbage-clicker
