@@ -9,5 +9,5 @@ Garbage Clicker = Переработка мусора + Cookie Clicker
     :target: https://travis-ci.org/grihabor/garbage-clicker
 
 .. |docker-image| image:: https://img.shields.io/docker/pulls/grihabor/garbage.clicker.svg
-    :target: https://hub.docker.com/grihabor/garbage.clicker
+    :target: https://hub.docker.com/r/grihabor/garbage.clicker
     
