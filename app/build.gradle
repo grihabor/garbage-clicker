@@ -40,6 +40,8 @@ int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 
 android {
     compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    flavorDimensions "default"
     
     defaultConfig {
         applicationId "ru.sibur.android.garbagecollector"
@@ -56,9 +58,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    
-    flavorDimensions "default"
-    
+        
     productFlavors {
         dev {
             minSdkVersion 21
@@ -73,8 +73,11 @@ android {
             variant.mergedFlavor.versionName = minutesSinceEpoch + "-" + variant.flavorName;
         }
     }
-
-    buildToolsVersion '26.0.2'
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
