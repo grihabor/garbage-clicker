@@ -20,7 +20,7 @@ task checkstyleAndroid(type: Checkstyle) {
 tasks.withType(Checkstyle) {
     reports {
         xml.enabled true
-        html.enabled false 
+        html.enabled true 
     }
 }
 
