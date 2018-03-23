@@ -27,12 +27,15 @@ public class UpgradeShopFragment extends ShopFragment {
     private ArrayList<ShopItem> getUpgradeList() {
         ArrayList<ShopItem> upgradeArray = new ArrayList<>();
 
+        //Использование убитых детей класса Automata
+
+        /*
         upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 100));
         upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 200));
         upgradeArray.add(new UpgradeManualClick(getString(R.string.Up_UpgradeManualClick), 300));
         upgradeArray.add(new AutomataDelayReduce(getString(R.string.Up_AutomataDelayReduce), 400));
         upgradeArray.add(new AutomataCostReduce(getString(R.string.Up_AutomataCostReduce), 500));
-
+         */
         return upgradeArray;
     }
   
