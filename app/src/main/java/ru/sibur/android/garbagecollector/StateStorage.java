@@ -43,20 +43,21 @@ public class StateStorage extends Storage {
         return sPref.getInt(MainActivity.MONEY_KEY, 0);
     }
 
-    void addShopItemPurchase(String itemName) {
+    synchronized void addShopItemCount(String itemName) {
         int newItemPurchaseNum = 1 + sPref.getInt(itemName, 0);
         editor.putInt(MainActivity.MONEY_KEY, newItemPurchaseNum);
         editor.apply();
     }
 
-    int getPurchases(String itemName) {
+    int getShopItemCount(String itemName) {
         return sPref.getInt(itemName, 0);
     }
 
-    long updateAutomataThreadActionTime() {
+    synchronized void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator) {
         long prevTime = sPref.getLong(AutomataThread.LAST_UPDATE_NAME, (new Date()).getTime());
         long currentTime = (new Date()).getTime();
         editor.putLong(AutomataThread.LAST_UPDATE_NAME, currentTime);
-        return currentTime - prevTime;
+        editor.apply();
+        addMoney(calculator.calculateMoney(currentTime - prevTime));
     }
 }

@@ -6,7 +6,7 @@ import android.os.AsyncTask;
  * Поток для работы автоматов
  */
 
-public class AutomataThread extends AsyncTask<Void, Void, Void> {
+public class AutomataThread extends AsyncTask<Void, Void, Void> implements AutomataMoneyCalculator {
     Storage storage;
     static final String LAST_UPDATE_NAME = "update";
     static final int TIME_UNIT = 1000;
@@ -16,10 +16,13 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
+    public int calculateMoney(long timeDifference) {
+        return (int) (getMoneyPerTimeUnit() * timeDifference / TIME_UNIT);
+    }
+
+    @Override
     protected Void doInBackground(Void... turningOn) {
-        long timeDelta = storage.updateAutomataThreadActionTime();
-        int moneyDelta = (int) (getMoneyPerTimeUnit() * timeDelta / TIME_UNIT);
-        storage.addMoney(moneyDelta);
+        storage.updateAutomataThreadActionTime(this);
 
         while (!(isCancelled())) {
             try {
@@ -31,9 +34,8 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
             if (isCancelled()) {
                 break;
             }
-            
-            storage.addMoney(getMoneyPerTimeUnit());
-            storage.updateAutomataThreadActionTime();
+
+            storage.updateAutomataThreadActionTime(this);
 
             publishProgress();
         }
