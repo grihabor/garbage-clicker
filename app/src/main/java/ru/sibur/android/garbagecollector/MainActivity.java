@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
 
     protected void onResume() {
         super.onResume();
-        automataThread = new AutomataThread(this, this);
+        automataThread = new AutomataThread(this);
         automataThread.execute();
     }
 

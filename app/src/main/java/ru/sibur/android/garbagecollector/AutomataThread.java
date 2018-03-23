@@ -16,9 +16,9 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
     static final String LAST_UPDATE_NAME = "update";
     static final int TIME_UNIT = 1000;
 
-    AutomataThread(Context context, OnMoneyUpdateListener listener) {
-        this.context = context;
-        this.listener = listener;
+    AutomataThread(MainActivity activity) {
+        this.context = activity;
+        this.listener = activity;
     }
 
     @Override
