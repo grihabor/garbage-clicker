@@ -19,7 +19,7 @@ public class StateStorage extends Storage {
     }
 
 
-    void addMoneyImpl(int amount) {
+    synchronized void addMoney(int amount) {
         int newMoney = amount + getMoney();
         editor.putInt(MainActivity.MONEY_KEY, newMoney);
         editor.apply();
@@ -40,7 +40,7 @@ public class StateStorage extends Storage {
     }
 
     long updateAutomataThreadActionTime() {
-        long prevTime = sPref.getLong(AutomataThread.LAST_UPDATE_NAME, 0);
+        long prevTime = sPref.getLong(AutomataThread.LAST_UPDATE_NAME, (new Date()).getTime());
         long currentTime = (new Date()).getTime();
         editor.putLong(AutomataThread.LAST_UPDATE_NAME, currentTime);
         return currentTime - prevTime;

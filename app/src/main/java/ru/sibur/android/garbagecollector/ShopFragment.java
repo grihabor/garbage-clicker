@@ -17,11 +17,13 @@ import java.util.HashMap;
 
 public class ShopFragment extends Fragment {
     OnMoneyUpdateListener listener;
+    Storage storage;
 
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
         listener = (OnMoneyUpdateListener) activity;
+        storage = ((MainActivity) activity).storage;
     }
 
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
@@ -31,10 +33,9 @@ public class ShopFragment extends Fragment {
             arrayList.add(shopItems.get(i).getViewData());
         }
 
-        SimpleAdapter adapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
+        return new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
-        return adapter;
     }
 
     protected void initListView(final Context context, final ArrayList<? extends ShopItem> items, int listViewId) {
@@ -42,13 +43,9 @@ public class ShopFragment extends Fragment {
         SimpleAdapter adapter = getListViewAdapter(context, items);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
-                                    long id) {
-                ShopItem current = items.get(position);
-                current.tryToBuy(context, listener);
-            }
+        listView.setOnItemClickListener((parent, itemClicked, position, id) -> {
+            ShopItem current = items.get(position);
+            current.tryToBuy(context, listener, storage);
         });
     }
 }

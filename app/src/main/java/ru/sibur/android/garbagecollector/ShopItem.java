@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -26,15 +25,11 @@ public class ShopItem {
         return map;
     }
 
-    void tryToBuy (Context context, OnMoneyUpdateListener listener) {
-        SharedPreferences preferences = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
-        int money = preferences.getInt(MainActivity.MONEY_KEY, 0);
-        if (money >= getPrice()) {
+    void tryToBuy (Context context, OnMoneyUpdateListener listener, Storage storage) {
+        if (storage.getMoney() >= getPrice()) {
             buy(context);
 
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt(MainActivity.MONEY_KEY, money - getPrice());
-            editor.apply();
+            storage.addMoney(-getPrice());
 
             listener.OnMoneyUpdate();
         } else {
