@@ -8,13 +8,11 @@ import android.os.AsyncTask;
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> {
     Storage storage;
-    OnMoneyUpdateListener listener;
     static final String LAST_UPDATE_NAME = "update";
     static final int TIME_UNIT = 1000;
 
     AutomataThread(MainActivity activity) {
         this.storage = activity.storage;
-        this.listener = activity;
     }
 
     @Override
@@ -44,7 +42,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
     }
 
     protected void onProgressUpdate(Void... voids) {
-        listener.OnMoneyUpdate();
+
     }
 
     int getMoneyPerTimeUnit() {

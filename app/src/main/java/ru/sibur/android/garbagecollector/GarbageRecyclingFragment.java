@@ -13,13 +13,11 @@ import android.widget.Button;
  */
  
 public class GarbageRecyclingFragment extends Fragment {
-    OnMoneyUpdateListener listener = null;
     Storage storage;
 
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
-        listener = (OnMoneyUpdateListener) activity;
         storage = ((MainActivity) activity).storage;
     }
 
@@ -39,10 +37,6 @@ public class GarbageRecyclingFragment extends Fragment {
 
         baffer.setOnClickListener(v -> {
             storage.addMoney(100);
-
-            if (listener != null) {
-                listener.OnMoneyUpdate();
-            }
         });
     }
 }

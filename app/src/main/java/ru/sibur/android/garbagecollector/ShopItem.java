@@ -25,13 +25,11 @@ public class ShopItem {
         return map;
     }
 
-    void tryToBuy (Context context, OnMoneyUpdateListener listener, Storage storage) {
+    void tryToBuy (Context context, Storage storage) {
         if (storage.getMoney() >= getPrice()) {
             buy(context);
 
             storage.addMoney(-getPrice());
-
-            listener.OnMoneyUpdate();
         } else {
             Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
         }

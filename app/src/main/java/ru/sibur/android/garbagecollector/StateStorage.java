@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.ArrayMap;
 
 import java.util.Date;
 
@@ -12,12 +13,25 @@ import java.util.Date;
 public class StateStorage extends Storage {
     SharedPreferences sPref;
     SharedPreferences.Editor editor;
+    ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        sPref.registerOnSharedPreferenceChangeListener((sharedPreferences, key) -> {
+            for (ArrayMap.Entry entry : listenerMap.entrySet()) {
+                if (entry.getKey().equals(key)) {
+                    ((OnDBChangeListener) entry.getValue()).OnDBChange();
+                }
+            }
+        });
         editor = sPref.edit();
     }
 
+    void setOnDBChangeListener (String key, OnDBChangeListener listener) {
+        editor.apply();
+        listenerMap.put(key, listener);
+        editor = sPref.edit();
+    }
 
     synchronized void addMoney(int amount) {
         int newMoney = amount + getMoney();

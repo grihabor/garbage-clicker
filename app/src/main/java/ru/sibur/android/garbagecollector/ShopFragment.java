@@ -3,8 +3,6 @@ package ru.sibur.android.garbagecollector;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -16,13 +14,11 @@ import java.util.HashMap;
  */
 
 public class ShopFragment extends Fragment {
-    OnMoneyUpdateListener listener;
     Storage storage;
 
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
-        listener = (OnMoneyUpdateListener) activity;
         storage = ((MainActivity) activity).storage;
     }
 
@@ -45,7 +41,7 @@ public class ShopFragment extends Fragment {
 
         listView.setOnItemClickListener((parent, itemClicked, position, id) -> {
             ShopItem current = items.get(position);
-            current.tryToBuy(context, listener, storage);
+            current.tryToBuy(context, storage);
         });
     }
 }
