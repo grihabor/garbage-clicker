@@ -15,7 +15,7 @@ public abstract class Storage {
     abstract int getMoney();
 
     abstract void addShopItemPurchase (String itemName);
-    abstract void getPurchases (String itemName);
+    abstract int getPurchases (String itemName);
 
     abstract long updateAutomataThreadActionTime();
 }
