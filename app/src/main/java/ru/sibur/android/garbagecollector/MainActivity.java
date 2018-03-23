@@ -2,7 +2,6 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,14 +19,14 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity implements OnMoneyUpdateListener {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
+    StateStorage storage;
     public static final String MONEY_KEY = "money_key";
     public static final String PREF_NAME = "my_pref";
     public static final float MONEY_DISPLAY_COEFFICIENT = 0.01f;
     
     @Override
     public void OnMoneyUpdate() {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        float money = sharedPreferences.getInt(MONEY_KEY, 0) * MONEY_DISPLAY_COEFFICIENT;
+        float money = storage.getMoney() * MONEY_DISPLAY_COEFFICIENT;
         NumberFormat formatter = new DecimalFormat("#0.00");     
         moneyDisplay.setText(formatter.format(money));
     }
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnMoneyUpdateList
 
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
+        storage = new StateStorage(this, PREF_NAME);
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
         OnMoneyUpdate();
