@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
         storage = new StateStorage(this, PREF_NAME);
-        storage.setOnDBChangeListener(MONEY_KEY, () -> {
+        storage.addOnDBChangeListener(MONEY_KEY, () -> {
             float money = storage.getMoney() * MONEY_DISPLAY_COEFFICIENT;
             NumberFormat formatter = new DecimalFormat("#0.00");
             moneyDisplay.setText(formatter.format(money));

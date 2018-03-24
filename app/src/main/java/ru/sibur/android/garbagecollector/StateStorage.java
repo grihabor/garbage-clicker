@@ -25,7 +25,8 @@ public class StateStorage extends Storage {
         });
     }
 
-    void setOnDBChangeListener (String key, OnDBChangeListener listener) {
+    @Override
+    void addOnDBChangeListener (String key, OnDBChangeListener listener) {
         listenerMap.put(key, listener);
     }
 

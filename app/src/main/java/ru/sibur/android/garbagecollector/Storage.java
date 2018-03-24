@@ -12,4 +12,7 @@ public abstract class Storage {
     abstract int getShopItemCount (String itemName);
 
     abstract void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator);
+
+    abstract void addOnDBChangeListener (String key, OnDBChangeListener listener);
+
 }
