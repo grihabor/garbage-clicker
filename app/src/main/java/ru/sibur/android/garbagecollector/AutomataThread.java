@@ -1,40 +1,28 @@
 package ru.sibur.android.garbagecollector;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-
-import java.util.Date;
 
 /**
  * Поток для работы автоматов
  */
 
-public class AutomataThread extends AsyncTask<Void, Void, Void> {
-    Context context;
-    OnMoneyUpdateListener listener;
+public class AutomataThread extends AsyncTask<Void, Void, Void> implements AutomataMoneyCalculator {
+    Storage storage;
     static final String LAST_UPDATE_NAME = "update";
     static final int TIME_UNIT = 1000;
 
-    AutomataThread(Context context, OnMoneyUpdateListener listener) {
-        this.context = context;
-        this.listener = listener;
+    AutomataThread(MainActivity activity) {
+        this.storage = activity.storage;
+    }
+
+    @Override
+    public int calculateMoney(long timeDifference) {
+        return (int) (getMoneyPerTimeUnit() * timeDifference / TIME_UNIT);
     }
 
     @Override
     protected Void doInBackground(Void... turningOn) {
-
-        SharedPreferences sPref = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
-
-        Date now = new Date();
-        long timeDelta = now.getTime() - sPref.getLong(LAST_UPDATE_NAME, now.getTime());
-        int moneyDelta = (int) (getMoneyPerTimeUnit() * timeDelta / TIME_UNIT);
-        int money = sPref.getInt(MainActivity.MONEY_KEY, 0);
-
-        SharedPreferences.Editor editor = sPref.edit();
-        editor.putInt(MainActivity.MONEY_KEY, money + moneyDelta);
-        editor.putLong(LAST_UPDATE_NAME, now.getTime());
-        editor.apply();
+        storage.updateAutomataThreadActionTime(this);
 
         while (!(isCancelled())) {
             try {
@@ -46,11 +34,8 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
             if (isCancelled()) {
                 break;
             }
-            
-            money = sPref.getInt(MainActivity.MONEY_KEY, 0);
-            editor.putInt(MainActivity.MONEY_KEY, money + getMoneyPerTimeUnit());
-            editor.putLong(LAST_UPDATE_NAME, (new Date()).getTime());
-            editor.apply();
+
+            storage.updateAutomataThreadActionTime(this);
 
             publishProgress();
         }
@@ -59,7 +44,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> {
     }
 
     protected void onProgressUpdate(Void... voids) {
-        listener.OnMoneyUpdate();
+
     }
 
     int getMoneyPerTimeUnit() {

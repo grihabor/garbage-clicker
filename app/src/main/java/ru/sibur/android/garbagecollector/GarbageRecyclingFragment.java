@@ -2,8 +2,6 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +13,12 @@ import android.widget.Button;
  */
  
 public class GarbageRecyclingFragment extends Fragment {
-    OnMoneyUpdateListener listener = null;
+    Storage storage;
 
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
-        listener = (OnMoneyUpdateListener) activity;
+        storage = ((MainActivity) activity).storage;
     }
 
     @Override
@@ -37,24 +35,8 @@ public class GarbageRecyclingFragment extends Fragment {
 
         Button baffer = getView().findViewById(R.id.button);
 
-        baffer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sp = 
-                    getActivity()
-                    .getSharedPreferences(
-                        MainActivity.PREF_NAME, 
-                        Context.MODE_PRIVATE
-                    );
-                SharedPreferences.Editor editor = sp.edit();
-                int money = sp.getInt(MainActivity.MONEY_KEY, 0);
-                editor.putInt(MainActivity.MONEY_KEY, money + 100);
-                editor.apply();
-
-                if (listener != null) {
-                    listener.OnMoneyUpdate();
-                }
-            }
+        baffer.setOnClickListener(v -> {
+            storage.addMoney(100);
         });
     }
 }
