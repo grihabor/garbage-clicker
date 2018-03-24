@@ -11,16 +11,17 @@
     <string name="factory_sign">переработать</string>
     <string name="displayed_vault_name">Сибурики:</string>
 
-    <string name="Up_UpgradeManualClick">Улучшение клика</string>
-    <string name="Up_AutomataCostReduce">Уменьшение стоимости автоматов</string>
-    <string name="Up_UpgradeCostReduce">Уменьшение стоимости апгрейдов</string>
-    <string name="Up_AutomataPerfomanceUpgrade">Улучшение производительности автоматов</string>
-    <string name="Up_AutomataDelayReduce">Увеличение скорости автоматов</string>
+    <string-array name="upgrade_array">
+        <item>Улучшение клика</item>
+        <item>Уменьшение стоимости автоматов</item>
+        <item>Уменьшение стоимости апгрейдов</item>
+        <item>Улучшение производительности автоматов</item>
+        <item>Увеличение скорости автоматов</item>
+    </string-array>
 
     <string-array name="automata_array">
         <item>Мусоровоз</item>
         <item>Свалка</item>
         <item>Перерабатывающий завод</item>
     </string-array>
-    <string name="intro_text">Нажмите, чтобы продолжить...</string>
 </resources>

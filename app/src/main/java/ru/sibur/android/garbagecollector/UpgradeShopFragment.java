@@ -26,16 +26,13 @@ public class UpgradeShopFragment extends ShopFragment {
 
     private ArrayList<ShopItem> getUpgradeList() {
         ArrayList<ShopItem> upgradeArray = new ArrayList<>();
+        String[] stringsArray = getResources().getStringArray(R.array.upgrade_array);
 
-        //Использование убитых детей класса Automata
+        for (int i = 0; i < stringsArray.length; i++) {
+            int price = 1000 + i*1000;
+            upgradeArray.add(new Automata(stringsArray[i], price));
+        }
 
-        /*
-        upgradeArray.add(new AutomataPerfomanceUpgrade(getString(R.string.Up_AutomataPerfomanceUpgrade), 100));
-        upgradeArray.add(new UpgradeCostReduce(getString(R.string.Up_UpgradeCostReduce), 200));
-        upgradeArray.add(new UpgradeManualClick(getString(R.string.Up_UpgradeManualClick), 300));
-        upgradeArray.add(new AutomataDelayReduce(getString(R.string.Up_AutomataDelayReduce), 400));
-        upgradeArray.add(new AutomataCostReduce(getString(R.string.Up_AutomataCostReduce), 500));
-         */
         return upgradeArray;
     }
   
