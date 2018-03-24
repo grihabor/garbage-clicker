@@ -5,5 +5,5 @@ package ru.sibur.android.garbagecollector;
  */
 
 public interface OnDBChangeListener {
-    void OnDBChange ();
+    void onDBChange ();
 }

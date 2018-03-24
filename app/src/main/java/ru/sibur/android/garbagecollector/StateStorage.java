@@ -19,7 +19,7 @@ public class StateStorage extends Storage {
         sPref.registerOnSharedPreferenceChangeListener((sharedPreferences, key) -> {
             for (ArrayMap.Entry entry : listenerMap.entrySet()) {
                 if (entry.getKey().equals(key)) {
-                    ((OnDBChangeListener) entry.getValue()).OnDBChange();
+                    ((OnDBChangeListener) entry.getValue()).onDBChange();
                 }
             }
         });
