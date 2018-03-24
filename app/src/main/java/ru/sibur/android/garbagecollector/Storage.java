@@ -8,7 +8,7 @@ public abstract class Storage {
     abstract void addMoney(int amount);
     abstract int getMoney();
 
-    abstract void addShopItemCount (String itemName);
+    abstract void incrementShopItemCount (String itemName);
     abstract int getShopItemCount (String itemName);
 
     abstract void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator);

@@ -7,12 +7,11 @@ import android.util.ArrayMap;
 import java.util.Date;
 
 /**
- * Created by Олег on 23.03.2018.
+ * Created by RedSnail on 23.03.2018.
  */
 
 public class StateStorage extends Storage {
     SharedPreferences sPref;
-    SharedPreferences.Editor editor;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
 
     StateStorage (Context context, String prefName) {
@@ -24,36 +23,44 @@ public class StateStorage extends Storage {
                 }
             }
         });
-        editor = sPref.edit();
     }
 
     void setOnDBChangeListener (String key, OnDBChangeListener listener) {
-        editor.apply();
         listenerMap.put(key, listener);
-        editor = sPref.edit();
     }
 
+    @Override
     synchronized void addMoney(int amount) {
+        SharedPreferences.Editor editor = sPref.edit();
+
         int newMoney = amount + getMoney();
         editor.putInt(MainActivity.MONEY_KEY, newMoney);
         editor.apply();
     }
 
+    @Override
     int getMoney() {
         return sPref.getInt(MainActivity.MONEY_KEY, 0);
     }
 
-    synchronized void addShopItemCount(String itemName) {
+    @Override
+    synchronized void incrementShopItemCount(String itemName) {
+        SharedPreferences.Editor editor = sPref.edit();
+
         int newItemPurchaseNum = 1 + sPref.getInt(itemName, 0);
         editor.putInt(MainActivity.MONEY_KEY, newItemPurchaseNum);
         editor.apply();
     }
 
+    @Override
     int getShopItemCount(String itemName) {
         return sPref.getInt(itemName, 0);
     }
 
+    @Override
     synchronized void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator) {
+        SharedPreferences.Editor editor = sPref.edit();
+
         long prevTime = sPref.getLong(AutomataThread.LAST_UPDATE_NAME, (new Date()).getTime());
         long currentTime = (new Date()).getTime();
         editor.putLong(AutomataThread.LAST_UPDATE_NAME, currentTime);
