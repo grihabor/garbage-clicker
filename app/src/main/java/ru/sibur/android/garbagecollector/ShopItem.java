@@ -5,6 +5,8 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+import static ru.sibur.android.garbagecollector.Constant.MONEY_DISPLAY_COEFFICIENT;
+
 /**
  * Элемент списка в фрагменте магазина
  */ 
@@ -21,7 +23,7 @@ public class ShopItem {
     public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice() * MainActivity.MONEY_DISPLAY_COEFFICIENT);
+        map.put("Price", "Стоимость : " + getPrice() * Constant.MONEY_DISPLAY_COEFFICIENT);
         return map;
     }
 
