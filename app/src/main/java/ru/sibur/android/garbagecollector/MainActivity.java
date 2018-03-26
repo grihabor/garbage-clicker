@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+
 /**
  * Активити самой игры
  */
@@ -20,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
     StateStorage storage;
-    public static final String MONEY_KEY = "money_key";
-    public static final String PREF_NAME = "my_pref";
-    public static final float MONEY_DISPLAY_COEFFICIENT = 0.01f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
-        storage = new StateStorage(this, PREF_NAME);
-        storage.addOnDBChangeListener(MONEY_KEY, () -> {
-            float money = storage.getMoney() * MONEY_DISPLAY_COEFFICIENT;
+        storage = new StateStorage(this, Constant.PREF_NAME);
+        storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
+            float money = storage.getMoney() * Constant.MONEY_DISPLAY_COEFFICIENT;
             NumberFormat formatter = new DecimalFormat("#0.00");
             moneyDisplay.setText(formatter.format(money));
         });

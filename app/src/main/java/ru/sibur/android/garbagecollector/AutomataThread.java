@@ -2,14 +2,14 @@ package ru.sibur.android.garbagecollector;
 
 import android.os.AsyncTask;
 
+
 /**
  * Поток для работы автоматов
  */
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> implements AutomataMoneyCalculator {
     Storage storage;
-    static final String LAST_UPDATE_NAME = "update";
-    static final int TIME_UNIT = 1000;
+
 
     AutomataThread(MainActivity activity) {
         this.storage = activity.storage;
@@ -17,7 +17,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     @Override
     public int calculateMoney(long timeDifference) {
-        return (int) (getMoneyPerTimeUnit() * timeDifference / TIME_UNIT);
+        return (int) (getMoneyPerTimeUnit() * timeDifference / Constant.TIME_UNIT);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
         while (!(isCancelled())) {
             try {
-                Thread.sleep(TIME_UNIT);
+                Thread.sleep(Constant.TIME_UNIT);
             } catch (InterruptedException e) {
                 break;
             }

@@ -32,7 +32,6 @@ public class UpgradeShopFragment extends ShopFragment {
             int price = 1000 + i*1000;
             upgradeArray.add(new Automata(stringsArray[i], price));
         }
-
         return upgradeArray;
     }
   
