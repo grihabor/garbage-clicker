@@ -7,4 +7,5 @@ public final class Constant {
     public static final float MONEY_DISPLAY_COEFFICIENT = 0.01f;
     public static final String LAST_UPDATE_NAME = "update";
     public static final int TIME_UNIT = 1000;
+    public static final String ABSOLUTE_MONEY_KEY = "absolute_money_key";
 }
