@@ -49,8 +49,8 @@ public class StateStorage extends Storage {
     synchronized void incrementShopItemCount(String itemName) {
         SharedPreferences.Editor editor = sPref.edit();
 
-        int newItemPurchaseNum = 1 + sPref.getInt(itemName, 0);
-        editor.putInt(Constant.MONEY_KEY, newItemPurchaseNum);
+        int newItemPurchaseNum = 1 + getShopItemCount(itemName);
+        editor.putInt(itemName, newItemPurchaseNum);
         editor.apply();
     }
 

@@ -14,10 +14,12 @@ import static ru.sibur.android.garbagecollector.Constant.MONEY_DISPLAY_COEFFICIE
 public class ShopItem {
     int price;
     String name;
+    Storage storage;
     
-    ShopItem(String nameIN, int priceIn) {
+    ShopItem(String nameIN, int priceIn, Storage storage) {
         price = priceIn;
         name = nameIN;
+        this.storage = storage;
     }
     
     public HashMap<String, String> getViewData() {
@@ -29,9 +31,9 @@ public class ShopItem {
 
     void tryToBuy (Context context, Storage storage) {
         if (storage.getMoney() >= getPrice()) {
-            buy(context);
-
             storage.addMoney(-getPrice());
+
+            buy(context);
         } else {
             Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
         }

@@ -36,9 +36,10 @@ public class AutomationShopFragment extends ShopFragment {
     private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
-        for (int i = 0; i < stringsArray.length; i++) {
+        for (int i = 0; i < Constant.AUTOMATA_NUM; i++) {
             int price = 1000 * (i + 1);
-            automataArray.add(new Automata(stringsArray[i], price));
+            if (i < stringsArray.length) automataArray.add(new Automata(stringsArray[i], price, storage, i));
+            else automataArray.add(new Automata(getString(R.string.no_resource_message), price, storage, i));
         }
         return automataArray;
     }

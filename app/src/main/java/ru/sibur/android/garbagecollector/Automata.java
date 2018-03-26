@@ -9,15 +9,17 @@ import android.content.Context;
  */
 
 public class Automata extends ShopItem {
+    int automataNum;
 
-    Automata(String nameIN, int priceIn) {
-        super(nameIN, priceIn);
+    Automata(String nameIN, int priceIn, Storage storage, int automataNum) {
+        super(nameIN, priceIn, storage);
+        this.automataNum = automataNum;
     }
 
     @Override
     void buy (Context context) {
         super.buy(context);
 
-        //пишет в sPref, что его купили
+        storage.incrementShopItemCount(Constant.AUTOMATA_COUNT_NAMES[automataNum]);
     }
 }

@@ -24,4 +24,6 @@
         <item>Свалка</item>
         <item>Перерабатывающий завод</item>
     </string-array>
+
+    <string name="no_resource_message">ресурс не найден</string>
 </resources>
