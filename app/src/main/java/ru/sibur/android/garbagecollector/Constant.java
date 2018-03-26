@@ -11,6 +11,12 @@ public final class Constant {
     public static final String LAST_UPDATE_NAME = "update";
     public static final int TIME_UNIT = 1000;
 
+    /**
+     * чтобы не прописывать вручную ключи всех int'ов количества покупок, можно их генерировать
+     * @param namePrefix общее начало всех генерируемых имён
+     * @param namesNum количество сгенерированных имён в возвращаемом массиве
+     * @return массив имён типа {"Automata0", "Automata1", ... "Automata" + (namesNum - 1)}
+     **/
     private static String[] generateCountNames(int namesNum, String namePrefix) {
         String[] ret = new String[namesNum];
 
