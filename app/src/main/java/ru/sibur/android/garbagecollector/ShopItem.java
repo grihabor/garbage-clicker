@@ -5,8 +5,6 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
-import static ru.sibur.android.garbagecollector.Constant.MONEY_DISPLAY_COEFFICIENT;
-
 /**
  * Элемент списка в фрагменте магазина
  */ 

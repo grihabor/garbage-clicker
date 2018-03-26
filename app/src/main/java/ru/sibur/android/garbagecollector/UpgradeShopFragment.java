@@ -29,9 +29,15 @@ public class UpgradeShopFragment extends ShopFragment {
         String[] stringsArray = getResources().getStringArray(R.array.upgrade_array);
 
         for (int i = 0; i < Constant.UPGRADE_NUM; i++) {
-            int price = 1000 + i*1000;
-            if (i < stringsArray.length) upgradeArray.add(new Upgrade(stringsArray[i], price, storage, i));
-            else upgradeArray.add(new Upgrade(getString(R.string.no_resource_message), price, storage, i));
+            int price = 1000 + i * 1000;
+
+            String name = getString(R.string.no_resource_message);
+
+            if (i < stringsArray.length) {
+                name = stringsArray[i];
+            }
+
+            upgradeArray.add(new Upgrade(name, price, storage, i));
         }
         return upgradeArray;
     }

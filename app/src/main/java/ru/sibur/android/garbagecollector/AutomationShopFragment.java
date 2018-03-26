@@ -38,8 +38,13 @@ public class AutomationShopFragment extends ShopFragment {
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < Constant.AUTOMATA_NUM; i++) {
             int price = 1000 * (i + 1);
-            if (i < stringsArray.length) automataArray.add(new Automata(stringsArray[i], price, storage, i));
-            else automataArray.add(new Automata(getString(R.string.no_resource_message), price, storage, i));
+
+            String name = getString(R.string.no_resource_message);
+            if (i < stringsArray.length) {
+                name = stringsArray[i];
+            }
+
+            automataArray.add(new Automata(name, price, storage, i));
         }
         return automataArray;
     }

@@ -1,5 +1,8 @@
 package ru.sibur.android.garbagecollector;
 
+/**
+ * класс содержит константы, нужные нам в разных классах программы
+ */
 
 public final class Constant {
     public static final String MONEY_KEY = "money_key";
