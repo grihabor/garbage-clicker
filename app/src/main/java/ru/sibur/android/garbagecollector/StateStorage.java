@@ -37,6 +37,7 @@ public class StateStorage extends Storage {
 
         int newMoney = amount + getMoney();
         editor.putInt(Constant.MONEY_KEY, newMoney);
+        editor.putInt(Constant.ABSOLUTE_MONEY_KEY, newMoney);
         editor.apply();
     }
 
