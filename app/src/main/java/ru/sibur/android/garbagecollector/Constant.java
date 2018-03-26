@@ -11,26 +11,12 @@ public final class Constant {
     public static final String LAST_UPDATE_NAME = "update";
     public static final int TIME_UNIT = 1000;
 
-    /**
-     * чтобы не прописывать вручную ключи всех int'ов количества покупок, можно их генерировать
-     * @param namePrefix общее начало всех генерируемых имён
-     * @param namesNum количество сгенерированных имён в возвращаемом массиве
-     * @return массив имён типа {"Automata0", "Automata1", ... "Automata" + (namesNum - 1)}
-     **/
-    private static String[] generateCountNames(int namesNum, String namePrefix) {
-        String[] ret = new String[namesNum];
-
-        for (int i = 0; i < namesNum; i++) {
-            ret [i] = namePrefix + i;
-        }
-
-        return ret;
+    public static String automataCountKey (int index) {
+        return "automata" + index;
     }
 
-    public static final int AUTOMATA_NUM = 3;
-    public static final String[] AUTOMATA_COUNT_NAMES = generateCountNames(AUTOMATA_NUM, "Automata");
-
-    public static final int UPGRADE_NUM = 5;
-    public static final String[] UPGRADE_COUNT_NAMES = generateCountNames(UPGRADE_NUM, "Upgrade");
+    public static String upgradeCountKey (int index) {
+        return "upgrade" + index;
+    }
 
 }

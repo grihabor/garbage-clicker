@@ -7,17 +7,17 @@ import android.content.Context;
  */ 
 
 public class Upgrade extends ShopItem {
-    int upgradeNum;
+    int index;
 
     Upgrade(String nameIN, int priceIn, Storage storage, int upgradeNum) {
        super(nameIN, priceIn, storage);
-       this.upgradeNum = upgradeNum;
+       this.index = upgradeNum;
     }
 
     @Override
     void buy (Context context) {
         super.buy(context);
 
-        storage.incrementShopItemCount(Constant.UPGRADE_COUNT_NAMES[upgradeNum]);
+        storage.incrementShopItemCount(Constant.upgradeCountKey(index));
     }
 }
