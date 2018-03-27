@@ -5,8 +5,6 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
-import static ru.sibur.android.garbagecollector.Constant.MONEY_DISPLAY_COEFFICIENT;
-
 /**
  * Элемент списка в фрагменте магазина
  */ 
@@ -14,10 +12,12 @@ import static ru.sibur.android.garbagecollector.Constant.MONEY_DISPLAY_COEFFICIE
 public class ShopItem {
     int price;
     String name;
+    Storage storage;
     
-    ShopItem(String nameIN, int priceIn) {
-        price = priceIn;
-        name = nameIN;
+    ShopItem(String name, int price, Storage storage) {
+        this.price = price;
+        this.name = name;
+        this.storage = storage;
     }
     
     public HashMap<String, String> getViewData() {
@@ -29,9 +29,9 @@ public class ShopItem {
 
     void tryToBuy (Context context, Storage storage) {
         if (storage.getMoney() >= getPrice()) {
-            buy(context);
-
             storage.addMoney(-getPrice());
+
+            buy(context);
         } else {
             Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
         }

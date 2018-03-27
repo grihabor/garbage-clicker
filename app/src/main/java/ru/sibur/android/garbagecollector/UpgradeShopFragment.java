@@ -24,15 +24,17 @@ public class UpgradeShopFragment extends ShopFragment {
         initListView(context, getUpgradeList(), R.id.upgradeShopListView);
     }
 
-    private ArrayList<ShopItem> getUpgradeList() {
-        ArrayList<ShopItem> upgradeArray = new ArrayList<>();
+    private ArrayList<Upgrade> getUpgradeList() {
+        ArrayList<Upgrade> upgradeArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.upgrade_array);
 
-        for (int i = 0; i < stringsArray.length; i++) {
-            int price = 1000 + i*1000;
-            upgradeArray.add(new Automata(stringsArray[i], price));
+        for (int index = 0; index < stringsArray.length; index++) {
+            int price = 1000 + index * 1000;
+            upgradeArray.add(new Upgrade(stringsArray[index], price, storage, index));
         }
         return upgradeArray;
+
+
     }
   
     @Override
