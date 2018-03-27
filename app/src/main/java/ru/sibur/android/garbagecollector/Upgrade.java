@@ -9,9 +9,9 @@ import android.content.Context;
 public class Upgrade extends ShopItem {
     int index;
 
-    Upgrade(String nameIN, int priceIn, Storage storage, int upgradeNum) {
-       super(nameIN, priceIn, storage);
-       this.index = upgradeNum;
+    Upgrade(String name, int price, Storage storage, int upgradeIndex) {
+       super(name, price, storage);
+       this.index = upgradeIndex;
     }
 
     @Override

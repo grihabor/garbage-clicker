@@ -14,9 +14,9 @@ public class ShopItem {
     String name;
     Storage storage;
     
-    ShopItem(String nameIN, int priceIn, Storage storage) {
-        price = priceIn;
-        name = nameIN;
+    ShopItem(String name, int price, Storage storage) {
+        this.price = price;
+        this.name = name;
         this.storage = storage;
     }
     

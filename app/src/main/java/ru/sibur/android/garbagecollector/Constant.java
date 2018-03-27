@@ -1,7 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
 /**
- * класс содержит константы, нужные нам в разных классах программы
+ * Содержит константы, нужные нам в разных классах программы
  */
 
 public final class Constant {
@@ -12,11 +12,11 @@ public final class Constant {
     public static final int TIME_UNIT = 1000;
 
     public static String automataCountKey (int index) {
-        return "automata" + index;
+        return "automata:" + index;
     }
 
     public static String upgradeCountKey (int index) {
-        return "upgrade" + index;
+        return "upgrade:" + index;
     }
 
 }

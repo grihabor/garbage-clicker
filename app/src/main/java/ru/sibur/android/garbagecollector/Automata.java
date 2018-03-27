@@ -11,9 +11,9 @@ import android.content.Context;
 public class Automata extends ShopItem {
     int index;
 
-    Automata(String nameIN, int priceIn, Storage storage, int automataNum) {
-        super(nameIN, priceIn, storage);
-        this.index = automataNum;
+    Automata(String name, int price, Storage storage, int automataIndex) {
+        super(name, price, storage);
+        this.index = automataIndex;
     }
 
     @Override
