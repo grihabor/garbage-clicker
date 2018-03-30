@@ -9,21 +9,21 @@ package ru.sibur.android.garbagecollector;
 public class Automata extends ShopItem {
     private int index;
 
-    Automata(String name, int initialPrice, Storage storage, int automataIndex) {
-        super(name, initialPrice, storage);
+    Automata(String name, int basePrice, Storage storage, int automataIndex) {
+        super(name, basePrice, storage);
         this.index = automataIndex;
     }
 
     @Override
     int getPrice () {
-        int count = storage.getShopItemCount(getCountKey());
-        int outPrice = initialPrice;
+        int count = getCount();
+        int price = basePrice;
 
         for (int i = 0; i < count; i++) {
-            outPrice *= 1.15;
+            price *= 1.15;
         }
 
-        return outPrice;
+        return price;
     }
 
     @Override

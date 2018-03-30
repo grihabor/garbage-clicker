@@ -9,13 +9,13 @@ import java.util.HashMap;
  * Элемент списка в фрагменте магазина
  */ 
 
-public class ShopItem {
-    int initialPrice;
+public abstract class ShopItem {
+    int basePrice;
     String name;
     Storage storage;
     
-    ShopItem(String name, int initialPrice, Storage storage) {
-        this.initialPrice = initialPrice;
+    ShopItem(String name, int basePrice, Storage storage) {
+        this.basePrice = basePrice;
         this.name = name;
         this.storage = storage;
     }
@@ -23,7 +23,7 @@ public class ShopItem {
     public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + Constant.moneyAndPricesFormat(getPrice()));
+        map.put("Price", "Стоимость : " + Constant.formatMoney(getPrice()));
         return map;
     }
 
@@ -43,11 +43,13 @@ public class ShopItem {
     }
 
     int getPrice () {
-        return initialPrice;
+        return basePrice;
     }
 
-    String getCountKey () {
-        return "no_key";
+    abstract String getCountKey ();
+
+    int getCount () {
+        return storage.getShopItemCount(getCountKey());
     }
 
     void setOnCountChangeListener (OnDBChangeListener listener) {

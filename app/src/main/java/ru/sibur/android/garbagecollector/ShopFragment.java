@@ -23,26 +23,26 @@ public class ShopFragment extends Fragment {
     }
 
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+        ArrayList<HashMap<String, String>> viewDataArray = new ArrayList<>();
 
-        SimpleAdapter retAdapter = new SimpleAdapter(context, arrayList, android.R.layout.simple_list_item_2,
+        SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
 
         for (int i = 0; i < shopItems.size(); i++) {
             ShopItem item = shopItems.get(i);
-            arrayList.add(item.getViewData());
+            viewDataArray.add(item.getViewData());
 
             int iCopy = i;
             item.setOnCountChangeListener(() -> {
-                arrayList.set(iCopy, item.getViewData());
-                retAdapter.notifyDataSetChanged();
+                viewDataArray.set(iCopy, item.getViewData());
+                adapter.notifyDataSetChanged();
             });
         }
 
-        retAdapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
 
-        return retAdapter;
+        return adapter;
     }
 
     protected void initListView(final Context context, final ArrayList<? extends ShopItem> items, int listViewId) {

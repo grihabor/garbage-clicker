@@ -7,8 +7,8 @@ package ru.sibur.android.garbagecollector;
 public class Upgrade extends ShopItem {
     private int index;
 
-    Upgrade(String name, int initialPrice, Storage storage, int upgradeIndex) {
-       super(name, initialPrice, storage);
+    Upgrade(String name, int basePrice, Storage storage, int upgradeIndex) {
+       super(name, basePrice, storage);
        this.index = upgradeIndex;
     }
 
@@ -19,13 +19,13 @@ public class Upgrade extends ShopItem {
 
     @Override
     int getPrice () {
-        int count = storage.getShopItemCount(getCountKey());
-        int outPrice = initialPrice;
+        int count = getCount();
+        int price = basePrice;
 
         for (int i = 0; i < count; i++) {
-            outPrice *= 1.30;
+            price *= 1.30;
         }
 
-        return outPrice;
+        return price;
     }
 }

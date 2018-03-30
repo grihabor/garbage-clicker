@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         switchToGarbageRecyclingFragment(null);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
-            moneyDisplay.setText(Constant.moneyAndPricesFormat(storage.getMoney()));
+            moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
         });
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
