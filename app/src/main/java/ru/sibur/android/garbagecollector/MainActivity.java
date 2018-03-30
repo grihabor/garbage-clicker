@@ -40,9 +40,7 @@ public class MainActivity extends AppCompatActivity {
         switchToGarbageRecyclingFragment(null);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
-            float money = storage.getMoney() * Constant.MONEY_DISPLAY_COEFFICIENT;
-            NumberFormat formatter = new DecimalFormat("#0.00");
-            moneyDisplay.setText(formatter.format(money));
+            moneyDisplay.setText(Constant.moneyAndPricesFormat(storage.getMoney()));
         });
 
         moneyDisplay = findViewById(R.id.moneyDisplay);

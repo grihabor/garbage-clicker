@@ -10,12 +10,12 @@ import java.util.HashMap;
  */ 
 
 public class ShopItem {
-    int price;
+    int initialPrice;
     String name;
     Storage storage;
     
-    ShopItem(String name, int price, Storage storage) {
-        this.price = price;
+    ShopItem(String name, int initialPrice, Storage storage) {
+        this.initialPrice = initialPrice;
         this.name = name;
         this.storage = storage;
     }
@@ -23,7 +23,7 @@ public class ShopItem {
     public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice() * Constant.MONEY_DISPLAY_COEFFICIENT);
+        map.put("Price", "Стоимость : " + Constant.moneyAndPricesFormat(getPrice()));
         return map;
     }
 
@@ -37,11 +37,20 @@ public class ShopItem {
         }
     }
 
-    void buy (Context context) {
+    private void buy(Context context) {
         Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
+        storage.incrementShopItemCount(getCountKey());
     }
 
     int getPrice () {
-        return price;
+        return initialPrice;
+    }
+
+    String getCountKey () {
+        return "no_key";
+    }
+
+    void setOnCountChangeListener (OnDBChangeListener listener) {
+        storage.addOnDBChangeListener(getCountKey(), listener);
     }
 }
