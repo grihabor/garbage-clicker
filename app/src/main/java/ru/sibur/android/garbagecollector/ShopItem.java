@@ -14,29 +14,27 @@ public class ShopItem {
     int price;
     String name;
     int img;
-
-
-
-
-    ShopItem(String nameIN, int priceIn) {
-        price = priceIn;
-        name = nameIN;
-        //TODO: доавить разные картинки
-        img = R.drawable.ferum;
+    Storage storage;
+    
+    ShopItem(String name, int price, Storage storage) {
+        this.price = price;
+        this.name = name;
+        this.storage = storage;
+      img = R.drawable.ferum;
     }
     
     public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice() * MainActivity.MONEY_DISPLAY_COEFFICIENT);
+        map.put("Price", "Стоимость : " + getPrice() * Constant.MONEY_DISPLAY_COEFFICIENT);
         return map;
     }
 
     void tryToBuy (Context context, Storage storage) {
         if (storage.getMoney() >= getPrice()) {
-            buy(context);
-
             storage.addMoney(-getPrice());
+
+            buy(context);
         } else {
             Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
         }

@@ -6,6 +6,7 @@ import android.util.ArrayMap;
 
 import java.util.Date;
 
+
 /**
  * Created by RedSnail on 23.03.2018.
  */
@@ -35,36 +36,36 @@ public class StateStorage extends Storage {
         SharedPreferences.Editor editor = sPref.edit();
 
         int newMoney = amount + getMoney();
-        editor.putInt(MainActivity.MONEY_KEY, newMoney);
+        editor.putInt(Constant.MONEY_KEY, newMoney);
         editor.apply();
     }
 
     @Override
     int getMoney() {
-        return sPref.getInt(MainActivity.MONEY_KEY, 0);
+        return sPref.getInt(Constant.MONEY_KEY, 0);
     }
 
     @Override
-    synchronized void incrementShopItemCount(String itemName) {
+    synchronized void incrementShopItemCount(String itemCountKey) {
         SharedPreferences.Editor editor = sPref.edit();
 
-        int newItemPurchaseNum = 1 + sPref.getInt(itemName, 0);
-        editor.putInt(MainActivity.MONEY_KEY, newItemPurchaseNum);
+        int newItemPurchaseNum = 1 + getShopItemCount(itemCountKey);
+        editor.putInt(itemCountKey, newItemPurchaseNum);
         editor.apply();
     }
 
     @Override
-    int getShopItemCount(String itemName) {
-        return sPref.getInt(itemName, 0);
+    int getShopItemCount(String itemCountKey) {
+        return sPref.getInt(itemCountKey, 0);
     }
 
     @Override
     synchronized void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator) {
         SharedPreferences.Editor editor = sPref.edit();
 
-        long prevTime = sPref.getLong(AutomataThread.LAST_UPDATE_NAME, (new Date()).getTime());
+        long prevTime = sPref.getLong(Constant.LAST_UPDATE_NAME, (new Date()).getTime());
         long currentTime = (new Date()).getTime();
-        editor.putLong(AutomataThread.LAST_UPDATE_NAME, currentTime);
+        editor.putLong(Constant.LAST_UPDATE_NAME, currentTime);
         editor.apply();
         addMoney(calculator.calculateMoney(currentTime - prevTime));
     }

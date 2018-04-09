@@ -41,7 +41,7 @@ public class AutomationShopFragment extends ShopFragment {
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int i = 0; i < stringsArray.length; i++) {
             int price = 1000 * (i + 1);
-            automataArray.add(new Automata(stringsArray[i], price, R.drawable.ferum));
+            automataArray.add(new Automata(stringsArray[i], price, R.drawable.ferum, storage, index));
         }
         return automataArray;
     }

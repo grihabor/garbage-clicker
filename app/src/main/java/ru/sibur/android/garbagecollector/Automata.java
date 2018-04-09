@@ -10,15 +10,17 @@ import android.widget.ImageView;
  */
 
 public class Automata extends ShopItem {
+    int index;
 
-    Automata(String nameIN, int priceIn, int img) {
-        super(nameIN, priceIn);
+
+    Automata(String nameIN, int priceIn, int img, Storage storage, int automataIndex) {
+        super(name, price, storage);
     }
 
     @Override
     void buy (Context context) {
         super.buy(context);
 
-        //пишет в sPref, что его купили
+        storage.incrementShopItemCount(Constant.automataCountKey(index));
     }
 }
