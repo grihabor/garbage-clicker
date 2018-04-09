@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,7 @@ import java.util.ArrayList;
  */
 
 public class AutomationShopFragment extends ShopFragment {
+
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
@@ -36,9 +39,9 @@ public class AutomationShopFragment extends ShopFragment {
     private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
-        for (int index = 0; index < stringsArray.length; index++) {
-            int price = 1000 * (index + 1);
-            automataArray.add(new Automata(stringsArray[index], price, storage, index));
+        for (int i = 0; i < stringsArray.length; i++) {
+            int price = 1000 * (i + 1);
+            automataArray.add(new Automata(stringsArray[i], price, R.drawable.ferum, storage, index));
         }
         return automataArray;
     }

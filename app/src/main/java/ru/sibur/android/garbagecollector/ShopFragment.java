@@ -36,7 +36,7 @@ public class ShopFragment extends Fragment {
 
     protected void initListView(final Context context, final ArrayList<? extends ShopItem> items, int listViewId) {
         ListView listView = getView().findViewById(listViewId);
-        SimpleAdapter adapter = getListViewAdapter(context, items);
+        ListViewAdapter adapter = new ListViewAdapter(context, items);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, itemClicked, position, id) -> {

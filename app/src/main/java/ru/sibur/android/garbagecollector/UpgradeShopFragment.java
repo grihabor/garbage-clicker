@@ -28,9 +28,9 @@ public class UpgradeShopFragment extends ShopFragment {
         ArrayList<Upgrade> upgradeArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.upgrade_array);
 
-        for (int index = 0; index < stringsArray.length; index++) {
-            int price = 1000 + index * 1000;
-            upgradeArray.add(new Upgrade(stringsArray[index], price, storage, index));
+        for (int i = 0; i < stringsArray.length; i++) {
+            int price = 1000 + i*1000;
+            upgradeArray.add(new Automata(stringsArray[i], price, R.drawable.ferum, storage, index));
         }
         return upgradeArray;
 

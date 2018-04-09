@@ -1,6 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -12,12 +13,14 @@ import java.util.HashMap;
 public class ShopItem {
     int price;
     String name;
+    int img;
     Storage storage;
     
     ShopItem(String name, int price, Storage storage) {
         this.price = price;
         this.name = name;
         this.storage = storage;
+      img = R.drawable.ferum;
     }
     
     public HashMap<String, String> getViewData() {
