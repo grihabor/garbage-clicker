@@ -37,7 +37,7 @@ public class StateStorage extends Storage {
 
         int newMoney = amount + getMoney();
         editor.putInt(Constant.MONEY_KEY, newMoney);
-        if(amount > 0) {editor.putInt(Constant.TOTAL_MONEY_EARNED_KEY, newMoney);}
+        if (amount > 0) editor.putInt(Constant.TOTAL_MONEY_EARNED_KEY, newMoney);
         editor.apply();
     }
 
