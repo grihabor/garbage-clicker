@@ -30,7 +30,7 @@ public class UpgradeShopFragment extends ShopFragment {
 
         for (int i = 0; i < stringsArray.length; i++) {
             int price = 1000 + i*1000;
-            upgradeArray.add(new Automata(stringsArray[i], price, R.drawable.ferum, storage, index));
+            upgradeArray.add(new Upgrade(stringsArray[i], price, storage, i));
         }
         return upgradeArray;
 

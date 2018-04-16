@@ -14,7 +14,7 @@ public class Automata extends ShopItem {
 
 
     Automata(String nameIN, int priceIn, int img, Storage storage, int automataIndex) {
-        super(name, price, storage);
+        super(nameIN, priceIn, storage);
     }
 
     @Override
