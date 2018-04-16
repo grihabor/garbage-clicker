@@ -15,6 +15,7 @@ public class Automata extends ShopItem {
 
     Automata(String nameIN, int priceIn, int img, Storage storage, int automataIndex) {
         super(nameIN, priceIn, storage);
+        this.index = automataIndex;
     }
 
     @Override

@@ -6,19 +6,10 @@ import android.widget.ImageView;
  * Created by GlAI17 on 26.03.2018.
  */
 public class Item {
-    /**
-     * Заголовок
-     */
+
     String header;
 
-    /**
-     * Подзаголовок
-     */
     String subHeader;
-
-    /**
-     * Картинка
-     */
 
     ImageView img;
 
