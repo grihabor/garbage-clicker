@@ -16,12 +16,12 @@ import static java.lang.String.valueOf;
  * Created by GlAI17 on 26.03.2018.
  */
 
-public class ListViewAdapter extends BaseAdapter {
+public class FragmentListAdepter extends BaseAdapter {
 
     ArrayList<? extends ShopItem> data = new ArrayList<ShopItem>();
     Context context;
 
-    public ListViewAdapter(Context context, ArrayList<? extends ShopItem> arr) {
+    public FragmentListAdepter(Context context, ArrayList<? extends ShopItem> arr) {
         if (arr != null) {
             data = arr;
         }
@@ -47,24 +47,18 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View someView, ViewGroup arg2) {
-        //Получение объекта inflater из контекста
         LayoutInflater inflater = LayoutInflater.from(context);
         //Если someView (View из ListView) вдруг оказался равен
         //null тогда мы загружаем его с помошью inflater
         if (someView == null) {
-            someView = inflater.inflate(R.layout.custom_list_view, arg2, false);
+            someView = inflater.inflate(R.layout.fragment_list_view, arg2, false);
         }
-        //Обявляем наши вьюшки и связываем их с разметкой
         TextView header = (TextView) someView.findViewById(R.id.Header);
         TextView subHeader = (TextView) someView.findViewById(R.id.SubHeader);
         ImageView img = (ImageView) someView.findViewById(R.id.img);
-        //Устанавливаем в каждую вьюшку соответствующий объект
-        // сначала заголовок
         header.setText(data.get(i).name);
-        // потом подзаголовок
         String t = valueOf(data.get(i).price/100);
         subHeader.setText(t);
-        //и наконец картинку
         img.setImageResource((data.get(i).img));
 
         return someView;

@@ -24,8 +24,6 @@ public class Item {
 
 
     /**
-     * Конструктор создает новый элемент в соответствии с передаваемыми
-     * параметрами:
      * @param header - заголовок элемента
      * @param subheader - подзаголовок
      * @param Iview - картинка
@@ -34,20 +32,6 @@ public class Item {
         this.header=header;
         this.subHeader=subheader;
         this.img = Iview;
-    }
-
-    //Всякие гетеры и сеттеры
-    public String getHeader() {
-        return header;
-    }
-    public void setHeader(String header) {
-        this.header = header;
-    }
-    public String getSubHeader() {
-        return subHeader;
-    }
-    public void setSubHeader(String subHeader) {
-        this.subHeader = subHeader;
     }
 
 }
