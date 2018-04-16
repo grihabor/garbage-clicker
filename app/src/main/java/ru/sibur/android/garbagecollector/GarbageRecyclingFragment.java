@@ -21,6 +21,7 @@ public class GarbageRecyclingFragment extends Fragment {
         storage = ((MainActivity) activity).storage;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
