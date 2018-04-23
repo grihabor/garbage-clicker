@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
-import android.widget.ImageView;
 
 /**
  * Класс автомата
@@ -13,8 +12,8 @@ public class Automata extends ShopItem {
     int index;
 
 
-    Automata(String nameIN, int priceIn, int img, Storage storage, int automataIndex) {
-        super(nameIN, priceIn, storage);
+    Automata(String name, int price, Storage storage, int automataIndex) {
+        super(name, price, storage);
         this.index = automataIndex;
     }
 

@@ -57,7 +57,7 @@ public class FragmentListAdepter extends BaseAdapter {
         TextView subHeader = (TextView) someView.findViewById(R.id.SubHeader);
         ImageView img = (ImageView) someView.findViewById(R.id.img);
         header.setText(data.get(i).name);
-        String t = valueOf(data.get(i).price/100);
+        String t = valueOf(data.get(i).price / 100);
         subHeader.setText(t);
         img.setImageResource((data.get(i).img));
 

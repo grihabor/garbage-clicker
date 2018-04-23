@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -41,7 +40,7 @@ public class AutomationShopFragment extends ShopFragment {
         String[] stringsArray = getResources().getStringArray(R.array.automata_array);
         for (int index = 0; index < stringsArray.length; index++) {
             int price = 1000 * (index + 1);
-            automataArray.add(new Automata(stringsArray[index], price, R.drawable.ferum, storage, index));
+            automataArray.add(new Automata(stringsArray[index], price, R.drawable.item_icon, storage, index));
         }
         return automataArray;
     }

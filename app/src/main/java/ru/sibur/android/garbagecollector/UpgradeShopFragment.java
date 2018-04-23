@@ -28,9 +28,9 @@ public class UpgradeShopFragment extends ShopFragment {
         ArrayList<Upgrade> upgradeArray = new ArrayList<>();
         String[] stringsArray = getResources().getStringArray(R.array.upgrade_array);
 
-        for (int item = 0; item < stringsArray.length; item++) {
-            int price = 1000 + item*1000;
-            upgradeArray.add(new Upgrade(stringsArray[item], price, storage, item));
+        for (int index = 0; index < stringsArray.length; index++) {
+            int price = 1000 + index * 1000;
+            upgradeArray.add(new Upgrade(stringsArray[index], price, storage, index));
         }
         return upgradeArray;
 

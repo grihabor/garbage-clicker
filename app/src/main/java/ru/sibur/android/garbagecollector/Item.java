@@ -19,9 +19,9 @@ public class Item {
      * @param subheader - подзаголовок
      * @param Iview - картинка
      */
-    Item(String header, String subheader, ImageView Iview){
-        this.header=header;
-        this.subHeader=subheader;
+    Item(String header, String subheader, ImageView Iview) {
+        this.header = header;
+        this.subHeader = subheader;
         this.img = Iview;
     }
 
