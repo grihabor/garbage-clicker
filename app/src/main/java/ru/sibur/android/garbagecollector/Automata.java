@@ -10,11 +10,12 @@ import android.content.Context;
 
 public class Automata extends ShopItem {
     int index;
+    int icon;
 
-
-    Automata(String name, int price, Storage storage, int automataIndex) {
+    Automata(String name, int price, Storage storage, int automataIndex, int img) {
         super(name, price, storage);
         this.index = automataIndex;
+        icon = this.img;
     }
 
     @Override
