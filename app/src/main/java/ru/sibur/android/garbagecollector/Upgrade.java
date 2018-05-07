@@ -14,7 +14,7 @@ public class Upgrade extends ShopItem {
 
     @Override
     String getCountKey() {
-        return  Constant.upgradeCountKey(index);
+        return Constant.upgradeCountKey(index);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -8,6 +9,10 @@ import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Базовый фрагмент для фрагментов магазинов
@@ -22,25 +27,21 @@ public class ShopFragment extends Fragment {
         storage = ((MainActivity) activity).storage;
     }
 
+    @SuppressLint("NewApi")
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        ArrayList<HashMap<String, String>> viewDataArray = new ArrayList<>();
+        ArrayList<HashMap<String, String>> viewDataArray = shopItems.stream().map(ShopItem::getViewData).collect(Collectors.toCollection(ArrayList::new));
 
         SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
 
-        for (int i = 0; i < shopItems.size(); i++) {
+        IntStream.range(0, shopItems.size() - 1).forEach(i -> {
             ShopItem item = shopItems.get(i);
-            viewDataArray.add(item.getViewData());
-
-            int iCopy = i;
             item.setOnCountChangeListener(() -> {
-                viewDataArray.set(iCopy, item.getViewData());
+                viewDataArray.set(i, item.getViewData());
                 adapter.notifyDataSetChanged();
             });
-        }
-
-        adapter.notifyDataSetChanged();
+        });
 
         return adapter;
     }
