@@ -29,13 +29,16 @@ public class ShopFragment extends Fragment {
 
     @SuppressLint("NewApi")
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        ArrayList<HashMap<String, String>> viewDataArray = shopItems.stream().map(ShopItem::getViewData).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<HashMap<String, String>> viewDataArray = shopItems
+                                                           .stream()
+                                                           .map(ShopItem::getViewData)
+                                                           .collect(Collectors.toCollection(ArrayList::new));
 
         SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, android.R.layout.simple_list_item_2,
                 new String[]{"Name", "Price"},
                 new int[]{android.R.id.text1, android.R.id.text2});
 
-        IntStream.range(0, shopItems.size() - 1).forEach(i -> {
+        IntStream.range(0, shopItems.size()).forEach(i -> {
             ShopItem item = shopItems.get(i);
             item.setOnCountChangeListener(() -> {
                 viewDataArray.set(i, item.getViewData());
