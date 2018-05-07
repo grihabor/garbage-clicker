@@ -11,20 +11,13 @@ import java.util.Date;
  * Created by RedSnail on 23.03.2018.
  */
 
-public class StateStorage extends Storage {
+public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener{
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
-    SharedPreferences.OnSharedPreferenceChangeListener changeListener = (sharedPreferences, key) -> {
-        for (ArrayMap.Entry entry : listenerMap.entrySet()) {
-            if (entry.getKey().equals(key)) {
-                ((OnDBChangeListener) entry.getValue()).onDBChange();
-            }
-        }
-    };
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
-        sPref.registerOnSharedPreferenceChangeListener(changeListener);
+        sPref.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -69,5 +62,15 @@ public class StateStorage extends Storage {
         editor.putLong(Constant.LAST_UPDATE_NAME, currentTime);
         editor.apply();
         addMoney(calculator.calculateMoney(currentTime - prevTime));
+    }
+
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        for (ArrayMap.Entry entry : listenerMap.entrySet()) {
+            if (entry.getKey().equals(key)) {
+                ((OnDBChangeListener) entry.getValue()).onDBChange();
+            }
+        }
     }
 }
