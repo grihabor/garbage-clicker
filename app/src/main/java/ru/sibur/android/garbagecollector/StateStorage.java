@@ -14,16 +14,17 @@ import java.util.Date;
 public class StateStorage extends Storage {
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
+    SharedPreferences.OnSharedPreferenceChangeListener changeListener = (sharedPreferences, key) -> {
+        for (ArrayMap.Entry entry : listenerMap.entrySet()) {
+            if (entry.getKey().equals(key)) {
+                ((OnDBChangeListener) entry.getValue()).onDBChange();
+            }
+        }
+    };
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
-        sPref.registerOnSharedPreferenceChangeListener((sharedPreferences, key) -> {
-            for (ArrayMap.Entry entry : listenerMap.entrySet()) {
-                if (entry.getKey().equals(key)) {
-                    ((OnDBChangeListener) entry.getValue()).onDBChange();
-                }
-            }
-        });
+        sPref.registerOnSharedPreferenceChangeListener(changeListener);
     }
 
     @Override
