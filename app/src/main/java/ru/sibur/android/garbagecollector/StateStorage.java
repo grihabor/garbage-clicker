@@ -11,7 +11,7 @@ import java.util.Date;
  * Created by RedSnail on 23.03.2018.
  */
 
-public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener {
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
 
