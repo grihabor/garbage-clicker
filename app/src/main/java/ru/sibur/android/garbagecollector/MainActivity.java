@@ -9,9 +9,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 
 /**
  * Активити самой игры
@@ -40,9 +37,7 @@ public class MainActivity extends AppCompatActivity {
         switchToGarbageRecyclingFragment(null);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
-            float money = storage.getMoney() * Constant.MONEY_DISPLAY_COEFFICIENT;
-            NumberFormat formatter = new DecimalFormat("#0.00");
-            moneyDisplay.setText(formatter.format(money));
+            moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
         });
 
         moneyDisplay = findViewById(R.id.moneyDisplay);

@@ -1,23 +1,31 @@
 package ru.sibur.android.garbagecollector;
 
-import android.content.Context;
-
 /**
  * Базовый класс для улучшений
  */ 
 
 public class Upgrade extends ShopItem {
-    int index;
+    private int index;
 
-    Upgrade(String name, int price, Storage storage, int upgradeIndex) {
-       super(name, price, storage);
+    Upgrade(String name, int basePrice, Storage storage, int upgradeIndex) {
+       super(name, basePrice, storage);
        this.index = upgradeIndex;
     }
 
     @Override
-    void buy (Context context) {
-        super.buy(context);
+    String getCountKey() {
+        return Constant.upgradeCountKey(index);
+    }
 
-        storage.incrementShopItemCount(Constant.upgradeCountKey(index));
+    @Override
+    int getPrice () {
+        int count = getCount();
+        int price = basePrice;
+
+        for (int i = 0; i < count; i++) {
+            price *= 1.30;
+        }
+
+        return price;
     }
 }
