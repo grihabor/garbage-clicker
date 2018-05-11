@@ -34,7 +34,7 @@ after_success:
   
 before_deploy:
   - export VERSION=$(make version)
-  - export ART_APK=${VERSION}.apk"
+  - export ART_APK=${VERSION}.apk
   - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
   - export ART_LINT=${VERSION}_lint.html
   - mv app-dev-debug.apk $ART_APK
