@@ -1,7 +1,5 @@
 package ru.sibur.android.garbagecollector;
 
-import android.content.Context;
-
 /**
  * Класс автомата
  * 
@@ -9,17 +7,27 @@ import android.content.Context;
  */
 
 public class Automata extends ShopItem {
-    int index;
+    private int index;
 
-    Automata(String name, int price, Storage storage, int automataIndex) {
-        super(name, price, storage);
+    Automata(String name, int basePrice, Storage storage, int automataIndex) {
+        super(name, basePrice, storage);
         this.index = automataIndex;
     }
 
     @Override
-    void buy (Context context) {
-        super.buy(context);
+    int getPrice () {
+        int count = getCount();
+        int price = basePrice;
 
-        storage.incrementShopItemCount(Constant.automataCountKey(index));
+        for (int i = 0; i < count; i++) {
+            price *= 1.15;
+        }
+
+        return price;
+    }
+
+    @Override
+    String getCountKey() {
+        return Constant.automataCountKey(index);
     }
 }
