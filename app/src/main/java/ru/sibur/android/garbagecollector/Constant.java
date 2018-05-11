@@ -22,7 +22,7 @@ public final class Constant {
     }
 
     public static String formatMoney (int amount) {
-        float val = amount*0.01f;
+        float val = amount * 0.01f;
         NumberFormat formatter = new DecimalFormat("#0.00");
         return formatter.format(val);
     }
