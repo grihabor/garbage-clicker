@@ -54,4 +54,5 @@ deploy:
   prerelease: true
   on:
     all_branches: true
+    tags: false
     condition: $TRAVIS_PULL_REQUEST = false
