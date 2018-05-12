@@ -65,8 +65,8 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     }
 
     /*
-    * registerOnSharedPreferenceChangeListener() не гарантирует сохранения listener'а, поэтому разработчики
-    * должны сами заботиться об этом и отвести под него место в динамической памяти
+    * ВАЖНО: Объект хранит слабый референс на объект listener,
+    * поэтому мы имплементим этот метод в классе StateStorage и передаем ссылку на него
     * https://developer.android.com/reference/android/content/SharedPreferences.html#registerOnSharedPreferenceChangeListener(android.content.SharedPreferences.OnSharedPreferenceChangeListener)
     * */
     @Override
