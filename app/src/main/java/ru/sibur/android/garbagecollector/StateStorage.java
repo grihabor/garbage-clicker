@@ -64,7 +64,11 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         addMoney(calculator.calculateMoney(currentTime - prevTime));
     }
 
-
+    /*
+    * registerOnSharedPreferenceChangeListener() не гарантирует сохранения listener'а, поэтому разработчики
+    * должны сами заботиться об этом и отвести под него место в динамической памяти
+    * https://developer.android.com/reference/android/content/SharedPreferences.html#registerOnSharedPreferenceChangeListener(android.content.SharedPreferences.OnSharedPreferenceChangeListener)
+    * */
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         for (ArrayMap.Entry entry : listenerMap.entrySet()) {
