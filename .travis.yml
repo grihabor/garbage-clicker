@@ -9,16 +9,17 @@ services:
   - docker
 
 install:
+  - sudo apt update
+  - sudo apt install make git
   - pip3 install -r requirements.txt
   
 before_script:
   - git config --local user.name "Borodin Gregory"
   - git config --local user.email "grihabor@gmail.com"
-  - export GIT_COMMIT=$(git log --format=%h -1)
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
  
 script:
-  - export IMAGE=grihabor/garbage.clicker:$GIT_COMMIT
+  - export IMAGE="$(make image)"
   - docker build . -t $IMAGE
   - echo -e "travis_fold:start:push.image\033[33;1mPushing docker image\033[0m"
   - docker push $IMAGE
@@ -32,20 +33,25 @@ after_success:
   - python3 parse_report.py reports/lint-results.xml
   
 before_deploy:
-  - mv app-dev-debug.apk "${GIT_COMMIT}.apk"
-  - mv reports/checkstyle/android.html "checkstyle_${GIT_COMMIT}.html"
-  - mv reports/lint-results.html "lint_${GIT_COMMIT}.html"
-  - git tag "${GIT_COMMIT}_${TRAVIS_BRANCH}_$(date +'%Y-%m-%d_%H-%M-%S')"
+  - export VERSION=$(make travis-version)
+  - export ART_APK=${VERSION}.apk
+  - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
+  - export ART_LINT=${VERSION}_lint.html
+  - mv app-dev-debug.apk $ART_APK
+  - mv reports/checkstyle/android.html $ART_CHECKSTYLE
+  - mv reports/lint-results.html $ART_LINT
+  - git tag ${VERSION}
 
 deploy:
   provider: releases
   api_key: ${DEPLOY_TOKEN}
   file: 
-    - ${GIT_COMMIT}.apk
-    - checkstyle_${GIT_COMMIT}.html
-    - lint_${GIT_COMMIT}.html
+    - ${ART_APK}
+    - ${ART_CHECKSTYLE}
+    - ${ART_LINT}
   skip_cleanup: true 
   prerelease: true
   on:
     all_branches: true
+    tags: false
     condition: $TRAVIS_PULL_REQUEST = false
