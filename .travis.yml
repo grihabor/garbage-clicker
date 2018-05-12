@@ -33,15 +33,14 @@ after_success:
   - python3 parse_report.py reports/lint-results.xml
   
 before_deploy:
-  - export VERSION=$(make version)
+  - export VERSION=$(make travis-version)
   - export ART_APK=${VERSION}.apk
   - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
   - export ART_LINT=${VERSION}_lint.html
   - mv app-dev-debug.apk $ART_APK
   - mv reports/checkstyle/android.html $ART_CHECKSTYLE
   - mv reports/lint-results.html $ART_LINT
-  - git tag -f ${VERSION}
-  - git tag ${VERSION}_${TRAVIS_BRANCH}
+  - git tag ${VERSION}
 
 deploy:
   provider: releases
