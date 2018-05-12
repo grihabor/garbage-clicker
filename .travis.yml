@@ -40,7 +40,7 @@ before_deploy:
   - mv app-dev-debug.apk $ART_APK
   - mv reports/checkstyle/android.html $ART_CHECKSTYLE
   - mv reports/lint-results.html $ART_LINT
-  - git tag ${VERSION}
+  - git tag -f ${VERSION}
   - git tag ${VERSION}_${TRAVIS_BRANCH}
 
 deploy:
