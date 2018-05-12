@@ -17,6 +17,8 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        
+        // see details in onSharedPreferenceChanged method
         sPref.registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -64,7 +66,14 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         addMoney(calculator.calculateMoney(currentTime - prevTime));
     }
 
-
+    /**
+     * Implements `SharedPreferences` listener interface
+     *
+     * IMPORTANT: `SharedPreferences` object holds a weak ref to the registered listener,
+     * so we implement this listener interface in `StateStorage` class and pass the reference
+     * into the `registerOnSharedPreferenceChangeListener` method.
+     * https://developer.android.com/reference/android/content/SharedPreferences.html#registerOnSharedPreferenceChangeListener(android.content.SharedPreferences.OnSharedPreferenceChangeListener)
+     */
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         for (ArrayMap.Entry entry : listenerMap.entrySet()) {
