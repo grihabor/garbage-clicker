@@ -1,3 +1,5 @@
+MAKE          := make --no-print-directory
+
 DESCRIBE      := $(shell git describe --match "*.*" --tags --always)
 PARTS         := $(subst ., ,$(subst -, ,$(DESCRIBE)))
 
@@ -12,6 +14,7 @@ VERSION       := $(MAJOR).$(MINOR).$(MICRO)-$(lastword $(PARTS))
 COMMIT        := $(shell git log --format=%h -1)
 IMAGE         := grihabor/garbage.clicker
 DATE          := $(shell date +'%Y-%m-%d_%H•%M•%S')
+
 
 all: version
 
@@ -30,3 +33,11 @@ next-minor:
 .PHONY: next-major
 next-major:
 	@echo "$(NEXT_MAJOR).0"
+
+.PHONY: travis-version
+travis-version:
+	@if [ ! -z "${TRAVIS_BRANCH}" ] && [ ${TRAVIS_BRANCH} = "master" ]; then \
+	    $(MAKE) next-minor; \
+	else \
+	    $(MAKE) version; \
+	fi
