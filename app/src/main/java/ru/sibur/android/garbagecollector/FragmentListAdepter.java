@@ -46,22 +46,22 @@ public class FragmentListAdepter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View someView, ViewGroup arg2) {
+    public View getView(int i, View view, ViewGroup group) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        //Если someView (View из ListView) вдруг оказался равен
+        //Если view (View из ListView) вдруг оказался равен
         //null тогда мы загружаем его с помошью inflater
-        if (someView == null) {
-            someView = inflater.inflate(R.layout.fragment_list_view, arg2, false);
+        if (view == null) {
+            view = inflater.inflate(R.layout.fragment_list_view, group, false);
         }
-        TextView header = (TextView) someView.findViewById(R.id.Header);
-        TextView subHeader = (TextView) someView.findViewById(R.id.SubHeader);
-        ImageView img = (ImageView) someView.findViewById(R.id.img);
+        TextView header = (TextView) view.findViewById(R.id.Header);
+        TextView subHeader = (TextView) view.findViewById(R.id.SubHeader);
+        ImageView img = (ImageView) view.findViewById(R.id.img);
         header.setText(data.get(i).name);
-        String t = valueOf(data.get(i).price / 100);
+        String t = valueOf(data.get(i).basePrice / 100);
         subHeader.setText(t);
         img.setImageResource((data.get(i).img));
 
-        return someView;
+        return view;
     }
 
 }

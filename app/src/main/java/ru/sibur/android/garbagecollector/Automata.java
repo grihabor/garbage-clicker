@@ -8,7 +8,6 @@ package ru.sibur.android.garbagecollector;
 
 public class Automata extends ShopItem {
 
-    int index;
     int icon;
 
     private int index;
