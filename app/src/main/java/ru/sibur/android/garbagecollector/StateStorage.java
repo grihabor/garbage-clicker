@@ -35,14 +35,18 @@ public class StateStorage extends Storage {
     synchronized void addMoney(int amount) {
         SharedPreferences.Editor editor = sPref.edit();
 
-        int newMoney = amount + getMoney();
-        editor.putInt(Constant.MONEY_KEY, newMoney);
+        if(amount > 0) {editor.putInt(Constant.TOTAL_MONEY_EARNED_KEY, getTotalMoneyEarned()+amount);}
+        editor.putInt(Constant.MONEY_KEY, getMoney()+amount);
         editor.apply();
     }
 
     @Override
     int getMoney() {
         return sPref.getInt(Constant.MONEY_KEY, 0);
+    }
+    @Override
+    int getTotalMoneyEarned() {
+        return sPref.getInt(Constant.TOTAL_MONEY_EARNED_KEY, 0);
     }
 
     @Override
