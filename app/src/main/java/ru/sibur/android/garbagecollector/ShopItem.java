@@ -8,14 +8,14 @@ import java.util.HashMap;
  * Элемент списка в фрагменте магазина
  */ 
 
-public class ShopItem {
-    int price;
+public abstract class ShopItem {
+    int basePrice;
     String name;
     int img;
     Storage storage;
     
-    ShopItem(String name, int price, Storage storage) {
-        this.price = price;
+    ShopItem(String name, int basePrice, Storage storage) {
+        this.basePrice = basePrice;
         this.name = name;
         this.storage = storage;
         img = R.drawable.item_icon;
@@ -24,7 +24,7 @@ public class ShopItem {
     public HashMap<String, String> getViewData() {
         HashMap<String, String> map = new HashMap<>();
         map.put("Name", name);
-        map.put("Price", "Стоимость : " + getPrice() * Constant.MONEY_DISPLAY_COEFFICIENT);
+        map.put("Price", "Стоимость : " + Constant.formatMoney(getPrice()));
         return map;
     }
 
@@ -38,11 +38,22 @@ public class ShopItem {
         }
     }
 
-    void buy (Context context) {
+    private void buy(Context context) {
         Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
+        storage.incrementShopItemCount(getCountKey());
     }
 
     int getPrice () {
-        return price;
+        return basePrice;
+    }
+
+    abstract String getCountKey ();
+
+    int getCount () {
+        return storage.getShopItemCount(getCountKey());
+    }
+
+    void setOnCountChangeListener (OnDBChangeListener listener) {
+        storage.addOnDBChangeListener(getCountKey(), listener);
     }
 }

@@ -11,19 +11,15 @@ import java.util.Date;
  * Created by RedSnail on 23.03.2018.
  */
 
-public class StateStorage extends Storage {
+public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener {
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
-        sPref.registerOnSharedPreferenceChangeListener((sharedPreferences, key) -> {
-            for (ArrayMap.Entry entry : listenerMap.entrySet()) {
-                if (entry.getKey().equals(key)) {
-                    ((OnDBChangeListener) entry.getValue()).onDBChange();
-                }
-            }
-        });
+        
+        // see details in onSharedPreferenceChanged method
+        sPref.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -68,5 +64,22 @@ public class StateStorage extends Storage {
         editor.putLong(Constant.LAST_UPDATE_NAME, currentTime);
         editor.apply();
         addMoney(calculator.calculateMoney(currentTime - prevTime));
+    }
+
+    /**
+     * Implements `SharedPreferences` listener interface
+     *
+     * IMPORTANT: `SharedPreferences` object holds a weak ref to the registered listener,
+     * so we implement this listener interface in `StateStorage` class and pass the reference
+     * into the `registerOnSharedPreferenceChangeListener` method.
+     * https://developer.android.com/reference/android/content/SharedPreferences.html#registerOnSharedPreferenceChangeListener(android.content.SharedPreferences.OnSharedPreferenceChangeListener)
+     */
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        for (ArrayMap.Entry entry : listenerMap.entrySet()) {
+            if (entry.getKey().equals(key)) {
+                ((OnDBChangeListener) entry.getValue()).onDBChange();
+            }
+        }
     }
 }
