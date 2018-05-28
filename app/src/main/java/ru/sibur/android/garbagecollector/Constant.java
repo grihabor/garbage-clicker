@@ -21,6 +21,10 @@ public final class Constant {
         return "upgrade:" + index;
     }
 
+    public static int automataPerfomance (int index) {
+        return (index + 1)*10;
+    }
+
     public static String formatMoney (int amount) {
         float val = amount * 0.01f;
         NumberFormat formatter = new DecimalFormat("#0.00");
