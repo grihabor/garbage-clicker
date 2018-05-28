@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\garbage-clicker\app\app.iml" filepath="C:\garbage-clicker\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/garbage-clicker.iml" filepath="$PROJECT_DIR$/garbage-clicker.iml" />
+      <module fileurl="file://C:\garbage-clicker\garbage-clicker.iml" filepath="C:\garbage-clicker\garbage-clicker.iml" />
     </modules>
   </component>
 </project>

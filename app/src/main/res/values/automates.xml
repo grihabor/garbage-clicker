@@ -1,14 +1,14 @@
 <resources>
-<srting-array name = "autom-names">
-<item index = "1">мусорный бак</item>
-<item index = "2">раздельный сбор</item>
-<item index = "3">сортировочная машина</item>
-<item index = "4">сортировочный центр</item>
-<item index = "5">машина по переработке пластика</item>
-<item index = "6">перерабатывающий завод</item>
-<item index = "7">модернизация производства</item>
-<item index = "8">экологичное производство</item>
-<item index = "9">сеть заводов</item>
+<string-array name="autom_names">
+<item index = "1">РјСѓСЃРѕСЂРЅС‹Р№ Р±Р°Рє</item>
+<item index = "2">СЂР°Р·РґРµР»СЊРЅС‹Р№ СЃР±РѕСЂ</item>
+<item index = "3">СЃРѕСЂС‚РёСЂРѕРІРѕС‡РЅР°СЏ РјР°С€РёРЅР°</item>
+<item index = "4">СЃРѕСЂС‚РёСЂРѕРІРѕС‡РЅС‹Р№ С†РµРЅС‚СЂ</item>
+<item index = "5">РјР°С€РёРЅР° РїРѕ РїРµСЂРµСЂР°Р±РѕС‚РєРµ РїР»Р°СЃС‚РёРєР°</item>
+<item index = "6">РїРµСЂРµСЂР°Р±Р°С‚С‹РІР°СЋС‰РёР№ Р·Р°РІРѕРґ</item>
+<item index = "7">РјРѕРґРµСЂРЅРёР·Р°С†РёСЏ Р·Р°РІРѕРґР°</item>
+<item index = "8">СЌРєРѕР»РѕРіРёС‡РЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ</item>
+<item index = "9">СЃРµС‚СЊ Р·Р°РІРѕРґРѕРІ</item>
 
 </string-array>
 </resources>
