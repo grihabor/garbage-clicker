@@ -1,6 +1,5 @@
 package ru.sibur.android.garbagecollector;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -9,8 +8,10 @@ import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
+import java9.util.stream.IntStream;
+import java9.util.stream.Collectors;
+import java9.util.stream.StreamSupport;
 
 /**
  * Базовый фрагмент для фрагментов магазинов
@@ -25,10 +26,8 @@ public class ShopFragment extends Fragment {
         storage = ((MainActivity) activity).storage;
     }
 
-    @SuppressLint("NewApi")
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        ArrayList<HashMap<String, String>> viewDataArray = shopItems
-                                                           .stream()
+        ArrayList<HashMap<String, String>> viewDataArray = StreamSupport.stream(shopItems)
                                                            .map(ShopItem::getViewData)
                                                            .collect(Collectors.toCollection(ArrayList::new));
 
