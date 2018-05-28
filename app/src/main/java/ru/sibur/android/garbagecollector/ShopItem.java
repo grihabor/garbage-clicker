@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.widget.Toast;
+
 import java.util.HashMap;
 
 /**
@@ -21,12 +22,7 @@ public abstract class ShopItem {
         img = R.drawable.item_icon;
     }
     
-    public HashMap<String, String> getViewData() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("Name", name);
-        map.put("Price", "Стоимость : " + Constant.formatMoney(getPrice()));
-        return map;
-    }
+    abstract public HashMap<String, Object> getViewData ();
 
     void tryToBuy (Context context, Storage storage) {
         if (storage.getMoney() >= getPrice()) {
