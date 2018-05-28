@@ -1,6 +1,6 @@
 MAKE          := make --no-print-directory
 
-DESCRIBE      := $(shell git describe --match "*.*" --tags --always)
+DESCRIBE      := $(shell git describe --exclude "*-*" --tags --always)
 PARTS         := $(subst ., ,$(subst -, ,$(DESCRIBE)))
 
 MAJOR         := $(word 1,$(PARTS))
@@ -41,3 +41,7 @@ travis-version:
 	else \
 	    $(MAKE) version; \
 	fi
+
+.PHONY: describe
+describe:
+	@echo $(DESCRIBE)
