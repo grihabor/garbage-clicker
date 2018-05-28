@@ -1,0 +1,14 @@
+<resources>
+<srting-array name = "autom-names">
+<item index = "1">мусорный бак</item>
+<item index = "2">раздельный сбор</item>
+<item index = "3">сортировочная машина</item>
+<item index = "4">сортировочный центр</item>
+<item index = "5">машина по переработке пластика</item>
+<item index = "6">перерабатывающий завод</item>
+<item index = "7">модернизация производства</item>
+<item index = "8">экологичное производство</item>
+<item index = "9">сеть заводов</item>
+
+</string-array>
+</resources>
