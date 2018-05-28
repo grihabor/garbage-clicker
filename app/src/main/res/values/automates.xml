@@ -1,5 +1,5 @@
 <resources>
-<string-array name="autom_names">
+<string-array name="automate_names">
 <item index = "1">мусорный бак</item>
 <item index = "2">раздельный сбор</item>
 <item index = "3">сортировочная машина</item>
