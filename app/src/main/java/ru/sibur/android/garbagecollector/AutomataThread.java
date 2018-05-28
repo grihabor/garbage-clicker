@@ -56,9 +56,12 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     @SuppressLint("NewApi")
     int getMoneyPerTimeUnit() {
-        int totalMoneyPerTimeUnit = IntStream.range(0, context.getResources().getStringArray(R.array.automata_array).length)
-                                             .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerfomance(i))
-                                             .sum();
+        String[] AutomataNames = context.getResources().getStringArray(R.array.automata_array);
+
+        int totalMoneyPerTimeUnit = IntStream
+                                    .range(0, AutomataNames.length)
+                                    .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerformance(i))
+                                    .sum();
         return totalMoneyPerTimeUnit;
     }
 }
