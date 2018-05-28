@@ -1,10 +1,9 @@
 package ru.sibur.android.garbagecollector;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import java.util.stream.IntStream;
+import java9.util.stream.IntStream;
 
 
 /**
@@ -54,7 +53,6 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     }
 
-    @SuppressLint("NewApi")
     int getMoneyPerTimeUnit() {
         String[] AutomataNames = context.getResources().getStringArray(R.array.automata_array);
 
