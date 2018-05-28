@@ -13,12 +13,34 @@ public final class Constant {
     public static final String LAST_UPDATE_NAME = "update";
     public static final int TIME_UNIT = 1000;
 
-    public static String automataCountKey (int index) {
-        return "automata:" + index;
+    /**
+     * @param automataIndex
+     * Automata number in the list of automationShop (from 0)
+     * @return
+     * Key by which we can change automata count (how many times was the automata bought) via StateStorage object
+     */
+    public static String automataCountKey (int automataIndex) {
+        return "automata:" + automataIndex;
     }
 
-    public static String upgradeCountKey (int index) {
-        return "upgrade:" + index;
+    /**
+     * @param upgradeIndex
+     * Upgrade number in the list of upgradeShop (from 0)
+     * @return
+     * Key by which we can change upgrade count (how many times was the upgrade bought) via StateStorage object
+     */
+    public static String upgradeCountKey (int upgradeIndex) {
+        return "upgrade:" + upgradeIndex;
+    }
+
+    /**
+     * @param automataIndex
+     * Automata number in the list of automationShop (from 0)
+     * @return
+     * Money that the automata gives per time unit
+     */
+    public static int automataPerformance (int automataIndex) {
+        return (automataIndex + 1)*10;
     }
 
     public static String formatMoney (int amount) {

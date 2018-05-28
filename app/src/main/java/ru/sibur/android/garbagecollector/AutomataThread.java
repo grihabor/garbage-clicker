@@ -1,6 +1,10 @@
 package ru.sibur.android.garbagecollector;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.AsyncTask;
+
+import java.util.stream.IntStream;
 
 
 /**
@@ -9,10 +13,13 @@ import android.os.AsyncTask;
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> implements AutomataMoneyCalculator {
     Storage storage;
+    Context context;
 
 
-    AutomataThread(MainActivity activity) {
-        this.storage = activity.storage;
+    AutomataThread(StateStorage storage, Context context) {
+        this.storage = storage;
+        this.context = context;
+
     }
 
     @Override
@@ -47,8 +54,14 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     }
 
+    @SuppressLint("NewApi")
     int getMoneyPerTimeUnit() {
-        //копается в sPref, смотрит, кого сколько купили
-        return 100;
+        String[] AutomataNames = context.getResources().getStringArray(R.array.automata_array);
+
+        int totalMoneyPerTimeUnit = IntStream
+                                    .range(0, AutomataNames.length)
+                                    .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerformance(i))
+                                    .sum();
+        return totalMoneyPerTimeUnit;
     }
 }

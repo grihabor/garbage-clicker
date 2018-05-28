@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
-        automataThread = new AutomataThread(this);
+        automataThread = new AutomataThread(storage, this);
         automataThread.execute();
     }
 
