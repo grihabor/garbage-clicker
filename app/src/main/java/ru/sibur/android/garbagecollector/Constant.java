@@ -15,7 +15,7 @@ public final class Constant {
 
     /**
      * @param automataIndex
-     * Automata number in the list of automationShop (from 0)
+     * Automata index in the list of automationShop (from 0)
      * @return
      * Key by which we can change automata count (how many times was the automata bought) via StateStorage object
      */
@@ -25,7 +25,7 @@ public final class Constant {
 
     /**
      * @param upgradeIndex
-     * Upgrade number in the list of upgradeShop (from 0)
+     * Upgrade index in the list of upgradeShop (from 0)
      * @return
      * Key by which we can change upgrade count (how many times was the upgrade bought) via StateStorage object
      */
@@ -35,7 +35,7 @@ public final class Constant {
 
     /**
      * @param automataIndex
-     * Automata number in the list of automationShop (from 0)
+     * Automata index in the list of automationShop (from 0)
      * @return
      * Money that the automata gives per time unit
      */
