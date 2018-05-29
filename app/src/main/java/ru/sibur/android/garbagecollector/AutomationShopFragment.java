@@ -6,7 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.stream.StreamSupport;
 
 /**
  * Фрагмент магазина автоматов
@@ -35,10 +42,18 @@ public class AutomationShopFragment extends ShopFragment {
 
     private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
-        String[] stringsArray = getResources().getStringArray(R.array.automata_array);
-        for (int index = 0; index < stringsArray.length; index++) {
-            int price = 1000 * (index + 1);
-            automataArray.add(new Automata(stringsArray[index], price, storage, index));
+        JSONLoader loader = new JSONLoader(getActivity());
+        JSONArray jsonarray = loader.loadShopItemData(R.raw.automatas);
+        for (int i = 0; i < jsonarray.length(); i++){
+            try {
+                JSONObject obj = jsonarray.getJSONObject(i);
+                String name = obj.getString("name");
+                int basePerformance = obj.getInt("base_performance");
+                int basePrice = obj.getInt("base_price");
+                automataArray.add(new Automata(name, basePrice, basePerformance, storage, i));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
         return automataArray;
     }

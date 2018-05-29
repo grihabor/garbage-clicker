@@ -3,6 +3,8 @@ package ru.sibur.android.garbagecollector;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import org.json.JSONArray;
+
 import java9.util.stream.IntStream;
 
 
@@ -54,10 +56,11 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     }
 
     int getMoneyPerTimeUnit() {
-        String[] AutomataNames = context.getResources().getStringArray(R.array.automata_array);
+        JSONLoader loader = new JSONLoader(context);
+        JSONArray automataArray = loader.loadShopItemData(R.raw.automatas);
 
         int totalMoneyPerTimeUnit = IntStream
-                                    .range(0, AutomataNames.length)
+                                    .range(0, automataArray.length())
                                     .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerformance(i))
                                     .sum();
         return totalMoneyPerTimeUnit;
