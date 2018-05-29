@@ -1,6 +1,5 @@
 package ru.sibur.android.garbagecollector;
 
-
 /**
  * Класс автомата
  * 
