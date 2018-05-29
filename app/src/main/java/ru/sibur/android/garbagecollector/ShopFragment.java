@@ -27,13 +27,18 @@ public class ShopFragment extends Fragment {
     }
 
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        ArrayList<HashMap<String, String>> viewDataArray = StreamSupport.stream(shopItems)
-                                                           .map(ShopItem::getViewData)
-                                                           .collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<HashMap<String, Object>> viewDataArray = StreamSupport.stream(shopItems)
+                                                                        .map(ShopItem::getViewData)
+                                                                        .collect(Collectors.toCollection(ArrayList::new));
 
-        SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, android.R.layout.simple_list_item_2,
-                new String[]{"Name", "Price"},
-                new int[]{android.R.id.text1, android.R.id.text2});
+
+        SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.shop_item_view,
+                new String[]{Constant.SHOP_ITEM_NAME_KEY,
+                             Constant.SHOP_ITEM_PRICE_KEY,
+                             Constant.SHOP_ITEM_COUNT_KEY,
+                             Constant.SHOP_ITEM_ICON_ID_KEY,
+                             Constant.SHOP_ITEM_PERFORMANCE_KEY},
+                new int[]{R.id.name, R.id.price, R.id.qty, R.id.img, R.id.performance });
 
         IntStream.range(0, shopItems.size()).forEach(i -> {
             ShopItem item = shopItems.get(i);

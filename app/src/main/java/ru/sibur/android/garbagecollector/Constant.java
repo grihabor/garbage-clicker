@@ -13,6 +13,12 @@ public final class Constant {
     public static final String LAST_UPDATE_NAME = "update";
     public static final int TIME_UNIT = 1000;
 
+    public static final String SHOP_ITEM_NAME_KEY = "name";
+    public static final String SHOP_ITEM_PRICE_KEY = "price";
+    public static final String SHOP_ITEM_COUNT_KEY = "count";
+    public static final String SHOP_ITEM_ICON_ID_KEY = "id";
+    public static final String SHOP_ITEM_PERFORMANCE_KEY = "performance";
+
     /**
      * @param automataIndex
      * Automata index in the list of automationShop (from 0)
