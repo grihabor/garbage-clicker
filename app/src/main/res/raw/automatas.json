@@ -1,0 +1,13 @@
+[{
+  "name": "мусорный бак",
+  "base_price": 20,
+  "base_performance": 20
+}, {
+  "name": "раздельный сбор",
+  "base_price": 500,
+  "base_performance": 500
+}, {
+  "name": "Грудинин - президент",
+  "base_price": 1000,
+  "base_performance": 1000
+}]
