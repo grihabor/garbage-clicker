@@ -1,5 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
+import java.util.HashMap;
+
 /**
  * Базовый класс для улучшений
  */ 
@@ -16,6 +18,16 @@ public class Upgrade extends ShopItem {
     String getCountKey() {
         return Constant.upgradeCountKey(index);
     }
+    @Override
+    public HashMap<String, Object> getViewData() {
+        HashMap<String,Object> map = new HashMap<>();
+        map.put("Name", name);
+        map.put("Price",getPrice());
+        map.put("Img", R.drawable.item_icon);
+        map.put("Qty", getCount());
+        return (map);
+    }
+
     @Override
     int getPrice () {
         int count = getCount();
