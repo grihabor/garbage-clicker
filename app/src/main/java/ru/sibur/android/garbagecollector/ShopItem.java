@@ -12,17 +12,25 @@ import java.util.HashMap;
 public abstract class ShopItem {
     int basePrice;
     String name;
-    int img;
+    int iconId;
     Storage storage;
     
-    ShopItem(String name, int basePrice, Storage storage) {
+    ShopItem(String name, int basePrice, int iconId, Storage storage) {
         this.basePrice = basePrice;
         this.name = name;
         this.storage = storage;
-        img = R.drawable.item_icon;
+        this.iconId = iconId;
     }
     
-    abstract public HashMap<String, Object> getViewData ();
+    public HashMap<String, Object> getViewData() {
+        HashMap<String,Object> map = new HashMap<>();
+        map.put(Constant.SHOP_ITEM_NAME_KEY, name);
+        map.put(Constant.SHOP_ITEM_PRICE_KEY, Constant.formatMoney(getPrice()));
+        map.put(Constant.SHOP_ITEM_ICON_ID_KEY, iconId);
+        map.put(Constant.SHOP_ITEM_COUNT_KEY, getCount());
+        map.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, "");
+        return (map);
+    }
 
     void tryToBuy (Context context, Storage storage) {
         if (storage.getMoney() >= getPrice()) {

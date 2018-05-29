@@ -9,8 +9,8 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import java9.util.stream.Collectors;
 import java9.util.stream.IntStream;
+import java9.util.stream.Collectors;
 import java9.util.stream.StreamSupport;
 
 /**
@@ -19,7 +19,6 @@ import java9.util.stream.StreamSupport;
 
 public class ShopFragment extends Fragment {
     Storage storage;
-    ArrayList<HashMap<String, Object>> viewDataArray;
 
     @Override
     public void onAttach (Activity activity) {
@@ -28,15 +27,18 @@ public class ShopFragment extends Fragment {
     }
 
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        viewDataArray = StreamSupport.stream(shopItems)
-                                     .map(ShopItem::getViewData)
-                                     .collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<HashMap<String, Object>> viewDataArray = StreamSupport.stream(shopItems)
+                                                                        .map(ShopItem::getViewData)
+                                                                        .collect(Collectors.toCollection(ArrayList::new));
 
 
-        SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.fragment_list_view,
-                new String[]{"Name", "Price", "Qty",
-                        "Img"},
-                new int[]{R.id.name, R.id.price, R.id.qty, R.id.img });
+        SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.shop_item_view,
+                new String[]{Constant.SHOP_ITEM_NAME_KEY,
+                             Constant.SHOP_ITEM_PRICE_KEY,
+                             Constant.SHOP_ITEM_COUNT_KEY,
+                             Constant.SHOP_ITEM_ICON_ID_KEY,
+                             Constant.SHOP_ITEM_PERFORMANCE_KEY},
+                new int[]{R.id.name, R.id.price, R.id.qty, R.id.img, R.id.performance });
 
         IntStream.range(0, shopItems.size()).forEach(i -> {
             ShopItem item = shopItems.get(i);
@@ -50,12 +52,8 @@ public class ShopFragment extends Fragment {
     }
 
     protected void initListView(final Context context, final ArrayList<? extends ShopItem> items, int listViewId) {
-        viewDataArray = StreamSupport.stream(items)
-                .map(ShopItem::getViewData)
-                .collect(Collectors.toCollection(ArrayList::new));
-
         ListView listView = getView().findViewById(listViewId);
-        SimpleAdapter adapter = getListViewAdapter(context,items);
+        SimpleAdapter adapter = getListViewAdapter(context, items);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, itemClicked, position, id) -> {
