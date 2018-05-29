@@ -1,14 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-<string-array name="automate_names">
-<item index = "1">мусорный бак</item>
-<item index = "2">раздельный сбор</item>
-<item index = "3">сортировочная машина</item>
-<item index = "4">сортировочный центр</item>
-<item index = "5">машина по переработке пластика</item>
-<item index = "6">перерабатывающий завод</item>
-<item index = "7">модернизация завода</item>
-<item index = "8">экологичное производство</item>
-<item index = "9">сеть заводов</item>
+<string-array name="autom_names">
+<item>мусорный бак</item>
+<item>раздельный сбор</item>
+<item>сортировочная машина</item>
+<item>сортировочный центр</item>
+<item>машина по переработке пластика</item>
+<item>перерабатывающий завод</item>
+<item>улучшенный завод</item>
+<item>экологическое производство</item>
+<item>сеть заводов</item>
 
 </string-array>
 </resources>
