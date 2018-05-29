@@ -28,8 +28,8 @@ public class ShopFragment extends Fragment {
 
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
         ArrayList<HashMap<String, Object>> viewDataArray = StreamSupport.stream(shopItems)
-                                                                        .map(ShopItem::getViewData)
-                                                                        .collect(Collectors.toCollection(ArrayList::new));
+                                                           .map(ShopItem::getViewData)
+                                                           .collect(Collectors.toCollection(ArrayList::new));
 
 
         SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.shop_item_view,
