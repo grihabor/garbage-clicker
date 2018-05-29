@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.HashMap;
 
 /**
  * Содержит константы, нужные нам в разных классах программы
@@ -49,5 +50,6 @@ public final class Constant {
         NumberFormat formatter = new DecimalFormat("#0.00");
         return formatter.format(val);
     }
+
 
 }

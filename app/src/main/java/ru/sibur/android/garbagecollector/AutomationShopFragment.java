@@ -3,9 +3,25 @@ package ru.sibur.android.garbagecollector;
 import android.app.Activity;
 import android.os.Bundle;
 
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
 
 /**
@@ -35,11 +51,22 @@ public class AutomationShopFragment extends ShopFragment {
 
     private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
-        String[] stringsArray = getResources().getStringArray(R.array.automata_array);
-        for (int index = 0; index < stringsArray.length; index++) {
-            int price = 1000 * (index + 1);
-            automataArray.add(new Automata(stringsArray[index], price, storage, index));
+
+        try {
+            JSONArray jsonarray = new JSONArray(readJson(R.raw.automatas));
+            for (int i = 0; i < jsonarray.length(); i++) {
+                JSONObject jsonobject = jsonarray.getJSONObject(i);
+                String name = jsonobject.getString("name");
+                int basePrice = jsonobject.getInt("base_price");
+                int basePerformance = jsonobject.getInt("base_performance");
+                automataArray.add(new Automata(name, 100*basePrice, 100*basePerformance, storage, i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return automataArray;
     }
+
+
+
 }

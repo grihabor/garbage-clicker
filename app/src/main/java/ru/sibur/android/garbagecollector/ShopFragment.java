@@ -5,7 +5,13 @@ import android.app.Fragment;
 import android.content.Context;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -55,5 +61,27 @@ public class ShopFragment extends Fragment {
             ShopItem current = items.get(position);
             current.tryToBuy(context, storage);
         });
+    }
+    public String readJson(int id){
+        InputStream resourceReader = getResources().openRawResource(id);
+        Writer writer = new StringWriter();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(resourceReader, "UTF-8"));
+            String line = reader.readLine();
+            while (line != null) {
+                writer.write(line);
+                line = reader.readLine();
+            }
+            return writer.toString();
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Exception E", Toast.LENGTH_SHORT).show();
+        } finally {
+            try {
+                resourceReader.close();
+            } catch (Exception e) {
+                Toast.makeText(getActivity(), "Exception E", Toast.LENGTH_SHORT).show();
+            }
+        }
+        return null;
     }
 }

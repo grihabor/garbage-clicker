@@ -11,17 +11,4 @@
     <string name="factory_sign">переработать</string>
     <string name="displayed_vault_name">Сибурики:</string>
 
-    <string-array name="upgrade_array">
-        <item>Улучшение клика</item>
-        <item>Уменьшение стоимости автоматов</item>
-        <item>Уменьшение стоимости апгрейдов</item>
-        <item>Улучшение производительности автоматов</item>
-        <item>Увеличение скорости автоматов</item>
-    </string-array>
-
-    <string-array name="automata_array">
-        <item>Мусоровоз</item>
-        <item>Свалка</item>
-        <item>Перерабатывающий завод</item>
-    </string-array>
 </resources>

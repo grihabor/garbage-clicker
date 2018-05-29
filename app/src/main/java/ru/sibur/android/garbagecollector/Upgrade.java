@@ -7,8 +7,8 @@ package ru.sibur.android.garbagecollector;
 public class Upgrade extends ShopItem {
     private int index;
 
-    Upgrade(String name, int basePrice, Storage storage, int upgradeIndex) {
-       super(name, basePrice, storage);
+    Upgrade(String name, int basePrice, int basePerformance, Storage storage, int upgradeIndex) {
+       super(name, basePrice, basePerformance, storage);
        this.index = upgradeIndex;
     }
 
