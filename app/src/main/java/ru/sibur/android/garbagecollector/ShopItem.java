@@ -11,10 +11,12 @@ import java.util.HashMap;
 
 public abstract class ShopItem {
     int basePrice;
+    int basePerformance;
     String name;
     Storage storage;
     
-    ShopItem(String name, int basePrice, Storage storage) {
+    ShopItem(String name, int basePrice, int basePerformance, Storage storage) {
+        this.basePerformance = basePerformance;
         this.basePrice = basePrice;
         this.name = name;
         this.storage = storage;

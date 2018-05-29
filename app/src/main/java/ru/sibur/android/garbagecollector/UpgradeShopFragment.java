@@ -7,6 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -26,14 +30,19 @@ public class UpgradeShopFragment extends ShopFragment {
 
     private ArrayList<Upgrade> getUpgradeList() {
         ArrayList<Upgrade> upgradeArray = new ArrayList<>();
-        String[] stringsArray = getResources().getStringArray(R.array.upgrade_array);
-
-        for (int index = 0; index < stringsArray.length; index++) {
-            int price = 1000 + index * 1000;
-            upgradeArray.add(new Upgrade(stringsArray[index], price, storage, index));
+        try {
+            JSONArray jsonarray = new JSONArray(readJson(R.raw.automatas));
+            for (int i = 0; i < jsonarray.length(); i++) {
+                JSONObject jsonobject = jsonarray.getJSONObject(i);
+                String name = jsonobject.getString("name");
+                int basePrice = jsonobject.getInt("base_price");
+                int basePerformance = jsonobject.getInt("base_performance");
+                upgradeArray.add(new Upgrade(name, basePrice, basePerformance, storage, i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return upgradeArray;
-
 
     }
   
