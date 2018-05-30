@@ -62,9 +62,11 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
                                     .range(0, AutomataNames.length)
                                     .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerformance(i))
                                     .sum();
-        totalMoneyPerTimeUnit*=(
-                pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(3)))
-                *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(4))));
+        totalMoneyPerTimeUnit= (int) (
+            totalMoneyPerTimeUnit
+            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(3)))
+            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(4))
+            ));
 
         return totalMoneyPerTimeUnit;
     }

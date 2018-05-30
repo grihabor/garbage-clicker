@@ -19,10 +19,14 @@ public class Automata extends ShopItem {
     @Override
     int getPrice () {
         int count = getCount();
-        int price = (int) (basePrice
+
+        int price = (int) (
+                basePrice
                 * pow(1.15,count)
                 *pow(0.85, this.storage
-                .getShopItemCount(Constant.upgradeCountKey(1))));
+                .getShopItemCount(Constant.upgradeCountKey(1)))
+        );
+
         return price;
     }
 
