@@ -1,5 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
+import static java.lang.Math.pow;
+
 /**
  * Базовый класс для улучшений
  */ 
@@ -19,11 +21,12 @@ public class Upgrade extends ShopItem {
     @Override
     int getPrice () {
         int count = getCount();
-        int price = basePrice;
+        int price = (int)(
+                basePrice
+                *pow(1.15,count)
+                *pow(0.85, this.storage.getShopItemCount(Constant.upgradeCountKey(2)))
+        );
 
-        for (int i = 0; i < count; i++) {
-            price *= 1.30;
-        }
 
         return price;
     }
