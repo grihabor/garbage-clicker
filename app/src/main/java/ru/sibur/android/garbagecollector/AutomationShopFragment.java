@@ -56,7 +56,8 @@ public class AutomationShopFragment extends ShopFragment {
                     String name = automataAttributes.getString("name");
                     int basePerformance = automataAttributes.getInt("base_performance");
                     int basePrice = automataAttributes.getInt("base_price");
-                    automataArray.add(new Automata(name, basePrice, basePerformance, R.drawable.shop_item_icon, storage, i));
+                    int iconId = Constant.SHOP_ITEMS_ICON_IDS[automataAttributes.getInt("icon_id_num")];
+                    automataArray.add(new Automata(name, basePrice, basePerformance, iconId, storage, i));
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONException: " + e.getMessage());
                 }
