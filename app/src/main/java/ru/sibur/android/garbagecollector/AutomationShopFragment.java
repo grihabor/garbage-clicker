@@ -51,10 +51,10 @@ public class AutomationShopFragment extends ShopFragment {
         if(jsonarray != null) {
             for (int i = 0; i < jsonarray.length(); i++) {
                 try {
-                    JSONObject obj = jsonarray.getJSONObject(i);
-                    String name = obj.getString("name");
-                    int basePerformance = obj.getInt("base_performance");
-                    int basePrice = obj.getInt("base_price");
+                    JSONObject automataAttributes = jsonarray.getJSONObject(i);
+                    String name = automataAttributes.getString("name");
+                    int basePerformance = automataAttributes.getInt("base_performance");
+                    int basePrice = automataAttributes.getInt("base_price");
                     automataArray.add(new Automata(name, basePrice, basePerformance, storage, i));
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONException: " + e.getMessage());

@@ -33,7 +33,7 @@ public  class JSONLoader {
             }
             return writer.toString();
         } catch (UnsupportedEncodingException e) {
-            Log.e(TAG, "wrong format in automatas.json ");
+            Log.e(TAG, "Wrong format in automatas.json ");
         } catch (IOException e) {
             Log.e(TAG, "IOException: " + e.getMessage()); //это непонятная ошибка, но пускай ловится и сигнализирует, если вылезает
         }finally {
