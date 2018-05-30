@@ -3,6 +3,7 @@ package ru.sibur.android.garbagecollector;
 import android.app.Activity;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +16,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.StreamSupport;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Фрагмент магазина автоматов
  */
 
 public class AutomationShopFragment extends ShopFragment {
+    private final String TAG = "AUTOMATION_FRAGMENT";
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
@@ -44,17 +48,22 @@ public class AutomationShopFragment extends ShopFragment {
         ArrayList<Automata> automataArray = new ArrayList<>();
         JSONLoader loader = new JSONLoader(getActivity());
         JSONArray jsonarray = loader.parceJSONResource(R.raw.automatas);
-        for (int i = 0; i < jsonarray.length(); i++){
-            try {
-                JSONObject obj = jsonarray.getJSONObject(i);
-                String name = obj.getString("name");
-                int basePerformance = obj.getInt("base_performance");
-                int basePrice = obj.getInt("base_price");
-                automataArray.add(new Automata(name, basePrice, basePerformance, storage, i));
-            } catch (JSONException e) {
-                e.printStackTrace();
+        if(jsonarray != null) {
+            for (int i = 0; i < jsonarray.length(); i++) {
+                try {
+                    JSONObject obj = jsonarray.getJSONObject(i);
+                    String name = obj.getString("name");
+                    int basePerformance = obj.getInt("base_performance");
+                    int basePrice = obj.getInt("base_price");
+                    automataArray.add(new Automata(name, basePrice, basePerformance, storage, i));
+                } catch (JSONException e) {
+                    Log.e(TAG, "JSONException: " + e.getMessage());
+                }
             }
+            return automataArray;
+        } else {
+            Log.e(TAG, "Unable to load data from automatas.json");
+            return null;
         }
-        return automataArray;
     }
 }

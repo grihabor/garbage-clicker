@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONArray;
 
@@ -13,6 +14,7 @@ import java9.util.stream.IntStream;
  */
 
 public class AutomataThread extends AsyncTask<Void, Void, Void> implements AutomataMoneyCalculator {
+    private final String TAG = "AUTOMATA_THREAD";
     Storage storage;
     Context context;
 
@@ -58,6 +60,10 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     int getMoneyPerTimeUnit() {
         JSONLoader loader = new JSONLoader(context);
         JSONArray automataArray = loader.parceJSONResource(R.raw.automatas);
+        if(automataArray == null){
+            Log.e(TAG, "Unable to load data from automatas.json");
+            return 0;
+        }
 
         int totalMoneyPerTimeUnit = IntStream
                                     .range(0, automataArray.length())
