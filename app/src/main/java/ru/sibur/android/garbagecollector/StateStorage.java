@@ -30,9 +30,7 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     @Override
     synchronized void addMoney(int amount) {
         SharedPreferences.Editor editor = sPref.edit();
-
-        int newMoney = amount + getMoney();
-        editor.putInt(Constant.MONEY_KEY, newMoney);
+        editor.putInt(Constant.MONEY_KEY, getMoney() + amount);
         editor.apply();
     }
 
@@ -40,6 +38,7 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     int getMoney() {
         return sPref.getInt(Constant.MONEY_KEY, 0);
     }
+
 
     @Override
     synchronized void incrementShopItemCount(String itemCountKey) {

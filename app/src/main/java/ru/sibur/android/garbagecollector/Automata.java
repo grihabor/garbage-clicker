@@ -8,9 +8,11 @@ package ru.sibur.android.garbagecollector;
 
 public class Automata extends ShopItem {
     private int index;
-
-    Automata(String name, int basePrice, int iconId, Storage storage, int automataIndex) {
+    private int basePerformance;
+  
+    Automata(String name, int basePrice, int basePerformance, int iconId, Storage storage, int automataIndex) {
         super(name, basePrice, iconId, storage);
+        this.basePerformance = basePerformance;
         this.index = automataIndex;
     }
 
