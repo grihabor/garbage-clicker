@@ -3,12 +3,18 @@ package ru.sibur.android.garbagecollector;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import java9.util.function.Function;
 import java9.util.stream.IntStream;
 import java9.util.stream.Collectors;
 import java9.util.stream.StreamSupport;
@@ -17,13 +23,26 @@ import java9.util.stream.StreamSupport;
  * Базовый фрагмент для фрагментов магазинов
  */
 
-public class ShopFragment extends Fragment {
+abstract public class ShopFragment extends Fragment implements Function<JSONObject, ShopItem> {
     Storage storage;
+    int iterationIndex;
+
+    private final String TAG = "SHOP_FRAGMENT";
+
+    abstract int getResourceId();
+    abstract int getListViewId();
 
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
         storage = ((MainActivity) activity).storage;
+        iterationIndex = 0;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        initListView(getActivity(), getShopItemList(), getListViewId());
     }
 
     public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
@@ -35,7 +54,7 @@ public class ShopFragment extends Fragment {
 
         SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.shop_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
-                new int[]{R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance });
+                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS);
 
         IntStream.range(0, shopItems.size()).forEach(i -> {
             ShopItem item = shopItems.get(i);
@@ -58,4 +77,33 @@ public class ShopFragment extends Fragment {
             current.tryToBuy(context, storage);
         });
     }
+
+    private ArrayList<? extends ShopItem> getShopItemList () {
+        JSONLoader loader = new JSONLoader(getActivity());
+        JSONArray jsonarray = loader.parceJSONResource(getResourceId());
+
+        ArrayList<? extends ShopItem> shopItemAttrArray = null;
+
+        if(jsonarray != null) {
+            shopItemAttrArray = IntStream.range(0, jsonarray.length()).mapToObj(i -> {
+                iterationIndex = i;
+                ShopItem ret = null;
+                try {
+                    ret = this.apply ((JSONObject) jsonarray.get(i));
+                } catch (JSONException e) {
+                    Log.e(TAG, "JSONException: " + e.getMessage());
+                }
+
+                return ret;
+            }).collect(Collectors.toCollection(ArrayList::new));
+
+
+        } else {
+            Log.e(TAG, "Unable to load data from automatas.json");
+        }
+        return shopItemAttrArray;
+    }
+
+
+
 }

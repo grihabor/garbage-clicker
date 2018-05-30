@@ -1,37 +1,43 @@
 [
   {
     "name":"Удвоение монет",
-    "base_price": 1000
+    "base_price": 1000,
+    "icon_id": 0
   },
 
 
   {
     "name":"Время удвоения монет",
-    "base_price": 10000
+    "base_price": 10000,
+    "icon_id": 0
   },
 
 
   {
     "name":"Мощность клика",
-    "base_price": 10000
+    "base_price": 10000,
+    "icon_id": 0
   },
 
 
   {
     "name":"Уменьшение стоимости автоматов",
-    "base_price": 10000000
+    "base_price": 10000000,
+    "icon_id": 0
   },
 
 
   {
     "name":"Уменьшение стоимости апгрейдов",
-    "base_price": 10000000
+    "base_price": 10000000,
+    "icon_id": 0
   },
 
 
   {
     "name":"Апгрейд мощности автоматов",
-    "base_price": 10000
+    "base_price": 10000,
+    "icon_id": 0
   }
 
 ]

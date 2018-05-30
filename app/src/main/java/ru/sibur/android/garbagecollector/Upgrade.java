@@ -1,5 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
+import org.json.JSONObject;
+
 import static java.lang.Math.pow;
 
 /**
@@ -9,9 +11,9 @@ import static java.lang.Math.pow;
 public class Upgrade extends ShopItem {
     private int index;
 
-    Upgrade(String name, int basePrice, int iconId, Storage storage, int upgradeIndex) {
-       super(name, basePrice, iconId, storage);
-       this.index = upgradeIndex;
+    Upgrade(JSONObject attrs, Storage storage, int upgradeIndex) {
+        super(attrs, storage);
+        this.index = upgradeIndex;
     }
 
     @Override

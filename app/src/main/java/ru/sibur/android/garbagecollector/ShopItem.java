@@ -1,7 +1,11 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 
@@ -14,12 +18,19 @@ public abstract class ShopItem {
     String name;
     int iconId;
     Storage storage;
-    
-    ShopItem(String name, int basePrice, int iconId, Storage storage) {
-        this.basePrice = basePrice;
-        this.name = name;
+
+    private final String TAG = "SHOP_ITEM";
+
+    ShopItem(JSONObject attributes, Storage storage) {
         this.storage = storage;
-        this.iconId = iconId;
+
+        try {
+            this.name = attributes.getString("name");
+            this.basePrice = attributes.getInt("base_price");
+            this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id")];
+        } catch (JSONException e) {
+            Log.e(TAG, "JSONException: " + e.getMessage());
+        }
     }
     
     public HashMap<String, Object> getViewData() {
