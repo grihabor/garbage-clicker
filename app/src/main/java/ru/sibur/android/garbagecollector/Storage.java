@@ -7,7 +7,7 @@ package ru.sibur.android.garbagecollector;
 public abstract class Storage {
     abstract void addMoney(int amount);
     abstract int getMoney();
-
+    abstract int getTotalMoneyEarned();
     abstract void incrementShopItemCount (String itemCountKey);
     abstract int getShopItemCount (String itemCountKey);
 
