@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import static java.lang.Math.pow;
+
 /**
  * Фрагмент ручной переработки мусора
  */
@@ -36,7 +38,7 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-            storage.addMoney(100);
+            storage.addMoney((int) (100*pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(0)))));
         });
     }
 }

@@ -1,5 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
+import static java.lang.Math.pow;
+
 /**
  * Класс автомата
  * 
@@ -17,12 +19,7 @@ public class Automata extends ShopItem {
     @Override
     int getPrice () {
         int count = getCount();
-        int price = basePrice;
-
-        for (int i = 0; i < count; i++) {
-            price *= 1.15;
-        }
-
+        int price = (int) (basePrice* pow(1.15,count)*pow(0.85, this.storage.getShopItemCount(Constant.upgradeCountKey(1))));
         return price;
     }
 
