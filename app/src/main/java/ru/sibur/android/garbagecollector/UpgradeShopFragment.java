@@ -30,7 +30,7 @@ public class UpgradeShopFragment extends ShopFragment {
 
         for (int index = 0; index < stringsArray.length; index++) {
             int price = 1000 + index * 1000;
-            upgradeArray.add(new Upgrade(stringsArray[index], price, storage, index));
+            upgradeArray.add(new Upgrade(stringsArray[index], price, R.drawable.shop_item_icon, storage, index));
         }
         return upgradeArray;
 

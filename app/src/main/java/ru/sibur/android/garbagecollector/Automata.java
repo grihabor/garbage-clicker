@@ -4,15 +4,16 @@ import static java.lang.Math.pow;
 
 /**
  * Класс автомата
- * 
+ *
  * Этот класс позволяет создавать новые виды автоматов
  */
 
 public class Automata extends ShopItem {
     private int index;
     private int basePerformance;
-    Automata(String name, int basePrice, int basePerformance, Storage storage, int automataIndex) {
-        super(name, basePrice, storage);
+  
+    Automata(String name, int basePrice, int basePerformance, int iconId, Storage storage, int automataIndex) {
+        super(name, basePrice, iconId, storage);
         this.basePerformance = basePerformance;
         this.index = automataIndex;
     }

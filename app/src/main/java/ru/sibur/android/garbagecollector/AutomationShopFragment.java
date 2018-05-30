@@ -46,6 +46,7 @@ public class AutomationShopFragment extends ShopFragment {
 
     private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
+
         JSONLoader loader = new JSONLoader(getActivity());
         JSONArray jsonarray = loader.parceJSONResource(R.raw.automatas);
         if(jsonarray != null) {
@@ -55,7 +56,7 @@ public class AutomationShopFragment extends ShopFragment {
                     String name = automataAttributes.getString("name");
                     int basePerformance = automataAttributes.getInt("base_performance");
                     int basePrice = automataAttributes.getInt("base_price");
-                    automataArray.add(new Automata(name, basePrice, basePerformance, storage, i));
+                    automataArray.add(new Automata(name, basePrice, basePerformance, R.drawable.shop_item_icon, storage, i));
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONException: " + e.getMessage());
                 }
