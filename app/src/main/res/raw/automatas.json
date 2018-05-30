@@ -1,61 +1,61 @@
 [
   {
     "name":"мусорный бак",
-    "price":"100",
-    "performance":"1"
+    "base_price":"100",
+    "base_performance":"1"
   },
 
 
   {
     "name":"раздельный сбор",
-    "price":"5000",
-    "performance":"5"
+    "base_price":"5000",
+    "base_performance":"5"
   },
 
 
   {
     "name":"мусоровоз",
-    "price":"30000",
-    "performance":"20"
+    "base_price":"30000",
+    "base_performance":"20"
   },
 
 
   {
     "name":"сортировочная машина",
-    "price":"150000",
-    "performance":"50"
+    "base_price":"150000",
+    "base_performance":"50"
   },
 
 
   {
     "name":"сортировочный центр",
-    "price":"1000000",
-    "performance":"75"
+    "base_price":"1000000",
+    "base_performance":"75"
   },
 
   {
     "name":"перерабатывающий завод",
-    "price":"10000000",
-    "performance":"100"
+    "base_price":"10000000",
+    "base_performance":"100"
   },
 
 
   {
     "name":"улучшенный завод",
-    "price":"50000000",
-    "performance":"150"
+    "base_price":"50000000",
+    "base_performance":"150"
   },
 
 
   {
     "name":"экологическое производство",
-    "price":"1.00E+09",
-    "performance":"300"},
+    "base_price":"1.00E+09",
+    "base_performance":"300"},
 
 
   {
     "name":"сеть заводов",
-    "price":"1.00E+12",
-    "performance":"500"
+    "base_price":"1.00E+12",
+    "base_performance":"500"
   }
 ]
