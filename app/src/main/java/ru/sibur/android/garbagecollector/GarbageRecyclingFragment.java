@@ -38,7 +38,9 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-            storage.addMoney((int) (100*pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(0)))));
+            storage.addMoney((int) (100 *pow(1.15,
+                    this.storage
+                    .getShopItemCount(Constant.upgradeCountKey(0)))));
         });
     }
 }
