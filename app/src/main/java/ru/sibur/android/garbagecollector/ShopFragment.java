@@ -29,7 +29,7 @@ abstract public class ShopFragment extends Fragment implements Function<JSONObje
 
     private final String TAG = "SHOP_FRAGMENT";
 
-    abstract int getDataFileId();
+    abstract int getResourceId();
     abstract int getListViewId();
 
     @Override
@@ -80,7 +80,7 @@ abstract public class ShopFragment extends Fragment implements Function<JSONObje
 
     private ArrayList<? extends ShopItem> getShopItemList () {
         JSONLoader loader = new JSONLoader(getActivity());
-        JSONArray jsonarray = loader.parceJSONResource(getDataFileId());
+        JSONArray jsonarray = loader.parceJSONResource(getResourceId());
 
         ArrayList<? extends ShopItem> shopItemAttrArray = null;
 

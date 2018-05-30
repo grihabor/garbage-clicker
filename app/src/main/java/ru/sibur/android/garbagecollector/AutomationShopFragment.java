@@ -17,7 +17,7 @@ public class AutomationShopFragment extends ShopFragment {
     private final String TAG = "AUTOMATION_FRAGMENT";
 
     @Override
-    int getDataFileId() {
+    int getResourceId() {
         return R.raw.automatas;
     }
 

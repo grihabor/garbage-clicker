@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class UpgradeShopFragment extends ShopFragment {
     @Override
-    int getDataFileId() {
+    int getResourceId() {
         return R.raw.upgrades;
     }
 
