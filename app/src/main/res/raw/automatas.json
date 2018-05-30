@@ -1,13 +1,65 @@
-[{
-  "name": "мусорный бак",
-  "base_price": 20,
-  "base_performance": 20
-}, {
-  "name": "раздельный сбор",
-  "base_price": 500,
-  "base_performance": 500
-}, {
-  "name": "Грудинин - президент",
-  "base_price": 1000,
-  "base_performance": 1000
-}]
+[
+
+  {
+    "name":"мусорный бак",
+    "price":"100",
+    "performance":"1"
+  },
+
+
+  {
+    "name":"раздельный сбор",
+    "price":"5000",
+    "performance":"5"
+  },
+
+
+  {
+    "name":"мусоровоз",
+    "price":"30000",
+    "performance":"20"
+  },
+
+
+  {
+    "name":"сортировочная машина",
+    "price":"150000",
+    "performance":"50"
+  },
+
+
+  {
+    "name":"сортировочный центр",
+    "price":"1000000",
+    "performance":"75"
+  },
+
+
+  {
+    "name":"перерабатывающий завод",
+    "price":"10000000",
+    "performance":"100"
+  },
+
+
+  {
+    "name":"улучшенный завод",
+    "price":"50000000",
+    "performance":"150"
+  },
+
+
+  {
+    "name":"экологическое производство",
+    "price":"1.00E+09",
+    "performance":"300"
+  },
+
+
+  {
+    "name":"сеть заводов",
+    "price":"1.00E+12",
+    "performance":"500"
+  }
+
+]
