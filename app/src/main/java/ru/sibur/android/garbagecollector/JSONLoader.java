@@ -23,7 +23,7 @@ public  class JSONLoader {
         this.context = context;
     }
 
-    public String readJson(int id){
+    private String readRawResource (int id){
         InputStream resourceReader = context.getResources().openRawResource(id);
         Writer writer = new StringWriter();
         try {
@@ -48,10 +48,10 @@ public  class JSONLoader {
         return null;
     }
 
-    public JSONArray loadShopItemData(int id){
+    public JSONArray parceJSONResource(int id){
 
         try {
-            JSONArray jsonarray = new JSONArray(readJson(id));
+            JSONArray jsonarray = new JSONArray(readRawResource(id));
             return jsonarray;
         } catch (JSONException e) {
             e.printStackTrace();

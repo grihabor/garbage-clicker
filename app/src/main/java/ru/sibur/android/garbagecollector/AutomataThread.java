@@ -57,7 +57,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     int getMoneyPerTimeUnit() {
         JSONLoader loader = new JSONLoader(context);
-        JSONArray automataArray = loader.loadShopItemData(R.raw.automatas);
+        JSONArray automataArray = loader.parceJSONResource(R.raw.automatas);
 
         int totalMoneyPerTimeUnit = IntStream
                                     .range(0, automataArray.length())

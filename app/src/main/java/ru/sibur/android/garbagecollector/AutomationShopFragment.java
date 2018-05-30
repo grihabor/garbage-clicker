@@ -43,7 +43,7 @@ public class AutomationShopFragment extends ShopFragment {
     private ArrayList<Automata> getAutomataList() {
         ArrayList<Automata> automataArray = new ArrayList<>();
         JSONLoader loader = new JSONLoader(getActivity());
-        JSONArray jsonarray = loader.loadShopItemData(R.raw.automatas);
+        JSONArray jsonarray = loader.parceJSONResource(R.raw.automatas);
         for (int i = 0; i < jsonarray.length(); i++){
             try {
                 JSONObject obj = jsonarray.getJSONObject(i);
