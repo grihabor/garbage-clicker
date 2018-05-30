@@ -14,6 +14,13 @@ public final class Constant {
     public static final String TOTAL_MONEY_EARNED_KEY = "total_money_earned_key";
     public static final int TIME_UNIT = 1000;
 
+    public static final String SHOP_ITEM_NAME_KEY = "name";
+    public static final String SHOP_ITEM_PRICE_KEY = "price";
+    public static final String SHOP_ITEM_COUNT_KEY = "count";
+    public static final String SHOP_ITEM_ICON_ID_KEY = "icon_id";
+    public static final String SHOP_ITEM_PERFORMANCE_KEY = "performance";
+    public static final String[] SHOP_ITEM_ATTRIBUTES = {SHOP_ITEM_NAME_KEY, SHOP_ITEM_PRICE_KEY, SHOP_ITEM_COUNT_KEY, SHOP_ITEM_ICON_ID_KEY, SHOP_ITEM_PERFORMANCE_KEY};
+
     /**
      * @param automataIndex
      * Automata index in the list of automationShop (from 0)
