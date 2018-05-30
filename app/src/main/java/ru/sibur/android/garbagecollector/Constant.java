@@ -20,6 +20,8 @@ public final class Constant {
     public static final String SHOP_ITEM_PERFORMANCE_KEY = "performance";
     public static final String[] SHOP_ITEM_ATTRIBUTES = {SHOP_ITEM_NAME_KEY, SHOP_ITEM_PRICE_KEY, SHOP_ITEM_COUNT_KEY, SHOP_ITEM_ICON_ID_KEY, SHOP_ITEM_PERFORMANCE_KEY};
 
+    public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.shop_item_icon};
+
     /**
      * @param automataIndex
      * Automata index in the list of automationShop (from 0)

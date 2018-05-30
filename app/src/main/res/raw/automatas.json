@@ -1,13 +1,16 @@
 [{
   "name": "мусорный бак",
   "base_price": 20,
-  "base_performance": 20
+  "base_performance": 20,
+  "icon_id_num": 0
 }, {
   "name": "раздельный сбор",
   "base_price": 500,
   "base_performance": 500
+  "icon_id_num": 0
 }, {
   "name": "Грудинин - президент",
   "base_price": 1000,
   "base_performance": 1000
+  "icon_id_num": 0
 }]
