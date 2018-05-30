@@ -13,7 +13,7 @@ public final class Constant {
     public static final String LAST_UPDATE_NAME = "update";
     public static final int TIME_UNIT = 1000;
 
-    public static final String[] SHOP_ITEM_DATA = {"name", "price", "count", "id", "performance"};
+    public static final String[] SHOP_ITEM_ATTRIBUTES = {"name", "price", "count", "img_id", "performance"};
 
     /**
      * @param automataIndex
