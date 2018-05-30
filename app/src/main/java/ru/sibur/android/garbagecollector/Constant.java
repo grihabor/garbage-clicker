@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.stream.StreamSupport;
 
 /**
  * Содержит константы, нужные нам в разных классах программы
@@ -13,6 +14,11 @@ public final class Constant {
     public static final String LAST_UPDATE_NAME = "update";
     public static final String TOTAL_MONEY_EARNED_KEY = "total_money_earned_key";
     public static final int TIME_UNIT = 1000;
+
+    public static final double UPGRADE_COST_INCREASE_MULTIPLIER = 1.30;
+    public static final double AUTOMATA_COST_INCREASE_MULTIPLIER = 1.30;
+    public static final double AUTOMATA_COST_DECREASE_MULTIPLIER = 0.85;
+    public static final double UPGRADE_COST_DECREASE_MULTIPLIER = 0.85;
 
     public static final String SHOP_ITEM_NAME_KEY = "name";
     public static final String SHOP_ITEM_PRICE_KEY = "price";

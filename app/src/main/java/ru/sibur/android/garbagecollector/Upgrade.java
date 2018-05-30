@@ -23,8 +23,8 @@ public class Upgrade extends ShopItem {
         int count = getCount();
         int price = (int)(
                 basePrice
-                *pow(1.15,count)
-                *pow(0.85, this.storage.getShopItemCount(Constant.upgradeCountKey(2)))
+                *pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER,count)
+                *pow(Constant.UPGRADE_COST_DECREASE_MULTIPLIER, this.storage.getShopItemCount(Constant.upgradeCountKey(2)))
         );
 
 
