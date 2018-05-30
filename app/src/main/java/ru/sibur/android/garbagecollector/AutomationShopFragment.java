@@ -45,7 +45,6 @@ public class AutomationShopFragment extends ShopFragment {
         super.onStart();
     }
 
-
     @Override
     public ShopItem apply(JSONObject jsonObject) {
         return new Automata(jsonObject, storage, iterationIndex);
