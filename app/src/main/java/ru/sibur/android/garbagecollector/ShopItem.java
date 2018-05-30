@@ -27,7 +27,7 @@ public abstract class ShopItem {
         try {
             this.name = attributes.getString("name");
             this.basePrice = attributes.getInt("base_price");
-            this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id_num")];
+            this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id")];
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
