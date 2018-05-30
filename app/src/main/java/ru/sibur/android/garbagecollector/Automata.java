@@ -1,5 +1,12 @@
 package ru.sibur.android.garbagecollector;
 
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 import static java.lang.Math.pow;
 
 /**
@@ -11,11 +18,18 @@ import static java.lang.Math.pow;
 public class Automata extends ShopItem {
     private int index;
     private int basePerformance;
-  
-    Automata(String name, int basePrice, int basePerformance, int iconId, Storage storage, int automataIndex) {
-        super(name, basePrice, iconId, storage);
-        this.basePerformance = basePerformance;
+
+    private final String TAG = "AUTOMATA";
+
+    Automata(JSONObject attrs, Storage storage, int automataIndex) {
+        super(attrs, storage);
         this.index = automataIndex;
+
+        try {
+            basePerformance = attrs.getInt("base_performance");
+        } catch (JSONException e) {
+            Log.e(TAG, "JSONException: " + e.getMessage());
+        }
     }
 
     @Override
@@ -34,5 +48,12 @@ public class Automata extends ShopItem {
     @Override
     String getCountKey() {
         return Constant.automataCountKey(index);
+    }
+
+    @Override
+    public HashMap<String, Object> getViewData() {
+        HashMap<String, Object> ret = super.getViewData();
+        ret.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, basePerformance);
+        return ret;
     }
 }

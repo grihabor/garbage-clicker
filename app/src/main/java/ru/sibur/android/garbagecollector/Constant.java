@@ -29,6 +29,8 @@ public final class Constant {
 
     public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.shop_item_icon};
 
+    public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
+
     /**
      * @param automataIndex
      * Automata index in the list of automationShop (from 0)
