@@ -40,8 +40,7 @@ public class GarbageRecyclingFragment extends Fragment {
         baffer.setOnClickListener(v -> {
             storage.addMoney((int) (
                     100
-                    *pow(1.15,
-                    this.storage.getShopItemCount(Constant.upgradeCountKey(0)))
+                    *pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))
                     )
             );
         });

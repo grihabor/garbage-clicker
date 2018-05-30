@@ -21,7 +21,7 @@ public class Upgrade extends ShopItem {
     @Override
     int getPrice () {
         int count = getCount();
-        int price = (int) (
+        int price = (int)(
                 basePrice
                 *pow(1.15,count)
                 *pow(0.85, this.storage.getShopItemCount(Constant.upgradeCountKey(2)))

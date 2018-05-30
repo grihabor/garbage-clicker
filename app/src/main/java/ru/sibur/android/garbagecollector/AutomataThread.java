@@ -74,8 +74,8 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
         totalMoneyPerTimeUnit= (int) (
             totalMoneyPerTimeUnit
             *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(3)))
-            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(4))
-            ));
+            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(4)))
+        );
 
         return totalMoneyPerTimeUnit;
     }
