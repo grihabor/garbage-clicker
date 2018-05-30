@@ -24,11 +24,11 @@ public abstract class ShopItem {
     
     public HashMap<String, Object> getViewData() {
         HashMap<String,Object> map = new HashMap<>();
-        map.put(Constant.SHOP_ITEM_ATTRIBUTES[0], name);
-        map.put(Constant.SHOP_ITEM_ATTRIBUTES[1], Constant.formatMoney(getPrice()));
-        map.put(Constant.SHOP_ITEM_ATTRIBUTES[2], iconId);
-        map.put(Constant.SHOP_ITEM_ATTRIBUTES[3], getCount());
-        map.put(Constant.SHOP_ITEM_ATTRIBUTES[4], "");
+        map.put(Constant.SHOP_ITEM_NAME_KEY, name);
+        map.put(Constant.SHOP_ITEM_PRICE_KEY, Constant.formatMoney(getPrice()));
+        map.put(Constant.SHOP_ITEM_ICON_ID_KEY, iconId);
+        map.put(Constant.SHOP_ITEM_COUNT_KEY, getCount());
+        map.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, "");
         return (map);
     }
 

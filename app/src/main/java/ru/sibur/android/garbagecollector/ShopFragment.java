@@ -35,7 +35,7 @@ public class ShopFragment extends Fragment {
 
         SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.shop_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
-                new int[]{R.id.name, R.id.price, R.id.qty, R.id.img, R.id.performance });
+                new int[]{R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance });
 
         IntStream.range(0, shopItems.size()).forEach(i -> {
             ShopItem item = shopItems.get(i);
