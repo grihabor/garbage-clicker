@@ -24,8 +24,8 @@ public class Automata extends ShopItem {
 
         int price = (int) (
                 basePrice
-                *pow(1.15,count)
-                *pow(0.85, this.storage.getShopItemCount(Constant.upgradeCountKey(1)))
+                *pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER,count)
+                *pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, this.storage.getShopItemCount(Constant.upgradeCountKey(1)))
         );
 
         return price;
