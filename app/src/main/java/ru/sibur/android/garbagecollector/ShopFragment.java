@@ -70,15 +70,15 @@ public class ShopFragment extends ListFragment {
                 TransitionDrawable trans = new TransitionDrawable(color);
                 v.setBackground(trans);
                 trans.startTransition(300);
-            } else {
-                ColorDrawable[] color = {
-                        new ColorDrawable(Color.RED),
-                        new ColorDrawable(Color.WHITE)
-                };
-                TransitionDrawable trans = new TransitionDrawable(color);
-                v.setBackground(trans);
-                trans.startTransition(300);
-            }
+        } else {
+            ColorDrawable[] color = {
+                    new ColorDrawable(Color.RED),
+                    new ColorDrawable(Color.WHITE)
+            };
+            TransitionDrawable trans = new TransitionDrawable(color);
+            v.setBackground(trans);
+            trans.startTransition(300);
+        }
     }
 
 }
