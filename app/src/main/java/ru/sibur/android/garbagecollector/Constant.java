@@ -62,19 +62,15 @@ public final class Constant {
 
     public static String formatMoney (int amount) {
         float val = amount * 0.01f;
-        if(val<1000){
+        if(val < 1000){
             NumberFormat formatter = new DecimalFormat("#0.00");
             return formatter.format(val);
         }
-        if(val<=1000000){
+        if(val < 1000000){NumberFormat formatter = new DecimalFormat("#0");
+            return String.valueOf(Math.round(val / 1000)) + 'T';
+        } else {
             NumberFormat formatter = new DecimalFormat("#0");
-            return formatter.format(val/1000)+'T';
-        }
-
-        else{
-            NumberFormat formatter = new DecimalFormat("#0");
-            return formatter.format(val/1000000)+'M';
-
+            return String.valueOf(Math.round(val / 1000000)) + 'M';
         }
     }
 
