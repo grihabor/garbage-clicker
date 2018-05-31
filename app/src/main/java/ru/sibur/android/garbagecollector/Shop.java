@@ -27,7 +27,7 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
 
     Context context;
 
-    final String TAG = "SHOP";
+    abstract String getTag();
 
     Shop (int resourceId, Context context, Storage storage) {
         this.storage = storage;
@@ -49,7 +49,7 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
                 try {
                     ret = this.apply ((JSONObject) jsonarray.get(i));
                 } catch (JSONException e) {
-                    Log.e(TAG, "JSONException: " + e.getMessage());
+                    Log.e(getTag(), "JSONException: " + e.getMessage());
                 }
 
                 return ret;
@@ -57,7 +57,7 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
 
 
         } else {
-            Log.e(TAG, "Unable to load data from automatas.json");
+            Log.e(getTag(), "Unable to load data from automatas.json");
         }
 
         return shopItemAttrArray;

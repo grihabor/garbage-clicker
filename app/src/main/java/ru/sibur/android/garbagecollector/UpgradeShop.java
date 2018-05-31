@@ -5,6 +5,10 @@ import android.content.Context;
 import org.json.JSONObject;
 
 public class UpgradeShop extends Shop {
+    @Override
+    String getTag() {
+        return "UPGRADE_SHOP";
+    }
 
     UpgradeShop(int resourceId, Context context, Storage storage) {
         super(resourceId, context, storage);

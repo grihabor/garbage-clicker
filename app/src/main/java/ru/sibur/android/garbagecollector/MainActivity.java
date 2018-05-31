@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
         switchTo(upgradeShop.getShopFragment(
                 R.layout.shop_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
-                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS));
+                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS
+        ));
     }
 
     public void switchToAutomationShopFragment(View view) {
