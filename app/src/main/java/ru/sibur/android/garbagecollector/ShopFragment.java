@@ -1,20 +1,14 @@
 package ru.sibur.android.garbagecollector;
 
-import android.app.Activity;
 import android.app.ListFragment;
 import android.view.View;
 
-import android.app.LauncherActivity;
-import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.TransitionDrawable;
 
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +21,6 @@ import java9.util.stream.IntStream;
 
 public class ShopFragment extends ListFragment {
 
-    private final String TAG = "SHOP_FRAGMENT";
     private Shop shop;
 
 
@@ -69,7 +62,7 @@ public class ShopFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         ShopItem current = shop.shopItemArray.get(position);
-        if(current.tryToBuy(context, storage)) {
+        if(current.tryToBuy(shop.context, shop.storage)) {
                 ColorDrawable[] color = {
                         new ColorDrawable(Color.GREEN),
                         new ColorDrawable(Color.WHITE)
