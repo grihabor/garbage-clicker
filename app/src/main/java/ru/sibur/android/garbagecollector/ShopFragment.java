@@ -28,6 +28,11 @@ public class ShopFragment extends ListFragment {
         this.shop = shop;
     }
 
+    /*
+    If you will need this fragment to be something beyond ListFragment,
+     then extend Fragment and Override Fragment method onCreateView(LayoutInflater inflater)
+     and make your own custom layout
+     */
 
     @Override
     public void onStart() {
