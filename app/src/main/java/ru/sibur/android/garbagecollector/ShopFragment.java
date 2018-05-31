@@ -68,13 +68,13 @@ public class ShopFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         ShopItem current = shop.shopItemArray.get(position);
         if(current.tryToBuy(shop.context, shop.storage)) {
-                ColorDrawable[] color = {
-                        new ColorDrawable(Color.GREEN),
-                        new ColorDrawable(Color.WHITE)
-                };
-                TransitionDrawable trans = new TransitionDrawable(color);
-                v.setBackground(trans);
-                trans.startTransition(300);
+            ColorDrawable[] color = {
+                    new ColorDrawable(Color.GREEN),
+                    new ColorDrawable(Color.WHITE)
+            };
+            TransitionDrawable trans = new TransitionDrawable(color);
+            v.setBackground(trans);
+            trans.startTransition(300);
         } else {
             ColorDrawable[] color = {
                     new ColorDrawable(Color.RED),
