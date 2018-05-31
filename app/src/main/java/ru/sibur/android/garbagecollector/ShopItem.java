@@ -2,7 +2,6 @@ package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,18 +42,18 @@ public abstract class ShopItem {
         return (map);
     }
 
-    void tryToBuy (Context context, Storage storage) {
+    boolean tryToBuy (Context context, Storage storage) {
+        boolean key = false;
         if (storage.getMoney() >= getPrice()) {
             storage.addMoney(-getPrice());
-
             buy(context);
-        } else {
-            Toast.makeText(context, "не хватает средств", Toast.LENGTH_SHORT).show();
+            key = true;
         }
+        return key;
     }
 
     private void buy(Context context) {
-        Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
         storage.incrementShopItemCount(getCountKey());
     }
 

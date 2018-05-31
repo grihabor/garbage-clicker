@@ -2,10 +2,16 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.LauncherActivity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -74,7 +80,23 @@ abstract public class ShopFragment extends Fragment implements Function<JSONObje
 
         listView.setOnItemClickListener((parent, itemClicked, position, id) -> {
             ShopItem current = items.get(position);
-            current.tryToBuy(context, storage);
+            if( current.tryToBuy(context, storage) == true) {
+                ColorDrawable[] color = {
+                        new ColorDrawable(Color.GREEN),
+                        new ColorDrawable(Color.WHITE)
+                };
+                TransitionDrawable trans = new TransitionDrawable(color);
+                itemClicked.setBackground(trans);
+                trans.startTransition(300);
+            } else {
+                ColorDrawable[] color = {
+                        new ColorDrawable(Color.RED),
+                        new ColorDrawable(Color.WHITE)
+                };
+                TransitionDrawable trans = new TransitionDrawable(color);
+                itemClicked.setBackground(trans);
+                trans.startTransition(300);
+            }
         });
     }
 
