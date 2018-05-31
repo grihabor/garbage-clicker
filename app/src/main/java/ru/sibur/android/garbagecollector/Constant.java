@@ -2,7 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-
+import java.util.stream.StreamSupport;
 /**
  * Содержит константы, нужные нам в разных классах программы
  */
