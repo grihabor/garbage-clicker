@@ -1,8 +1,3 @@
-language: python
-
-python:
-  - "3.6"
-  
 sudo: required
 
 services:
@@ -11,8 +6,7 @@ services:
 install:
   - sudo apt update
   - sudo apt install make git
-  - pip3 install -r requirements.txt
-  
+
 before_script:
   - git config --local user.name "Borodin Gregory"
   - git config --local user.email "grihabor@gmail.com"
@@ -27,10 +21,6 @@ script:
   - docker cp build:/project/app/build/outputs/apk/dev/debug/app-dev-debug.apk .
   - docker cp build:/project/app/build/reports reports
   - echo -e "\ntravis_fold:end:push.image\r"
-  
-after_success:  
-  - python3 parse_report.py reports/checkstyle/android.xml
-  - python3 parse_report.py reports/lint-results.xml
   
 before_deploy:
   - export VERSION=$(make travis-version)
