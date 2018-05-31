@@ -61,27 +61,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchToUpgradeShopFragment(View view) {
         UpgradeShop upgradeShop = new UpgradeShop(R.raw.upgrades, this, storage);
-        upgradeShop.setDisplayData(
-                R.id.upgradeShopListView,
+        switchTo(upgradeShop.getShopFragment(
                 R.layout.shop_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
-                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS);
-        ShopFragment upgradeShopFragment = new ShopFragment();
-        switchTo(upgradeShopFragment);
-        upgradeShopFragment.fill(upgradeShop);
+                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS));
     }
 
     public void switchToAutomationShopFragment(View view) {
         AutomationShop automationShop = new AutomationShop(R.raw.automatas, this, storage);
-        automationShop.setDisplayData(
-                R.id.upgradeShopListView,
+        switchTo(automationShop.getShopFragment(
                 R.layout.shop_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
                 Constant.SHOP_ITEM_VIEWS_ATTRS_IDS
-        );
-        ShopFragment automationShopFragment = new ShopFragment();
-        switchTo(automationShopFragment);
-        automationShopFragment.fill(automationShop);
+        ));
     }
 
     public void switchToGarbageRecyclingFragment(View view) {

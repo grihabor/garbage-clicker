@@ -21,12 +21,9 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
     int iterationIndex;
     ArrayList<? extends ShopItem> shopItemArray;
 
-    int listViewId;
-
     int itemLayoutId;
     String[] shopItemAttributes;
     int[] shopItemAttrIds;
-    boolean readyToAttach;
 
     Context context;
 
@@ -37,8 +34,6 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
         iterationIndex = 0;
         this.context = context;
         shopItemArray = getShopItemList(resourceId);
-        listViewId = 0;
-        readyToAttach = false;
     }
 
     private ArrayList<? extends ShopItem> getShopItemList (int resourceId) {
@@ -68,12 +63,14 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
         return shopItemAttrArray;
     }
 
-    public void setDisplayData (int listViewId, int shopItemLayoutId, String[] shopItemAttributes, int[] shopItemAttrIds) {
-        this.listViewId = listViewId;
+    public ShopFragment getShopFragment (int shopItemLayoutId, String[] shopItemAttributes, int[] shopItemAttrIds) {
         this.itemLayoutId = shopItemLayoutId;
         this.shopItemAttributes = shopItemAttributes;
         this.shopItemAttrIds = shopItemAttrIds;
-        this.readyToAttach = true;
+
+        ShopFragment ret = new ShopFragment();
+        ret.setShop(this);
+        return ret;
     }
 
     ArrayList<HashMap<String, Object>> getViewDataArray() {

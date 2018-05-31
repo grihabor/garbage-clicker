@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import android.app.Activity;
 import android.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
@@ -20,17 +21,16 @@ public class ShopFragment extends ListFragment {
     private final String TAG = "SHOP_FRAGMENT";
     private Shop shop;
 
-    void fill(Shop shop) {
-        if (shop.readyToAttach) {
-            this.shop = shop;
-            initListView();
-        }
+
+    void setShop(Shop shop) {
+        this.shop = shop;
     }
 
 
     @Override
     public void onStart() {
         super.onStart();
+        initListView();
     }
 
     public SimpleAdapter getListViewAdapter() {
