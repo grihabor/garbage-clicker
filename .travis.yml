@@ -18,16 +18,19 @@ script:
   - echo -e "travis_fold:start:push.image\033[33;1mPushing docker image\033[0m"
   - docker push $IMAGE
   - docker run --name build $IMAGE
-  - docker cp build:/project/app/build/outputs/apk/dev/debug/app-dev-debug.apk .
+  - docker cp build:/project/app/build/outputs/apk/dev/debug/app-dev-debug.apk ./debug.apk
+  - docker cp build:/project/app/build/outputs/apk/dev/release/app-dev-release-unsigned.apk ./release-unsigned.apk
   - docker cp build:/project/app/build/reports reports
   - echo -e "\ntravis_fold:end:push.image\r"
   
 before_deploy:
   - export VERSION=$(make travis-version)
-  - export ART_APK=${VERSION}.apk
+  - export ART_DEBUG_APK="debug-${VERSION}.apk"
+  - export ART_RELEASE_APK="release-${VERSION}.apk"
   - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
   - export ART_LINT=${VERSION}_lint.html
-  - mv app-dev-debug.apk $ART_APK
+  - mv debug.apk $ART_DEBUG_APK
+  - mv release-unsigned.apk $ART_RELEASE_APK
   - mv reports/checkstyle/android.html $ART_CHECKSTYLE
   - mv reports/lint-results.html $ART_LINT
   - git tag ${VERSION}
@@ -36,7 +39,8 @@ deploy:
   provider: releases
   api_key: ${DEPLOY_TOKEN}
   file: 
-    - ${ART_APK}
+    - ${ART_DEBUG_APK}
+    - ${ART_RELEASE_APK}
     - ${ART_CHECKSTYLE}
     - ${ART_LINT}
   skip_cleanup: true 
