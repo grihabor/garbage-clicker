@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+<string-array name="autom_names">
+<item>мусорный бак</item>
+<item>раздельный сбор</item>
+<item>сортировочная машина</item>
+<item>сортировочный центр</item>
+<item>машина по переработке пластика</item>
+<item>перерабатывающий завод</item>
+<item>улучшенный завод</item>
+<item>экологическое производство</item>
+<item>сеть заводов</item>
+
+</string-array>
+</resources>
