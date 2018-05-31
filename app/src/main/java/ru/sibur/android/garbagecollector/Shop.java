@@ -10,15 +10,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import java9.util.function.Function;
 import java9.util.stream.Collectors;
 import java9.util.stream.IntStream;
 import java9.util.stream.StreamSupport;
 
-public abstract class Shop implements Function<JSONObject, ShopItem> {
+public abstract class Shop implements ShopItemCreator {
     Storage storage;
 
-    int iterationIndex;
     ArrayList<? extends ShopItem> shopItemArray;
 
     int itemLayoutId;
@@ -31,7 +29,6 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
 
     Shop (int resourceId, Context context, Storage storage) {
         this.storage = storage;
-        iterationIndex = 0;
         this.context = context;
         shopItemArray = getShopItemList(resourceId);
     }
@@ -44,10 +41,9 @@ public abstract class Shop implements Function<JSONObject, ShopItem> {
 
         if(jsonarray != null) {
             shopItemAttrArray = IntStream.range(0, jsonarray.length()).mapToObj(i -> {
-                iterationIndex = i;
                 ShopItem ret = null;
                 try {
-                    ret = this.apply ((JSONObject) jsonarray.get(i));
+                    ret = this.createInstance ((JSONObject) jsonarray.get(i), i);
                 } catch (JSONException e) {
                     Log.e(getTag(), "JSONException: " + e.getMessage());
                 }

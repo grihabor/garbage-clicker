@@ -15,7 +15,7 @@ public class UpgradeShop extends Shop {
     }
 
     @Override
-    public ShopItem apply(JSONObject jsonObject) {
-        return new Upgrade(jsonObject, storage, iterationIndex);
+    public ShopItem createInstance(JSONObject object, int iterationIndex) {
+        return new Upgrade(object, storage, iterationIndex);
     }
 }

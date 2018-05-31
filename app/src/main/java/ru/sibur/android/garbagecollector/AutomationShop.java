@@ -15,7 +15,7 @@ public class AutomationShop extends Shop {
     }
 
     @Override
-    public ShopItem apply(JSONObject jsonObject) {
-        return new Automata(jsonObject, storage, iterationIndex);
+    public ShopItem createInstance(JSONObject object, int iterationIndex) {
+        return new Automata(object, storage, iterationIndex);
     }
 }
