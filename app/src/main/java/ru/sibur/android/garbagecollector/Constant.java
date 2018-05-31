@@ -66,10 +66,9 @@ public final class Constant {
             NumberFormat formatter = new DecimalFormat("#0.00");
             return formatter.format(val);
         }
-        if(val < 1000000){NumberFormat formatter = new DecimalFormat("#0");
+        if(val < 1000000){
             return String.valueOf(Math.round(val / 1000)) + 'T';
         } else {
-            NumberFormat formatter = new DecimalFormat("#0");
             return String.valueOf(Math.round(val / 1000000)) + 'M';
         }
     }
