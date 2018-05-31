@@ -53,7 +53,6 @@ public abstract class ShopItem {
     }
 
     private void buy(Context context) {
-        //Toast.makeText(context, "спасибо за покупку", Toast.LENGTH_SHORT).show();
         storage.incrementShopItemCount(getCountKey());
     }
 
