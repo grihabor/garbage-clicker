@@ -2,7 +2,6 @@ package ru.sibur.android.garbagecollector;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.stream.StreamSupport;
 
 /**
  * Содержит константы, нужные нам в разных классах программы
@@ -60,7 +59,7 @@ public final class Constant {
         return (automataIndex + 1)*10;
     }
 
-    public static String formatMoney (int amount) {
+    public static String formatMoney (long amount) {
         float val = amount * 0.01f;
         NumberFormat formatter = new DecimalFormat("#0.00");
         return formatter.format(val);

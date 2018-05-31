@@ -14,7 +14,7 @@ import java.util.HashMap;
  */ 
 
 public abstract class ShopItem {
-    int basePrice;
+    long basePrice;
     String name;
     int iconId;
     Storage storage;
@@ -58,7 +58,7 @@ public abstract class ShopItem {
         storage.incrementShopItemCount(getCountKey());
     }
 
-    int getPrice () {
+    long getPrice () {
         return basePrice;
     }
 
