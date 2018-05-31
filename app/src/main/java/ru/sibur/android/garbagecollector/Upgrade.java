@@ -1,5 +1,9 @@
 package ru.sibur.android.garbagecollector;
 
+import org.json.JSONObject;
+
+import static java.lang.Math.pow;
+
 /**
  * Базовый класс для улучшений
  */ 
@@ -7,24 +11,24 @@ package ru.sibur.android.garbagecollector;
 public class Upgrade extends ShopItem {
     private int index;
 
-    Upgrade(String name, int basePrice, Storage storage, int upgradeIndex) {
-       super(name, basePrice, storage);
-       this.index = upgradeIndex;
+    Upgrade(JSONObject attrs, Storage storage, int upgradeIndex) {
+        super(attrs, storage);
+        this.index = upgradeIndex;
     }
 
     @Override
     String getCountKey() {
         return Constant.upgradeCountKey(index);
     }
-
     @Override
     int getPrice () {
         int count = getCount();
-        int price = basePrice;
+        int price = (int)(
+                basePrice
+                *pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER,count)
+                *pow(Constant.UPGRADE_COST_DECREASE_MULTIPLIER, this.storage.getShopItemCount(Constant.upgradeCountKey(2)))
+        );
 
-        for (int i = 0; i < count; i++) {
-            price *= 1.30;
-        }
 
         return price;
     }

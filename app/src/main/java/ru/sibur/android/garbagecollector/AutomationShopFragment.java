@@ -6,13 +6,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
+
+import org.json.JSONObject;
 
 /**
  * Фрагмент магазина автоматов
  */
 
 public class AutomationShopFragment extends ShopFragment {
+    private final String TAG = "AUTOMATION_FRAGMENT";
+
+    @Override
+    int getResourceId() {
+        return R.raw.automatas;
+    }
+
+    @Override
+    int getListViewId() {
+        return R.id.automationShopListView;
+    }
+
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
@@ -30,16 +43,10 @@ public class AutomationShopFragment extends ShopFragment {
     @Override
     public void onStart() {
         super.onStart();
-        initListView(getActivity(), getAutomataList(), R.id.automationShopListView);
     }
 
-    private ArrayList<Automata> getAutomataList() {
-        ArrayList<Automata> automataArray = new ArrayList<>();
-        String[] stringsArray = getResources().getStringArray(R.array.automata_array);
-        for (int index = 0; index < stringsArray.length; index++) {
-            int price = 1000 * (index + 1);
-            automataArray.add(new Automata(stringsArray[index], price, storage, index));
-        }
-        return automataArray;
+    @Override
+    public ShopItem apply(JSONObject jsonObject) {
+        return new Automata(jsonObject, storage, iterationIndex);
     }
 }
