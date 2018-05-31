@@ -14,7 +14,7 @@ import java9.util.stream.Collectors;
 import java9.util.stream.IntStream;
 import java9.util.stream.StreamSupport;
 
-public abstract class Shop implements ShopItemCreator {
+public abstract class Shop {
     Storage storage;
 
     ArrayList<? extends ShopItem> shopItemArray;
@@ -75,4 +75,6 @@ public abstract class Shop implements ShopItemCreator {
                 .map(ShopItem::getViewData)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+
+    abstract public ShopItem createInstance(JSONObject object, int iterationIndex);
 }
