@@ -1,63 +1,55 @@
 package ru.sibur.android.garbagecollector;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
-import android.util.Log;
+import android.app.ListFragment;
+import android.view.View;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.TransitionDrawable;
+
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import java9.util.function.Function;
 import java9.util.stream.IntStream;
-import java9.util.stream.Collectors;
-import java9.util.stream.StreamSupport;
 
 /**
  * Базовый фрагмент для фрагментов магазинов
  */
 
-abstract public class ShopFragment extends Fragment implements Function<JSONObject, ShopItem> {
-    Storage storage;
-    int iterationIndex;
+public class ShopFragment extends ListFragment {
 
-    private final String TAG = "SHOP_FRAGMENT";
+    private Shop shop;
 
-    abstract int getResourceId();
-    abstract int getListViewId();
 
-    @Override
-    public void onAttach (Activity activity) {
-        super.onAttach(activity);
-        storage = ((MainActivity) activity).storage;
-        iterationIndex = 0;
+    void setShop(Shop shop) {
+        this.shop = shop;
     }
+
+    /*
+    If you will need this fragment to be something beyond ListFragment,
+     then extend Fragment and Override Fragment method onCreateView(LayoutInflater inflater)
+     and make your own custom layout.
+     */
 
     @Override
     public void onStart() {
         super.onStart();
-        initListView(getActivity(), getShopItemList(), getListViewId());
+        initListView();
     }
 
-    public SimpleAdapter getListViewAdapter(Context context, ArrayList<? extends ShopItem> shopItems) {
-        ArrayList<HashMap<String, Object>> viewDataArray = StreamSupport
-                .stream(shopItems)
-                .map(ShopItem::getViewData)
-                .collect(Collectors.toCollection(ArrayList::new));
+    public SimpleAdapter getListViewAdapter() {
 
+        ArrayList<HashMap<String, Object>> viewDataArray = shop.getViewDataArray();
 
-        SimpleAdapter adapter = new SimpleAdapter(context, viewDataArray, R.layout.shop_item_view,
-                Constant.SHOP_ITEM_ATTRIBUTES,
-                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS);
+        SimpleAdapter adapter = new SimpleAdapter(shop.context, viewDataArray, R.layout.shop_item_view,
+                shop.shopItemAttributes,
+                shop.shopItemAttrIds);
 
-        IntStream.range(0, shopItems.size()).forEach(i -> {
-            ShopItem item = shopItems.get(i);
+        IntStream.range(0, shop.shopItemArray.size()).forEach(i -> {
+            ShopItem item = shop.shopItemArray.get(i);
             item.setOnCountChangeListener(() -> {
                 viewDataArray.set(i, item.getViewData());
                 adapter.notifyDataSetChanged();
@@ -67,43 +59,31 @@ abstract public class ShopFragment extends Fragment implements Function<JSONObje
         return adapter;
     }
 
-    protected void initListView(final Context context, final ArrayList<? extends ShopItem> items, int listViewId) {
-        ListView listView = getView().findViewById(listViewId);
-        SimpleAdapter adapter = getListViewAdapter(context, items);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener((parent, itemClicked, position, id) -> {
-            ShopItem current = items.get(position);
-            current.tryToBuy(context, storage);
-        });
+    protected void initListView() {
+        SimpleAdapter adapter = getListViewAdapter();
+        setListAdapter(adapter);
     }
 
-    private ArrayList<? extends ShopItem> getShopItemList () {
-        JSONLoader loader = new JSONLoader(getActivity());
-        JSONArray jsonarray = loader.parceJSONResource(getResourceId());
-
-        ArrayList<? extends ShopItem> shopItemAttrArray = null;
-
-        if(jsonarray != null) {
-            shopItemAttrArray = IntStream.range(0, jsonarray.length()).mapToObj(i -> {
-                iterationIndex = i;
-                ShopItem ret = null;
-                try {
-                    ret = this.apply ((JSONObject) jsonarray.get(i));
-                } catch (JSONException e) {
-                    Log.e(TAG, "JSONException: " + e.getMessage());
-                }
-
-                return ret;
-            }).collect(Collectors.toCollection(ArrayList::new));
-
-
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        ShopItem current = shop.shopItemArray.get(position);
+        if(current.tryToBuy(shop.context, shop.storage)) {
+            ColorDrawable[] color = {
+                    new ColorDrawable(Color.GREEN),
+                    new ColorDrawable(Color.WHITE)
+            };
+            TransitionDrawable trans = new TransitionDrawable(color);
+            v.setBackground(trans);
+            trans.startTransition(300);
         } else {
-            Log.e(TAG, "Unable to load data from automatas.json");
+            ColorDrawable[] color = {
+                    new ColorDrawable(Color.RED),
+                    new ColorDrawable(Color.WHITE)
+            };
+            TransitionDrawable trans = new TransitionDrawable(color);
+            v.setBackground(trans);
+            trans.startTransition(300);
         }
-        return shopItemAttrArray;
     }
-
-
 
 }

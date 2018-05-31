@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -59,11 +60,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        switchTo(new UpgradeShopFragment());
+        UpgradeShop upgradeShop = new UpgradeShop(R.raw.upgrades, this, storage);
+        switchTo(upgradeShop.getShopFragment(
+                R.layout.shop_item_view,
+                Constant.SHOP_ITEM_ATTRIBUTES,
+                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS
+        ));
     }
 
     public void switchToAutomationShopFragment(View view) {
-        switchTo(new AutomationShopFragment());
+        AutomationShop automationShop = new AutomationShop(R.raw.automatas, this, storage);
+        switchTo(automationShop.getShopFragment(
+                R.layout.shop_item_view,
+                Constant.SHOP_ITEM_ATTRIBUTES,
+                Constant.SHOP_ITEM_VIEWS_ATTRS_IDS
+        ));
     }
 
     public void switchToGarbageRecyclingFragment(View view) {
