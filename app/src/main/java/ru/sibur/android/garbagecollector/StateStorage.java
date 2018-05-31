@@ -28,22 +28,22 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     }
 
     @Override
-    synchronized void addMoney(int amount) {
+    synchronized void addMoney(long amount) {
         SharedPreferences.Editor editor = sPref.edit();
-        editor.putInt(Constant.MONEY_KEY, getMoney() + amount);
+        editor.putLong(Constant.MONEY_KEY, getMoney() + amount);
         if(amount > 0){
-            editor.putInt(Constant.TOTAL_MONEY_EARNED_KEY, getTotalMoneyEarned() + amount);
+            editor.putLong(Constant.TOTAL_MONEY_EARNED_KEY, getTotalMoneyEarned() + amount);
         }
         editor.apply();
     }
 
     @Override
-    int getMoney() {
-        return sPref.getInt(Constant.MONEY_KEY, 0);
+    long getMoney() {
+        return sPref.getLong(Constant.MONEY_KEY, 0);
     }
     @Override
-    int getTotalMoneyEarned() {
-        return sPref.getInt(Constant.TOTAL_MONEY_EARNED_KEY, 0);
+    long getTotalMoneyEarned() {
+        return sPref.getLong(Constant.TOTAL_MONEY_EARNED_KEY, 0);
     }
 
 

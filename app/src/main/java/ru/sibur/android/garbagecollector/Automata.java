@@ -33,7 +33,7 @@ public class Automata extends ShopItem {
     }
 
     @Override
-    int getPrice () {
+    long getPrice () {
         int count = getCount();
 
         int price = (int) (

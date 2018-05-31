@@ -60,7 +60,7 @@ public final class Constant {
         return (automataIndex + 1)*10;
     }
 
-    public static String formatMoney (int amount) {
+    public static String formatMoney (long amount) {
         float val = amount * 0.01f;
         NumberFormat formatter = new DecimalFormat("#0.00");
         return formatter.format(val);
