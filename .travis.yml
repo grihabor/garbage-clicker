@@ -46,6 +46,8 @@ deploy:
   skip_cleanup: true 
   prerelease: true
   on:
-    all_branches: true
+    branch:
+      - master
+      - force-build
     tags: false
     condition: $TRAVIS_PULL_REQUEST = false
