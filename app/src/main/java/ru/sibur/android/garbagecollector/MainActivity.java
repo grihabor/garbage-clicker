@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
 
-        storage.addMoney(1000000000);
+        storage.addMoney(0);
     }
 
     protected void onResume() {
