@@ -38,7 +38,7 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
 def get_version_name() {
     def sout = new StringBuilder()
     def serr = new StringBuilder()
-    def proc = 'make -f ../Makefile travis-version'.execute()
+    def proc = 'make travis-version'.execute()
     proc.consumeProcessOutput(sout, serr)
     proc.waitForOrKill(1000)
     return sout ?: serr
