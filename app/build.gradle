@@ -70,13 +70,8 @@ android {
     }
     
     applicationVariants.all { variant ->
-        if (variant.buildType.name == "release") {
-            variant.mergedFlavor.versionCode = releaseVersionCode;
-            variant.mergedFlavor.versionName = releaseVersionCode + "-" + variant.flavorName;
-        } else if (variant.buildType.name == "debug") {
-            variant.mergedFlavor.versionCode = debugVersionCode;
-            variant.mergedFlavor.versionName = debugVersionCode + "-" + variant.flavorName;
-        }
+        variant.mergedFlavor.versionCode = debugVersionCode;
+        variant.mergedFlavor.versionName = debugVersionCode + "-" + variant.flavorName;
     }
     
     compileOptions {
