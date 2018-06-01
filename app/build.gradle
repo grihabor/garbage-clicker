@@ -35,6 +35,15 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
     }
 }
 
+def get_version_name() {
+    ByteArrayOutputStream stdout = new ByteArrayOutputStream()
+    task.project.exec { 
+        commandLine = [ "make", "travis-version" ] 
+        versionNameFromMake = stdout 
+    }
+    return versionNameFromMake
+}
+
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 int debugVersionCode = minutesSinceEpoch
