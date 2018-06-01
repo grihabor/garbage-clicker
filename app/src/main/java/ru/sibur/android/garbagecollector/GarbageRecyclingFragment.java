@@ -39,7 +39,7 @@ public class GarbageRecyclingFragment extends Fragment {
                 clickPerformanceTextView = getActivity().findViewById(R.id.click_pefrormance_text_view);
             }
 
-        Button baffer = getView().findViewById(R.id.button);
+        Button baffer = getActivity().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
             storage.addMoney((int) (getClickPerformance())
