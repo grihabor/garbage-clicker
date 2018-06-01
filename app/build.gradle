@@ -46,8 +46,7 @@ def get_version_name() {
 
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
-int debugVersionCode = minutesSinceEpoch
-int releaseVersionCode = debugVersionCode + 1
+int genericVersionCode = minutesSinceEpoch
 
 android {
     compileSdkVersion 26
@@ -58,12 +57,17 @@ android {
         applicationId "ru.sibur.android.garbagecollector"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode genericVersionCode
+        versionName "build-" + genericVersionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -79,8 +83,10 @@ android {
     }
     
     applicationVariants.all { variant ->
-        variant.mergedFlavor.versionCode = debugVersionCode;
-        variant.mergedFlavor.versionName = debugVersionCode + "-" + variant.flavorName;
+        if (variant.buildType.name == "release") {
+            variant.mergedFlavor.versionCode = genericVersionCode;
+            variant.mergedFlavor.versionName = genericVersionCode + "-" + variant.flavorName;
+        }
     }
     
     compileOptions {
