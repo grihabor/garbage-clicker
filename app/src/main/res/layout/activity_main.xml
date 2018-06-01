@@ -46,7 +46,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToAutomationShopFragment"
-            android:text="@string/automation_shop_sign" />
+            android:text="@string/automation_shop_sign"
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/buttonGarbageRecyclingFragment"
@@ -54,7 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToGarbageRecyclingFragment"
-            android:text="@string/recycle_sign" />
+            android:text="@string/recycle_sign"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/buttonUpgradeShopFragment"
@@ -62,7 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToUpgradeShopFragment"
-            android:text="@string/upgrade_shop_sign" />
+            android:text="@string/upgrade_shop_sign"
+            android:textSize="12sp"/>
 
     </LinearLayout>
 

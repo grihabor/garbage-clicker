@@ -35,18 +35,18 @@ public abstract class Shop {
 
     private ArrayList<? extends ShopItem> getShopItemList (int resourceId) {
         JSONLoader loader = new JSONLoader(context);
-        JSONArray jsonarray = loader.parceJSONResource(resourceId);
+                JSONArray jsonarray = loader.parceJSONResource(resourceId);
 
-        ArrayList<? extends ShopItem> shopItemAttrArray = null;
+                ArrayList<? extends ShopItem> shopItemAttrArray = null;
 
-        if(jsonarray != null) {
-            shopItemAttrArray = IntStream.range(0, jsonarray.length()).mapToObj(i -> {
-                ShopItem ret = null;
-                try {
-                    ret = this.createInstance ((JSONObject) jsonarray.get(i), i);
-                } catch (JSONException e) {
-                    Log.e(getTag(), "JSONException: " + e.getMessage());
-                }
+                if(jsonarray != null) {
+                    shopItemAttrArray = IntStream.range(0, jsonarray.length()).mapToObj(i -> {
+                        ShopItem ret = null;
+                        try {
+                            ret = this.createInstance ((JSONObject) jsonarray.get(i), i);
+                        } catch (JSONException e) {
+                            Log.e(getTag(), "JSONException: " + e.getMessage());
+                        }
 
                 return ret;
             }).collect(Collectors.toCollection(ArrayList::new));
