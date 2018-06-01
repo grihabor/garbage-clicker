@@ -37,6 +37,8 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
 
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
+int debugVersionCode = 2 * minutesSinceEpoch
+int releaseVersionCode = debugVersionCode + 1
 
 android {
     compileSdkVersion 26
@@ -69,8 +71,11 @@ android {
     
     applicationVariants.all { variant ->
         if (variant.buildType.name == "release") {
-            variant.mergedFlavor.versionCode = minutesSinceEpoch;
-            variant.mergedFlavor.versionName = minutesSinceEpoch + "-" + variant.flavorName;
+            variant.mergedFlavor.versionCode = releaseVersionCode;
+            variant.mergedFlavor.versionName = releaseVersionCode + "-" + variant.flavorName;
+        } else if (variant.buildType.name == "debug") {
+            variant.mergedFlavor.versionCode = debugVersionCode;
+            variant.mergedFlavor.versionName = debugVersionCode + "-" + variant.flavorName;
         }
     }
     
