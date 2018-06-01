@@ -31,6 +31,9 @@ public final class Constant {
     public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.shop_item_icon};
 
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
+
+    public static final String[] MATH_ORDER_LETTERS = {"", "k", "m", "b", "t"};
+    public static final int MONEY_DIVISOR_LG = 2;
     /**
      * @param automataIndex
      * Automata index in the list of automationShop (from 0)
@@ -54,7 +57,7 @@ public final class Constant {
 
     public static String formatMoney (BigInteger amount) {
         String decimal = amount.toString(10);
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i <= MONEY_DIVISOR_LG; i ++) {
             if (decimal.length() <= i) {
                 decimal = "0" + decimal;
             }
@@ -62,17 +65,16 @@ public final class Constant {
 
         StringBuilder builder = new StringBuilder(decimal);
         int signsThrown = Math.min(decimal.length() - 3, 11);
-        if (decimal.length() <= 13) {
+        if (decimal.length() < MATH_ORDER_LETTERS.length*3 + MONEY_DIVISOR_LG) {
             if ((decimal.length() % 3) == 0) builder.insert(1, ",");
             if ((decimal.length() % 3) == 1) builder.insert(2, ",");
         }
         String format = builder.substring(0, builder.length() - signsThrown);
-        if (signsThrown >= 9) {
-            format = format + "b";
-        } else if (signsThrown >= 6) {
-            format = format + "m";
-        } else if (signsThrown >= 3) {
-            format = format + "k";
+        for (int i = 0; i < MATH_ORDER_LETTERS.length; i++) {
+            if (i*3 >= (signsThrown - MONEY_DIVISOR_LG)) {
+                format = format + MATH_ORDER_LETTERS[i];
+                break;
+            }
         }
 
         return format;
