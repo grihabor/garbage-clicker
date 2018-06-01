@@ -39,6 +39,7 @@ public class GarbageRecyclingFragment extends Fragment {
         clickPerf.setText(
                 Constant.formatMoney((int)(100*pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))))
         );
+
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
@@ -46,8 +47,11 @@ public class GarbageRecyclingFragment extends Fragment {
                     100
                     *pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))
                     )
-            );
 
+            );
+            clickPerf.setText(
+                    Constant.formatMoney((int)(100*pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))))
+            );
         });
     }
 }
