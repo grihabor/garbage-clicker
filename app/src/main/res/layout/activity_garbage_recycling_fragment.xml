@@ -25,7 +25,7 @@
                 android:text="@string/factory_sign" />
 
             <TextView
-                android:id="@+id/click_pefr"
+                android:id="@+id/click_pefrormance_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
