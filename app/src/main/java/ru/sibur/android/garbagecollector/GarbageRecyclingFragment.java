@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import static java.lang.Math.pow;
 
@@ -16,7 +17,7 @@ import static java.lang.Math.pow;
  
 public class GarbageRecyclingFragment extends Fragment {
     Storage storage;
-
+    TextView clickPerf;
     @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
@@ -34,7 +35,10 @@ public class GarbageRecyclingFragment extends Fragment {
 
     public void onStart() {
         super.onStart();
-
+        clickPerf = getView().findViewById(R.id.click_pefr);
+        clickPerf.setText(
+                Constant.formatMoney((int)(100*pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))))
+        );
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
@@ -43,6 +47,7 @@ public class GarbageRecyclingFragment extends Fragment {
                     *pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))
                     )
             );
+
         });
     }
 }
