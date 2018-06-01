@@ -41,7 +41,7 @@ def get_version_name() {
     def proc = 'make -f ../Makefile travis-version'.execute()
     proc.consumeProcessOutput(sout, serr)
     proc.waitForOrKill(1000)
-    return $sout ?: $serr
+    return sout ?: serr
 }
 
 int MILLIS_IN_MINUTE = 1000 * 60
