@@ -36,12 +36,12 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
 }
 
 def get_version_name() {
-    ByteArrayOutputStream stdout = new ByteArrayOutputStream()
-    task.project.exec { 
-        commandLine = [ "make", "travis-version" ] 
-        versionNameFromMake = stdout 
-    }
-    return versionNameFromMake
+    def sout = new StringBuilder()
+    def serr = new StringBuilder()
+    def proc = 'make -f ../Makefile travis-version'.execute()
+    proc.consumeProcessOutput(sout, serr)
+    proc.waitForOrKill(1000)
+    return $sout ?: $serr
 }
 
 int MILLIS_IN_MINUTE = 1000 * 60
