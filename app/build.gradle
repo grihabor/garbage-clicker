@@ -58,7 +58,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 26
         versionCode genericVersionCode
-        versionName "build-" + genericVersionCode
+        versionName get_version_name()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     
