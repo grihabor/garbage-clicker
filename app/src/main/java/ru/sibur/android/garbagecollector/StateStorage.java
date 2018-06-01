@@ -4,7 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.ArrayMap;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Date;
+
+import java9.util.stream.Collectors;
+import java9.util.stream.IntStream;
 
 
 /**
@@ -27,23 +32,40 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         listenerMap.put(key, listener);
     }
 
-    @Override
-    synchronized void addMoney(int amount) {
+    synchronized BigInteger getBigInteger(String key, BigInteger defVal) {
+        return new BigInteger(sPref
+                .getString(key, defVal.toString(10)));
+    }
+
+    synchronized void putBigInteger (String key, BigInteger bigInteger) {
         SharedPreferences.Editor editor = sPref.edit();
-        editor.putInt(Constant.MONEY_KEY, getMoney() + amount);
-        if(amount > 0){
-            editor.putInt(Constant.TOTAL_MONEY_EARNED_KEY, getTotalMoneyEarned() + amount);
-        }
+        editor.putString(key, bigInteger.toString(10));
         editor.apply();
     }
 
     @Override
-    int getMoney() {
-        return sPref.getInt(Constant.MONEY_KEY, 0);
+    synchronized void addMoney(BigInteger amount) {
+        BigInteger money = getMoney();
+        BigInteger totalMoney = getTotalMoney();
+
+        putBigInteger(Constant.MONEY_KEY, money.add(amount));
+        putBigInteger(Constant.TOTAL_MONEY_EARNED_KEY, totalMoney.add(amount));
     }
+
     @Override
-    int getTotalMoneyEarned() {
-        return sPref.getInt(Constant.TOTAL_MONEY_EARNED_KEY, 0);
+    boolean enoughMoney(BigInteger price) {
+        return (getBigInteger(Constant.MONEY_KEY, BigInteger.ZERO)
+                .compareTo(price) >= 0);
+    }
+
+    @Override
+    BigInteger getMoney() {
+        return getBigInteger(Constant.MONEY_KEY, BigInteger.ZERO);
+    }
+
+    @Override
+    BigInteger getTotalMoney() {
+        return getBigInteger(Constant.TOTAL_MONEY_EARNED_KEY, BigInteger.ZERO);
     }
 
 
@@ -69,7 +91,7 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         long currentTime = (new Date()).getTime();
         editor.putLong(Constant.LAST_UPDATE_NAME, currentTime);
         editor.apply();
-        addMoney(calculator.calculateMoney(currentTime - prevTime));
+        addMoney(calculator.calculateMoney(new BigInteger(String.valueOf(currentTime - prevTime))));
     }
 
     /**

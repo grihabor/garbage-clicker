@@ -2,11 +2,11 @@ package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import org.json.JSONArray;
+import java.math.BigInteger;
+import java.util.ArrayList;
 
-import java9.util.stream.IntStream;
+import java9.util.stream.StreamSupport;
 
 import static java.lang.Math.pow;
 
@@ -24,12 +24,13 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     AutomataThread(StateStorage storage, Context context) {
         this.storage = storage;
         this.context = context;
-
     }
 
     @Override
-    public int calculateMoney(long timeDifference) {
-        return (int) (getMoneyPerTimeUnit() * timeDifference / Constant.TIME_UNIT);
+    public BigInteger calculateMoney(BigInteger timeDifference) {
+        return getMoneyPerTimeUnit()
+                .multiply(timeDifference)
+                .divide(Constant.TIME_UNIT);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
         while (!(isCancelled())) {
             try {
-                Thread.sleep(Constant.TIME_UNIT);
+                Thread.sleep(Constant.TIME_UNIT.intValue());
             } catch (InterruptedException e) {
                 break;
             }
@@ -59,24 +60,22 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     }
 
-    int getMoneyPerTimeUnit() {
-        JSONLoader loader = new JSONLoader(context);
-        JSONArray automataArray = loader.parceJSONResource(R.raw.automatas);
-        if(automataArray == null){
-            Log.e(TAG, "Unable to load data from automatas.json");
-            return 0;
-        }
+    BigInteger getMoneyPerTimeUnit() {
 
-        int totalMoneyPerTimeUnit = IntStream
-                                    .range(0, automataArray.length())
-                                    .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerformance(i))
-                                    .sum();
-        totalMoneyPerTimeUnit= (int) (
-            totalMoneyPerTimeUnit
-            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(3)))
-            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(4)))
-        );
+        AutomationShop automationShop = new AutomationShop(R.raw.automatas, context, storage);
+        ArrayList<Automata> automatas = (ArrayList<Automata>) automationShop.shopItemArray;
 
-        return totalMoneyPerTimeUnit;
+        BigInteger sum = StreamSupport
+                .stream(automatas)
+                .map(Automata::getTotalPerformance)
+                .reduce((s1, s2) -> s1.add(s2))
+                .orElse(BigInteger.ZERO);
+
+        double multiplier = pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(3))) *
+                pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(4)));
+        BigInteger bigMultiplier = BigInteger.valueOf((int) multiplier*100);
+
+
+        return sum.multiply(bigMultiplier).divide(BigInteger.valueOf(100));
     }
 }

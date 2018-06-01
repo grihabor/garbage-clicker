@@ -1,13 +1,16 @@
 package ru.sibur.android.garbagecollector;
 
+import java.math.BigInteger;
+
 /**
  * Created by RedSnail on 23.03.2018.
  */
 
 public abstract class Storage {
-    abstract void addMoney(int amount);
-    abstract int getMoney();
-    abstract int getTotalMoneyEarned();
+    abstract void addMoney(BigInteger amount);
+    abstract boolean enoughMoney (BigInteger price);
+    abstract BigInteger getMoney();
+    abstract BigInteger getTotalMoney();
     abstract void incrementShopItemCount (String itemCountKey);
     abstract int getShopItemCount (String itemCountKey);
 

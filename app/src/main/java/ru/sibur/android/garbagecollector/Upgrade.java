@@ -2,6 +2,8 @@ package ru.sibur.android.garbagecollector;
 
 import org.json.JSONObject;
 
+import java.math.BigInteger;
+
 import static java.lang.Math.pow;
 
 /**
@@ -21,15 +23,10 @@ public class Upgrade extends ShopItem {
         return Constant.upgradeCountKey(index);
     }
     @Override
-    int getPrice () {
-        int count = getCount();
-        int price = (int)(
-                basePrice
-                *pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER,count)
-                *pow(Constant.UPGRADE_COST_DECREASE_MULTIPLIER, this.storage.getShopItemCount(Constant.upgradeCountKey(2)))
-        );
+    BigInteger getPrice () {
+        double multiplier = pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER, getCount()) *
+                pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER, storage.getShopItemCount(Constant.upgradeCountKey(2)));
 
-
-        return price;
+        return Constant.multiply(basePrice, multiplier);
     }
 }

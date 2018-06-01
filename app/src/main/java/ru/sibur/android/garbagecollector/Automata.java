@@ -5,6 +5,7 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 
 import static java.lang.Math.pow;
@@ -17,7 +18,7 @@ import static java.lang.Math.pow;
 
 public class Automata extends ShopItem {
     private int index;
-    private int basePerformance;
+    private BigInteger basePerformance;
 
     private final String TAG = "AUTOMATA";
 
@@ -26,23 +27,18 @@ public class Automata extends ShopItem {
         this.index = automataIndex;
 
         try {
-            basePerformance = attrs.getInt("base_performance");
+            basePerformance = BigInteger.valueOf(attrs.getLong("base_performance"));
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
     }
 
     @Override
-    int getPrice () {
-        int count = getCount();
+    BigInteger getPrice () {
+        double multiplier = pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER, getCount()) *
+                pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, storage.getShopItemCount(Constant.upgradeCountKey(1)));
 
-        int price = (int) (
-                basePrice
-                *pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER,count)
-                *pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, this.storage.getShopItemCount(Constant.upgradeCountKey(1)))
-        );
-
-        return price;
+        return Constant.multiply(basePrice, multiplier);
     }
 
     @Override
@@ -53,7 +49,15 @@ public class Automata extends ShopItem {
     @Override
     public HashMap<String, Object> getViewData() {
         HashMap<String, Object> ret = super.getViewData();
-        ret.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, basePerformance);
+        ret.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, Constant.formatMoney(getUnaryPerformance()));
         return ret;
+    }
+
+    BigInteger getTotalPerformance() {
+        return getUnaryPerformance().multiply(BigInteger.valueOf(getCount()));
+    }
+
+    BigInteger getUnaryPerformance() {
+        return Constant.multiply(basePerformance, pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(5))));
     }
 }

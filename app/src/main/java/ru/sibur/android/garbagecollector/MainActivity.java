@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import java.math.BigInteger;
+
 
 /**
  * Активити самой игры
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
 
-        storage.addMoney(0);
+        storage.addMoney(BigInteger.ZERO);
     }
 
     protected void onResume() {

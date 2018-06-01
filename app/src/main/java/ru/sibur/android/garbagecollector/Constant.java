@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.stream.StreamSupport;
@@ -13,7 +14,7 @@ public final class Constant {
     public static final String PREF_NAME = "my_pref";
     public static final String LAST_UPDATE_NAME = "update";
     public static final String TOTAL_MONEY_EARNED_KEY = "total_money_earned_key";
-    public static final int TIME_UNIT = 1000;
+    public static final BigInteger TIME_UNIT = BigInteger.valueOf(1000);
 
     public static final double UPGRADE_COST_INCREASE_MULTIPLIER = 1.30;
     public static final double AUTOMATA_COST_INCREASE_MULTIPLIER = 1.30;
@@ -50,27 +51,38 @@ public final class Constant {
         return "upgrade:" + upgradeIndex;
     }
 
-    /**
-     * @param automataIndex
-     * Automata index in the list of automationShop (from 0)
-     * @return
-     * Money that the automata gives per time unit
-     */
-    public static int automataPerformance (int automataIndex) {
-        return (automataIndex + 1)*10;
+
+    public static String formatMoney (BigInteger amount) {
+        /*String decimal = amount.toString(10);
+        for (int i = 0; i < 3; i ++) {
+            if (decimal.length() <= i) {
+                decimal = "0" + decimal;
+            }
+        }
+
+        StringBuilder builder = new StringBuilder(decimal);
+        int signsThrown = Math.min(decimal.length() - 3, 11);
+        if (decimal.length() <= 11) {
+            if ((builder.length() % 3) == 0) builder.insert(1, ",");
+            if ((builder.length() % 3) == 1) builder.insert(2, ",");
+        }
+        String format = builder.substring(0, decimal.length() - 1 - signsThrown);
+        if (signsThrown >= 9) {
+            format = format + "b";
+        } else if (signsThrown >= 6) {
+            format = format + "m";
+        } else if (signsThrown >= 3) {
+            format = format + "k";
+        }
+
+        return format;*/
+        return amount.toString(10);
+
     }
 
-    public static String formatMoney (int amount) {
-        float val = amount * 0.01f;
-        if(val < 1000){
-            NumberFormat formatter = new DecimalFormat("#0.00");
-            return formatter.format(val);
-        }
-        if(val < 1000000){
-            return String.valueOf(Math.round(val / 1000)) + 'T';
-        } else {
-            return String.valueOf(Math.round(val / 1000000)) + 'M';
-        }
+    public static BigInteger multiply(BigInteger in, double multiplier) {
+        BigInteger bigMultiplier = BigInteger.valueOf((long) (multiplier*100));
+        return in.multiply(bigMultiplier).divide(BigInteger.valueOf(100));
     }
 
 }
