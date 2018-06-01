@@ -40,22 +40,24 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-            storage.addMoney((int) (
-                    100
-                    *pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(0)))
-                    )
+            storage.addMoney((int) (getClickPerformance())
 
             );
             showClickPerformance();
         });
     }
 
-    public void showClickPerformance(){
+    public int getClickPerformance() {
         String countKey = Constant.upgradeCountKey(0);
         int count = this.storage.getShopItemCount(countKey);
-        int clickPerformance =(int)(100*pow(1.15,count));
-        String clickPerformancestring =Constant.formatMoney(clickPerformance);
-        clickPerformanceTextView.setText(clickPerformancestring);
+        int clickPerformance = (int) (100 * pow(1.15, count));
+        return clickPerformance;
+    }
+
+    public void showClickPerformance(){
+        int clickPerformance = getClickPerformance();
+        String clickPerformanceString =Constant.formatMoney(clickPerformance);
+        clickPerformanceTextView.setText(clickPerformanceString);
 
     }
 }
