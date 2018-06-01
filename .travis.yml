@@ -1,27 +1,29 @@
-sudo: required
-
-services:
-  - docker
-
-install:
-  - sudo apt update
-  - sudo apt install make git
-
-before_script:
-  - git config --local user.name "Borodin Gregory"
-  - git config --local user.email "grihabor@gmail.com"
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
- 
-script:
-  - export IMAGE="$(make image)"
-  - docker build . -t $IMAGE
+language: android 
+android: 
+  components: 
+    - build-tools-27.0.3
+    - android-27
+jdk:
+  - openjdk8
   
-after_success:
-  - docker push $IMAGE
-  - docker run --name build $IMAGE
-  - docker cp build:/project/app/build/outputs/apk/dev/debug/app-dev-debug.apk ./debug.apk
-  - docker cp build:/project/app/build/outputs/apk/dev/release/app-dev-release-unsigned.apk ./release-unsigned.apk
-  - docker cp build:/project/app/build/reports reports
+addons:
+  apt:
+    packages:
+      - git
+      - make
+
+script:
+  - ./gradlew build
+  
+before_cache: 
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock 
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/ 
+  
+cache: 
+  directories: 
+    - $HOME/.gradle/caches/ 
+    - $HOME/.gradle/wrapper/ 
+    - $HOME/.android/build-cache
   
 before_deploy:
   - export VERSION=$(make travis-version)
@@ -29,10 +31,14 @@ before_deploy:
   - export ART_RELEASE_APK="release-${VERSION}.apk"
   - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
   - export ART_LINT=${VERSION}_lint.html
-  - mv debug.apk $ART_DEBUG_APK
-  - mv release-unsigned.apk $ART_RELEASE_APK
-  - mv reports/checkstyle/android.html $ART_CHECKSTYLE
-  - mv reports/lint-results.html $ART_LINT
+  
+  - mv app/build/outputs/apk/dev/debug/app-dev-debug.apk $ART_DEBUG_APK
+  - mv app/build/outputs/apk/dev/release/app-dev-release-unsigned.apk $ART_RELEASE_APK
+  - mv app/build/reports/checkstyle/android.html $ART_CHECKSTYLE
+  - mv app/build/reports/lint-results.html $ART_LINT
+  
+  - git config --local user.name "Travis Bot"
+  - git config --local user.email "travis@gmail.com"
   - git tag ${VERSION}
 
 deploy:
