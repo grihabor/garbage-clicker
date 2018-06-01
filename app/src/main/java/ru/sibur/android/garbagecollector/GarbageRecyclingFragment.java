@@ -35,7 +35,9 @@ public class GarbageRecyclingFragment extends Fragment {
 
     public void onStart() {
         super.onStart();
-        showClickPerformance();
+            if (getActivity() != null) {
+                clickPerformanceTextView = getActivity().findViewById(R.id.click_pefrormance_text_view);
+            }
 
         Button baffer = getView().findViewById(R.id.button);
 
@@ -45,6 +47,9 @@ public class GarbageRecyclingFragment extends Fragment {
             );
             showClickPerformance();
         });
+
+        showClickPerformance();
+
     }
 
     public int getClickPerformance() {
@@ -56,7 +61,7 @@ public class GarbageRecyclingFragment extends Fragment {
 
     public void showClickPerformance(){
         int clickPerformance = getClickPerformance();
-        String clickPerformanceString =Constant.formatMoney(clickPerformance);
+        String clickPerformanceString = Constant.formatMoney(clickPerformance);
         clickPerformanceTextView.setText(clickPerformanceString);
 
     }
