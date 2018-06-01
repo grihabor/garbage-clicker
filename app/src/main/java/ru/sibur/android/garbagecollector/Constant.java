@@ -53,7 +53,7 @@ public final class Constant {
 
 
     public static String formatMoney (BigInteger amount) {
-        /*String decimal = amount.toString(10);
+        String decimal = amount.toString(10);
         for (int i = 0; i < 3; i ++) {
             if (decimal.length() <= i) {
                 decimal = "0" + decimal;
@@ -62,11 +62,11 @@ public final class Constant {
 
         StringBuilder builder = new StringBuilder(decimal);
         int signsThrown = Math.min(decimal.length() - 3, 11);
-        if (decimal.length() <= 11) {
-            if ((builder.length() % 3) == 0) builder.insert(1, ",");
-            if ((builder.length() % 3) == 1) builder.insert(2, ",");
+        if (decimal.length() <= 13) {
+            if ((decimal.length() % 3) == 0) builder.insert(1, ",");
+            if ((decimal.length() % 3) == 1) builder.insert(2, ",");
         }
-        String format = builder.substring(0, decimal.length() - 1 - signsThrown);
+        String format = builder.substring(0, builder.length() - signsThrown);
         if (signsThrown >= 9) {
             format = format + "b";
         } else if (signsThrown >= 6) {
@@ -75,8 +75,7 @@ public final class Constant {
             format = format + "k";
         }
 
-        return format;*/
-        return amount.toString(10);
+        return format;
 
     }
 

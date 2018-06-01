@@ -40,7 +40,7 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v ->
-                storage.addMoney(Constant.multiply(BigInteger.valueOf(100),
+                storage.addMoney(Constant.multiply(BigInteger.ONE,
                         pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(0)))))
         );
     }
