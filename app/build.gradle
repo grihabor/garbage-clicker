@@ -40,14 +40,14 @@ int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 int genericVersionCode = minutesSinceEpoch
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
     flavorDimensions "default"
     
     defaultConfig {
         applicationId "ru.sibur.android.garbagecollector"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode genericVersionCode
         versionName "build-" + genericVersionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
