@@ -27,7 +27,7 @@ public class Automata extends ShopItem {
         this.index = automataIndex;
 
         try {
-            basePerformance = BigInteger.valueOf(attrs.getLong("base_performance"));
+            basePerformance = new BigInteger (attrs.getString("base_performance"));
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
