@@ -35,11 +35,12 @@ public class GarbageRecyclingFragment extends Fragment {
 
     public void onStart() {
         super.onStart();
-            if (getActivity() != null) {
-                clickPerformanceTextView = getActivity().findViewById(R.id.click_pefrormance_text_view);
+        Activity activity = getActivity();
+            if (activity != null) {
+                clickPerformanceTextView = activity.findViewById(R.id.click_pefrormance_text_view);
             }
 
-        Button baffer = getActivity().findViewById(R.id.button);
+        Button baffer = activity.findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
             storage.addMoney((int) (getClickPerformance())
