@@ -37,7 +37,7 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
 
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
-int debugVersionCode = 2 * minutesSinceEpoch
+int debugVersionCode = minutesSinceEpoch
 int releaseVersionCode = debugVersionCode + 1
 
 android {
