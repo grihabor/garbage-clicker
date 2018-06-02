@@ -1,8 +1,10 @@
 package ru.sibur.android.garbagecollector;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Formatter;
 import java.util.stream.StreamSupport;
 
 /**
@@ -34,7 +36,7 @@ public final class Constant {
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
 
     public static final String[] MATH_ORDER_LETTERS = {"", "k", "m", "b", "t"};
-    public static final int MONEY_DIVISOR_LG = 2;
+    public static final int MONEY_DIVISOR = 100;
     /**
      * @param automataIndex
      * Automata index in the list of automationShop (from 0)
@@ -57,28 +59,29 @@ public final class Constant {
 
 
     public static String formatMoney (BigInteger amount) {
-        String decimal = amount.toString(10);
-        for (int i = 0; i <= MONEY_DIVISOR_LG; i ++) {
-            if (decimal.length() <= i) {
-                decimal = "0" + decimal;
+        BigDecimal bigDecimal = new BigDecimal(amount);
+        bigDecimal = bigDecimal.divide(BigDecimal.valueOf(MONEY_DIVISOR));
+        int i;
+        for (i = 0; i < MATH_ORDER_LETTERS.length; i++) {
+            if (bigDecimal.compareTo(BigDecimal.valueOf(1000)) > 0) {
+                bigDecimal = bigDecimal.divide(BigDecimal.valueOf(1000));
             }
+            else break;
         }
 
-        StringBuilder builder = new StringBuilder(decimal);
-        int signsThrown = Math.min(decimal.length() - 3, 11);
-        if (decimal.length() < MATH_ORDER_LETTERS.length*3 + MONEY_DIVISOR_LG) {
-            if ((decimal.length() % 3) == 0) builder.insert(1, ",");
-            if ((decimal.length() % 3) == 1) builder.insert(2, ",");
+        int scale = 0;
+        DecimalFormat formatter = new DecimalFormat();
+        if (bigDecimal.compareTo(BigDecimal.valueOf(100)) < 0) {
+            scale = 1;
+            formatter.applyPattern("00.0");
         }
-        String format = builder.substring(0, builder.length() - signsThrown);
-        for (int i = 0; i < MATH_ORDER_LETTERS.length; i++) {
-            if (i*3 >= (signsThrown - MONEY_DIVISOR_LG)) {
-                format = format + MATH_ORDER_LETTERS[i];
-                break;
-            }
+        if (bigDecimal.compareTo(BigDecimal.valueOf(10)) < 0) {
+            scale = 2;
+            formatter.applyPattern("0.00");
         }
 
-        return format;
+        bigDecimal.setScale(scale, BigDecimal.ROUND_FLOOR);
+        return formatter.format(bigDecimal) + MATH_ORDER_LETTERS[i];
 
     }
 
