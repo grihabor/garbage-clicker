@@ -51,6 +51,7 @@ ext.getVersionName = { ->
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 int genericVersionCode = minutesSinceEpoch
+String versionNameExt = getVersionName()
 
 android {
     compileSdkVersion 27
@@ -62,7 +63,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode genericVersionCode
-        versionName project.getVersionName()
+        versionName versionNameExt
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     
