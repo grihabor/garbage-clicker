@@ -35,27 +35,58 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
     }
 }
 
+ext.getVersionName = { ->
+    try {
+        def sout = new StringBuilder()
+        def serr = new StringBuilder()
+        def proc = 'make travis-version'.execute()
+        proc.consumeProcessOutput(sout, serr)
+        proc.waitForOrKill(1000)
+        return (sout as String).trim() ?: serr.replaceAll("\\s", " ")
+    } catch (Exception e) {
+        println('VERSION_EXCEPTION: ' + e);
+        return "0.0"
+    }
+}
+
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
-int debugVersionCode = minutesSinceEpoch
-int releaseVersionCode = debugVersionCode + 1
+int genericVersionCode = minutesSinceEpoch
+def versionNameExt = getVersionName()
+println('VERSION: ' + versionNameExt)
+
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
     flavorDimensions "default"
+
+    signingConfigs {
+        release {
+            storeFile file('secrets/raw/release.keystore')
+            storePassword System.getenv('KEYSTORE_PASSWORD')
+            keyAlias System.getenv('KEY_ALIAS')
+            keyPassword System.getenv('KEY_PASSWORD')
+        }
+    }
     
     defaultConfig {
         applicationId "ru.sibur.android.garbagecollector"
         minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 27
+        versionCode genericVersionCode
+        versionName versionNameExt
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -70,8 +101,10 @@ android {
     }
     
     applicationVariants.all { variant ->
-        variant.mergedFlavor.versionCode = debugVersionCode;
-        variant.mergedFlavor.versionName = debugVersionCode + "-" + variant.flavorName;
+        if (variant.buildType.name == "release") {
+            variant.mergedFlavor.versionCode = genericVersionCode;
+            variant.mergedFlavor.versionName = genericVersionCode + "-" + variant.flavorName;
+        }
     }
     
     compileOptions {
