@@ -18,6 +18,7 @@ before_install:
 
 script:
   - ./gradlew assemble
+  - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
   
 before_cache: 
