@@ -35,7 +35,7 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
     }
 }
 
-def get_version_name() {
+ext.get_version_name = { () ->
     def sout = new StringBuilder()
     def serr = new StringBuilder()
     def proc = 'make travis-version'.execute()
