@@ -60,6 +60,15 @@ android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
     flavorDimensions "default"
+
+    signingConfigs {
+        release {
+            storeFile file('secrets/raw/release.keystore')
+            storePassword System.getenv('KEYSTORE_PASSWORD')
+            keyAlias System.getenv('KEY_ALIAS')
+            keyPassword System.getenv('KEY_PASSWORD')
+        }
+    }
     
     defaultConfig {
         applicationId "ru.sibur.android.garbagecollector"
@@ -77,6 +86,7 @@ android {
         }
 
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
