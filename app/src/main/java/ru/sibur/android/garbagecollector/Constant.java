@@ -63,7 +63,8 @@ public final class Constant {
         bigDecimal = bigDecimal.divide(BigDecimal.valueOf(MONEY_DIVISOR));
         int i;
         for (i = 0; i < MATH_ORDER_LETTERS.length; i++) {
-            if (bigDecimal.compareTo(BigDecimal.valueOf(1000)) > 0) {
+            if (bigDecimal.compareTo(BigDecimal.valueOf(1000)) > 0 &&
+                    i < (MATH_ORDER_LETTERS.length - 1)) {
                 bigDecimal = bigDecimal.divide(BigDecimal.valueOf(1000));
             }
             else break;
