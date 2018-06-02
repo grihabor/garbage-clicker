@@ -35,13 +35,17 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
     }
 }
 
-ext.get_version_name = { ->
-    def sout = new StringBuilder()
-    def serr = new StringBuilder()
-    def proc = 'make travis-version'.execute()
-    proc.consumeProcessOutput(sout, serr)
-    proc.waitForOrKill(1000)
-    return sout ?: serr
+ext.getVersionName = { ->
+    try {
+        def sout = new StringBuilder()
+        def serr = new StringBuilder()
+        def proc = 'make travis-version'.execute()
+        proc.consumeProcessOutput(sout, serr)
+        proc.waitForOrKill(1000)
+        return sout ?: serr
+    } catch (ignored) {
+        return "0.0"
+    }
 }
 
 int MILLIS_IN_MINUTE = 1000 * 60
@@ -58,7 +62,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode genericVersionCode
-        versionName get_version_name()
+        versionName project.getVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     
