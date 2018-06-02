@@ -43,7 +43,8 @@ ext.getVersionName = { ->
         proc.consumeProcessOutput(sout, serr)
         proc.waitForOrKill(1000)
         return sout.trim() ?: serr.replaceAll("\\s", " ")
-    } catch (ignored) {
+    } catch (Exception e) {
+        println('VERSION_EXCEPTION: ' + e);
         return "0.0"
     }
 }
@@ -51,7 +52,9 @@ ext.getVersionName = { ->
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 int genericVersionCode = minutesSinceEpoch
-String versionNameExt = getVersionName()
+def versionNameExt = getVersionName()
+println('VERSION: ' + versionNameExt)
+
 
 android {
     compileSdkVersion 27
