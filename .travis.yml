@@ -38,7 +38,7 @@ before_deploy:
   - export ART_LINT=${VERSION}_lint.html
   
   - mv app/build/outputs/apk/dev/debug/app-dev-debug.apk $ART_DEBUG_APK
-  - mv app/build/outputs/apk/dev/release/app-dev-release-unsigned.apk $ART_RELEASE_APK
+  - mv app/build/outputs/apk/dev/release/app-dev-release.apk $ART_RELEASE_APK
   - mv app/build/reports/checkstyle/android.html $ART_CHECKSTYLE
   - mv app/build/reports/lint-results.html $ART_LINT
   
