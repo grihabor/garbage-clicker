@@ -42,7 +42,7 @@ ext.getVersionName = { ->
         def proc = 'make travis-version'.execute()
         proc.consumeProcessOutput(sout, serr)
         proc.waitForOrKill(1000)
-        return sout ?: serr
+        return sout.trim() ?: serr.replaceAll("\\s", " ")
     } catch (ignored) {
         return "0.0"
     }
