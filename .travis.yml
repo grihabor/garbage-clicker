@@ -12,6 +12,10 @@ addons:
       - git
       - make
 
+before_install: 
+  - mkdir -p app/secrets/raw
+  - openssl aes-256-cbc -K $encrypted_b9ef2d895ec4_key -iv $encrypted_b9ef2d895ec4_iv -in app/secrets/encrypted/release.keystore.enc -out app/secrets/raw/release.keystore -d
+
 script:
   - ./gradlew build
   - ./gradlew checkstyleAndroid
