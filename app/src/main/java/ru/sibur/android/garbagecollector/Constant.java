@@ -14,12 +14,13 @@ public final class Constant {
     public static final String PREF_NAME = "my_pref";
     public static final String LAST_UPDATE_NAME = "update";
     public static final String TOTAL_MONEY_EARNED_KEY = "total_money_earned_key";
-    public static final BigInteger TIME_UNIT = BigInteger.valueOf(1000);
+    public static final int TIME_UNIT = 1000;
 
     public static final double UPGRADE_COST_INCREASE_MULTIPLIER = 1.30;
     public static final double AUTOMATA_COST_INCREASE_MULTIPLIER = 1.30;
     public static final double AUTOMATA_COST_DECREASE_MULTIPLIER = 0.85;
     public static final double UPGRADE_COST_DECREASE_MULTIPLIER = 0.85;
+    public static final double PERFORMANCE_INCREASE_MULTIPLIER = 1.15;
 
     public static final String SHOP_ITEM_NAME_KEY = "name";
     public static final String SHOP_ITEM_PRICE_KEY = "price";

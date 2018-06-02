@@ -30,7 +30,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     public BigInteger calculateMoney(BigInteger timeDifference) {
         return getMoneyPerTimeUnit()
                 .multiply(timeDifference)
-                .divide(Constant.TIME_UNIT);
+                .divide(BigInteger.valueOf(Constant.TIME_UNIT));
     }
 
     @Override
@@ -39,7 +39,7 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
         while (!(isCancelled())) {
             try {
-                Thread.sleep(Constant.TIME_UNIT.intValue());
+                Thread.sleep(Constant.TIME_UNIT);
             } catch (InterruptedException e) {
                 break;
             }

@@ -35,8 +35,11 @@ public class Automata extends ShopItem {
 
     @Override
     BigInteger getPrice () {
-        double multiplier = pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER, getCount()) *
-                pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, storage.getShopItemCount(Constant.upgradeCountKey(1)));
+        String priceUpgradeCountKey = Constant.upgradeCountKey(1);
+        int priceUpgradeCount = storage.getShopItemCount(priceUpgradeCountKey);
+        double decreaseMultiplier = pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, priceUpgradeCount);
+        double increaseMultiplier = pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER, getCount());
+        double multiplier = decreaseMultiplier * increaseMultiplier;
 
         return Constant.multiply(basePrice, multiplier);
     }
@@ -58,6 +61,9 @@ public class Automata extends ShopItem {
     }
 
     BigInteger getUnaryPerformance() {
-        return Constant.multiply(basePerformance, pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(5))));
+        String performanceUpgradeCountKey = Constant.upgradeCountKey(5);
+        int performanceUpgradeCount = storage.getShopItemCount(performanceUpgradeCountKey);
+        double multiplier = pow (Constant.PERFORMANCE_INCREASE_MULTIPLIER, performanceUpgradeCount);
+        return Constant.multiply(basePerformance, multiplier);
     }
 }
