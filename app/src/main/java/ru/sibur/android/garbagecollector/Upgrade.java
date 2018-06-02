@@ -26,7 +26,6 @@ public class Upgrade extends ShopItem {
     BigInteger getPrice () {
         double multiplier = pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER, getCount()) *
                 pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER, storage.getShopItemCount(Constant.upgradeCountKey(2)));
-
         return Constant.multiply(basePrice, multiplier);
     }
 }

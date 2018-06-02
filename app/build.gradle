@@ -35,21 +35,38 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
     }
 }
 
+ext.getVersionName = { ->
+    try {
+        def sout = new StringBuilder()
+        def serr = new StringBuilder()
+        def proc = 'make travis-version'.execute()
+        proc.consumeProcessOutput(sout, serr)
+        proc.waitForOrKill(1000)
+        return (sout as String).trim() ?: serr.replaceAll("\\s", " ")
+    } catch (Exception e) {
+        println('VERSION_EXCEPTION: ' + e);
+        return "0.0"
+    }
+}
+
 int MILLIS_IN_MINUTE = 1000 * 60
 int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE
 int genericVersionCode = minutesSinceEpoch
+def versionNameExt = getVersionName()
+println('VERSION: ' + versionNameExt)
+
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
     flavorDimensions "default"
     
     defaultConfig {
         applicationId "ru.sibur.android.garbagecollector"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode genericVersionCode
-        versionName "build-" + genericVersionCode
+        versionName versionNameExt
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     
