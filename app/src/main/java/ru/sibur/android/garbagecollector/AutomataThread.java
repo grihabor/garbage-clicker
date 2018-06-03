@@ -63,19 +63,8 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     BigInteger getMoneyPerTimeUnit() {
 
         AutomationShop automationShop = new AutomationShop(R.raw.automatas, context, storage);
-        ArrayList<Automata> automatas = (ArrayList<Automata>) automationShop.shopItemArray;
+        BigInteger sum = automationShop.getTotalPerformance();
 
-        BigInteger sum = StreamSupport
-                .stream(automatas)
-                .map(Automata::getTotalPerformance)
-                .reduce((s1, s2) -> s1.add(s2))
-                .orElse(BigInteger.ZERO);
-
-        double multiplier = pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(3))) *
-                pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(4)));
-        BigInteger bigMultiplier = BigInteger.valueOf((int) multiplier*100);
-
-
-        return sum.multiply(bigMultiplier).divide(BigInteger.valueOf(100));
+        return sum;
     }
 }
