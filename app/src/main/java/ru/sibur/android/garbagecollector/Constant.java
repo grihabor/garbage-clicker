@@ -70,18 +70,14 @@ public final class Constant {
             else break;
         }
 
-        int scale = 0;
-        DecimalFormat formatter = new DecimalFormat();
+        DecimalFormat formatter = new DecimalFormat("000");
         if (bigDecimal.compareTo(BigDecimal.valueOf(100)) < 0) {
-            scale = 1;
             formatter.applyPattern("00.0");
         }
         if (bigDecimal.compareTo(BigDecimal.valueOf(10)) < 0) {
-            scale = 2;
             formatter.applyPattern("0.00");
         }
 
-        bigDecimal.setScale(scale, BigDecimal.ROUND_FLOOR);
         return formatter.format(bigDecimal) + MATH_ORDER_LETTERS[i];
 
     }
