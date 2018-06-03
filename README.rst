@@ -1,9 +1,11 @@
-garbage-clicker
+Garbage Clicker
 ===============
 
-|build| |docker-image|
+|build|
 
 Garbage Clicker = Переработка мусора + Cookie Clicker
+
+grihabor.github.io/garbage-clicker
 
 .. |build| image:: https://travis-ci.org/grihabor/garbage-clicker.svg?branch=master
     :target: https://travis-ci.org/grihabor/garbage-clicker
