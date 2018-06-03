@@ -5,7 +5,9 @@ Garbage Clicker
 
 Garbage Clicker = Переработка мусора + Cookie Clicker
 
-grihabor.github.io/garbage-clicker
+`Github Pages`_ 
+
+.. _`Github Pages`: grihabor.github.io/garbage-clicker
 
 .. |build| image:: https://travis-ci.org/grihabor/garbage-clicker.svg?branch=master
     :target: https://travis-ci.org/grihabor/garbage-clicker
