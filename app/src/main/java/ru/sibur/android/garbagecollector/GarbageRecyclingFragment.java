@@ -39,9 +39,13 @@ public class GarbageRecyclingFragment extends Fragment {
 
         Button baffer = getView().findViewById(R.id.button);
 
-        baffer.setOnClickListener(v ->
-                storage.addMoney(Constant.multiply(BigInteger.ONE,
-                        pow(1.15, storage.getShopItemCount(Constant.upgradeCountKey(0)))))
+        baffer.setOnClickListener(v -> {
+            String clickUpgradeCountKey = Constant.upgradeCountKey(0);
+            int clickUpgradeCount = storage.getShopItemCount(clickUpgradeCountKey);
+            double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickUpgradeCount);
+            BigInteger moneyPerClick = Constant.multiply(BigInteger.ONE, multiplier);
+            storage.addMoney(moneyPerClick);
+                }
         );
     }
 }

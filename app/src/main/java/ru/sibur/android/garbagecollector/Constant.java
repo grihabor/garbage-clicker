@@ -23,6 +23,7 @@ public final class Constant {
     public static final double AUTOMATA_COST_DECREASE_MULTIPLIER = 0.85;
     public static final double UPGRADE_COST_DECREASE_MULTIPLIER = 0.85;
     public static final double PERFORMANCE_INCREASE_MULTIPLIER = 1.15;
+    public static final double CLICK_INCREASE_MULTIPLIER = 4;
 
     public static final String SHOP_ITEM_NAME_KEY = "name";
     public static final String SHOP_ITEM_PRICE_KEY = "price";
@@ -61,11 +62,12 @@ public final class Constant {
     public static String formatMoney (BigInteger amount) {
         BigDecimal bigDecimal = new BigDecimal(amount);
         bigDecimal = bigDecimal.divide(BigDecimal.valueOf(MONEY_DIVISOR));
+        BigDecimal thousand = BigDecimal.valueOf(1000);
         int i;
-        for (i = 0; i < MATH_ORDER_LETTERS.length; i++) {
-            if (bigDecimal.compareTo(BigDecimal.valueOf(1000)) > 0 &&
-                    i < (MATH_ORDER_LETTERS.length - 1)) {
-                bigDecimal = bigDecimal.divide(BigDecimal.valueOf(1000));
+        for (i = 0; i < MATH_ORDER_LETTERS.length - 1; i++) {
+            boolean tooLarge = bigDecimal.compareTo(thousand) > 0;
+            if (tooLarge) {
+                bigDecimal = bigDecimal.divide(thousand);
             }
             else break;
         }
