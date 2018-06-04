@@ -6,6 +6,7 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 
 /**
@@ -13,7 +14,7 @@ import java.util.HashMap;
  */ 
 
 public abstract class ShopItem {
-    int basePrice;
+    BigInteger basePrice;
     String name;
     int iconId;
     Storage storage;
@@ -25,7 +26,7 @@ public abstract class ShopItem {
 
         try {
             this.name = attributes.getString("name");
-            this.basePrice = attributes.getInt("base_price");
+            this.basePrice = new BigInteger (attributes.getString("base_price"));
             this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id")];
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
@@ -44,8 +45,8 @@ public abstract class ShopItem {
 
     boolean tryToBuy (Context context, Storage storage) {
         boolean key = false;
-        if (storage.getMoney() >= getPrice()) {
-            storage.addMoney(-getPrice());
+        if (storage.enoughMoney(getPrice())) {
+            storage.addMoney(getPrice().negate());
             buy(context);
             key = true;
         }
@@ -56,7 +57,7 @@ public abstract class ShopItem {
         storage.incrementShopItemCount(getCountKey());
     }
 
-    int getPrice () {
+    BigInteger getPrice () {
         return basePrice;
     }
 

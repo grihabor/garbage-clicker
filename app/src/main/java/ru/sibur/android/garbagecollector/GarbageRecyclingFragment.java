@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.math.BigInteger;
+
 import static java.lang.Math.pow;
 
 /**
@@ -38,11 +40,12 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-            storage.addMoney((int) (
-                    100
-                    *pow(1.15,this.storage.getShopItemCount(Constant.upgradeCountKey(2)))
-                    )
-            );
-        });
+            String clickUpgradeCountKey = Constant.upgradeCountKey(0);
+            int clickUpgradeCount = storage.getShopItemCount(clickUpgradeCountKey);
+            double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickUpgradeCount);
+            BigInteger moneyPerClick = Constant.multiply(BigInteger.ONE, multiplier);
+            storage.addMoney(moneyPerClick);
+                }
+        );
     }
 }

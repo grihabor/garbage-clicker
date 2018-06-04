@@ -2,11 +2,11 @@ package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import org.json.JSONArray;
+import java.math.BigInteger;
+import java.util.ArrayList;
 
-import java9.util.stream.IntStream;
+import java9.util.stream.StreamSupport;
 
 import static java.lang.Math.pow;
 
@@ -24,12 +24,13 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     AutomataThread(StateStorage storage, Context context) {
         this.storage = storage;
         this.context = context;
-
     }
 
     @Override
-    public int calculateMoney(long timeDifference) {
-        return (int) (getMoneyPerTimeUnit() * timeDifference / Constant.TIME_UNIT);
+    public BigInteger calculateMoney(BigInteger timeDifference) {
+        return getMoneyPerTimeUnit()
+                .multiply(timeDifference)
+                .divide(BigInteger.valueOf(Constant.TIME_UNIT));
     }
 
     @Override
@@ -59,23 +60,11 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     }
 
-    int getMoneyPerTimeUnit() {
-        JSONLoader loader = new JSONLoader(context);
-        JSONArray automataArray = loader.parceJSONResource(R.raw.automatas);
-        if(automataArray == null){
-            Log.e(TAG, "Unable to load data from automatas.json");
-            return 0;
-        }
+    BigInteger getMoneyPerTimeUnit() {
 
-        int totalMoneyPerTimeUnit = IntStream
-                                    .range(0, automataArray.length())
-                                    .map(i -> storage.getShopItemCount(Constant.automataCountKey(i)) * Constant.automataPerformance(i))
-                                    .sum();
-        totalMoneyPerTimeUnit= (int) (
-            totalMoneyPerTimeUnit
-            *pow(1.15, this.storage.getShopItemCount(Constant.upgradeCountKey(5)))
-        );
+        AutomationShop automationShop = new AutomationShop(R.raw.automatas, context, storage);
+        BigInteger sum = automationShop.getTotalPerformance();
 
-        return totalMoneyPerTimeUnit;
+        return sum;
     }
 }
