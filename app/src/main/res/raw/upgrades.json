@@ -1,6 +1,6 @@
 [
   {
-    "key":"double_money",
+    "count_key":"double_money",
     "name":"Удвоение монет",
     "base_price": 1000,
     "icon_id": 0
@@ -8,7 +8,7 @@
 
 
   {
-    "key":"time_of_double_money",
+    "count_key":"time_of_double_money",
     "name":"Время удвоения монет",
     "base_price": 10000,
     "icon_id": 0
@@ -16,7 +16,7 @@
 
 
   {
-    "key":"click_performance",
+    "count_key":"click_performance",
     "name":"Мощность клика",
     "base_price": 10000,
     "icon_id": 0
@@ -24,7 +24,7 @@
 
 
   {
-    "key":"cheep_automata",
+    "count_key":"cheep_automata",
     "name":"Уменьшение стоимости автоматов",
     "base_price": 10000000,
     "icon_id": 0
@@ -32,7 +32,7 @@
 
 
   {
-    "key":"cheep_upgrade",
+    "count_key":"cheep_upgrade",
     "name":"Уменьшение стоимости апгрейдов",
     "base_price": 10000000,
     "icon_id": 0
@@ -40,7 +40,7 @@
 
 
   {
-    "key":"automata_performance",
+    "count_key":"automata_performance",
     "name":"Апгрейд мощности автоматов",
     "base_price": 10000,
     "icon_id": 0
