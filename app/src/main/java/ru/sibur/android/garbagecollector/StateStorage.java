@@ -34,12 +34,12 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
 
     synchronized BigInteger getBigInteger(String key, BigInteger defVal) {
         return new BigInteger(sPref
-                .getString(key, defVal.toString(10)));
+                .getString(key, defVal.toString(Constant.S_PREF_NUMERAL_SYSTEM)));
     }
 
     synchronized void putBigInteger (String key, BigInteger bigInteger) {
         SharedPreferences.Editor editor = sPref.edit();
-        editor.putString(key, bigInteger.toString(10));
+        editor.putString(key, bigInteger.toString(Constant.S_PREF_NUMERAL_SYSTEM));
         editor.apply();
     }
 
@@ -91,7 +91,10 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         long currentTime = (new Date()).getTime();
         editor.putLong(Constant.LAST_UPDATE_NAME, currentTime);
         editor.apply();
-        addMoney(calculator.calculateMoney(new BigInteger(String.valueOf(currentTime - prevTime))));
+
+        BigInteger timeDifference = BigInteger.valueOf(currentTime - prevTime);
+        BigInteger addedMoney = calculator.calculateMoney(timeDifference);
+        addMoney(addedMoney);
     }
 
     /**

@@ -57,7 +57,8 @@ public class Automata extends ShopItem {
     }
 
     BigInteger getTotalPerformance() {
-        return getUnaryPerformance().multiply(BigInteger.valueOf(getCount()));
+        BigInteger count = BigInteger.valueOf(getCount());
+        return getUnaryPerformance().multiply(count);
     }
 
     BigInteger getUnaryPerformance() {
