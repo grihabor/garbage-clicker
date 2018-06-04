@@ -2,13 +2,17 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.games.AchievementsClient;
+import com.google.android.gms.games.Games;
 
 import java.math.BigInteger;
 
@@ -24,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -46,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
         moneyDisplay = findViewById(R.id.moneyDisplay);
 
         storage.addMoney(BigInteger.ZERO);
+
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        AchievementsClient achievementsClient = Games.getAchievementsClient(this, account);
+
+        String welcomeAchievement = getString(R.string.achievement_welcome);
+        achievementsClient.unlock(welcomeAchievement);
     }
 
     protected void onResume() {

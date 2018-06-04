@@ -3,10 +3,21 @@ package ru.sibur.android.garbagecollector;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.games.AchievementsClient;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 
 /**
  * Главное меню
@@ -17,6 +28,7 @@ import android.widget.Button;
  */
 
 public class IntroActivity extends AppCompatActivity {
+    private String TAG = "INTRO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +54,31 @@ public class IntroActivity extends AppCompatActivity {
 
         Button achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
-            Intent intent = new Intent(IntroActivity.this, AchievementActivity.class);
-            startActivity(intent);
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+            AchievementsClient client = Games.getAchievementsClient(this, account);
+            Task<Intent> task = client.getAchievementsIntent();
+            task.addOnSuccessListener(this::startActivity);
         });
+
+        signIn();
+    }
+
+    void signIn() {
+        GoogleSignInAccount testAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if (testAccount == null) {
+            GoogleSignInOptions.Builder builder = new GoogleSignInOptions.Builder();
+            GoogleSignInOptions options = builder.build();
+            GoogleSignInClient client = GoogleSignIn.getClient(this, options);
+
+            Task<GoogleSignInAccount> silentSignInTask = client.silentSignIn();
+            silentSignInTask.addOnFailureListener(e -> {
+                Log.e(TAG, e.getMessage());
+                Intent signIntent = client.getSignInIntent();
+                startActivity(signIntent);
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(signIntent);
+                task.addOnSuccessListener(result -> Log.e(TAG, "Success"));
+                task.addOnFailureListener(ex -> Log.e(TAG, ex.getMessage()));
+            });
+        }
     }
 }
