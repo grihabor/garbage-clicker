@@ -19,10 +19,6 @@ public class Upgrade extends ShopItem {
     }
 
     @Override
-    String getCountKey() {
-        return Constant.upgradeCountKey(index);
-    }
-    @Override
     BigInteger getPrice () {
         String priceUpgradeCountKey = Constant.upgradeCountKey(2);
         int priceUpgradeCount = storage.getShopItemCount(priceUpgradeCountKey);
