@@ -32,12 +32,9 @@ public class IntroActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Button playButton = findViewById(R.id.play_button);
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        playButton.setOnClickListener(view -> {
+            Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
         Button exitButton = findViewById(R.id.exit_button);

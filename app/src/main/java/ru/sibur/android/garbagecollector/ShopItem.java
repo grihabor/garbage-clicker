@@ -17,6 +17,7 @@ public abstract class ShopItem {
     String name;
     int iconId;
     Storage storage;
+    String countKey;
 
     private final String TAG = "SHOP_ITEM";
 
@@ -24,9 +25,10 @@ public abstract class ShopItem {
         this.storage = storage;
 
         try {
-            this.name = attributes.getString("name");
-            this.basePrice = attributes.getInt("base_price");
-            this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id")];
+            this.name = attributes.getString(Constant.SHOP_ITEM_NAME_KEY);
+            this.basePrice = attributes.getInt(Constant.SHOP_ITEM_PRICE_KEY);
+            this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt(Constant.SHOP_ITEM_ICON_ID_KEY)];
+            this.countKey = attributes.getString(Constant.SHOP_ITEM_COUNT_KEY);
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
@@ -60,7 +62,9 @@ public abstract class ShopItem {
         return basePrice;
     }
 
-    abstract String getCountKey ();
+    String getCountKey() {
+        return countKey;
+    }
 
     int getCount () {
         return storage.getShopItemCount(getCountKey());

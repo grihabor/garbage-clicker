@@ -46,11 +46,6 @@ public class Automata extends ShopItem {
     }
 
     @Override
-    String getCountKey() {
-        return Constant.automataCountKey(index);
-    }
-
-    @Override
     public HashMap<String, Object> getViewData() {
         HashMap<String, Object> ret = super.getViewData();
         ret.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, basePerformance);

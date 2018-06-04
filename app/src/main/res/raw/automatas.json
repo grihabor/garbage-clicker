@@ -1,5 +1,6 @@
 [
   {
+    "key":"garbage-bin",
     "name":"мусорный бак",
     "base_price": 100,
     "base_performance": 1,
@@ -8,6 +9,7 @@
 
 
   {
+    "key":"separate_collection",
     "name":"раздельный сбор",
     "base_price": 5000,
     "base_performance": 5,
@@ -16,6 +18,7 @@
 
 
   {
+    "key":"garbage_car",
     "name":"мусоровоз",
     "base_price": 30000,
     "base_performance": 20,
@@ -24,6 +27,7 @@
 
 
   {
+    "key":"sorting_machine",
     "name":"сортировочная машина",
     "base_price": 150000,
     "base_performance": 50,
@@ -32,6 +36,7 @@
 
 
   {
+    "key":"sorting_center",
     "name":"сортировочный центр",
     "base_price": 1000000,
     "base_performance": 75,
@@ -39,6 +44,7 @@
   },
 
   {
+    "key":"recycling_factory",
     "name":"перерабатывающий завод",
     "base_price": 10000000,
     "base_performance": 100,
@@ -47,6 +53,7 @@
 
 
   {
+    "key":"improved_facory",
     "name":"улучшенный завод",
     "base_price": 50000000,
     "base_performance": 150,
@@ -55,6 +62,7 @@
 
 
   {
+    "key":"eco_factory",
     "name":"экологическое производство",
     "base_price": 1000000000,
     "base_performance": 300,
@@ -63,6 +71,7 @@
 
 
   {
+    "key":"factory_net",
     "name":"сеть заводов",
     "base_price": 1000000000000,
     "base_performance":"500",

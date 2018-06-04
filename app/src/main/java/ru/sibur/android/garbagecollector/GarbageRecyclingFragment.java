@@ -43,7 +43,6 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = activity.findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-          Showing_money_per_click
             storage.addMoney((int) (getClickPerformance())
             );
             showClickPerformance();
