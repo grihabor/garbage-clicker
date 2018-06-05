@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
@@ -85,7 +86,7 @@ public final class Constant {
     }
 
     public static BigInteger multiply(BigInteger bi, double multiplier) {
-        long intMultiplier = MONEY_DIVISOR * multiplier;
+        int intMultiplier = Math.round(MONEY_DIVISOR * multiplier);
         BigInteger bigMultiplier = BigInteger.valueOf(intMultiplier);
         return bi.multiply(bigMultiplier).divide(BigInteger.valueOf(MONEY_DIVISOR));
     }
