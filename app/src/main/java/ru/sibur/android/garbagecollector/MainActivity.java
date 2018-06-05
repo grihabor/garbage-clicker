@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
         storage.addMoney(BigInteger.ZERO);
 
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        /*GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         AchievementsClient achievementsClient = Games.getAchievementsClient(this, account);
 
         String welcomeAchievement = getString(R.string.achievement_welcome);
-        achievementsClient.unlock(welcomeAchievement);
+        achievementsClient.unlock(welcomeAchievement);*/
     }
 
     protected void onResume() {
