@@ -81,7 +81,7 @@ public final class Constant {
             formatter.applyPattern("00.00");
         }
 
-        return formatter.format(displayedMoney) + MATH_ORDER_LETTERS[i];
+        return formatter.format(displayedMoney) + MATH_ORDER_LETTERS[exp];
     }
 
     public static BigInteger multiply(BigInteger bi, double multiplier) {
