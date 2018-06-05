@@ -37,7 +37,7 @@ public final class Constant {
 
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
 
-    public static final String[] MATH_ORDER_LETTERS = {"", "k", "m", "b", "t"};
+    public static final String[] MATH_ORDER_LETTERS = {"", "T", "M", "B", "T"};
     public static final int MONEY_DIVISOR = 100;
     /**
      * @param automataIndex
@@ -61,28 +61,27 @@ public final class Constant {
 
 
     public static String formatMoney (BigInteger amount) {
-        BigDecimal bigDecimal = new BigDecimal(amount);
-        bigDecimal = bigDecimal.divide(BigDecimal.valueOf(MONEY_DIVISOR));
-        BigDecimal thousand = BigDecimal.valueOf(1000);
-        int i;
-        for (i = 0; i < MATH_ORDER_LETTERS.length - 1; i++) {
-            boolean tooLarge = bigDecimal.compareTo(thousand) > 0;
-            if (tooLarge) {
-                bigDecimal = bigDecimal.divide(thousand);
+        final BigDecimal floatAmount = new BigDecimal(amount);
+        final BigDecimal money = floatAmount.divide(BigDecimal.valueOf(MONEY_DIVISOR));
+        final BigDecimal threshold = BigDecimal.valueOf(100000);
+        final BigDecimal step = BigDecimal.valueOf(1000);
+        
+        BigDecimal displayedMoney = money;
+        int exp;
+        for (exp = 0; exp < MATH_ORDER_LETTERS.length - 1; ++exp) {
+            boolean fitsExpectedWidth = bigDecimal.compareTo(threshold) < 0;
+            if (fitsExpectedWidth) {
+                break;
             }
-            else break;
+            bigDecimal = bigDecimal.divide(step);
         }
 
-        DecimalFormat formatter = new DecimalFormat("000");
+        DecimalFormat formatter = new DecimalFormat("0000");
         if (bigDecimal.compareTo(BigDecimal.valueOf(100)) < 0) {
-            formatter.applyPattern("00.0");
-        }
-        if (bigDecimal.compareTo(BigDecimal.valueOf(10)) < 0) {
-            formatter.applyPattern("0.00");
+            formatter.applyPattern("00.00");
         }
 
         return formatter.format(bigDecimal) + MATH_ORDER_LETTERS[i];
-
     }
 
     public static BigInteger multiply(BigInteger in, double multiplier) {
