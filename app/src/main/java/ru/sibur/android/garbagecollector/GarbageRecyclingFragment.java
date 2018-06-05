@@ -19,8 +19,8 @@ import static java.lang.Math.pow;
  
 public class GarbageRecyclingFragment extends Fragment {
     Storage storage;
-    TextView clickPerformanceTextView;
-    @Override
+
+ @Override
     public void onAttach (Activity activity) {
         super.onAttach(activity);
         storage = ((MainActivity) activity).storage;
