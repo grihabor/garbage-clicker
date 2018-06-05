@@ -69,19 +69,19 @@ public final class Constant {
         BigDecimal displayedMoney = money;
         int exp;
         for (exp = 0; exp < MATH_ORDER_LETTERS.length - 1; ++exp) {
-            boolean fitsExpectedWidth = bigDecimal.compareTo(threshold) < 0;
+            boolean fitsExpectedWidth = displayedMoney.compareTo(threshold) < 0;
             if (fitsExpectedWidth) {
                 break;
             }
-            bigDecimal = bigDecimal.divide(step);
+            displayedMoney = displayedMoney.divide(step);
         }
 
         DecimalFormat formatter = new DecimalFormat("0000");
-        if (bigDecimal.compareTo(BigDecimal.valueOf(100)) < 0) {
+        if (displayedMoney.compareTo(BigDecimal.valueOf(100)) < 0) {
             formatter.applyPattern("00.00");
         }
 
-        return formatter.format(bigDecimal) + MATH_ORDER_LETTERS[i];
+        return formatter.format(displayedMoney) + MATH_ORDER_LETTERS[i];
     }
 
     public static BigInteger multiply(BigInteger bi, double multiplier) {
