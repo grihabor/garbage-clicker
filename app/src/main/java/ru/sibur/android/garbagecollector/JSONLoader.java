@@ -1,6 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -20,6 +21,7 @@ public  class JSONLoader {
     public JSONLoader(Context context){
         this.context = context;
     }
+
 
     private String readRawResource (int id) {
         InputStream resourceReader = context.getResources().openRawResource(id);

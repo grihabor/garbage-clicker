@@ -29,7 +29,9 @@ public abstract class ShopItem {
             this.name = attributes.getString(Constant.SHOP_ITEM_NAME_KEY);
             this.basePrice = BigInteger.valueOf(attributes.getInt(Constant.SHOP_ITEM_PRICE_KEY));
             this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt(Constant.SHOP_ITEM_ICON_ID_KEY)];
-            this.countKey = attributes.getString(Constant.SHOP_ITEM_COUNT_KEY);
+            Object names = attributes.names();
+            names = attributes;
+            this.countKey = (String)attributes.names().get(0);
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
