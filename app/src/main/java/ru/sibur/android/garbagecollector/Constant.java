@@ -37,7 +37,7 @@ public final class Constant {
 
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
 
-    public static final String[] MATH_ORDER_LETTERS = {"", "T", "M", "B", "T"};
+    public static final String[] MATH_ORDER_LETTERS = {"", "T", "M", "B", "R"};
     public static final int MONEY_DIVISOR = 100;
     /**
      * @param automataIndex
