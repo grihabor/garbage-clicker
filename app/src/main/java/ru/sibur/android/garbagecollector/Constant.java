@@ -86,7 +86,7 @@ public final class Constant {
     }
 
     public static BigInteger multiply(BigInteger bi, double multiplier) {
-        int intMultiplier = Math.round(MONEY_DIVISOR * multiplier);
+        long intMultiplier = Math.round(MONEY_DIVISOR * multiplier);
         BigInteger bigMultiplier = BigInteger.valueOf(intMultiplier);
         return bi.multiply(bigMultiplier).divide(BigInteger.valueOf(MONEY_DIVISOR));
     }
