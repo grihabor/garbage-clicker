@@ -84,9 +84,10 @@ public final class Constant {
         return formatter.format(bigDecimal) + MATH_ORDER_LETTERS[i];
     }
 
-    public static BigInteger multiply(BigInteger in, double multiplier) {
-        BigInteger bigMultiplier = BigInteger.valueOf((long) (multiplier*100));
-        return in.multiply(bigMultiplier).divide(BigInteger.valueOf(100));
+    public static BigInteger multiply(BigInteger bi, double multiplier) {
+        long intMultiplier = MONEY_DIVISOR * multiplier;
+        BigInteger bigMultiplier = BigInteger.valueOf(intMultiplier);
+        return bi.multiply(bigMultiplier).divide(BigInteger.valueOf(MONEY_DIVISOR));
     }
 
 }
