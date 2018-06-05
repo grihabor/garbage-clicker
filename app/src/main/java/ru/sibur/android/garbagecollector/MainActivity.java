@@ -44,14 +44,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
-
-        storage.addMoney(BigInteger.ZERO);
     }
 
     protected void onResume() {
         super.onResume();
         automataThread = new AutomataThread(storage, this);
         automataThread.execute();
+        storage.addMoney(BigInteger.ZERO);
     }
 
     protected void onPause() {
