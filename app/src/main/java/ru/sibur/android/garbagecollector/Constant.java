@@ -77,9 +77,9 @@ public final class Constant {
             displayedMoney = displayedMoney.divide(step);
         }
 
-        DecimalFormat formatter = new DecimalFormat("0000");
+        DecimalFormat formatter = new DecimalFormat("0");
         if (displayedMoney.compareTo(BigDecimal.valueOf(100)) < 0) {
-            formatter.applyPattern("00.00");
+            formatter.applyPattern("0.00");
         }
 
         return formatter.format(displayedMoney) + MATH_ORDER_LETTERS[exp];
