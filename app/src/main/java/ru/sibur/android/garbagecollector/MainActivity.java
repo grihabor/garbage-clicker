@@ -38,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
+        
+        moneyDisplay = findViewById(R.id.moneyDisplay);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
             moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
         });
-
-        moneyDisplay = findViewById(R.id.moneyDisplay);
     }
 
     protected void onResume() {
