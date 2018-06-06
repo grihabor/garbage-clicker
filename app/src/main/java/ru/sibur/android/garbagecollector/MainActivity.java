@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
+        
+        moneyDisplay = findViewById(R.id.moneyDisplay);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
             moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
@@ -50,17 +52,18 @@ public class MainActivity extends AppCompatActivity {
 
         storage.addMoney(BigInteger.ZERO);
 
-        /*GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         AchievementsClient achievementsClient = Games.getAchievementsClient(this, account);
 
         String welcomeAchievement = getString(R.string.achievement_welcome);
-        achievementsClient.unlock(welcomeAchievement);*/
+        achievementsClient.unlock(welcomeAchievement);
     }
 
     protected void onResume() {
         super.onResume();
         automataThread = new AutomataThread(storage, this);
         automataThread.execute();
+        storage.addMoney(BigInteger.ZERO);
     }
 
     protected void onPause() {
