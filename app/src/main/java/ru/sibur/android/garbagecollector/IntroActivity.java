@@ -91,7 +91,7 @@ public class IntroActivity extends AppCompatActivity {
             task.addOnSuccessListener(this::startActivity);
         });
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
                 .requestEmail()
                 .build();
 
