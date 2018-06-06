@@ -61,9 +61,9 @@ deploy:
   on:
     branch:
       - master
-      - force-build
-      - force-build-aglubshev
-      - force-build-odemianchenko
-      - force-build-dteterin
+      - force-deploy
+      - force-deploy-aglubshev
+      - force-deploy-odemianchenko
+      - force-deploy-dteterin
     tags: false
     condition: $TRAVIS_PULL_REQUEST = false
