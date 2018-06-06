@@ -3,16 +3,21 @@ package ru.sibur.android.garbagecollector;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.AchievementsClient;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.tasks.Task;
@@ -27,8 +32,8 @@ import com.google.android.gms.tasks.Task;
 
 public class IntroActivity extends AppCompatActivity {
     private String TAG = "INTRO";
-    private static final int SIGN_IN_REQUEST_CODE = 9001;
-    private GoogleSignInClient client;
+    GoogleSignInClient signInClient;
+    public static final int RC_SIGN_IN = 1488;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,19 +59,22 @@ public class IntroActivity extends AppCompatActivity {
 
         Button achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
-            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-            AchievementsClient client = Games.getAchievementsClient(this, account);
+            AchievementsClient client = Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this));
             Task<Intent> task = client.getAchievementsIntent();
             task.addOnSuccessListener(this::startActivity);
         });
 
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton.setOnClickListener((view) -> {
+            Intent signInIntent = signInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
 
-        GoogleSignInOptions.Builder builder = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN);
-        builder = builder.requestEmail();
-        GoogleSignInOptions options = builder.build();
-        client = GoogleSignIn.getClient(this, options);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
 
-        signIn();
+        signInClient = GoogleSignIn.getClient(this, gso);
     }
 
     @Override
@@ -74,38 +82,33 @@ public class IntroActivity extends AppCompatActivity {
         super.onStart();
     }
 
-    void signIn() {
-        //GoogleSignInAccount testAccount = GoogleSignIn.getLastSignedInAccount(this);
-        //if (testAccount == null) {
-            //Task<GoogleSignInAccount> silentSignInTask = client.silentSignIn();
-            //silentSignInTask.addOnFailureListener(e -> {
-                //Log.e(TAG, e.getMessage());
-                Intent signIntent = client.getSignInIntent();
 
-                startActivityForResult(signIntent, SIGN_IN_REQUEST_CODE);
-            //});
-        //}
+    boolean isSignedIn() {
+        return GoogleSignIn.getLastSignedInAccount(this) != null;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == SIGN_IN_REQUEST_CODE) {
-            Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-            accountTask.addOnFailureListener(ex -> Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show());
-            handleSignInResult(accountTask);
-        }
-    }
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            completedTask.getResult(ApiException.class);
-            // Signed in successfully, show authenticated UI.
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Toast.makeText(this, e.getStatusCode() + "code", Toast.LENGTH_SHORT).show();
+            try {
+                task.getResult(ApiException.class);
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.e(TAG, e.getStatusCode() + " code");
+                // [START_EXCLUDE]
+                Toast.makeText(this, "google sign in fail", Toast.LENGTH_LONG).show();
+                // [END_EXCLUDE]
+            } catch (Exception e) {
+                Toast.makeText(this, "vse huevo", Toast.LENGTH_LONG).show();
+            }
+
         }
     }
 }

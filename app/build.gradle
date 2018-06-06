@@ -64,9 +64,9 @@ android {
     signingConfigs {
         release {
             storeFile file('secrets/raw/release.keystore')
-            storePassword System.getenv('KEYSTORE_PASSWORD')
-            keyAlias System.getenv('KEY_ALIAS')
-            keyPassword System.getenv('KEY_PASSWORD')
+            storePassword 'n0fARehTIn=y'
+            keyAlias 'example'
+            keyPassword 'n0fARehTIn=y'
         }
     }
     
@@ -81,6 +81,7 @@ android {
     
     buildTypes {
         debug {
+            signingConfig signingConfigs.release
             applicationIdSuffix ".debug"
             debuggable true
         }
