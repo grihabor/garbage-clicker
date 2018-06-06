@@ -81,7 +81,6 @@ android {
     
     buildTypes {
         debug {
-            signingConfig signingConfigs.release
             applicationIdSuffix ".debug"
             debuggable true
         }
