@@ -92,7 +92,6 @@ public class IntroActivity extends AppCompatActivity {
         });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestScopes(Games.SCOPE_GAMES_LITE)
                 .requestEmail()
                 .build();
 
