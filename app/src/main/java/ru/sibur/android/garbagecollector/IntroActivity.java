@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
@@ -83,25 +84,31 @@ public class IntroActivity extends AppCompatActivity {
         Button exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener((view) -> finish());
 
+        Button achievementButton = findViewById(R.id.achievement_button);
+        achievementButton.setOnClickListener((view) -> {
+            AchievementsClient client = Games.getAchievementsClient(this, account);
+            Task<Intent> task = client.getAchievementsIntent();
+            task.addOnSuccessListener(this::startActivity);
+        });
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        signInClient = GoogleSignIn.getClient(this, gso);
+
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton.setOnClickListener((view) -> {
+            Intent signInIntent = signInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
+
         if (account != null) {
-            Button achievementButton = findViewById(R.id.achievement_button);
-            achievementButton.setOnClickListener((view) -> {
-                AchievementsClient client = Games.getAchievementsClient(this, account);
-                Task<Intent> task = client.getAchievementsIntent();
-                task.addOnSuccessListener(this::startActivity);
-            });
+            signInButton.setVisibility(View.GONE);
+            achievementButton.setVisibility(View.VISIBLE);
         } else {
-            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestEmail()
-                    .build();
-
-            signInClient = GoogleSignIn.getClient(this, gso);
-
-            SignInButton signInButton = findViewById(R.id.sign_in_button);
-            signInButton.setOnClickListener((view) -> {
-                Intent signInIntent = signInClient.getSignInIntent();
-                startActivityForResult(signInIntent, RC_SIGN_IN);
-            });
+            signInButton.setVisibility(View.VISIBLE);
+            achievementButton.setVisibility(View.GONE);
         }
 
     }
