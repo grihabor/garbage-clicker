@@ -9,7 +9,9 @@
     <string name="automation_shop_sign">автоматы</string>
     <string name="recycle_sign">переработка</string>
     <string name="factory_sign">переработать</string>
-    <string name="displayed_vault_name">Сибурики:</string>
+    <string name="displayed_vault_name">Сибурики: </string>
+    <string name="displayed_qty_name">Куплено: </string>
+    <string name="displayed_performance_name">Мощность: </string>
 
     <string-array name="upgrade_array">
         <item>Улучшение клика</item>
