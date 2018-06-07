@@ -4,6 +4,7 @@
     "base_price": "100",
     "base_performance": "1",
     "icon_id": 0
+
   },
   "seprate_collection": {
     "name": "раздельный сбор",
@@ -11,6 +12,7 @@
     "base_performance": "5",
     "icon_id": 1
   },
+
   "garbage_car ": {
     "name": "мусоровоз",
     "base_price": "30000",
@@ -18,50 +20,45 @@
     "icon_id": 2
   },
 
+  "sorting_car": {
+    "name": "сортировочная машина",
+    "base_price": "150000",
+    "base_performance": "50",
+    "icon_id": 3
+  },
+  "sorting_center": {
+    "name": "сортировочный центр",
+    "base_price": "1000000",
+    "base_performance": "75",
+    "icon_id": 4
+  },
 
-"sorting_car":{
-  "name": "сортировочная машина",
-  "base_price": "150000",
-  "base_performance": "50",
-  "icon_id": 3
-},
+  "recycling_factory": {
+    "name": "перерабатывающий завод",
+    "base_price": "10000000",
+    "base_performance": "100",
+    "icon_id": 5
+  },
 
+  "improved_factory": {
+    "name": "улучшенный завод",
+    "base_price": "50000000",
+    "base_performance": "150",
+    "icon_id": 6
+  },
 
-"sorting_center":{
-"name": "сортировочный центр",
-"base_price": "1000000",
-"base_performance": "75",
-"icon_id": 4
-},
+  "eco_factory": {
+    "name": "экологическое производство",
+    "base_price": "1000000000",
+    "base_performance": "300",
+    "icon_id": 7
+  },
 
-"recycling_factory":{
-"name": "перерабатывающий завод",
-"base_price": "10000000",
-"base_performance": "100",
-"icon_id": 5
-},
+  "net_of_factorys": {
+    "name": "сеть заводов",
+    "base_price": "1000000000000",
+    "base_performance": "500",
+    "icon_id": 8
+  }
 
-
-"improved_factory":{
-"name": "улучшенный завод",
-"base_price": "50000000",
-"base_performance": "150",
-"icon_id": 6
-},
-
-
-"eco_factory":{
-"name": "экологическое производство",
-"base_price": "1000000000",
-"base_performance": "300",
-"icon_id": 7
-},
-
-
-"net_of_factorys":{
-"name": "сеть заводов",
-"base_price": "1000000000000",
-"base_performance": "500",
-"icon_id": 8
-}
 }

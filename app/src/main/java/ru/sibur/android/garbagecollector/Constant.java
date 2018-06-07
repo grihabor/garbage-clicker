@@ -36,6 +36,7 @@ public final class Constant {
 
     public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.automata1,R.drawable.automata2, R.drawable.automata3, R.drawable.automata4, R.drawable.automata5,R.drawable.automata6,R.drawable.automata7,R.drawable.automata8,R.drawable.automata9, R.drawable.upgrade1, R.drawable.upgrade2, R.drawable.upgrade3, R.drawable.upgrade4, R.drawable.upgrade5, R.drawable.upgrade6};
 
+
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
 
     public static final String[] MATH_ORDER_LETTERS = {"", "T", "M", "B", "R"};
