@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_height">120dp</dimen>
+    <dimen name="view_layout_height">72dp</dimen>
+    <dimen name="name_layout_height">48dp</dimen>
+    <dimen name="name_text_size">18sp</dimen>
+    <dimen name="price_text_size">16sp</dimen>
+    <dimen name="quantity_text_size">16sp</dimen>
+    <dimen name="performance_text_size">16sp</dimen>
+    <dimen name="main_button_text_size">12sp</dimen>
+    <dimen name="main_money_text_size">20sp</dimen>
+</resources>
