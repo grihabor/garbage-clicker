@@ -16,8 +16,8 @@ addons:
 
 before_install: 
   - mkdir -p app/secrets/raw
-  - openssl aes-256-cbc -K $encrypted_b9ef2d895ec4_key -iv $encrypted_b9ef2d895ec4_iv -in app/secrets/encrypted/release.keystore.enc -out app/secrets/raw/release.keystore -d
-  - openssl aes-256-cbc -K $encrypted_b494ab82b075_key -iv $encrypted_b494ab82b075_iv -in ./app/secrets/encrypted/google-services.json.enc -out ./app/google-services.json -d
+  - openssl aes-256-cbc -K $encrypted_b494ab82b075_key -iv $encrypted_b494ab82b075_iv -in app/secrets/encrypted/release.keystore.enc -out app/secrets/raw/release.keystore -d
+  - openssl aes-256-cbc -K $encrypted_b494ab82b075_key -iv $encrypted_b494ab82b075_iv -in app/secrets/encrypted/google-services.json.enc -out app/google-services.json -d
 
 script:
   - ./gradlew assemble
