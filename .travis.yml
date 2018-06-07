@@ -16,17 +16,14 @@ addons:
 
 before_install: 
   - mkdir -p app/secrets/raw
-  - openssl aes-256-cbc -K $encrypted_b494ab82b075_key -iv $encrypted_b494ab82b075_iv -in app/secrets/encrypted/release.keystore.enc -out app/secrets/raw/release.keystore -d
-  - openssl aes-256-cbc -K $encrypted_b494ab82b075_key -iv $encrypted_b494ab82b075_iv -in app/secrets/encrypted/google-services.json.enc -out app/google-services.json -d
+  - openssl aes-256-cbc -K $encrypted_b494ab82b075_key -iv $encrypted_b494ab82b075_iv -in app/secrets/raw.tar.gz.enc -out app/secrets/raw.tar.gz -d
+  - tar -xzvf app/secrets/raw.tar.gz
+  - mv app/secrets/raw/google-services.json app/
 
 script:
   - ./gradlew assemble
   - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
-  
-before_cache: 
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock 
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/ 
   
 cache: 
   directories: 
