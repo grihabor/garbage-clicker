@@ -5,7 +5,7 @@
     <dimen name="name_layout_height">96dp</dimen>
     <dimen name="name_text_size">36sp</dimen>
     <dimen name="price_text_size">26sp</dimen>
-    <dimen name="qty_text_size">24sp</dimen>
+    <dimen name="quantityty_text_size">24sp</dimen>
     <dimen name="performance_text_size">24sp</dimen>
     <dimen name="main_button_text_size">18sp</dimen>
     <dimen name="main_money_text_size">24sp</dimen>
