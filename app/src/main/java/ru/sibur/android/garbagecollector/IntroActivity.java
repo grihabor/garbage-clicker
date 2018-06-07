@@ -36,6 +36,9 @@ public class IntroActivity extends AppCompatActivity {
 
     Button achievementButton;
     SignInButton signInButton;
+    Button signOutButton;
+
+    GoogleSignInClient signInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +53,17 @@ public class IntroActivity extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setUI();
-        updateUI();
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        signInClient = GoogleSignIn.getClient(this, gso);
+
+        Task<GoogleSignInAccount> silentSignInTask = signInClient.silentSignIn();
+        silentSignInTask.addOnCompleteListener((i) -> {
+            setUI();
+            updateUI();
+        });
 
     }
 
@@ -98,25 +110,28 @@ public class IntroActivity extends AppCompatActivity {
             });
         });
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        GoogleSignInClient signInClient = GoogleSignIn.getClient(this, gso);
 
         signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener((view) -> {
             Intent signInIntent = signInClient.getSignInIntent();
             startActivityForResult(signInIntent, RC_SIGN_IN);
         });
+
+        signOutButton = findViewById(R.id.sign_out_button);
+        signOutButton.setOnClickListener((view) -> {
+            Task<Void> signOutTask = signInClient.signOut();
+            signOutTask.addOnSuccessListener((n) -> updateUI());
+        });
     }
 
     void updateUI() {
         if (GoogleSignIn.getLastSignedInAccount(this) != null) {
             signInButton.setVisibility(View.GONE);
+            signOutButton.setVisibility(View.VISIBLE);
             achievementButton.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
+            signOutButton.setVisibility(View.GONE);
             achievementButton.setVisibility(View.GONE);
         }
     }
