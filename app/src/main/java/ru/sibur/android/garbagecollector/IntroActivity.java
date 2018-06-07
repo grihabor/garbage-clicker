@@ -30,9 +30,12 @@ import com.google.android.gms.tasks.Task;
 
 public class IntroActivity extends AppCompatActivity {
     private String TAG = "INTRO";
-    GoogleSignInClient signInClient;
+
     public static final int RC_SIGN_IN = 2001;
-    public static final int RC_ACHIEVEMENT = 31415;
+    public static final int RC_ACHIEVEMENT_UI = 31415;
+
+    Button achievementButton;
+    SignInButton signInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,8 @@ public class IntroActivity extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setUI(GoogleSignIn.getLastSignedInAccount(this));
+        setUI();
+        updateUI();
 
     }
 
@@ -66,7 +70,7 @@ public class IntroActivity extends AppCompatActivity {
 
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                setUI(account);
+                updateUI();
             } catch (ApiException e) {
                 Log.e(TAG, e.getStatusCode() + " code");
                 Toast.makeText(this, "google sign in fail", Toast.LENGTH_LONG).show();
@@ -75,7 +79,7 @@ public class IntroActivity extends AppCompatActivity {
         }
     }
 
-    void setUI(GoogleSignInAccount account) {
+    void setUI() {
         Button playButton = findViewById(R.id.play_button);
         playButton.setOnClickListener((view) -> {
             Intent intent = new Intent(IntroActivity.this, MainActivity.class);
@@ -85,12 +89,12 @@ public class IntroActivity extends AppCompatActivity {
         Button exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener((view) -> finish());
 
-        Button achievementButton = findViewById(R.id.achievement_button);
+        achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
             AchievementsClient client = Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this));
             Task<Intent> task = client.getAchievementsIntent();
             task.addOnSuccessListener(intent -> {
-                startActivityForResult(intent, RC_ACHIEVEMENT);
+                startActivityForResult(intent, RC_ACHIEVEMENT_UI);
             });
         });
 
@@ -98,21 +102,22 @@ public class IntroActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        signInClient = GoogleSignIn.getClient(this, gso);
+        GoogleSignInClient signInClient = GoogleSignIn.getClient(this, gso);
 
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener((view) -> {
             Intent signInIntent = signInClient.getSignInIntent();
             startActivityForResult(signInIntent, RC_SIGN_IN);
         });
+    }
 
-        if (account != null) {
+    void updateUI() {
+        if (GoogleSignIn.getLastSignedInAccount(this) != null) {
             signInButton.setVisibility(View.GONE);
             achievementButton.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
             achievementButton.setVisibility(View.GONE);
         }
-
     }
 }
