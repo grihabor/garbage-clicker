@@ -20,7 +20,6 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     Storage storage;
     Context context;
 
-
     AutomataThread(StateStorage storage, Context context) {
         this.storage = storage;
         this.context = context;

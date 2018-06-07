@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="20sp"
-            android:text="@string/displayed_vault_name"/>
+            android:text="Сибурики: "/>
         <TextView
             android:id="@+id/moneyDisplay"
             android:layout_width="wrap_content"
@@ -43,7 +43,6 @@
         <Button
             android:id="@+id/buttonAutomationShopFragment"
             android:layout_width="0dp"
-            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToAutomationShopFragment"
@@ -53,7 +52,6 @@
         <Button
             android:id="@+id/buttonGarbageRecyclingFragment"
             android:layout_width="0dp"
-            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToGarbageRecyclingFragment"
@@ -63,7 +61,6 @@
         <Button
             android:id="@+id/buttonUpgradeShopFragment"
             android:layout_width="0dp"
-            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToUpgradeShopFragment"
