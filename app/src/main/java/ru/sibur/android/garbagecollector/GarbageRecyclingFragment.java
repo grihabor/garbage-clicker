@@ -40,13 +40,15 @@ public class GarbageRecyclingFragment extends Fragment {
         Activity activity = getActivity();
             if (activity != null) {
                 clickPerformanceTextView = activity.findViewById(R.id.click_pefrormance_text_view);
+                storage.addOnDBChangeListener(Constant.upgradeCountKey(0), () -> {
+
+                });
             }
 
         Button baffer = activity.findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-            storage.addMoney( (getClickPerformance())
-            );
+            storage.addMoney(BigInteger.valueOf(getClickPerformance()));
             showClickPerformance();
         });
 
@@ -61,17 +63,10 @@ public class GarbageRecyclingFragment extends Fragment {
         return clickPerformance;
     }
 
-    public void showClickPerformance(){
+    public void showClickPerformance() {
         int clickPerformance = getClickPerformance();
-        String clickPerformanceString = Constant.formatMoney(clickPerformance);
+        String clickPerformanceString = Constant.formatMoney(BigInteger.valueOf((clickPerformance)));
         clickPerformanceTextView.setText(clickPerformanceString);
-
-            String clickUpgradeCountKey = Constant.upgradeCountKey(0);
-            int clickUpgradeCount = storage.getShopItemCount(clickUpgradeCountKey);
-            double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickUpgradeCount);
-            BigInteger moneyPerClick = Constant.multiply(BigInteger.ONE, multiplier);
-            storage.addMoney(moneyPerClick);
-                }
-        );
     }
+
 }
