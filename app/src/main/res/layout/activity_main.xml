@@ -43,7 +43,7 @@
         <Button
             android:id="@+id/buttonAutomationShopFragment"
             android:layout_width="0dp"
-            android:textSize="12dp"
+            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToAutomationShopFragment"
@@ -52,7 +52,7 @@
         <Button
             android:id="@+id/buttonGarbageRecyclingFragment"
             android:layout_width="0dp"
-            android:textSize="12dp"
+            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToGarbageRecyclingFragment"
