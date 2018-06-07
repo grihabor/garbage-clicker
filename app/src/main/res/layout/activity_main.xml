@@ -61,7 +61,7 @@
         <Button
             android:id="@+id/buttonUpgradeShopFragment"
             android:layout_width="0dp"
-            android:textSize="12dp"
+            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="switchToUpgradeShopFragment"
