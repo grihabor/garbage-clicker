@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_layout"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="100dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/name_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_height="40dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -21,25 +20,25 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:text="TextView"
-            android:textSize="18dp" />
+            android:textSize="12dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/view_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:layout_weight="2"
         android:orientation="horizontal">
 
         <FrameLayout
             android:id="@+id/img_layout"
-            android:layout_width="72dp"
-            android:layout_height="72dp">
+            android:layout_width="60dp"
+            android:layout_height="60dp">
 
             <ImageView
                 android:id="@+id/img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/shop_item_icon" />
         </FrameLayout>
 
@@ -58,8 +57,8 @@
 
                 <FrameLayout
                     android:id="@+id/money_img_layout"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp">
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
 
                     <ImageView
                         android:id="@+id/money_img"
@@ -74,8 +73,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:textSize="16dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
@@ -85,20 +84,23 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="@string/displayed_qty_name"
-                    android:textSize="16dp"
-                    android:layout_gravity="center_vertical"/>
+                    android:textSize="10dp" />
+
                 <TextView
                     android:id="@+id/quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:textSize="16dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textSize="10dp" />
+
 
             </LinearLayout>
         </LinearLayout>
