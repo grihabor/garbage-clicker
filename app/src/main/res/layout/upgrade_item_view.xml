@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/name_layout_height"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="TextView"
+            android:textSize="@dimen/name_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_layout_height"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/img_layout"
+            android:layout_width="@dimen/view_layout_height"
+            android:layout_height="@dimen/view_layout_height">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/shop_item_icon" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/price_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/money_img_layout"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp">
+
+                    <ImageView
+                        android:id="@+id/money_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@android:drawable/btn_star_big_on" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/price_text_size"
+                    android:text="TextView" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qty_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/displayed_qty_name"
+                    android:textSize="@dimen/quantity_text_size"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/quantity_text_size"
+                    android:text="TextView" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
