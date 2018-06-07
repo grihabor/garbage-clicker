@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#367dd2ff"
+        android:background="@drawable/background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button"
-            android:text="@string/play_button_text" />
+            android:text="@string/play_button_text"
+            android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/achievement_button"
@@ -30,14 +31,15 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button"
             android:text="@string/achievement_button_text"
-            android:textColor="#4727A3" />
+            android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/exit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button"
-            android:text="@string/exit_button_text" />
+            android:text="@string/exit_button_text"
+            android:textColor="@color/textColor" />
     </LinearLayout>
 
     <com.google.android.gms.common.SignInButton

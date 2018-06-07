@@ -11,14 +11,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="end">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:textSize="20sp"
             android:text="@string/displayed_vault_name"
-            android:textSize="20sp" />
+            />
 
         <TextView
             android:id="@+id/moneyDisplay"
@@ -46,32 +47,35 @@
         <Button
             android:id="@+id/buttonAutomationShopFragment"
             android:layout_width="0dp"
-            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button"
             android:onClick="switchToAutomationShopFragment"
-            android:text="@string/automation_shop_sign" />
+            android:text="@string/automation_shop_sign"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/main_button_text_size" />
 
         <Button
             android:id="@+id/buttonGarbageRecyclingFragment"
             android:layout_width="0dp"
-            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button"
             android:onClick="switchToGarbageRecyclingFragment"
-            android:text="@string/recycle_sign" />
+            android:text="@string/recycle_sign"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/main_button_text_size" />
 
         <Button
             android:id="@+id/buttonUpgradeShopFragment"
             android:layout_width="0dp"
-            android:textSize="@dimen/main_button_text_size"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button"
             android:onClick="switchToUpgradeShopFragment"
-            android:text="@string/upgrade_shop_sign" />
+            android:text="@string/upgrade_shop_sign"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/main_button_text_size" />
 
     </LinearLayout>
 
