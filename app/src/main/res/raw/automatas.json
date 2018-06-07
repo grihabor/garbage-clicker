@@ -1,71 +1,67 @@
-[
-  {
-    "name":"мусорный бак",
+{
+  "garbage_bin": {
+    "name": "мусорный бак",
     "base_price": "100",
     "base_performance": "1",
     "icon_id": 0
   },
-
-
-  {
-    "name":"раздельный сбор",
+  "seprate_collection": {
+    "name": "раздельный сбор",
     "base_price": "5000",
     "base_performance": "5",
     "icon_id": 1
   },
-
-
-  {
-    "name":"мусоровоз",
+  "garbage_car ": {
+    "name": "мусоровоз",
     "base_price": "30000",
     "base_performance": "20",
     "icon_id": 2
   },
 
 
-  {
-    "name":"сортировочная машина",
-    "base_price": "150000",
-    "base_performance": "50",
-    "icon_id": 3
-  },
+"sorting_car":{
+  "name": "сортировочная машина",
+  "base_price": "150000",
+  "base_performance": "50",
+  "icon_id": 3
+},
 
 
-  {
-    "name":"сортировочный центр",
-    "base_price": "1000000",
-    "base_performance": "75",
-    "icon_id": 4
-  },
+"sorting_center":{
+"name": "сортировочный центр",
+"base_price": "1000000",
+"base_performance": "75",
+"icon_id": 4
+},
 
-  {
-    "name":"перерабатывающий завод",
-    "base_price": "10000000",
-    "base_performance": "100",
-    "icon_id": 5
-  },
-
-
-  {
-    "name":"улучшенный завод",
-    "base_price": "50000000",
-    "base_performance": "150",
-    "icon_id": 6
-  },
+"recycling_factory":{
+"name": "перерабатывающий завод",
+"base_price": "10000000",
+"base_performance": "100",
+"icon_id": 5
+},
 
 
-  {
-    "name":"экологическое производство",
-    "base_price": "1000000000",
-    "base_performance": "300",
-    "icon_id": 7
-  },
+"improved_factory":{
+"name": "улучшенный завод",
+"base_price": "50000000",
+"base_performance": "150",
+"icon_id": 6
+},
 
 
-  {
-    "name":"сеть заводов",
-    "base_price": "1000000000000",
-    "base_performance":"500",
-    "icon_id": 8
-  }
-]
+"eco_factory":{
+"name": "экологическое производство",
+"base_price": "1000000000",
+"base_performance": "300",
+"icon_id": 7
+},
+
+
+"net_of_factorys":{
+"name": "сеть заводов",
+"base_price": "1000000000000",
+"base_performance": "500",
+"icon_id": 8
+}
+}

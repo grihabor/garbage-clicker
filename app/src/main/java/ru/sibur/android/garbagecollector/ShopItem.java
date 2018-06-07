@@ -1,6 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -28,6 +29,7 @@ public abstract class ShopItem {
             this.name = attributes.getString("name");
             this.basePrice = new BigInteger (attributes.getString("base_price"));
             this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id")];
+            //this.iconId = Resources.getSystem().getIdentifier(attributes.getString("icon_id"), "drawable", "ru.sibur.android.garbagecollector");
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
