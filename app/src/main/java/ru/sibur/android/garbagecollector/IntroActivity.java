@@ -31,7 +31,8 @@ import com.google.android.gms.tasks.Task;
 public class IntroActivity extends AppCompatActivity {
     private String TAG = "INTRO";
     GoogleSignInClient signInClient;
-    public static final int RC_SIGN_IN = 1488;
+    public static final int RC_SIGN_IN = 2001;
+    public static final int RC_ACHIEVEMENT = 31415;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +89,9 @@ public class IntroActivity extends AppCompatActivity {
         achievementButton.setOnClickListener((view) -> {
             AchievementsClient client = Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this));
             Task<Intent> task = client.getAchievementsIntent();
-            task.addOnSuccessListener(this::startActivity);
+            task.addOnSuccessListener(intent -> {
+                startActivityForResult(intent, RC_ACHIEVEMENT);
+            });
         });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
