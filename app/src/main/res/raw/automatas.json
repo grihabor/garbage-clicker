@@ -11,7 +11,7 @@
     "name":"раздельный сбор",
     "base_price": "5000",
     "base_performance": "5",
-    "icon_id": 0
+    "icon_id": 1
   },
 
 
@@ -19,7 +19,7 @@
     "name":"мусоровоз",
     "base_price": "30000",
     "base_performance": "20",
-    "icon_id": 0
+    "icon_id": 2
   },
 
 
@@ -27,7 +27,7 @@
     "name":"сортировочная машина",
     "base_price": "150000",
     "base_performance": "50",
-    "icon_id": 0
+    "icon_id": 3
   },
 
 
@@ -35,14 +35,14 @@
     "name":"сортировочный центр",
     "base_price": "1000000",
     "base_performance": "75",
-    "icon_id": 0
+    "icon_id": 4
   },
 
   {
     "name":"перерабатывающий завод",
     "base_price": "10000000",
     "base_performance": "100",
-    "icon_id": 0
+    "icon_id": 5
   },
 
 
@@ -50,7 +50,7 @@
     "name":"улучшенный завод",
     "base_price": "50000000",
     "base_performance": "150",
-    "icon_id": 0
+    "icon_id": 6
   },
 
 
@@ -58,7 +58,7 @@
     "name":"экологическое производство",
     "base_price": "1000000000",
     "base_performance": "300",
-    "icon_id": 0
+    "icon_id": 7
   },
 
 
@@ -66,6 +66,6 @@
     "name":"сеть заводов",
     "base_price": "1000000000000",
     "base_performance":"500",
-    "icon_id": 0
+    "icon_id": 8
   }
 ]

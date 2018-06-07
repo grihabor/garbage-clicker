@@ -34,7 +34,7 @@ public final class Constant {
     public static final String[] SHOP_ITEM_ATTRIBUTES = {SHOP_ITEM_NAME_KEY, SHOP_ITEM_PRICE_KEY, SHOP_ITEM_COUNT_KEY, SHOP_ITEM_ICON_ID_KEY, SHOP_ITEM_PERFORMANCE_KEY};
     public static final int S_PREF_NUMERAL_SYSTEM = 10;
 
-    public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.shop_item_icon};
+    public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.automata1,R.drawable.automata2, R.drawable.automata3, R.drawable.automata4, R.drawable.automata5,R.drawable.automata6,R.drawable.automata7,R.drawable.automata8,R.drawable.automata9};
 
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
 
