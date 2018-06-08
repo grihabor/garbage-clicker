@@ -1,5 +1,8 @@
 package ru.sibur.android.garbagecollector;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.ListFragment;
 import android.view.View;
 
@@ -7,6 +10,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.TransitionDrawable;
 
+import android.view.ViewPropertyAnimator;
+import android.view.animation.ScaleAnimation;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -67,23 +72,25 @@ public class ShopFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         ShopItem current = shop.shopItemArray.get(position);
+        int initialColor;
         if(current.tryToBuy(shop.context, shop.storage)) {
-            ColorDrawable[] color = {
-                    new ColorDrawable(Color.GREEN),
-                    new ColorDrawable(Color.WHITE)
-            };
-            TransitionDrawable trans = new TransitionDrawable(color);
-            v.setBackground(trans);
-            trans.startTransition(300);
+            initialColor = Color.GREEN;
         } else {
-            ColorDrawable[] color = {
-                    new ColorDrawable(Color.RED),
-                    new ColorDrawable(Color.WHITE)
-            };
-            TransitionDrawable trans = new TransitionDrawable(color);
-            v.setBackground(trans);
-            trans.startTransition(300);
+            initialColor = Color.RED;
         }
+
+        ValueAnimator animator = ValueAnimator.ofObject(new ArgbEvaluator(),
+                initialColor,
+                Color.argb(0, 0, 0, 0));
+
+        animator.setDuration(300);
+
+        animator.addUpdateListener((animation) -> {
+            int color = (int) animation.getAnimatedValue();
+            v.setBackgroundColor(color);
+        });
+
+        animator.start();
     }
 
 }
