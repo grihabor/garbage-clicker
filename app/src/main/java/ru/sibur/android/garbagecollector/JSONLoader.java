@@ -5,7 +5,6 @@ import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,7 +33,7 @@ public  class JSONLoader {
             }
             return writer.toString();
         } catch (UnsupportedEncodingException e) {
-            Log.e(TAG, "Wrong format in json file: id=" + id);
+            Log.e(TAG, "Wrong format in automatas.json ");
         } catch (IOException e) {
             Log.e(TAG, "IOException: " + e.getMessage()); //это непонятная ошибка, но пускай ловится и сигнализирует, если вылезает
         }finally {
@@ -49,15 +48,15 @@ public  class JSONLoader {
 
 
 
-    public JSONObject parceJSONResource(int id){
-        JSONObject jsonObject = null;
+    public JSONArray parceJSONResource(int id){
+        JSONArray jsonArray = null;
         try {
-            jsonObject = new JSONObject(readRawResource(id));
-            if(jsonObject == null) Log.e(TAG, "Unable to load data from json file: id="+id);
+            jsonArray = new JSONArray(readRawResource(id));
+            if(jsonArray == null) Log.e(TAG, "Unable to load data from automatas.json");
             } catch (JSONException e) {
             Log.e(TAG, "JSONException: "+ e.getMessage());
 
         }
-        return jsonObject;
+        return jsonArray;
     }
 }

@@ -1,55 +1,71 @@
-{
-  "garbage_bin": {
-    "name": "Мусорный бак",
+[
+  {
+    "name":"мусорный бак",
     "base_price": "100",
-    "base_performance": "1"
+    "base_performance": "1",
+    "icon_id": 0
   },
-  "separate_collection": {
-    "name": "Раздельный сбор",
+
+
+  {
+    "name":"раздельный сбор",
     "base_price": "5000",
-    "base_performance": "5"
+    "base_performance": "5",
+    "icon_id": 0
   },
 
-  "garbage_car": {
-    "name": "Мусоровоз",
+
+  {
+    "name":"мусоровоз",
     "base_price": "30000",
-    "base_performance": "20"
+    "base_performance": "20",
+    "icon_id": 0
   },
 
-  "sorting_car": {
-    "name": "Сортировочная машина",
+
+  {
+    "name":"сортировочная машина",
     "base_price": "150000",
-    "base_performance": "50"
+    "base_performance": "50",
+    "icon_id": 0
   },
 
-  "sorting_center": {
-    "name": "Сортировочный центр",
+
+  {
+    "name":"сортировочный центр",
     "base_price": "1000000",
-    "base_performance": "75"
+    "base_performance": "75",
+    "icon_id": 0
   },
 
-  "recycling_factory": {
-    "name": "Перерабатывающий завод",
+  {
+    "name":"перерабатывающий завод",
     "base_price": "10000000",
-    "base_performance": "100"
+    "base_performance": "100",
+    "icon_id": 0
   },
 
-  "improved_factory": {
-    "name": "Улучшенный завод",
+
+  {
+    "name":"улучшенный завод",
     "base_price": "50000000",
-    "base_performance": "150"
+    "base_performance": "150",
+    "icon_id": 0
   },
 
-  "eco_factory": {
-    "name": "Экологическое производство",
+
+  {
+    "name":"экологическое производство",
     "base_price": "1000000000",
-    "base_performance": "300"
+    "base_performance": "300",
+    "icon_id": 0
   },
 
-  "net_of_factorys": {
-    "name": "Сеть заводов",
-    "base_price": "1000000000000",
-    "base_performance": "500"
-  }
 
-}
+  {
+    "name":"сеть заводов",
+    "base_price": "1000000000000",
+    "base_performance":"500",
+    "icon_id": 0
+  }
+]
