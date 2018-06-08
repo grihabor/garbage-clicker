@@ -13,6 +13,17 @@ import java.util.stream.StreamSupport;
  */
 
 public final class Constant {
+
+    public static final int SOUND_ONE = 1; // наименования звуков, начинать с единицы
+    public static final int SOUND_TWO = 2;
+    public static final int SOUND_QUALITY = 100; // уже не используется, можно ставить 0
+    public static final int MAX_STREAMS = 4; // максимальное количество потоков звука, воспр. одновременно
+    public static final int PRIORITY = 1; // приоритет потока (0 - самый низкий)
+
+    public static final float volume = 1f; // громкость звукового эффекта
+    public static final float rate = 1f; // скорость воспроизведения (от 0.5 до 2.0)
+    public static final int loop = 0; // количество повторов 0 - без повторов, (-1) - зациклен
+
     public static final String MONEY_KEY = "money_key";
     public static final String PREF_NAME = "my_pref";
     public static final String LAST_UPDATE_NAME = "update";
@@ -90,5 +101,6 @@ public final class Constant {
         BigInteger bigMultiplier = BigInteger.valueOf(intMultiplier);
         return bi.multiply(bigMultiplier).divide(BigInteger.valueOf(MONEY_DIVISOR));
     }
+
 
 }

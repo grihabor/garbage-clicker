@@ -4,6 +4,7 @@
     <string name="play_button_text">Играть</string>
     <string name="achievement_button_text">Достижения</string>
     <string name="exit_button_text">Выход</string>
+    <string name="settings_button_text">Настройки</string>
  
     <string name="upgrade_shop_sign">улучшения</string>
     <string name="automation_shop_sign">автоматы</string>
