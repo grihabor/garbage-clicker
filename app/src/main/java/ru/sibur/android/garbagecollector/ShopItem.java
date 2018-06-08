@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -9,6 +8,8 @@ import org.json.JSONObject;
 
 import java.math.BigInteger;
 import java.util.HashMap;
+
+import static android.app.PendingIntent.getActivity;
 
 /**
  * Элемент списка в фрагменте магазина
@@ -27,9 +28,8 @@ public abstract class ShopItem {
 
         try {
             this.name = attributes.getString("name");
+            this.iconId = StateStorage.getIdFromName(attributes.getString("icon_id"));
             this.basePrice = new BigInteger (attributes.getString("base_price"));
-            this.iconId = Constant.SHOP_ITEMS_ICON_IDS[attributes.getInt("icon_id")];
-            //this.iconId = Resources.getSystem().getIdentifier(attributes.getString("icon_id"), "drawable", "ru.sibur.android.garbagecollector");
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
@@ -39,7 +39,7 @@ public abstract class ShopItem {
         HashMap<String,Object> map = new HashMap<>();
         map.put(Constant.SHOP_ITEM_NAME_KEY, name);
         map.put(Constant.SHOP_ITEM_PRICE_KEY, Constant.formatMoney(getPrice()));
-        map.put(Constant.SHOP_ITEM_ICON_ID_KEY, iconId);
+        map.put(Constant.SHOP_ITEM_ICON_KEY, iconId);
         map.put(Constant.SHOP_ITEM_COUNT_KEY, getCount());
         map.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, "");
         return (map);

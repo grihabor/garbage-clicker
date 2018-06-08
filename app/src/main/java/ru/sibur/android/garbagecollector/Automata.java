@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONException;

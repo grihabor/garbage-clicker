@@ -43,7 +43,9 @@ public abstract class Shop {
             shopItemAttrArray = IntStream.range(0, jsonObject.names().length()).mapToObj(i -> {
                 ShopItem ret = null;
                 try {
-                    ret = this.createInstance ((JSONObject) jsonObject.get((jsonObject.names().get(i)).toString()),i);
+                    ret = this.createInstance (
+                            (JSONObject) jsonObject.get((jsonObject.names().get(i)).toString()),
+                            i);
                 } catch (JSONException e) {
                     Log.e(getTag(), "JSONException: " + e.getMessage());
                 }
