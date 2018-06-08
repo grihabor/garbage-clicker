@@ -84,6 +84,12 @@ public class IntroActivity extends AppCompatActivity {
         Button exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener((view) -> finish());
 
+        Button settingsButton = findViewById(R.id.settings_button);
+        settingsButton.setOnClickListener((view)->{
+            Intent intent = new Intent(IntroActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
         Button achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
             AchievementsClient client = Games.getAchievementsClient(this, account);

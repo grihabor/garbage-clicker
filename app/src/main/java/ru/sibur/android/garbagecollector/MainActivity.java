@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
     protected void onStart(){
         super.onStart();
-        startService(new Intent(this, MyService.class));
+        if(storage.getMusicShouldBe()) startService(new Intent(this, MyService.class));
     }
 
     protected void onResume() {

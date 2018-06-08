@@ -83,7 +83,7 @@ public class ShopFragment extends ListFragment {
             };
             TransitionDrawable trans = new TransitionDrawable(color);
             v.setBackground(trans);
-            if (soundPool != null) soundPool.play(Constant.SOUND_ONE, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
+            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_ONE, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
 
             trans.startTransition(300);
         } else {
@@ -92,7 +92,7 @@ public class ShopFragment extends ListFragment {
                     new ColorDrawable(Color.WHITE)
             };
             TransitionDrawable trans = new TransitionDrawable(color);
-            if (soundPool != null) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
+            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
             v.setBackground(trans);
             trans.startTransition(300);
         }

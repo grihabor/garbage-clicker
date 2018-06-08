@@ -27,6 +27,8 @@ public final class Constant {
     public static final String PREF_NAME = "my_pref";
     public static final String LAST_UPDATE_NAME = "update";
     public static final String TOTAL_MONEY_EARNED_KEY = "total_money_earned_key";
+    public static final String MUSIC_SHOULD_BE_KEY = "music_should_be";
+    public static final String SOUNDS_SHOULD_BE_KEY = "sounds_should_be";
     public static final int TIME_UNIT = 1000;
 
     public static final double UPGRADE_COST_INCREASE_MULTIPLIER = 1.30;
