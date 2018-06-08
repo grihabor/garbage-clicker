@@ -28,7 +28,7 @@ public abstract class ShopItem {
 
         try {
             String name = jsonData.names().get(iterationIndex).toString();
-            iconName = Constant.resFullName(name);
+            iconName = name;
             countKey = name;
             JSONObject attributes = jsonData.getJSONObject(name);
             setJsonAttrs(attributes);
@@ -38,8 +38,11 @@ public abstract class ShopItem {
     }
     
     public HashMap<String, Object> getViewData(Context context) {
+        String packageName = context.getPackageName();
+        String fullIconName = Constant.resFullName(iconName, packageName);
+
         Resources res = context.getResources();
-        int iconId = res.getIdentifier(iconName, "drawable", getClass().getPackage().getName());
+        int iconId = res.getIdentifier(fullIconName, "drawable", fullIconName);
 
         HashMap<String,Object> map = new HashMap<>();
         map.put(Constant.SHOP_ITEM_NAME_KEY, name);
