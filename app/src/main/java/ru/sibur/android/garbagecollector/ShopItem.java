@@ -39,7 +39,7 @@ public abstract class ShopItem {
     
     public HashMap<String, Object> getViewData(Context context) {
         String packageName = context.getPackageName();
-        String fullIconName = Constant.resFullName(iconName, packageName);
+        String fullIconName = Constant.getDrawableResourceFullName(iconName, packageName);
 
         Resources res = context.getResources();
         int iconId = res.getIdentifier(fullIconName, "drawable", fullIconName);

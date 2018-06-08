@@ -48,7 +48,7 @@ public final class Constant {
     public static final String[] MATH_ORDER_LETTERS = {"", "T", "M", "B", "R"};
     public static final int MONEY_DIVISOR = 100;
 
-    public static String resFullName (String shortName, String packageName) {
+    public static String getDrawableResourceFullName (String shortName, String packageName) {
         return packageName + ":drawable/" + shortName;
     }
 
