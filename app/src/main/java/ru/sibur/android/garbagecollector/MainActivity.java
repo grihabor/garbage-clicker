@@ -3,14 +3,21 @@ package ru.sibur.android.garbagecollector;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 import java.math.BigInteger;
+
+import static ru.sibur.android.garbagecollector.Constant.SOUND_QUALITY;
 
 
 /**
@@ -21,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView moneyDisplay;
     AutomataThread automataThread = null;
     StateStorage storage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +46,16 @@ public class MainActivity extends AppCompatActivity {
 
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
-        
+
         moneyDisplay = findViewById(R.id.moneyDisplay);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
             moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
         });
+    }
+    protected void onStart(){
+        super.onStart();
+        if(storage.getMusicShouldBe()) startService(new Intent(this, MyService.class));
     }
 
     protected void onResume() {
@@ -58,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         if (automataThread != null) {
             automataThread.cancel(true);
         }
+        stopService(new Intent(this, MyService.class));
     }
 
     public void switchToUpgradeShopFragment(View view) {
@@ -87,4 +100,6 @@ public class MainActivity extends AppCompatActivity {
         fTrans.replace(R.id.fragmentMainLayout, fragment);
         fTrans.commit();
     }
+
+
 }

@@ -27,7 +27,6 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         listenerMap.put(key, listener);
     }
 
-
     synchronized BigInteger getBigInteger(String key, BigInteger defVal) {
         return new BigInteger(sPref
                 .getString(key, defVal.toString(Constant.S_PREF_NUMERAL_SYSTEM)));
@@ -91,6 +90,25 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         BigInteger timeDifference = BigInteger.valueOf(currentTime - prevTime);
         BigInteger addedMoney = calculator.calculateMoney(timeDifference);
         addMoney(addedMoney);
+    }
+
+    synchronized void setMusicShouldBe(boolean shouldBe) {
+        SharedPreferences.Editor editor = sPref.edit();
+
+        editor.putBoolean(Constant.MUSIC_SHOULD_BE_KEY, shouldBe);
+        editor.apply();
+    }
+    synchronized boolean getMusicShouldBe(){
+        return sPref.getBoolean(Constant.MUSIC_SHOULD_BE_KEY,false);
+    }
+    synchronized void setSoundsShouldBe(boolean shouldBe) {
+        SharedPreferences.Editor editor = sPref.edit();
+
+        editor.putBoolean(Constant.SOUNDS_SHOULD_BE_KEY, shouldBe);
+        editor.apply();
+    }
+    synchronized boolean getSoundsShouldBe(){
+        return sPref.getBoolean(Constant.SOUNDS_SHOULD_BE_KEY,false);
     }
 
     /**
