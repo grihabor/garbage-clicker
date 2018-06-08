@@ -40,12 +40,13 @@ public class GarbageRecyclingFragment extends Fragment {
         Button baffer = getView().findViewById(R.id.button);
 
         baffer.setOnClickListener(v -> {
-            String clickUpgradeCountKey = Constant.upgradeCountKey(0);
-            int clickUpgradeCount = storage.getShopItemCount(clickUpgradeCountKey);
-            double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickUpgradeCount);
+            String clickMultKey = "click_performance";
+            int clickMultCount = storage.getShopItemCount(clickMultKey);
+
+            double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickMultCount);
+
             BigInteger moneyPerClick = Constant.multiply(BigInteger.ONE, multiplier);
             storage.addMoney(moneyPerClick);
-                }
-        );
+            });
     }
 }

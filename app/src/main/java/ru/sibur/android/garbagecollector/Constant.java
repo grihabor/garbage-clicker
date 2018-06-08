@@ -4,9 +4,6 @@ import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Formatter;
-import java.util.stream.StreamSupport;
 
 /**
  * Содержит константы, нужные нам в разных классах программы
@@ -34,30 +31,13 @@ public final class Constant {
     public static final String[] SHOP_ITEM_ATTRIBUTES = {SHOP_ITEM_NAME_KEY, SHOP_ITEM_PRICE_KEY, SHOP_ITEM_COUNT_KEY, SHOP_ITEM_ICON_ID_KEY, SHOP_ITEM_PERFORMANCE_KEY};
     public static final int S_PREF_NUMERAL_SYSTEM = 10;
 
-    public static final int[] SHOP_ITEMS_ICON_IDS = {R.drawable.shop_item_icon};
-
     public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS = {R.id.name, R.id.price, R.id.quantity, R.id.img, R.id.performance };
 
     public static final String[] MATH_ORDER_LETTERS = {"", "T", "M", "B", "R"};
     public static final int MONEY_DIVISOR = 100;
-    /**
-     * @param automataIndex
-     * Automata index in the list of automationShop (from 0)
-     * @return
-     * Key by which we can change automata count (how many times was the automata bought) via StateStorage object
-     */
-    public static String automataCountKey (int automataIndex) {
-        return "automata:" + automataIndex;
-    }
 
-    /**
-     * @param upgradeIndex
-     * Upgrade index in the list of upgradeShop (from 0)
-     * @return
-     * Key by which we can change upgrade count (how many times was the upgrade bought) via StateStorage object
-     */
-    public static String upgradeCountKey (int upgradeIndex) {
-        return "upgrade:" + upgradeIndex;
+    public static String resFullName (String shortName) {
+        return "ru.sibur.android.garbagecollector.dev.debug:drawable/" + shortName;
     }
 
 
@@ -90,5 +70,4 @@ public final class Constant {
         BigInteger bigMultiplier = BigInteger.valueOf(intMultiplier);
         return bi.multiply(bigMultiplier).divide(BigInteger.valueOf(MONEY_DIVISOR));
     }
-
 }
