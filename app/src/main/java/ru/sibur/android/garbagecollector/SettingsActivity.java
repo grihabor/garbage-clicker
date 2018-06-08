@@ -4,10 +4,8 @@ package ru.sibur.android.garbagecollector;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 
 public class SettingsActivity extends AppCompatActivity {
     @Override

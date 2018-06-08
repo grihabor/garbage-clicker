@@ -86,31 +86,12 @@ public class ShopFragment extends ListFragment {
         ShopItem current = shop.shopItemArray.get(position);
         ValueAnimator animator;
         if(current.tryToBuy(shop.context, shop.storage)) {
-<<<<<<< HEAD
-            ColorDrawable[] color = {
-                    new ColorDrawable(Color.GREEN),
-                    new ColorDrawable(Color.WHITE)
-            };
-            TransitionDrawable trans = new TransitionDrawable(color);
-            v.setBackground(trans);
-            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_ONE, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
-
-            trans.startTransition(300);
-        } else {
-            ColorDrawable[] color = {
-                    new ColorDrawable(Color.RED),
-                    new ColorDrawable(Color.WHITE)
-            };
-            TransitionDrawable trans = new TransitionDrawable(color);
-            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
-            v.setBackground(trans);
-            trans.startTransition(300);
-=======
 
             animator = (ValueAnimator) AnimatorInflater.loadAnimator(this.getActivity(), R.animator.buying_success);
+            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_ONE, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
         } else {
             animator = (ValueAnimator) AnimatorInflater.loadAnimator(this.getActivity(), R.animator.buying_fail);
->>>>>>> bde93cf9959cc9cda4ee2f93e69b99516e713fac
+            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
         }
 
         animator.addUpdateListener((animation) -> {
