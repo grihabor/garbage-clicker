@@ -1,6 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -16,23 +17,30 @@ import java.util.HashMap;
 public abstract class ShopItem {
     BigInteger basePrice;
     String name;
-    int iconId;
+    String iconName;
     Storage storage;
+    String countKey;
 
     private final String TAG = "SHOP_ITEM";
 
-    ShopItem(JSONObject attributes, Storage storage) {
+    ShopItem(JSONObject jsonData, Storage storage, int iterationIndex) {
         this.storage = storage;
 
         try {
-            this.name = attributes.getString("name");
-            this.basePrice = new BigInteger (attributes.getString("base_price"));
+            String name = jsonData.names().get(iterationIndex).toString();
+            iconName = Constant.resFullName(name);
+            countKey = name;
+            JSONObject attributes = jsonData.getJSONObject(name);
+            setJsonAttrs(attributes);
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());
         }
     }
     
-    public HashMap<String, Object> getViewData() {
+    public HashMap<String, Object> getViewData(Context context) {
+        Resources res = context.getResources();
+        int iconId = res.getIdentifier(iconName, "drawable", getClass().getPackage().getName());
+
         HashMap<String,Object> map = new HashMap<>();
         map.put(Constant.SHOP_ITEM_NAME_KEY, name);
         map.put(Constant.SHOP_ITEM_PRICE_KEY, Constant.formatMoney(getPrice()));
@@ -60,7 +68,9 @@ public abstract class ShopItem {
         return basePrice;
     }
 
-    abstract String getCountKey ();
+    String getCountKey () {
+        return countKey;
+    }
 
     int getCount () {
         return storage.getShopItemCount(getCountKey());
@@ -68,5 +78,10 @@ public abstract class ShopItem {
 
     void setOnCountChangeListener (OnDBChangeListener listener) {
         storage.addOnDBChangeListener(getCountKey(), listener);
+    }
+
+    void setJsonAttrs(JSONObject jsonAttrs) throws JSONException {
+        this.name = jsonAttrs.getString("name");
+        this.basePrice = new BigInteger (jsonAttrs.getString("base_price"));
     }
 }

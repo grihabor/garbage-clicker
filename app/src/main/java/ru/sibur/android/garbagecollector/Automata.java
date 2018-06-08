@@ -1,5 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -17,25 +18,17 @@ import static java.lang.Math.pow;
  */
 
 public class Automata extends ShopItem {
-    private int index;
     private BigInteger basePerformance;
 
     private final String TAG = "AUTOMATA";
 
-    Automata(JSONObject attrs, Storage storage, int automataIndex) {
-        super(attrs, storage);
-        this.index = automataIndex;
-
-        try {
-            basePerformance = new BigInteger (attrs.getString("base_performance"));
-        } catch (JSONException e) {
-            Log.e(TAG, "JSONException: " + e.getMessage());
-        }
+    Automata(JSONObject jsonData, Storage storage, int automataIndex) {
+        super(jsonData, storage, automataIndex);
     }
 
     @Override
     BigInteger getPrice () {
-        String priceUpgradeCountKey = Constant.upgradeCountKey(1);
+        String priceUpgradeCountKey = "cheap_automatas";
         int priceUpgradeCount = storage.getShopItemCount(priceUpgradeCountKey);
         double decreaseMultiplier = pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, priceUpgradeCount);
         double increaseMultiplier = pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER, getCount());
@@ -45,13 +38,14 @@ public class Automata extends ShopItem {
     }
 
     @Override
-    String getCountKey() {
-        return Constant.automataCountKey(index);
+    void setJsonAttrs(JSONObject jsonAttrs) throws JSONException {
+        super.setJsonAttrs(jsonAttrs);
+        basePerformance = new BigInteger (jsonAttrs.getString("base_performance"));
     }
 
     @Override
-    public HashMap<String, Object> getViewData() {
-        HashMap<String, Object> ret = super.getViewData();
+    public HashMap<String, Object> getViewData(Context context) {
+        HashMap<String, Object> ret = super.getViewData(context);
         ret.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, Constant.formatMoney(getUnaryPerformance()));
         return ret;
     }
@@ -62,7 +56,7 @@ public class Automata extends ShopItem {
     }
 
     BigInteger getUnaryPerformance() {
-        String performanceUpgradeCountKey = Constant.upgradeCountKey(5);
+        String performanceUpgradeCountKey = "automatas_performance_upgrade";
         int performanceUpgradeCount = storage.getShopItemCount(performanceUpgradeCountKey);
         double multiplier = pow (Constant.PERFORMANCE_INCREASE_MULTIPLIER, performanceUpgradeCount);
         return Constant.multiply(basePerformance, multiplier);

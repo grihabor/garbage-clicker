@@ -59,7 +59,7 @@ public class ShopFragment extends ListFragment {
         IntStream.range(0, shop.shopItemArray.size()).forEach(i -> {
             ShopItem item = shop.shopItemArray.get(i);
             item.setOnCountChangeListener(() -> {
-                viewDataArray.set(i, item.getViewData());
+                viewDataArray.set(i, item.getViewData(getActivity()));
                 adapter.notifyDataSetChanged();
             });
         });
