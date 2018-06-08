@@ -28,7 +28,6 @@ public abstract class ShopItem {
 
         try {
             this.name = attributes.getString("name");
-            this.iconId = StateStorage.getIdFromName(attributes.getString("icon_id"));
             this.basePrice = new BigInteger (attributes.getString("base_price"));
         } catch (JSONException e) {
             Log.e(TAG, "JSONException: " + e.getMessage());

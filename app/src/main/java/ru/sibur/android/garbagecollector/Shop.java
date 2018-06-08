@@ -46,6 +46,7 @@ public abstract class Shop {
                     ret = this.createInstance (
                             (JSONObject) jsonObject.get((jsonObject.names().get(i)).toString()),
                             i);
+                    ret.iconId = ((StateStorage)storage).getIdByName(jsonObject.names().get(i).toString());
                 } catch (JSONException e) {
                     Log.e(getTag(), "JSONException: " + e.getMessage());
                 }

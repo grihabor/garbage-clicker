@@ -29,10 +29,12 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         listenerMap.put(key, listener);
     }
 
-    static int getIdFromName(String name) {
-       int id =  context.getResources().getIdentifier("ru.sibur.android.garbagecollector.dev.debug:drawable/"+name,"drawable", "ru.sibur.android.garbagecollector.dev.debug");
-       return id;
+    @Override
+    int getIdByName(String name) {
+        int id =  context.getResources().getIdentifier("ru.sibur.android.garbagecollector.dev.debug:drawable/"+name,"drawable", "ru.sibur.android.garbagecollector.dev.debug");
+        return id;
     }
+
 
     synchronized BigInteger getBigInteger(String key, BigInteger defVal) {
         return new BigInteger(sPref
