@@ -1,37 +1,43 @@
-{
-  "double_money":{
+[
+  {
     "name":"Удвоение монет",
     "base_price": "1000",
+    "icon_id": 0
   },
 
 
-  "time_of_double_money":{
+  {
     "name":"Время удвоения монет",
     "base_price": "10000",
+    "icon_id": 0
   },
 
 
-  "click_performance":{
+  {
     "name":"Мощность клика",
     "base_price": "10000",
+    "icon_id": 0
   },
 
 
-  "cheap_automatas":{
+  {
     "name":"Уменьшение стоимости автоматов",
     "base_price": "10000000",
+    "icon_id": 0
   },
 
 
-  "cheap_upgrades":{
+  {
     "name":"Уменьшение стоимости апгрейдов",
     "base_price": "10000000",
+    "icon_id": 0
   },
 
 
-  "automatas_performance_upgrade":{
+  {
     "name":"Апгрейд мощности автоматов",
     "base_price": "10000",
+    "icon_id": 0
   }
 
-  }
+]

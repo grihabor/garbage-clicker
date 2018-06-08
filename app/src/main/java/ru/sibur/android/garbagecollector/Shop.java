@@ -35,18 +35,15 @@ public abstract class Shop {
 
     private ArrayList<? extends ShopItem> getShopItemList (int resourceId) {
         JSONLoader loader = new JSONLoader(context);
-        JSONObject jsonObject = loader.parceJSONResource(resourceId);
+        JSONArray jsonarray = loader.parceJSONResource(resourceId);
 
         ArrayList<? extends ShopItem> shopItemAttrArray = null;
 
-        if(jsonObject != null) {
-            shopItemAttrArray = IntStream.range(0, jsonObject.names().length()).mapToObj(i -> {
+        if(jsonarray != null) {
+            shopItemAttrArray = IntStream.range(0, jsonarray.length()).mapToObj(i -> {
                 ShopItem ret = null;
                 try {
-                    ret = this.createInstance (
-                            (JSONObject) jsonObject.get((jsonObject.names().get(i)).toString()),
-                            i);
-                    ret.iconId = ((StateStorage)storage).getIdByName(jsonObject.names().get(i).toString());
+                    ret = this.createInstance ((JSONObject) jsonarray.get(i), i);
                 } catch (JSONException e) {
                     Log.e(getTag(), "JSONException: " + e.getMessage());
                 }
@@ -56,7 +53,7 @@ public abstract class Shop {
 
 
         } else {
-            Log.e(getTag(), "Unable to load data from json: id=" + resourceId);
+            Log.e(getTag(), "Unable to load data from automatas.json");
         }
 
         return shopItemAttrArray;
