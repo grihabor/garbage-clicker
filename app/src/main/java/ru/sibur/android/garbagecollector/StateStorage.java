@@ -5,11 +5,7 @@ import android.content.SharedPreferences;
 import android.util.ArrayMap;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Date;
-
-import java9.util.stream.Collectors;
-import java9.util.stream.IntStream;
 
 
 /**
@@ -19,10 +15,11 @@ import java9.util.stream.IntStream;
 public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener {
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
+    static Context context;
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
-        
+        this.context = context;
         // see details in onSharedPreferenceChanged method
         sPref.registerOnSharedPreferenceChangeListener(this);
     }
@@ -31,6 +28,13 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     void addOnDBChangeListener (String key, OnDBChangeListener listener) {
         listenerMap.put(key, listener);
     }
+
+    @Override
+    int getIdByName(String name) {
+        int id =  context.getResources().getIdentifier("ru.sibur.android.garbagecollector.dev.debug:drawable/"+name,"drawable", "ru.sibur.android.garbagecollector.dev.debug");
+        return id;
+    }
+
 
     synchronized BigInteger getBigInteger(String key, BigInteger defVal) {
         return new BigInteger(sPref
@@ -95,6 +99,25 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         BigInteger timeDifference = BigInteger.valueOf(currentTime - prevTime);
         BigInteger addedMoney = calculator.calculateMoney(timeDifference);
         addMoney(addedMoney);
+    }
+
+    synchronized void setMusicShouldBe(boolean shouldBe) {
+        SharedPreferences.Editor editor = sPref.edit();
+
+        editor.putBoolean(Constant.MUSIC_SHOULD_BE_KEY, shouldBe);
+        editor.apply();
+    }
+    synchronized boolean getMusicShouldBe(){
+        return sPref.getBoolean(Constant.MUSIC_SHOULD_BE_KEY,false);
+    }
+    synchronized void setSoundsShouldBe(boolean shouldBe) {
+        SharedPreferences.Editor editor = sPref.edit();
+
+        editor.putBoolean(Constant.SOUNDS_SHOULD_BE_KEY, shouldBe);
+        editor.apply();
+    }
+    synchronized boolean getSoundsShouldBe(){
+        return sPref.getBoolean(Constant.SOUNDS_SHOULD_BE_KEY,false);
     }
 
     /**

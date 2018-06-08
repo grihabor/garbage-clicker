@@ -47,18 +47,19 @@ public class MainActivity extends AppCompatActivity {
         //инициализация игрового фрагмента
         switchToGarbageRecyclingFragment(null);
 
-        startService(new Intent(this, MyService.class));
-
         moneyDisplay = findViewById(R.id.moneyDisplay);
         storage = new StateStorage(this, Constant.PREF_NAME);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
             moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
         });
     }
+    protected void onStart(){
+        super.onStart();
+        if(storage.getMusicShouldBe()) startService(new Intent(this, MyService.class));
+    }
 
     protected void onResume() {
         super.onResume();
-        startService(new Intent(this, MyService.class));
         automataThread = new AutomataThread(storage, this);
         automataThread.execute();
         storage.addMoney(BigInteger.ZERO);

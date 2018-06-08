@@ -13,9 +13,14 @@ public abstract class Storage {
     abstract BigInteger getTotalMoney();
     abstract void incrementShopItemCount (String itemCountKey);
     abstract int getShopItemCount (String itemCountKey);
+    abstract void setMusicShouldBe(boolean shouldBe);
+    abstract boolean getMusicShouldBe();
+    abstract void setSoundsShouldBe(boolean shouldBe);
+    abstract boolean getSoundsShouldBe();
 
     abstract void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator);
 
     abstract void addOnDBChangeListener (String key, OnDBChangeListener listener);
+    abstract int getIdByName(String name);
 
 }
