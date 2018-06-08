@@ -111,11 +111,10 @@ public class IntroActivity extends AppCompatActivity {
 
         if (account != null) {
             signInButton.setVisibility(View.GONE);
-            achievementButton.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
-            achievementButton.setVisibility(View.GONE);
         }
+        achievementButton.setVisibility(View.GONE);
 
     }
 }
