@@ -19,7 +19,6 @@ public final class Constant {
     public static final int SOUND_QUALITY = 100; // уже не используется, можно ставить 0
     public static final int MAX_STREAMS = 4; // максимальное количество потоков звука, воспр. одновременно
     public static final int PRIORITY = 1; // приоритет потока (0 - самый низкий)
-
     public static final float volume = 1f; // громкость звукового эффекта
     public static final float rate = 1f; // скорость воспроизведения (от 0.5 до 2.0)
     public static final int loop = 0; // количество повторов 0 - без повторов, (-1) - зациклен
