@@ -9,8 +9,6 @@ import org.json.JSONObject;
 import java.math.BigInteger;
 import java.util.HashMap;
 
-import static android.app.PendingIntent.getActivity;
-
 /**
  * Элемент списка в фрагменте магазина
  */ 
