@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="textColor">#2747A3</color>
+
+    <color name="buying_success_color">#22785b</color>
+    <color name="buying_fail_color">#f23333</color>
+    <color name="transparent">#00ffffff</color>
 </resources>

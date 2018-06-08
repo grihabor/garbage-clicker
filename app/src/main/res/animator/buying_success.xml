@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@integer/buy_animation_duration"
+    android:valueType="colorType"
+    android:valueFrom="@color/buying_success_color"
+    android:valueTo="@color/transparent">
+</animator>

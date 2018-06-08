@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/introLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +11,6 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,6 +23,13 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button"
             android:text="@string/play_button_text"
+            android:textColor="@color/textColor" />
+        <Button
+            android:id="@+id/settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="@string/settings_button_text"
             android:textColor="@color/textColor" />
 
         <Button
