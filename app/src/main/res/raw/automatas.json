@@ -9,12 +9,12 @@
       "base_price":"5000",
       "base_performance":"5"
    },
-   "garbage_car":{
+   "garbage_truck":{
       "name":"Мусоровоз",
       "base_price":"30000",
       "base_performance":"20"
    },
-   "sorting_car":{
+   "sorting_machine":{
       "name":"Сортировочная машина",
       "base_price":"150000",
       "base_performance":"50"
