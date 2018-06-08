@@ -49,9 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
         storage = new StateStorage(this, Constant.PREF_NAME);
-        storage.addOnDBChangeListener(Constant.MONEY_KEY, () -> {
-            moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
-        });
+        storage.addOnDBChangeListener(Constant.MONEY_KEY, this::updateMoney);
     }
     protected void onStart(){
         super.onStart();
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         automataThread = new AutomataThread(storage, this);
         automataThread.execute();
-        storage.addMoney(BigInteger.ZERO);
+        updateMoney();
     }
 
     protected void onPause() {
@@ -101,5 +99,8 @@ public class MainActivity extends AppCompatActivity {
         fTrans.commit();
     }
 
+    void updateMoney() {
+        moneyDisplay.setText(Constant.formatMoney(storage.getMoney()));
+    }
 
 }
