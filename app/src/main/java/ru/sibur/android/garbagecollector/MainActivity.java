@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public void switchToUpgradeShopFragment(View view) {
         UpgradeShop upgradeShop = new UpgradeShop(R.raw.upgrades, this, storage);
         switchTo(upgradeShop.getShopFragment(
-                R.layout.shop_item_view,
+                R.layout.upgrade_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
                 Constant.SHOP_ITEM_VIEWS_ATTRS_IDS
         ));
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     public void switchToAutomationShopFragment(View view) {
         AutomationShop automationShop = new AutomationShop(R.raw.automatas, this, storage);
         switchTo(automationShop.getShopFragment(
-                R.layout.shop_item_view,
+                R.layout.automata_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
                 Constant.SHOP_ITEM_VIEWS_ATTRS_IDS
         ));

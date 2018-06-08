@@ -44,7 +44,7 @@ public class ShopFragment extends ListFragment {
 
         ArrayList<HashMap<String, Object>> viewDataArray = shop.getViewDataArray();
 
-        SimpleAdapter adapter = new SimpleAdapter(shop.context, viewDataArray, R.layout.shop_item_view,
+        SimpleAdapter adapter = new SimpleAdapter(shop.context, viewDataArray, shop.itemLayoutId,
                 shop.shopItemAttributes,
                 shop.shopItemAttrIds);
 
