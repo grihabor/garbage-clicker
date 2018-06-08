@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GarbageCollector</string>
+    <string name="app_name">Garbage Collector</string>
 
     <string name="play_button_text">Играть</string>
     <string name="achievement_button_text">Достижения</string>
