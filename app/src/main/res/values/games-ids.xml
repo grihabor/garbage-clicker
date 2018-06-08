@@ -8,6 +8,6 @@ Save this file as res/values/games-ids.xml in your project.
     <string name="app_id" translatable="false">1042040524363</string>
     <!-- package_name -->
     <string name="package_name" translatable="false">ru.sibur.android.garbagecollector.dev</string>
-    <!-- achievement welcome achievement -->
-    <string name="achievement_welcome_achievement" translatable="false">CgkIy5zS86keEAIQAQ</string>
+    <!-- achievement Basic recycling -->
+    <string name="achievement_basic_recycling" translatable="false">CgkIy5zS86keEAIQAQ</string>
 </resources>

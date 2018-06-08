@@ -81,7 +81,7 @@ public class IntroActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
 
             try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
+                task.getResult(ApiException.class);
                 updateUI();
             } catch (ApiException e) {
                 Log.e(TAG, e.getStatusCode() + " code");
@@ -103,11 +103,15 @@ public class IntroActivity extends AppCompatActivity {
 
         achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
-            AchievementsClient client = Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this));
-            Task<Intent> task = client.getAchievementsIntent();
-            task.addOnSuccessListener(intent -> {
-                startActivityForResult(intent, RC_ACHIEVEMENT_UI);
-            });
+            try {
+                AchievementsClient client = Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this));
+                Task<Intent> task = client.getAchievementsIntent();
+                task.addOnSuccessListener(intent -> {
+                    startActivityForResult(intent, RC_ACHIEVEMENT_UI);
+                });
+            } catch (Exception e) {
+                Toast.makeText(this, "code " + e.getMessage(), Toast.LENGTH_LONG).show();
+            }
         });
 
 
