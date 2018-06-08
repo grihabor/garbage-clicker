@@ -1,5 +1,10 @@
 package ru.sibur.android.garbagecollector;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.ListFragment;
 import android.content.Context;
 import android.media.AudioAttributes;
@@ -12,6 +17,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.TransitionDrawable;
 
+import android.view.ViewPropertyAnimator;
+import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -76,7 +84,9 @@ public class ShopFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         ShopItem current = shop.shopItemArray.get(position);
+        ValueAnimator animator;
         if(current.tryToBuy(shop.context, shop.storage)) {
+<<<<<<< HEAD
             ColorDrawable[] color = {
                     new ColorDrawable(Color.GREEN),
                     new ColorDrawable(Color.WHITE)
@@ -95,7 +105,20 @@ public class ShopFragment extends ListFragment {
             if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
             v.setBackground(trans);
             trans.startTransition(300);
+=======
+
+            animator = (ValueAnimator) AnimatorInflater.loadAnimator(this.getActivity(), R.animator.buying_success);
+        } else {
+            animator = (ValueAnimator) AnimatorInflater.loadAnimator(this.getActivity(), R.animator.buying_fail);
+>>>>>>> bde93cf9959cc9cda4ee2f93e69b99516e713fac
         }
+
+        animator.addUpdateListener((animation) -> {
+            int color = (int) animation.getAnimatedValue();
+            v.setBackgroundColor(color);
+        });
+
+        animator.start();
     }
     public void initializeSoundEffects(Context context) {
         soundPool = new SoundPool(Constant.MAX_STREAMS, AudioManager.STREAM_MUSIC, Constant.SOUND_QUALITY);
