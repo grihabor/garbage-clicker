@@ -21,6 +21,5 @@ public abstract class Storage {
     abstract void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator);
 
     abstract void addOnDBChangeListener (String key, OnDBChangeListener listener);
-    abstract int getIdByName(String name);
 
 }

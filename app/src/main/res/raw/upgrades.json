@@ -1,12 +1,4 @@
 {
-   "double_money":{
-      "name":"Удвоение монет",
-      "base_price":"1000"
-   },
-   "time_of_double_money":{
-      "name":"Время удвоения монет",
-      "base_price":"10000"
-   },
    "click_performance":{
       "name":"Мощность клика",
       "base_price":"10000"
@@ -19,7 +11,7 @@
       "name":"Уменьшение стоимости апгрейдов",
       "base_price":"10000000"
    },
-   "automatas_performance_upgrade":{
+   "automata_performance_upgrade":{
       "name":"Апгрейд мощности автоматов",
       "base_price":"10000"
    }
