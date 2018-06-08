@@ -89,14 +89,14 @@ public class IntroActivity extends AppCompatActivity {
             Intent intent = new Intent(IntroActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
-        
+
         Button achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
             AchievementsClient client = Games.getAchievementsClient(this, account);
             Task<Intent> task = client.getAchievementsIntent();
             task.addOnSuccessListener(this::startActivity);
         });
-        
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
