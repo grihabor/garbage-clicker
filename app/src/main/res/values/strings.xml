@@ -4,26 +4,14 @@
     <string name="play_button_text">Играть</string>
     <string name="achievement_button_text">Достижения</string>
     <string name="exit_button_text">Выход</string>
+    <string name="sign_out_text">Sign out</string>
  
     <string name="upgrade_shop_sign">улучшения</string>
     <string name="automation_shop_sign">автоматы</string>
     <string name="recycle_sign">переработка</string>
     <string name="factory_sign">переработать</string>
+
     <string name="displayed_vault_name">Сибурики: </string>
     <string name="displayed_qty_name">Куплено: </string>
-    <string name="displayed_performance_name">Мощность: </string>
-
-    <string-array name="upgrade_array">
-        <item>Улучшение клика</item>
-        <item>Уменьшение стоимости автоматов</item>
-        <item>Уменьшение стоимости апгрейдов</item>
-        <item>Улучшение производительности автоматов</item>
-        <item>Увеличение скорости автоматов</item>
-    </string-array>
-
-    <string-array name="automata_array">
-        <item>Мусоровоз</item>
-        <item>Свалка</item>
-        <item>Перерабатывающий завод</item>
-    </string-array>
+    <string name="displayed_performance_name">Мощность: </string
 </resources>

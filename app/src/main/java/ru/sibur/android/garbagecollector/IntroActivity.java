@@ -30,8 +30,15 @@ import com.google.android.gms.tasks.Task;
 
 public class IntroActivity extends AppCompatActivity {
     private String TAG = "INTRO";
+
+    public static final int RC_SIGN_IN = 2001;
+    public static final int RC_ACHIEVEMENT_UI = 31415;
+
+    Button achievementButton;
+    SignInButton signInButton;
+    Button signOutButton;
+
     GoogleSignInClient signInClient;
-    public static final int RC_SIGN_IN = 1488;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +53,17 @@ public class IntroActivity extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setUI(GoogleSignIn.getLastSignedInAccount(this));
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        signInClient = GoogleSignIn.getClient(this, gso);
+
+        Task<GoogleSignInAccount> silentSignInTask = signInClient.silentSignIn();
+        silentSignInTask.addOnCompleteListener((i) -> {
+            setUI();
+            updateUI();
+        });
 
     }
 
@@ -65,7 +82,7 @@ public class IntroActivity extends AppCompatActivity {
 
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                setUI(account);
+                updateUI();
             } catch (ApiException e) {
                 Log.e(TAG, e.getStatusCode() + " code");
                 Toast.makeText(this, "google sign in fail", Toast.LENGTH_LONG).show();
@@ -74,7 +91,7 @@ public class IntroActivity extends AppCompatActivity {
         }
     }
 
-    void setUI(GoogleSignInAccount account) {
+    void setUI() {
         Button playButton = findViewById(R.id.play_button);
         playButton.setOnClickListener((view) -> {
             Intent intent = new Intent(IntroActivity.this, MainActivity.class);
@@ -84,32 +101,38 @@ public class IntroActivity extends AppCompatActivity {
         Button exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener((view) -> finish());
 
-        Button achievementButton = findViewById(R.id.achievement_button);
+        achievementButton = findViewById(R.id.achievement_button);
         achievementButton.setOnClickListener((view) -> {
-            AchievementsClient client = Games.getAchievementsClient(this, account);
+            AchievementsClient client = Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this));
             Task<Intent> task = client.getAchievementsIntent();
-            task.addOnSuccessListener(this::startActivity);
+            task.addOnSuccessListener(intent -> {
+                startActivityForResult(intent, RC_ACHIEVEMENT_UI);
+            });
         });
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
 
-        signInClient = GoogleSignIn.getClient(this, gso);
-
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener((view) -> {
             Intent signInIntent = signInClient.getSignInIntent();
             startActivityForResult(signInIntent, RC_SIGN_IN);
         });
 
-        if (account != null) {
+        signOutButton = findViewById(R.id.sign_out_button);
+        signOutButton.setOnClickListener((view) -> {
+            Task<Void> signOutTask = signInClient.signOut();
+            signOutTask.addOnSuccessListener((n) -> updateUI());
+        });
+    }
+
+    void updateUI() {
+        if (GoogleSignIn.getLastSignedInAccount(this) != null) {
             signInButton.setVisibility(View.GONE);
+            signOutButton.setVisibility(View.VISIBLE);
             achievementButton.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
+            signOutButton.setVisibility(View.GONE);
             achievementButton.setVisibility(View.GONE);
         }
-
     }
 }
