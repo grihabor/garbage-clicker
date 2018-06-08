@@ -5,11 +5,7 @@ import android.content.SharedPreferences;
 import android.util.ArrayMap;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Date;
-
-import java9.util.stream.Collectors;
-import java9.util.stream.IntStream;
 
 
 /**
@@ -35,9 +31,6 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
 
     static int getIdFromName(String name) {
        int id =  context.getResources().getIdentifier("ru.sibur.android.garbagecollector.dev.debug:drawable/"+name,"drawable", "ru.sibur.android.garbagecollector.dev.debug");
-       String s1 = context.getResources().getResourceName(R.drawable.automata1);
-       String s2 = context.getResources().getResourceTypeName(R.drawable.automata1);
-       String s3 = context.getResources().getResourcePackageName(R.drawable.automata1);
        return id;
     }
 

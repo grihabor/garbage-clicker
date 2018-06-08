@@ -3,62 +3,62 @@
     "name": "мусорный бак",
     "base_price": "100",
     "base_performance": "1",
-    "icon_id": "automata1"
+    "icon_id": "garbage_bin"
 
   },
   "separate_collection": {
     "name": "раздельный сбор",
     "base_price": "5000",
     "base_performance": "5",
-    "icon_id": "automata2"
+    "icon_id": "separate_collection"
   },
 
   "garbage_car ": {
     "name": "мусоровоз",
     "base_price": "30000",
     "base_performance": "20",
-    "icon_id": "automata3"
+    "icon_id": "garbage_car"
   },
 
   "sorting_car": {
     "name": "сортировочная машина",
     "base_price": "150000",
     "base_performance": "50",
-    "icon_id": "automata4"
+    "icon_id": "sorting_car"
   },
   "sorting_center": {
     "name": "сортировочный центр",
     "base_price": "1000000",
     "base_performance": "75",
-    "icon_id": "automata5"
+    "icon_id": "sorting_center"
   },
 
   "recycling_factory": {
     "name": "перерабатывающий завод",
     "base_price": "10000000",
     "base_performance": "100",
-    "icon_id": "automata6"
+    "icon_id": "recycling_factory"
   },
 
   "improved_factory": {
     "name": "улучшенный завод",
     "base_price": "50000000",
     "base_performance": "150",
-    "icon_id": "automata7"
+    "icon_id": "improved_factory"
   },
 
   "eco_factory": {
     "name": "экологическое производство",
     "base_price": "1000000000",
     "base_performance": "300",
-    "icon_id": "automata8"
+    "icon_id": "eco_factory"
   },
 
   "net_of_factorys": {
     "name": "сеть заводов",
     "base_price": "1000000000000",
     "base_performance": "500",
-    "icon_id": "automata9"
+    "icon_id": "net_of_factorys"
   }
 
 }

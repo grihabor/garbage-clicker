@@ -39,7 +39,7 @@ public abstract class ShopItem {
         HashMap<String,Object> map = new HashMap<>();
         map.put(Constant.SHOP_ITEM_NAME_KEY, name);
         map.put(Constant.SHOP_ITEM_PRICE_KEY, Constant.formatMoney(getPrice()));
-        map.put(Constant.SHOP_ITEM_ICON_KEY, iconId);
+        map.put(Constant.SHOP_ITEM_ICON_ID_KEY, iconId);
         map.put(Constant.SHOP_ITEM_COUNT_KEY, getCount());
         map.put(Constant.SHOP_ITEM_PERFORMANCE_KEY, "");
         return (map);
