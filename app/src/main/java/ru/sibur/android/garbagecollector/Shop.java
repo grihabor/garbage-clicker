@@ -40,21 +40,10 @@ public abstract class Shop {
         ArrayList<? extends ShopItem> shopItemAttrArray = null;
 
         if(jsonObject != null) {
-            shopItemAttrArray = IntStream.range(0, jsonObject.names().length()).mapToObj(i -> {
-                ShopItem ret = null;
-                try {
-                    ret = this.createInstance (
-                            (JSONObject) jsonObject.get((jsonObject.names().get(i)).toString()),
-                            i);
-                    ret.iconId = ((StateStorage)storage).getIdByName(jsonObject.names().get(i).toString());
-                } catch (JSONException e) {
-                    Log.e(getTag(), "JSONException: " + e.getMessage());
-                }
-
-                return ret;
-            }).collect(Collectors.toCollection(ArrayList::new));
-
-
+            shopItemAttrArray = IntStream
+                    .range(0, jsonObject.names().length())
+                    .mapToObj(i -> createInstance(jsonObject, i))
+                    .collect(Collectors.toCollection(ArrayList::new));
         } else {
             Log.e(getTag(), "Unable to load data from json: id=" + resourceId);
         }
@@ -75,7 +64,7 @@ public abstract class Shop {
     ArrayList<HashMap<String, Object>> getViewDataArray() {
         return StreamSupport
                 .stream(shopItemArray)
-                .map(ShopItem::getViewData)
+                .map((item) -> item.getViewData(context))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
