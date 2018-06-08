@@ -15,11 +15,9 @@ import java.util.Date;
 public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener {
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
-    static Context context;
 
     StateStorage (Context context, String prefName) {
         sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
-        this.context = context;
         // see details in onSharedPreferenceChanged method
         sPref.registerOnSharedPreferenceChangeListener(this);
     }
@@ -28,13 +26,6 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     void addOnDBChangeListener (String key, OnDBChangeListener listener) {
         listenerMap.put(key, listener);
     }
-
-    @Override
-    int getIdByName(String name) {
-        int id =  context.getResources().getIdentifier("ru.sibur.android.garbagecollector.dev.debug:drawable/"+name,"drawable", "ru.sibur.android.garbagecollector.dev.debug");
-        return id;
-    }
-
 
     synchronized BigInteger getBigInteger(String key, BigInteger defVal) {
         return new BigInteger(sPref
