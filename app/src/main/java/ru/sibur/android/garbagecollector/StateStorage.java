@@ -5,11 +5,7 @@ import android.content.SharedPreferences;
 import android.util.ArrayMap;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Date;
-
-import java9.util.stream.Collectors;
-import java9.util.stream.IntStream;
 
 
 /**
@@ -95,6 +91,25 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
         BigInteger timeDifference = BigInteger.valueOf(currentTime - prevTime);
         BigInteger addedMoney = calculator.calculateMoney(timeDifference);
         addMoney(addedMoney);
+    }
+
+    synchronized void setMusicShouldBe(boolean shouldBe) {
+        SharedPreferences.Editor editor = sPref.edit();
+
+        editor.putBoolean(Constant.MUSIC_SHOULD_BE_KEY, shouldBe);
+        editor.apply();
+    }
+    synchronized boolean getMusicShouldBe(){
+        return sPref.getBoolean(Constant.MUSIC_SHOULD_BE_KEY,false);
+    }
+    synchronized void setSoundsShouldBe(boolean shouldBe) {
+        SharedPreferences.Editor editor = sPref.edit();
+
+        editor.putBoolean(Constant.SOUNDS_SHOULD_BE_KEY, shouldBe);
+        editor.apply();
+    }
+    synchronized boolean getSoundsShouldBe(){
+        return sPref.getBoolean(Constant.SOUNDS_SHOULD_BE_KEY,false);
     }
 
     /**

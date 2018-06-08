@@ -1,12 +1,8 @@
 package ru.sibur.android.garbagecollector;
 
-import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Formatter;
-import java.util.stream.StreamSupport;
 
 /**
  * Содержит константы, нужные нам в разных классах программы
@@ -19,7 +15,6 @@ public final class Constant {
     public static final int SOUND_QUALITY = 100; // уже не используется, можно ставить 0
     public static final int MAX_STREAMS = 4; // максимальное количество потоков звука, воспр. одновременно
     public static final int PRIORITY = 1; // приоритет потока (0 - самый низкий)
-
     public static final float volume = 1f; // громкость звукового эффекта
     public static final float rate = 1f; // скорость воспроизведения (от 0.5 до 2.0)
     public static final int loop = 0; // количество повторов 0 - без повторов, (-1) - зациклен
@@ -28,6 +23,8 @@ public final class Constant {
     public static final String PREF_NAME = "my_pref";
     public static final String LAST_UPDATE_NAME = "update";
     public static final String TOTAL_MONEY_EARNED_KEY = "total_money_earned_key";
+    public static final String MUSIC_SHOULD_BE_KEY = "music_should_be";
+    public static final String SOUNDS_SHOULD_BE_KEY = "sounds_should_be";
     public static final int TIME_UNIT = 1000;
 
     public static final double UPGRADE_COST_INCREASE_MULTIPLIER = 1.30;

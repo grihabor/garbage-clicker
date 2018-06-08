@@ -1,5 +1,7 @@
 package ru.sibur.android.garbagecollector;
 
+import android.animation.AnimatorInflater;
+import android.animation.ValueAnimator;
 import android.app.ListFragment;
 import android.content.Context;
 import android.media.AudioAttributes;
@@ -7,11 +9,6 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.SparseIntArray;
 import android.view.View;
-
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.TransitionDrawable;
-
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -76,26 +73,22 @@ public class ShopFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         ShopItem current = shop.shopItemArray.get(position);
+        ValueAnimator animator;
         if(current.tryToBuy(shop.context, shop.storage)) {
-            ColorDrawable[] color = {
-                    new ColorDrawable(Color.GREEN),
-                    new ColorDrawable(Color.WHITE)
-            };
-            TransitionDrawable trans = new TransitionDrawable(color);
-            v.setBackground(trans);
-            if (soundPool != null) soundPool.play(Constant.SOUND_ONE, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
 
-            trans.startTransition(300);
+            animator = (ValueAnimator) AnimatorInflater.loadAnimator(this.getActivity(), R.animator.buying_success);
+            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_ONE, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
         } else {
-            ColorDrawable[] color = {
-                    new ColorDrawable(Color.RED),
-                    new ColorDrawable(Color.WHITE)
-            };
-            TransitionDrawable trans = new TransitionDrawable(color);
-            if (soundPool != null) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
-            v.setBackground(trans);
-            trans.startTransition(300);
+            animator = (ValueAnimator) AnimatorInflater.loadAnimator(this.getActivity(), R.animator.buying_fail);
+            if ( (soundPool != null) && shop.storage.getSoundsShouldBe()) soundPool.play(Constant.SOUND_TWO, Constant.volume, Constant.volume, Constant.PRIORITY, Constant.loop, Constant.rate);
         }
+
+        animator.addUpdateListener((animation) -> {
+            int color = (int) animation.getAnimatedValue();
+            v.setBackgroundColor(color);
+        });
+
+        animator.start();
     }
     public void initializeSoundEffects(Context context) {
         soundPool = new SoundPool(Constant.MAX_STREAMS, AudioManager.STREAM_MUSIC, Constant.SOUND_QUALITY);

@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <service android:enabled="true" android:name=".MyService" />
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
 
         <activity android:name=".IntroActivity">
             <intent-filter>
