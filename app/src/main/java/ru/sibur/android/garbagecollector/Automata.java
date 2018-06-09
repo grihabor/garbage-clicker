@@ -6,6 +6,7 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 
@@ -30,9 +31,14 @@ public class Automata extends ShopItem {
     BigInteger getPrice () {
         String priceUpgradeCountKey = "cheap_automatas";
         int priceUpgradeCount = storage.getShopItemCount(priceUpgradeCountKey);
-        double decreaseMultiplier = pow(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER, priceUpgradeCount);
-        double increaseMultiplier = pow(Constant.AUTOMATA_COST_INCREASE_MULTIPLIER, getCount());
-        double multiplier = decreaseMultiplier * increaseMultiplier;
+
+        BigDecimal decreaseMultiplier = BigDecimal.valueOf(Constant.AUTOMATA_COST_DECREASE_MULTIPLIER);
+        decreaseMultiplier = decreaseMultiplier.pow(priceUpgradeCount);
+
+        BigDecimal increaseMultiplier = BigDecimal.valueOf(Constant.PERFORMANCE_INCREASE_MULTIPLIER);
+        increaseMultiplier = increaseMultiplier.pow(getCount());
+
+        BigDecimal multiplier = decreaseMultiplier.multiply(increaseMultiplier);
 
         return Constant.multiply(basePrice, multiplier);
     }
@@ -58,7 +64,10 @@ public class Automata extends ShopItem {
     BigInteger getUnaryPerformance() {
         String performanceUpgradeCountKey = "automatas_performance_upgrade";
         int performanceUpgradeCount = storage.getShopItemCount(performanceUpgradeCountKey);
-        double multiplier = pow (Constant.PERFORMANCE_INCREASE_MULTIPLIER, performanceUpgradeCount);
+
+        BigDecimal multiplier = BigDecimal.valueOf(Constant.PERFORMANCE_INCREASE_MULTIPLIER);
+        multiplier = multiplier.pow(performanceUpgradeCount);
+
         return Constant.multiply(basePerformance, multiplier);
     }
 }

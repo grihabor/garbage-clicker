@@ -2,6 +2,7 @@ package ru.sibur.android.garbagecollector;
 
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import static java.lang.Math.pow;
@@ -20,9 +21,14 @@ public class Upgrade extends ShopItem {
     BigInteger getPrice () {
         String priceUpgradeCountKey = "cheap_upgrades";
         int priceUpgradeCount = storage.getShopItemCount(priceUpgradeCountKey);
-        double increaseMultiplier = pow(Constant.UPGRADE_COST_INCREASE_MULTIPLIER, getCount());
-        double decreaseMultiplier = pow(Constant.UPGRADE_COST_DECREASE_MULTIPLIER, priceUpgradeCount);
-        double multiplier = increaseMultiplier*decreaseMultiplier;
+
+        BigDecimal increaseMultiplier = BigDecimal.valueOf(Constant.UPGRADE_COST_INCREASE_MULTIPLIER);
+        increaseMultiplier = increaseMultiplier.pow(getCount());
+
+        BigDecimal decreaseMultiplier = BigDecimal.valueOf(Constant.UPGRADE_COST_DECREASE_MULTIPLIER);
+        decreaseMultiplier = decreaseMultiplier.pow(priceUpgradeCount);
+
+        BigDecimal multiplier = increaseMultiplier.multiply(decreaseMultiplier);
         return Constant.multiply(basePrice, multiplier);
     }
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import static java.lang.Math.pow;
@@ -43,7 +44,9 @@ public class GarbageRecyclingFragment extends Fragment {
             String clickMultKey = "click_performance";
             int clickMultCount = storage.getShopItemCount(clickMultKey);
 
-            double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickMultCount);
+            BigDecimal multiplier = BigDecimal.valueOf(Constant.CLICK_INCREASE_MULTIPLIER);
+            multiplier = multiplier.pow(clickMultCount);
+
             BigInteger baseClickPerfomance = new BigInteger("10");
             BigInteger moneyPerClick = Constant.multiply(baseClickPerfomance, multiplier);
             storage.addMoney(moneyPerClick);

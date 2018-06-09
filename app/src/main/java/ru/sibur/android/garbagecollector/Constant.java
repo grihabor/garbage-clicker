@@ -77,9 +77,9 @@ public final class Constant {
         return formatter.format(displayedMoney) + MATH_ORDER_LETTERS[exp];
     }
 
-    public static BigInteger multiply(BigInteger bi, double multiplier) {
-        long intMultiplier = Math.round(MONEY_DIVISOR * multiplier);
-        BigInteger bigMultiplier = BigInteger.valueOf(intMultiplier);
-        return bi.multiply(bigMultiplier).divide(BigInteger.valueOf(MONEY_DIVISOR));
+    public static BigInteger multiply(BigInteger bi, BigDecimal multiplier) {
+        BigDecimal bd = new BigDecimal(bi);
+        BigDecimal result = bd.multiply(multiplier);
+        return result.toBigInteger();
     }
 }
