@@ -20,6 +20,10 @@ before_install:
   - tar -xzvf app/secrets/raw.tar.gz
   - mv app/secrets/raw/google-services.json app/
 
+before_script:
+  - make travis-version
+  - make message
+
 script:
   - ./gradlew assemble
   - find . -name '*.apk'
