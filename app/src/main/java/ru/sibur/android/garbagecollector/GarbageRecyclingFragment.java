@@ -44,8 +44,8 @@ public class GarbageRecyclingFragment extends Fragment {
             int clickMultCount = storage.getShopItemCount(clickMultKey);
 
             double multiplier = pow (Constant.CLICK_INCREASE_MULTIPLIER, clickMultCount);
-
-            BigInteger moneyPerClick = Constant.multiply(BigInteger.ONE, multiplier);
+            BigInteger baseClickPerfomance = new BigInteger("10");
+            BigInteger moneyPerClick = Constant.multiply(baseClickPerfomance, multiplier);
             storage.addMoney(moneyPerClick);
             });
     }
