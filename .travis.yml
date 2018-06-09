@@ -52,7 +52,7 @@ before_deploy:
   
   - git config --local user.name "Travis Bot"
   - git config --local user.email "travis@gmail.com"
-  - "git tag -f -a -m '${VERSION}: ${COMMIT_MESSAGE}' -m '${TAG_MESSAGE}' '${VERSION}'"
+  - "git tag -f -a -m '${VERSION}: ${COMMIT_MESSAGE}' -m ${TAG_MESSAGE} ${VERSION}"
 
 deploy:
   provider: releases
