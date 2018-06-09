@@ -22,7 +22,8 @@ before_install:
 
 before_script:
   - make travis-version
-  - make message
+  - make commit-message
+  - make tag-message
 
 script:
   - ./gradlew assemble
@@ -48,7 +49,7 @@ before_deploy:
   
   - git config --local user.name "Travis Bot"
   - git config --local user.email "travis@gmail.com"
-  - git tag ${VERSION}
+  - git tag -f -a -m "${VERSION}: $(make commit-message)" -m "$(make tag-message)" ${VERSION}
 
 deploy:
   provider: releases

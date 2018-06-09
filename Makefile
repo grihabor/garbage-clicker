@@ -1,25 +1,25 @@
-MAKE              := make --no-print-directory
+MAKE               := make --no-print-directory
 
-DESCRIBE          := $(shell git describe --match "v*" --always)
-DESCRIBE_PARTS    := $(subst -, ,$(DESCRIBE))
+DESCRIBE           := $(shell git describe --match "v*" --always)
+DESCRIBE_PARTS     := $(subst -, ,$(DESCRIBE))
 
-VERSION_TAG       := $(word 1,$(DESCRIBE_PARTS))
-COMMITS_SINCE_TAG := $(word 2,$(DESCRIBE_PARTS))
+VERSION_TAG        := $(word 1,$(DESCRIBE_PARTS))
+COMMITS_SINCE_TAG  := $(word 2,$(DESCRIBE_PARTS))
 
-VERSION           := $(subst v,,$(VERSION_TAG))
-VERSION_PARTS     := $(subst ., ,$(VERSION))
+VERSION            := $(subst v,,$(VERSION_TAG))
+VERSION_PARTS      := $(subst ., ,$(VERSION))
 
-MAJOR             := $(word 1,$(VERSION_PARTS))
-MINOR             := $(word 2,$(VERSION_PARTS))
-MICRO             := $(word 3,$(VERSION_PARTS))
+MAJOR              := $(word 1,$(VERSION_PARTS))
+MINOR              := $(word 2,$(VERSION_PARTS))
+MICRO              := $(word 3,$(VERSION_PARTS))
 
-NEXT_MAJOR        := $(shell echo $$(($(MAJOR)+1)))
-NEXT_MINOR        := $(shell echo $$(($(MINOR)+1)))
+NEXT_MAJOR         := $(shell echo $$(($(MAJOR)+1)))
+NEXT_MINOR         := $(shell echo $$(($(MINOR)+1)))
 
 ifeq ($(strip $(COMMITS_SINCE_TAG)),)
-NEXT_MICRO        := $(MICRO)
+NEXT_MICRO         := $(MICRO)
 else 
-NEXT_MICRO        := $(shell echo $$(($(MICRO)+$(COMMITS_SINCE_TAG))))
+NEXT_MICRO         := $(shell echo $$(($(MICRO)+$(COMMITS_SINCE_TAG))))
 endif
 
 VERSION_NEXT_MICRO := $(MAJOR).$(MINOR).$(NEXT_MICRO)
@@ -32,7 +32,7 @@ COMMIT             := $(shell git rev-parse HEAD)
 AUTHOR             := $(firstword $(subst @, ,$(shell git show --format="%aE" $(COMMIT))))
 
 TAG_MESSAGE         = "$(TIME) $(DATE) $(AUTHOR)"
-
+COMMIT_MESSAGE     := $(shell git log --format=%B -n 1 $(COMMIT))
 
 all: latest-version
 
@@ -52,9 +52,13 @@ next-minor:
 next-major:
 	@echo "v$(VERSION_NEXT_MAJOR)"
 
-.PHONY: message
-message:
+.PHONY: tag-message
+tag-message:
 	@echo "$(TAG_MESSAGE)"
+
+.PHONY: commit-message
+commit-message:
+	@echo "$(COMMIT_MESSAGE)"
 
 .PHONY: travis-version
 travis-version:
