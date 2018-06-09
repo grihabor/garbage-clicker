@@ -5,14 +5,14 @@
    },
    "cheap_automatas":{
       "name":"Уменьшение стоимости автоматов",
-      "base_price":"10000000"
+      "base_price":"1000000"
    },
    "cheap_upgrades":{
       "name":"Уменьшение стоимости апгрейдов",
-      "base_price":"10000000"
+      "base_price":"30000000"
    },
    "automata_performance_upgrade":{
       "name":"Апгрейд мощности автоматов",
-      "base_price":"10000"
+      "base_price":"70000000"
    }
 }
