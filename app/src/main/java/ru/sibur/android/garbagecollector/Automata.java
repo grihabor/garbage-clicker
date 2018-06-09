@@ -62,7 +62,7 @@ public class Automata extends ShopItem {
     }
 
     BigInteger getUnaryPerformance() {
-        String performanceUpgradeCountKey = "automatas_performance_upgrade";
+        String performanceUpgradeCountKey = "automata_performance_upgrade";
         int performanceUpgradeCount = storage.getShopItemCount(performanceUpgradeCountKey);
 
         BigDecimal multiplier = BigDecimal.valueOf(Constant.PERFORMANCE_INCREASE_MULTIPLIER);
