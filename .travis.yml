@@ -40,7 +40,10 @@ before_deploy:
   - export VERSION=$(make travis-version)
   - export COMMIT_MESSAGE=$(make commit-message)
   - export TAG_MESSAGE=$(make tag-message)
-  
+
+  - export RELEASE_NAME="${VERSION}: ${COMMIT_MESSAGE}"
+  - export RELEASE_BODY=${TAG_MESSAGE}
+
   - export ART_DEBUG_APK="debug-${VERSION}.apk"
   - export ART_RELEASE_APK="release-${VERSION}.apk"
   - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
@@ -52,7 +55,7 @@ before_deploy:
   
   - git config --local user.name "Travis Bot"
   - git config --local user.email "travis@gmail.com"
-  - 'git tag -f -a -m "${VERSION}: ${COMMIT_MESSAGE} - ${TAG_MESSAGE}" ${VERSION}'
+  - 'git tag -f -a -m "${RELEASE_NAME} - ${RELEASE_BODY}" ${VERSION}'
 
 deploy:
   provider: releases
@@ -63,12 +66,11 @@ deploy:
     - ${ART_CHECKSTYLE}
   skip_cleanup: true 
   prerelease: true
+  name: ${RELEASE_NAME}
+  body: ${RELEASE_BODY}
   on:
     branch:
       - master
-      - force-deploy
-      - force-deploy-aglubshev
-      - force-deploy-odemianchenko
-      - force-deploy-dteterin
+      - force-deploy*
     tags: false
     condition: $TRAVIS_PULL_REQUEST = false
