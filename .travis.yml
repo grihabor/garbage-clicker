@@ -41,7 +41,7 @@ before_deploy:
   - export COMMIT_MESSAGE=$(make commit-message)
   - export TAG_MESSAGE=$(make tag-message)
 
-  - export RELEASE_NAME="${VERSION}: ${COMMIT_MESSAGE}"
+  - 'export RELEASE_NAME="${VERSION}: ${COMMIT_MESSAGE}"'
   - export RELEASE_BODY=${TAG_MESSAGE}
 
   - export ART_DEBUG_APK="debug-${VERSION}.apk"
