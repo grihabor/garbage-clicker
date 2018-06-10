@@ -30,8 +30,9 @@ DATE                = $(shell date +'%d.%m.%Y')
 TIME                = $(shell date +'%H:%M:%S')
 COMMIT             := $(shell git rev-parse HEAD)
 AUTHOR             := $(firstword $(subst @, ,$(shell git show --format="%aE" $(COMMIT))))
+BRANCH_NAME        := $(shell git rev-parse --abbrev-ref HEAD)
 
-TAG_MESSAGE         = "$(TIME) $(DATE) $(AUTHOR)"
+TAG_MESSAGE         = "$(TIME) $(DATE) $(AUTHOR) $(BRANCH_NAME)"
 COMMIT_MESSAGE     := $(shell git log --format=%B -n 1 $(COMMIT))
 
 all: latest-version
