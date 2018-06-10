@@ -55,7 +55,7 @@ before_deploy:
   
   - git config --local user.name "Travis Bot"
   - git config --local user.email "travis@gmail.com"
-  - 'git tag -f -a -m "${RELEASE_NAME} - ${RELEASE_BODY}" ${VERSION}'
+  - git tag -f "${VERSION}"
 
 deploy:
   provider: releases

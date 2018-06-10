@@ -1,6 +1,6 @@
 MAKE               := make --no-print-directory
 
-DESCRIBE           := $(shell git describe --match "v*" --always)
+DESCRIBE           := $(shell git describe --match "v*" --always --tags)
 DESCRIBE_PARTS     := $(subst -, ,$(DESCRIBE))
 
 VERSION_TAG        := $(word 1,$(DESCRIBE_PARTS))
