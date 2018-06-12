@@ -25,7 +25,7 @@ before_install:
   - mv app/secrets/raw/google-services.json app/
 
 install:
-  - pip3 install virtualenv
+  - sudo pip3 install virtualenv
   - python3 -m virtualenv venv
   - source venv/bin/activate
   - pip install sphinx javasphinx
