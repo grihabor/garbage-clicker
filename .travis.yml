@@ -13,6 +13,8 @@ addons:
     packages:
       - git
       - make
+      - python3
+      - python3-pip
 
 before_install: 
   - mkdir -p app/secrets/raw
@@ -20,6 +22,9 @@ before_install:
   - tar -xzvf app/secrets/raw.tar.gz
   - mv app/secrets/raw/google-services.json app/
 
+install:
+  - pip install sphinx javasphinx
+  
 before_script:
   - make travis-version
   - make commit-message
@@ -29,6 +34,7 @@ script:
   - ./gradlew assemble
   - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
+  - javasphinx-apidoc -o docs/docs .
   
 cache: 
   directories: 
@@ -58,19 +64,19 @@ before_deploy:
   - git tag -f "${VERSION}"
 
 deploy:
-  provider: releases
-  api_key: ${DEPLOY_TOKEN}
-  file: 
-    - ${ART_DEBUG_APK}
-    - ${ART_RELEASE_APK}
-    - ${ART_CHECKSTYLE}
-  skip_cleanup: true 
-  prerelease: true
-  name: ${RELEASE_NAME}
-  body: ${RELEASE_BODY}
-  on:
-    branch:
-      - master
-      - force-deploy*
-    tags: false
-    condition: $TRAVIS_PULL_REQUEST = false
+  - provider: releases
+    api_key: ${DEPLOY_TOKEN}
+    file: 
+      - ${ART_DEBUG_APK}
+      - ${ART_RELEASE_APK}
+      - ${ART_CHECKSTYLE}
+    skip_cleanup: true 
+    prerelease: true
+    name: ${RELEASE_NAME}
+    body: ${RELEASE_BODY}
+    on:
+      branch:
+        - master
+        - force-deploy*
+      tags: false
+      condition: $TRAVIS_PULL_REQUEST = false
