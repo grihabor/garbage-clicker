@@ -39,7 +39,7 @@ script:
   - ./gradlew assemble
   - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
-  - javasphinx-apidoc --update --cache-dir=.javasphinx-apidoc-cache -o docs/src .
+  - javasphinx-apidoc --update --cache-dir=.javasphinx-apidoc-cache -o docs/src ./app/src/main/java/ru/sibur
   - cd docs; make html; cd ..
   - touch docs/build/html/.nojekyll
   
