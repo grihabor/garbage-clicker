@@ -93,11 +93,11 @@ deploy:
       tags: false
       condition: $TRAVIS_PULL_REQUEST = false
   - provider: pages
-    api-key: ${DEPLOY_TOKEN}
-    skip-cleanup: true
-    keep-history: true
-    local-dir: docs/build
-    target-branch: gh-pages
+    api_key: ${DEPLOY_TOKEN}
+    skip_cleanup: true
+    keep_history: true
+    local_dir: docs/build
+    target_branch: gh-pages
     on:
       branch:
         - master
