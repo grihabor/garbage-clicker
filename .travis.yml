@@ -22,7 +22,7 @@ before_install:
   - mv app/secrets/raw/google-services.json app/
 
 install:
-  - pip install sphinx javasphinx
+  - pip3 install sphinx javasphinx
   
 before_script:
   - make travis-version
