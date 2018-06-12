@@ -7,14 +7,13 @@ android:
     - addon-google_apis-google-27
 jdk:
   - openjdk8
+python: "3.6"
   
 addons:
   apt:
     packages:
       - git
       - make
-      - python3
-      - python3-pip
 
 before_install: 
   - mkdir -p app/secrets/raw
