@@ -37,6 +37,7 @@ COMMIT_MESSAGE     := $(shell git log --format=%B -n 1 $(COMMIT))
 
 all: next-micro
 
+.PHONY: venv
 venv:
 	python3 -m virtualenv venv
 
