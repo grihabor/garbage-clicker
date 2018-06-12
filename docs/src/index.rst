@@ -10,7 +10,7 @@ Welcome to Garbage Clicker's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   docs/packages
+   packages
 
 Indices and tables
 ==================
