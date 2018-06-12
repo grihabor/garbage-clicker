@@ -26,9 +26,9 @@ before_install:
 
 install:
   - sudo pip3 install virtualenv
-  - python3 -m virtualenv venv
+  - make venv
   - source venv/bin/activate
-  - pip install sphinx javasphinx sphinx_rtd_theme
+  - make install
   
 before_script:
   - make travis-version
