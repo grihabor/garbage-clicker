@@ -35,7 +35,14 @@ BRANCH_NAME        := $(shell git rev-parse --abbrev-ref HEAD)
 TAG_MESSAGE         = "$(TIME) $(DATE) $(AUTHOR) $(BRANCH_NAME)"
 COMMIT_MESSAGE     := $(shell git log --format=%B -n 1 $(COMMIT))
 
-all: latest-version
+all: next-micro
+
+venv:
+	python3 -m virtualenv venv
+
+.PHONY: install
+install:
+	pip install sphinx javasphinx sphinx_rtd_theme
 
 .PHONY: latest-version
 latest-version:
