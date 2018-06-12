@@ -96,7 +96,7 @@ deploy:
     github-token: ${DEPLOY_TOKEN}
     skip-cleanup: true
     keep-history: true
-    local-dir: docs/build
+    local-dir: docs/build/html
     target-branch: gh-pages
     on:
       branch:
