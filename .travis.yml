@@ -34,7 +34,8 @@ script:
   - ./gradlew assemble
   - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
-  - javasphinx-apidoc -o docs/docs .
+  - javasphinx-apidoc -o docs/src .
+  - cd docs; make html
   
 cache: 
   directories: 
@@ -80,3 +81,13 @@ deploy:
         - force-deploy*
       tags: false
       condition: $TRAVIS_PULL_REQUEST = false
+  - provider: pages
+    api-key: $(DEPLOY_TOKEN)
+    skip-cleanup: true
+    keep-history: true
+    local-dir: docs/build
+    target-branch: gh-pages
+    on:
+      branch:
+        - master
+    
