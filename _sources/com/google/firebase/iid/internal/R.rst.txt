@@ -1,8 +1,0 @@
-R
-=
-
-.. java:package:: com.google.firebase.iid.internal
-   :noindex:
-
-.. java:type:: public final class R
-

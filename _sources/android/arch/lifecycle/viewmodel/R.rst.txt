@@ -1,8 +1,0 @@
-R
-=
-
-.. java:package:: android.arch.lifecycle.viewmodel
-   :noindex:
-
-.. java:type:: public final class R
-

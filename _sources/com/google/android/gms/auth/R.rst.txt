@@ -1,8 +1,0 @@
-R
-=
-
-.. java:package:: com.google.android.gms.auth
-   :noindex:
-
-.. java:type:: public final class R
-
