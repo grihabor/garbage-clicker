@@ -1,0 +1,50 @@
+.. java:import:: android.app Service
+
+.. java:import:: android.content Intent
+
+.. java:import:: android.media MediaPlayer
+
+.. java:import:: android.os IBinder
+
+MyService
+=========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class MyService extends Service
+
+Fields
+------
+player
+^^^^^^
+
+.. java:field::  MediaPlayer player
+   :outertype: MyService
+
+Methods
+-------
+onBind
+^^^^^^
+
+.. java:method:: @Override public IBinder onBind(Intent intent)
+   :outertype: MyService
+
+onCreate
+^^^^^^^^
+
+.. java:method:: @Override public void onCreate()
+   :outertype: MyService
+
+onDestroy
+^^^^^^^^^
+
+.. java:method:: @Override public void onDestroy()
+   :outertype: MyService
+
+onStart
+^^^^^^^
+
+.. java:method:: @Override public void onStart(Intent intent, int startid)
+   :outertype: MyService
+

@@ -1,0 +1,83 @@
+R.anim
+======
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class anim
+   :outertype: R
+
+Fields
+------
+abc_fade_in
+^^^^^^^^^^^
+
+.. java:field:: public static final int abc_fade_in
+   :outertype: R.anim
+
+abc_fade_out
+^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_fade_out
+   :outertype: R.anim
+
+abc_grow_fade_in_from_bottom
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_grow_fade_in_from_bottom
+   :outertype: R.anim
+
+abc_popup_enter
+^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_popup_enter
+   :outertype: R.anim
+
+abc_popup_exit
+^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_popup_exit
+   :outertype: R.anim
+
+abc_shrink_fade_out_from_bottom
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_shrink_fade_out_from_bottom
+   :outertype: R.anim
+
+abc_slide_in_bottom
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_slide_in_bottom
+   :outertype: R.anim
+
+abc_slide_in_top
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_slide_in_top
+   :outertype: R.anim
+
+abc_slide_out_bottom
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_slide_out_bottom
+   :outertype: R.anim
+
+abc_slide_out_top
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_slide_out_top
+   :outertype: R.anim
+
+abc_tooltip_enter
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tooltip_enter
+   :outertype: R.anim
+
+abc_tooltip_exit
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tooltip_exit
+   :outertype: R.anim
+

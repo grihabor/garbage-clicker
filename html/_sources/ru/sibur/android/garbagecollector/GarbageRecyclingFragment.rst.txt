@@ -1,0 +1,62 @@
+.. java:import:: android.app Activity
+
+.. java:import:: android.app Fragment
+
+.. java:import:: android.os Bundle
+
+.. java:import:: android.view LayoutInflater
+
+.. java:import:: android.view View
+
+.. java:import:: android.view ViewGroup
+
+.. java:import:: android.widget Button
+
+.. java:import:: java.math BigDecimal
+
+.. java:import:: java.math BigInteger
+
+GarbageRecyclingFragment
+========================
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class GarbageRecyclingFragment extends Fragment
+
+   Фрагмент ручной переработки мусора
+
+Fields
+------
+storage
+^^^^^^^
+
+.. java:field::  Storage storage
+   :outertype: GarbageRecyclingFragment
+
+Methods
+-------
+onAttach
+^^^^^^^^
+
+.. java:method:: @Override public void onAttach(Activity activity)
+   :outertype: GarbageRecyclingFragment
+
+onCreate
+^^^^^^^^
+
+.. java:method:: @Override public void onCreate(Bundle savedInstanceState)
+   :outertype: GarbageRecyclingFragment
+
+onCreateView
+^^^^^^^^^^^^
+
+.. java:method:: public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+   :outertype: GarbageRecyclingFragment
+
+onStart
+^^^^^^^
+
+.. java:method:: public void onStart()
+   :outertype: GarbageRecyclingFragment
+

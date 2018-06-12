@@ -1,0 +1,32 @@
+.. java:import:: org.json JSONObject
+
+.. java:import:: java.math BigDecimal
+
+.. java:import:: java.math BigInteger
+
+Upgrade
+=======
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class Upgrade extends ShopItem
+
+   Базовый класс для улучшений
+
+Constructors
+------------
+Upgrade
+^^^^^^^
+
+.. java:constructor::  Upgrade(JSONObject jsonData, Storage storage, int iterationIndex)
+   :outertype: Upgrade
+
+Methods
+-------
+getPrice
+^^^^^^^^
+
+.. java:method:: @Override  BigInteger getPrice()
+   :outertype: Upgrade
+

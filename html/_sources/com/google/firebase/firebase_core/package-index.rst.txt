@@ -1,0 +1,10 @@
+com.google.firebase.firebase_core
+=================================
+
+.. java:package:: com.google.firebase.firebase_core
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

@@ -1,0 +1,8 @@
+R
+=
+
+.. java:package:: android.support.mediacompat
+   :noindex:
+
+.. java:type:: public final class R
+

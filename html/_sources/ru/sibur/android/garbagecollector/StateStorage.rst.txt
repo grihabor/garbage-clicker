@@ -1,0 +1,142 @@
+.. java:import:: android.content Context
+
+.. java:import:: android.content SharedPreferences
+
+.. java:import:: android.util ArrayMap
+
+.. java:import:: java.math BigInteger
+
+.. java:import:: java.util Date
+
+StateStorage
+============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener
+
+   Created by RedSnail on 23.03.2018.
+
+Fields
+------
+context
+^^^^^^^
+
+.. java:field:: static Context context
+   :outertype: StateStorage
+
+listenerMap
+^^^^^^^^^^^
+
+.. java:field::  ArrayMap<String, OnDBChangeListener> listenerMap
+   :outertype: StateStorage
+
+sPref
+^^^^^
+
+.. java:field::  SharedPreferences sPref
+   :outertype: StateStorage
+
+Constructors
+------------
+StateStorage
+^^^^^^^^^^^^
+
+.. java:constructor::  StateStorage(Context context, String prefName)
+   :outertype: StateStorage
+
+Methods
+-------
+addMoney
+^^^^^^^^
+
+.. java:method:: @Override synchronized void addMoney(BigInteger amount)
+   :outertype: StateStorage
+
+addOnDBChangeListener
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: @Override  void addOnDBChangeListener(String key, OnDBChangeListener listener)
+   :outertype: StateStorage
+
+enoughMoney
+^^^^^^^^^^^
+
+.. java:method:: @Override  boolean enoughMoney(BigInteger price)
+   :outertype: StateStorage
+
+getBigInteger
+^^^^^^^^^^^^^
+
+.. java:method:: synchronized BigInteger getBigInteger(String key, BigInteger defVal)
+   :outertype: StateStorage
+
+getMoney
+^^^^^^^^
+
+.. java:method:: @Override  BigInteger getMoney()
+   :outertype: StateStorage
+
+getMusicShouldBe
+^^^^^^^^^^^^^^^^
+
+.. java:method:: synchronized boolean getMusicShouldBe()
+   :outertype: StateStorage
+
+getShopItemCount
+^^^^^^^^^^^^^^^^
+
+.. java:method:: @Override  int getShopItemCount(String itemCountKey)
+   :outertype: StateStorage
+
+getSoundsShouldBe
+^^^^^^^^^^^^^^^^^
+
+.. java:method:: synchronized boolean getSoundsShouldBe()
+   :outertype: StateStorage
+
+getTotalMoney
+^^^^^^^^^^^^^
+
+.. java:method:: @Override  BigInteger getTotalMoney()
+   :outertype: StateStorage
+
+incrementShopItemCount
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: @Override synchronized void incrementShopItemCount(String itemCountKey)
+   :outertype: StateStorage
+
+onSharedPreferenceChanged
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: @Override public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
+   :outertype: StateStorage
+
+   Implements `SharedPreferences` listener interface IMPORTANT: `SharedPreferences` object holds a weak ref to the registered listener, so we implement this listener interface in `StateStorage` class and pass the reference into the `registerOnSharedPreferenceChangeListener` method. https://developer.android.com/reference/android/content/SharedPreferences.html#registerOnSharedPreferenceChangeListener(android.content.SharedPreferences.OnSharedPreferenceChangeListener)
+
+putBigInteger
+^^^^^^^^^^^^^
+
+.. java:method:: synchronized void putBigInteger(String key, BigInteger bigInteger)
+   :outertype: StateStorage
+
+setMusicShouldBe
+^^^^^^^^^^^^^^^^
+
+.. java:method:: synchronized void setMusicShouldBe(boolean shouldBe)
+   :outertype: StateStorage
+
+setSoundsShouldBe
+^^^^^^^^^^^^^^^^^
+
+.. java:method:: synchronized void setSoundsShouldBe(boolean shouldBe)
+   :outertype: StateStorage
+
+updateAutomataThreadActionTime
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: @Override synchronized void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator)
+   :outertype: StateStorage
+

@@ -1,0 +1,17 @@
+R.bool
+======
+
+.. java:package:: android.support.v4
+   :noindex:
+
+.. java:type:: public static final class bool
+   :outertype: R
+
+Fields
+------
+abc_action_bar_embed_tabs
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_bar_embed_tabs
+   :outertype: R.bool
+

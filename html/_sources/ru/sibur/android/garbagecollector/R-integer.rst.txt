@@ -1,0 +1,53 @@
+R.integer
+=========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class integer
+   :outertype: R
+
+Fields
+------
+abc_config_activityDefaultDur
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_config_activityDefaultDur
+   :outertype: R.integer
+
+abc_config_activityShortDur
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_config_activityShortDur
+   :outertype: R.integer
+
+buy_animation_duration
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int buy_animation_duration
+   :outertype: R.integer
+
+cancel_button_image_alpha
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int cancel_button_image_alpha
+   :outertype: R.integer
+
+config_tooltipAnimTime
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int config_tooltipAnimTime
+   :outertype: R.integer
+
+google_play_services_version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int google_play_services_version
+   :outertype: R.integer
+
+status_bar_notification_info_maxnum
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int status_bar_notification_info_maxnum
+   :outertype: R.integer
+

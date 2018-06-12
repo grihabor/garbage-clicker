@@ -1,0 +1,880 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R.string &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="R.style" href="R-style.html" />
+    <link rel="prev" title="R.raw" href="R-raw.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/constraint/package-index.html">android.support.constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/mediacompat/package-index.html">android.support.mediacompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/v7/appcompat/package-index.html">android.support.v7.appcompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">ru.sibur.android.garbagecollector</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Automata.html">Automata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomataMoneyCalculator.html">AutomataMoneyCalculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomataThread.html">AutomataThread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomationShop.html">AutomationShop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildConfig.html">BuildConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Constant.html">Constant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExampleInstrumentedTest.html">ExampleInstrumentedTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExampleUnitTest.html">ExampleUnitTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GarbageRecyclingFragment.html">GarbageRecyclingFragment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IntroActivity.html">IntroActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JSONLoader.html">JSONLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MainActivity.html">MainActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manifest.html">Manifest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manifest-permission.html">Manifest.permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MyService.html">MyService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OnDBChangeListener.html">OnDBChangeListener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-anim.html">R.anim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-animator.html">R.animator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-array.html">R.array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-attr.html">R.attr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-bool.html">R.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-color.html">R.color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-dimen.html">R.dimen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-drawable.html">R.drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-id.html">R.id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-integer.html">R.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-layout.html">R.layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-mipmap.html">R.mipmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-raw.html">R.raw</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">R.string</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R-style.html">R.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SettingsActivity.html">SettingsActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Shop.html">Shop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ShopFragment.html">ShopFragment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ShopItem.html">ShopItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StateStorage.html">StateStorage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade.html">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UpgradeShop.html">UpgradeShop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">ru.sibur.android.garbagecollector</a> &raquo;</li>
+        
+      <li>R.string</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/ru/sibur/android/garbagecollector/R-string.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-string">
+<h1>R.string<a class="headerlink" href="#r-string" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="ru.sibur.android.garbagecollector.R.string">
+public static final class <code class="descname">string</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="abc-action-bar-home-description">
+<h3>abc_action_bar_home_description<a class="headerlink" href="#abc-action-bar-home-description" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_action_bar_home_description">
+public static final int <code class="descname">abc_action_bar_home_description</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_action_bar_home_description" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-up-description">
+<h3>abc_action_bar_up_description<a class="headerlink" href="#abc-action-bar-up-description" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_action_bar_up_description">
+public static final int <code class="descname">abc_action_bar_up_description</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_action_bar_up_description" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-menu-overflow-description">
+<h3>abc_action_menu_overflow_description<a class="headerlink" href="#abc-action-menu-overflow-description" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_action_menu_overflow_description">
+public static final int <code class="descname">abc_action_menu_overflow_description</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_action_menu_overflow_description" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-mode-done">
+<h3>abc_action_mode_done<a class="headerlink" href="#abc-action-mode-done" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_action_mode_done">
+public static final int <code class="descname">abc_action_mode_done</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_action_mode_done" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-activity-chooser-view-see-all">
+<h3>abc_activity_chooser_view_see_all<a class="headerlink" href="#abc-activity-chooser-view-see-all" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_activity_chooser_view_see_all">
+public static final int <code class="descname">abc_activity_chooser_view_see_all</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_activity_chooser_view_see_all" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-activitychooserview-choose-application">
+<h3>abc_activitychooserview_choose_application<a class="headerlink" href="#abc-activitychooserview-choose-application" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_activitychooserview_choose_application">
+public static final int <code class="descname">abc_activitychooserview_choose_application</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_activitychooserview_choose_application" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-capital-off">
+<h3>abc_capital_off<a class="headerlink" href="#abc-capital-off" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_capital_off">
+public static final int <code class="descname">abc_capital_off</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_capital_off" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-capital-on">
+<h3>abc_capital_on<a class="headerlink" href="#abc-capital-on" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_capital_on">
+public static final int <code class="descname">abc_capital_on</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_capital_on" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-body-1-material">
+<h3>abc_font_family_body_1_material<a class="headerlink" href="#abc-font-family-body-1-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_body_1_material">
+public static final int <code class="descname">abc_font_family_body_1_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_body_1_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-body-2-material">
+<h3>abc_font_family_body_2_material<a class="headerlink" href="#abc-font-family-body-2-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_body_2_material">
+public static final int <code class="descname">abc_font_family_body_2_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_body_2_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-button-material">
+<h3>abc_font_family_button_material<a class="headerlink" href="#abc-font-family-button-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_button_material">
+public static final int <code class="descname">abc_font_family_button_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_button_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-caption-material">
+<h3>abc_font_family_caption_material<a class="headerlink" href="#abc-font-family-caption-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_caption_material">
+public static final int <code class="descname">abc_font_family_caption_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_caption_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-display-1-material">
+<h3>abc_font_family_display_1_material<a class="headerlink" href="#abc-font-family-display-1-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_display_1_material">
+public static final int <code class="descname">abc_font_family_display_1_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_display_1_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-display-2-material">
+<h3>abc_font_family_display_2_material<a class="headerlink" href="#abc-font-family-display-2-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_display_2_material">
+public static final int <code class="descname">abc_font_family_display_2_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_display_2_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-display-3-material">
+<h3>abc_font_family_display_3_material<a class="headerlink" href="#abc-font-family-display-3-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_display_3_material">
+public static final int <code class="descname">abc_font_family_display_3_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_display_3_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-display-4-material">
+<h3>abc_font_family_display_4_material<a class="headerlink" href="#abc-font-family-display-4-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_display_4_material">
+public static final int <code class="descname">abc_font_family_display_4_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_display_4_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-headline-material">
+<h3>abc_font_family_headline_material<a class="headerlink" href="#abc-font-family-headline-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_headline_material">
+public static final int <code class="descname">abc_font_family_headline_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_headline_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-menu-material">
+<h3>abc_font_family_menu_material<a class="headerlink" href="#abc-font-family-menu-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_menu_material">
+public static final int <code class="descname">abc_font_family_menu_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_menu_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-subhead-material">
+<h3>abc_font_family_subhead_material<a class="headerlink" href="#abc-font-family-subhead-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_subhead_material">
+public static final int <code class="descname">abc_font_family_subhead_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_subhead_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-font-family-title-material">
+<h3>abc_font_family_title_material<a class="headerlink" href="#abc-font-family-title-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_font_family_title_material">
+public static final int <code class="descname">abc_font_family_title_material</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_font_family_title_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-search-hint">
+<h3>abc_search_hint<a class="headerlink" href="#abc-search-hint" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_search_hint">
+public static final int <code class="descname">abc_search_hint</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_search_hint" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-searchview-description-clear">
+<h3>abc_searchview_description_clear<a class="headerlink" href="#abc-searchview-description-clear" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_searchview_description_clear">
+public static final int <code class="descname">abc_searchview_description_clear</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_searchview_description_clear" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-searchview-description-query">
+<h3>abc_searchview_description_query<a class="headerlink" href="#abc-searchview-description-query" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_searchview_description_query">
+public static final int <code class="descname">abc_searchview_description_query</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_searchview_description_query" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-searchview-description-search">
+<h3>abc_searchview_description_search<a class="headerlink" href="#abc-searchview-description-search" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_searchview_description_search">
+public static final int <code class="descname">abc_searchview_description_search</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_searchview_description_search" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-searchview-description-submit">
+<h3>abc_searchview_description_submit<a class="headerlink" href="#abc-searchview-description-submit" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_searchview_description_submit">
+public static final int <code class="descname">abc_searchview_description_submit</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_searchview_description_submit" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-searchview-description-voice">
+<h3>abc_searchview_description_voice<a class="headerlink" href="#abc-searchview-description-voice" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_searchview_description_voice">
+public static final int <code class="descname">abc_searchview_description_voice</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_searchview_description_voice" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-shareactionprovider-share-with">
+<h3>abc_shareactionprovider_share_with<a class="headerlink" href="#abc-shareactionprovider-share-with" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_shareactionprovider_share_with">
+public static final int <code class="descname">abc_shareactionprovider_share_with</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_shareactionprovider_share_with" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-shareactionprovider-share-with-application">
+<h3>abc_shareactionprovider_share_with_application<a class="headerlink" href="#abc-shareactionprovider-share-with-application" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_shareactionprovider_share_with_application">
+public static final int <code class="descname">abc_shareactionprovider_share_with_application</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_shareactionprovider_share_with_application" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-toolbar-collapse-description">
+<h3>abc_toolbar_collapse_description<a class="headerlink" href="#abc-toolbar-collapse-description" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.abc_toolbar_collapse_description">
+public static final int <code class="descname">abc_toolbar_collapse_description</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.abc_toolbar_collapse_description" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="achievement-button-text">
+<h3>achievement_button_text<a class="headerlink" href="#achievement-button-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.achievement_button_text">
+public static final int <code class="descname">achievement_button_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.achievement_button_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="app-name">
+<h3>app_name<a class="headerlink" href="#app-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.app_name">
+public static final int <code class="descname">app_name</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.app_name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="automation-shop-sign">
+<h3>automation_shop_sign<a class="headerlink" href="#automation-shop-sign" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.automation_shop_sign">
+public static final int <code class="descname">automation_shop_sign</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.automation_shop_sign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="checkbox-music">
+<h3>checkbox_music<a class="headerlink" href="#checkbox-music" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.checkbox_music">
+public static final int <code class="descname">checkbox_music</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.checkbox_music" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="checkbox-sound">
+<h3>checkbox_sound<a class="headerlink" href="#checkbox-sound" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.checkbox_sound">
+public static final int <code class="descname">checkbox_sound</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.checkbox_sound" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-enable-button">
+<h3>common_google_play_services_enable_button<a class="headerlink" href="#common-google-play-services-enable-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_enable_button">
+public static final int <code class="descname">common_google_play_services_enable_button</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_enable_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-enable-text">
+<h3>common_google_play_services_enable_text<a class="headerlink" href="#common-google-play-services-enable-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_enable_text">
+public static final int <code class="descname">common_google_play_services_enable_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_enable_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-enable-title">
+<h3>common_google_play_services_enable_title<a class="headerlink" href="#common-google-play-services-enable-title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_enable_title">
+public static final int <code class="descname">common_google_play_services_enable_title</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_enable_title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-install-button">
+<h3>common_google_play_services_install_button<a class="headerlink" href="#common-google-play-services-install-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_install_button">
+public static final int <code class="descname">common_google_play_services_install_button</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_install_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-install-text">
+<h3>common_google_play_services_install_text<a class="headerlink" href="#common-google-play-services-install-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_install_text">
+public static final int <code class="descname">common_google_play_services_install_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_install_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-install-title">
+<h3>common_google_play_services_install_title<a class="headerlink" href="#common-google-play-services-install-title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_install_title">
+public static final int <code class="descname">common_google_play_services_install_title</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_install_title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-notification-channel-name">
+<h3>common_google_play_services_notification_channel_name<a class="headerlink" href="#common-google-play-services-notification-channel-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_notification_channel_name">
+public static final int <code class="descname">common_google_play_services_notification_channel_name</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_notification_channel_name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-notification-ticker">
+<h3>common_google_play_services_notification_ticker<a class="headerlink" href="#common-google-play-services-notification-ticker" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_notification_ticker">
+public static final int <code class="descname">common_google_play_services_notification_ticker</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_notification_ticker" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-unknown-issue">
+<h3>common_google_play_services_unknown_issue<a class="headerlink" href="#common-google-play-services-unknown-issue" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_unknown_issue">
+public static final int <code class="descname">common_google_play_services_unknown_issue</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_unknown_issue" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-unsupported-text">
+<h3>common_google_play_services_unsupported_text<a class="headerlink" href="#common-google-play-services-unsupported-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_unsupported_text">
+public static final int <code class="descname">common_google_play_services_unsupported_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_unsupported_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-update-button">
+<h3>common_google_play_services_update_button<a class="headerlink" href="#common-google-play-services-update-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_update_button">
+public static final int <code class="descname">common_google_play_services_update_button</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_update_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-update-text">
+<h3>common_google_play_services_update_text<a class="headerlink" href="#common-google-play-services-update-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_update_text">
+public static final int <code class="descname">common_google_play_services_update_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_update_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-update-title">
+<h3>common_google_play_services_update_title<a class="headerlink" href="#common-google-play-services-update-title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_update_title">
+public static final int <code class="descname">common_google_play_services_update_title</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_update_title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-updating-text">
+<h3>common_google_play_services_updating_text<a class="headerlink" href="#common-google-play-services-updating-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_updating_text">
+public static final int <code class="descname">common_google_play_services_updating_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_updating_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-google-play-services-wear-update-text">
+<h3>common_google_play_services_wear_update_text<a class="headerlink" href="#common-google-play-services-wear-update-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_google_play_services_wear_update_text">
+public static final int <code class="descname">common_google_play_services_wear_update_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_google_play_services_wear_update_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-open-on-phone">
+<h3>common_open_on_phone<a class="headerlink" href="#common-open-on-phone" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_open_on_phone">
+public static final int <code class="descname">common_open_on_phone</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_open_on_phone" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-signin-button-text">
+<h3>common_signin_button_text<a class="headerlink" href="#common-signin-button-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_signin_button_text">
+public static final int <code class="descname">common_signin_button_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_signin_button_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="common-signin-button-text-long">
+<h3>common_signin_button_text_long<a class="headerlink" href="#common-signin-button-text-long" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.common_signin_button_text_long">
+public static final int <code class="descname">common_signin_button_text_long</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.common_signin_button_text_long" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="default-web-client-id">
+<h3>default_web_client_id<a class="headerlink" href="#default-web-client-id" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.default_web_client_id">
+public static final int <code class="descname">default_web_client_id</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.default_web_client_id" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="displayed-performance-name">
+<h3>displayed_performance_name<a class="headerlink" href="#displayed-performance-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.displayed_performance_name">
+public static final int <code class="descname">displayed_performance_name</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.displayed_performance_name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="displayed-qty-name">
+<h3>displayed_qty_name<a class="headerlink" href="#displayed-qty-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.displayed_qty_name">
+public static final int <code class="descname">displayed_qty_name</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.displayed_qty_name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="displayed-vault-name">
+<h3>displayed_vault_name<a class="headerlink" href="#displayed-vault-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.displayed_vault_name">
+public static final int <code class="descname">displayed_vault_name</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.displayed_vault_name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="exit-button-text">
+<h3>exit_button_text<a class="headerlink" href="#exit-button-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.exit_button_text">
+public static final int <code class="descname">exit_button_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.exit_button_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="factory-sign">
+<h3>factory_sign<a class="headerlink" href="#factory-sign" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.factory_sign">
+public static final int <code class="descname">factory_sign</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.factory_sign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="firebase-database-url">
+<h3>firebase_database_url<a class="headerlink" href="#firebase-database-url" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.firebase_database_url">
+public static final int <code class="descname">firebase_database_url</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.firebase_database_url" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="gcm-defaultsenderid">
+<h3>gcm_defaultSenderId<a class="headerlink" href="#gcm-defaultsenderid" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.gcm_defaultSenderId">
+public static final int <code class="descname">gcm_defaultSenderId</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.gcm_defaultSenderId" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="google-api-key">
+<h3>google_api_key<a class="headerlink" href="#google-api-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.google_api_key">
+public static final int <code class="descname">google_api_key</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.google_api_key" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="google-app-id">
+<h3>google_app_id<a class="headerlink" href="#google-app-id" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.google_app_id">
+public static final int <code class="descname">google_app_id</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.google_app_id" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="google-crash-reporting-api-key">
+<h3>google_crash_reporting_api_key<a class="headerlink" href="#google-crash-reporting-api-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.google_crash_reporting_api_key">
+public static final int <code class="descname">google_crash_reporting_api_key</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.google_crash_reporting_api_key" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="google-storage-bucket">
+<h3>google_storage_bucket<a class="headerlink" href="#google-storage-bucket" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.google_storage_bucket">
+public static final int <code class="descname">google_storage_bucket</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.google_storage_bucket" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="play-button-text">
+<h3>play_button_text<a class="headerlink" href="#play-button-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.play_button_text">
+public static final int <code class="descname">play_button_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.play_button_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="project-id">
+<h3>project_id<a class="headerlink" href="#project-id" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.project_id">
+public static final int <code class="descname">project_id</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.project_id" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="recycle-sign">
+<h3>recycle_sign<a class="headerlink" href="#recycle-sign" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.recycle_sign">
+public static final int <code class="descname">recycle_sign</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.recycle_sign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-menu-title">
+<h3>search_menu_title<a class="headerlink" href="#search-menu-title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.search_menu_title">
+public static final int <code class="descname">search_menu_title</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.search_menu_title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="settings-button-text">
+<h3>settings_button_text<a class="headerlink" href="#settings-button-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.settings_button_text">
+public static final int <code class="descname">settings_button_text</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.settings_button_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="status-bar-notification-info-overflow">
+<h3>status_bar_notification_info_overflow<a class="headerlink" href="#status-bar-notification-info-overflow" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.status_bar_notification_info_overflow">
+public static final int <code class="descname">status_bar_notification_info_overflow</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.status_bar_notification_info_overflow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="upgrade-shop-sign">
+<h3>upgrade_shop_sign<a class="headerlink" href="#upgrade-shop-sign" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.R.string.upgrade_shop_sign">
+public static final int <code class="descname">upgrade_shop_sign</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.R.string.upgrade_shop_sign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="R-style.html" class="btn btn-neutral float-right" title="R.style" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="R-raw.html" class="btn btn-neutral" title="R.raw" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

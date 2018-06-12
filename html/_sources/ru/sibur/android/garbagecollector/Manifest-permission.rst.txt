@@ -1,0 +1,17 @@
+Manifest.permission
+===================
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class permission
+   :outertype: Manifest
+
+Fields
+------
+C2D_MESSAGE
+^^^^^^^^^^^
+
+.. java:field:: public static final String C2D_MESSAGE
+   :outertype: Manifest.permission
+

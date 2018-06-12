@@ -1,0 +1,1092 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R.id &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="R.integer" href="R-integer.html" />
+    <link rel="prev" title="R.drawable" href="R-drawable.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../constraint/package-index.html">android.support.constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mediacompat/package-index.html">android.support.mediacompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">android.support.v7.appcompat</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-anim.html">R.anim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-attr.html">R.attr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-bool.html">R.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-color.html">R.color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-dimen.html">R.dimen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-drawable.html">R.drawable</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">R.id</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R-integer.html">R.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-layout.html">R.layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-string.html">R.string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-style.html">R.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ru/sibur/android/garbagecollector/package-index.html">ru.sibur.android.garbagecollector</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">android.support.v7.appcompat</a> &raquo;</li>
+        
+      <li>R.id</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/android/support/v7/appcompat/R-id.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-id">
+<h1>R.id<a class="headerlink" href="#r-id" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="android.support.v7.appcompat.R.id">
+public static final class <code class="descname">id</code><a class="headerlink" href="#android.support.v7.appcompat.R.id" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="action-bar">
+<h3>action_bar<a class="headerlink" href="#action-bar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar">
+public static final int <code class="descname">action_bar</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-bar-activity-content">
+<h3>action_bar_activity_content<a class="headerlink" href="#action-bar-activity-content" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar_activity_content">
+public static final int <code class="descname">action_bar_activity_content</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar_activity_content" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-bar-container">
+<h3>action_bar_container<a class="headerlink" href="#action-bar-container" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar_container">
+public static final int <code class="descname">action_bar_container</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar_container" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-bar-root">
+<h3>action_bar_root<a class="headerlink" href="#action-bar-root" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar_root">
+public static final int <code class="descname">action_bar_root</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar_root" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-bar-spinner">
+<h3>action_bar_spinner<a class="headerlink" href="#action-bar-spinner" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar_spinner">
+public static final int <code class="descname">action_bar_spinner</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar_spinner" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-bar-subtitle">
+<h3>action_bar_subtitle<a class="headerlink" href="#action-bar-subtitle" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar_subtitle">
+public static final int <code class="descname">action_bar_subtitle</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar_subtitle" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-bar-title">
+<h3>action_bar_title<a class="headerlink" href="#action-bar-title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_bar_title">
+public static final int <code class="descname">action_bar_title</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_bar_title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-container">
+<h3>action_container<a class="headerlink" href="#action-container" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_container">
+public static final int <code class="descname">action_container</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_container" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-context-bar">
+<h3>action_context_bar<a class="headerlink" href="#action-context-bar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_context_bar">
+public static final int <code class="descname">action_context_bar</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_context_bar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-divider">
+<h3>action_divider<a class="headerlink" href="#action-divider" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_divider">
+public static final int <code class="descname">action_divider</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_divider" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-image">
+<h3>action_image<a class="headerlink" href="#action-image" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_image">
+public static final int <code class="descname">action_image</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_image" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-menu-divider">
+<h3>action_menu_divider<a class="headerlink" href="#action-menu-divider" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_menu_divider">
+public static final int <code class="descname">action_menu_divider</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_menu_divider" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-menu-presenter">
+<h3>action_menu_presenter<a class="headerlink" href="#action-menu-presenter" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_menu_presenter">
+public static final int <code class="descname">action_menu_presenter</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_menu_presenter" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-mode-bar">
+<h3>action_mode_bar<a class="headerlink" href="#action-mode-bar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_mode_bar">
+public static final int <code class="descname">action_mode_bar</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_mode_bar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-mode-bar-stub">
+<h3>action_mode_bar_stub<a class="headerlink" href="#action-mode-bar-stub" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_mode_bar_stub">
+public static final int <code class="descname">action_mode_bar_stub</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_mode_bar_stub" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-mode-close-button">
+<h3>action_mode_close_button<a class="headerlink" href="#action-mode-close-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_mode_close_button">
+public static final int <code class="descname">action_mode_close_button</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_mode_close_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="action-text">
+<h3>action_text<a class="headerlink" href="#action-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.action_text">
+public static final int <code class="descname">action_text</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.action_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="actions">
+<h3>actions<a class="headerlink" href="#actions" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.actions">
+public static final int <code class="descname">actions</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.actions" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="activity-chooser-view-content">
+<h3>activity_chooser_view_content<a class="headerlink" href="#activity-chooser-view-content" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.activity_chooser_view_content">
+public static final int <code class="descname">activity_chooser_view_content</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.activity_chooser_view_content" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="add">
+<h3>add<a class="headerlink" href="#add" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.add">
+public static final int <code class="descname">add</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.add" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="alerttitle">
+<h3>alertTitle<a class="headerlink" href="#alerttitle" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.alertTitle">
+public static final int <code class="descname">alertTitle</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.alertTitle" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="async">
+<h3>async<a class="headerlink" href="#async" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.async">
+public static final int <code class="descname">async</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.async" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="blocking">
+<h3>blocking<a class="headerlink" href="#blocking" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.blocking">
+public static final int <code class="descname">blocking</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.blocking" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="bottom">
+<h3>bottom<a class="headerlink" href="#bottom" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.bottom">
+public static final int <code class="descname">bottom</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.bottom" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="buttonpanel">
+<h3>buttonPanel<a class="headerlink" href="#buttonpanel" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.buttonPanel">
+public static final int <code class="descname">buttonPanel</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.buttonPanel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="checkbox">
+<h3>checkbox<a class="headerlink" href="#checkbox" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.checkbox">
+public static final int <code class="descname">checkbox</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.checkbox" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="chronometer">
+<h3>chronometer<a class="headerlink" href="#chronometer" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.chronometer">
+public static final int <code class="descname">chronometer</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.chronometer" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="contentpanel">
+<h3>contentPanel<a class="headerlink" href="#contentpanel" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.contentPanel">
+public static final int <code class="descname">contentPanel</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.contentPanel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="custom">
+<h3>custom<a class="headerlink" href="#custom" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.custom">
+public static final int <code class="descname">custom</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.custom" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="custompanel">
+<h3>customPanel<a class="headerlink" href="#custompanel" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.customPanel">
+public static final int <code class="descname">customPanel</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.customPanel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="decor-content-parent">
+<h3>decor_content_parent<a class="headerlink" href="#decor-content-parent" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.decor_content_parent">
+public static final int <code class="descname">decor_content_parent</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.decor_content_parent" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="default-activity-button">
+<h3>default_activity_button<a class="headerlink" href="#default-activity-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.default_activity_button">
+public static final int <code class="descname">default_activity_button</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.default_activity_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="edit-query">
+<h3>edit_query<a class="headerlink" href="#edit-query" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.edit_query">
+public static final int <code class="descname">edit_query</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.edit_query" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="end">
+<h3>end<a class="headerlink" href="#end" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.end">
+public static final int <code class="descname">end</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.end" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="expand-activities-button">
+<h3>expand_activities_button<a class="headerlink" href="#expand-activities-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.expand_activities_button">
+public static final int <code class="descname">expand_activities_button</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.expand_activities_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="expanded-menu">
+<h3>expanded_menu<a class="headerlink" href="#expanded-menu" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.expanded_menu">
+public static final int <code class="descname">expanded_menu</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.expanded_menu" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="forever">
+<h3>forever<a class="headerlink" href="#forever" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.forever">
+public static final int <code class="descname">forever</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.forever" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="home">
+<h3>home<a class="headerlink" href="#home" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.home">
+public static final int <code class="descname">home</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.home" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="icon">
+<h3>icon<a class="headerlink" href="#icon" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.icon">
+public static final int <code class="descname">icon</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.icon" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="icon-group">
+<h3>icon_group<a class="headerlink" href="#icon-group" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.icon_group">
+public static final int <code class="descname">icon_group</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.icon_group" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="image">
+<h3>image<a class="headerlink" href="#image" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.image">
+public static final int <code class="descname">image</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.image" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="info">
+<h3>info<a class="headerlink" href="#info" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.info">
+public static final int <code class="descname">info</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.info" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="italic">
+<h3>italic<a class="headerlink" href="#italic" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.italic">
+public static final int <code class="descname">italic</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.italic" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="left">
+<h3>left<a class="headerlink" href="#left" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.left">
+public static final int <code class="descname">left</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.left" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="line1">
+<h3>line1<a class="headerlink" href="#line1" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.line1">
+public static final int <code class="descname">line1</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.line1" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="line3">
+<h3>line3<a class="headerlink" href="#line3" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.line3">
+public static final int <code class="descname">line3</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.line3" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="listmode">
+<h3>listMode<a class="headerlink" href="#listmode" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.listMode">
+public static final int <code class="descname">listMode</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.listMode" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="list-item">
+<h3>list_item<a class="headerlink" href="#list-item" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.list_item">
+public static final int <code class="descname">list_item</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.list_item" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="message">
+<h3>message<a class="headerlink" href="#message" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.message">
+public static final int <code class="descname">message</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.message" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="multiply">
+<h3>multiply<a class="headerlink" href="#multiply" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.multiply">
+public static final int <code class="descname">multiply</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.multiply" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="none">
+<h3>none<a class="headerlink" href="#none" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.none">
+public static final int <code class="descname">none</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.none" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="normal">
+<h3>normal<a class="headerlink" href="#normal" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.normal">
+public static final int <code class="descname">normal</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.normal" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-background">
+<h3>notification_background<a class="headerlink" href="#notification-background" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.notification_background">
+public static final int <code class="descname">notification_background</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.notification_background" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-main-column">
+<h3>notification_main_column<a class="headerlink" href="#notification-main-column" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.notification_main_column">
+public static final int <code class="descname">notification_main_column</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.notification_main_column" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-main-column-container">
+<h3>notification_main_column_container<a class="headerlink" href="#notification-main-column-container" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.notification_main_column_container">
+public static final int <code class="descname">notification_main_column_container</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.notification_main_column_container" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="parentpanel">
+<h3>parentPanel<a class="headerlink" href="#parentpanel" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.parentPanel">
+public static final int <code class="descname">parentPanel</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.parentPanel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="progress-circular">
+<h3>progress_circular<a class="headerlink" href="#progress-circular" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.progress_circular">
+public static final int <code class="descname">progress_circular</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.progress_circular" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="progress-horizontal">
+<h3>progress_horizontal<a class="headerlink" href="#progress-horizontal" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.progress_horizontal">
+public static final int <code class="descname">progress_horizontal</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.progress_horizontal" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="radio">
+<h3>radio<a class="headerlink" href="#radio" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.radio">
+public static final int <code class="descname">radio</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.radio" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="right">
+<h3>right<a class="headerlink" href="#right" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.right">
+public static final int <code class="descname">right</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.right" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="right-icon">
+<h3>right_icon<a class="headerlink" href="#right-icon" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.right_icon">
+public static final int <code class="descname">right_icon</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.right_icon" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="right-side">
+<h3>right_side<a class="headerlink" href="#right-side" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.right_side">
+public static final int <code class="descname">right_side</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.right_side" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="screen">
+<h3>screen<a class="headerlink" href="#screen" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.screen">
+public static final int <code class="descname">screen</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.screen" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="scrollindicatordown">
+<h3>scrollIndicatorDown<a class="headerlink" href="#scrollindicatordown" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.scrollIndicatorDown">
+public static final int <code class="descname">scrollIndicatorDown</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.scrollIndicatorDown" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="scrollindicatorup">
+<h3>scrollIndicatorUp<a class="headerlink" href="#scrollindicatorup" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.scrollIndicatorUp">
+public static final int <code class="descname">scrollIndicatorUp</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.scrollIndicatorUp" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="scrollview">
+<h3>scrollView<a class="headerlink" href="#scrollview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.scrollView">
+public static final int <code class="descname">scrollView</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.scrollView" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-badge">
+<h3>search_badge<a class="headerlink" href="#search-badge" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_badge">
+public static final int <code class="descname">search_badge</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_badge" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-bar">
+<h3>search_bar<a class="headerlink" href="#search-bar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_bar">
+public static final int <code class="descname">search_bar</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_bar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-button">
+<h3>search_button<a class="headerlink" href="#search-button" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_button">
+public static final int <code class="descname">search_button</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_button" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-close-btn">
+<h3>search_close_btn<a class="headerlink" href="#search-close-btn" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_close_btn">
+public static final int <code class="descname">search_close_btn</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_close_btn" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-edit-frame">
+<h3>search_edit_frame<a class="headerlink" href="#search-edit-frame" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_edit_frame">
+public static final int <code class="descname">search_edit_frame</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_edit_frame" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-go-btn">
+<h3>search_go_btn<a class="headerlink" href="#search-go-btn" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_go_btn">
+public static final int <code class="descname">search_go_btn</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_go_btn" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-mag-icon">
+<h3>search_mag_icon<a class="headerlink" href="#search-mag-icon" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_mag_icon">
+public static final int <code class="descname">search_mag_icon</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_mag_icon" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-plate">
+<h3>search_plate<a class="headerlink" href="#search-plate" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_plate">
+public static final int <code class="descname">search_plate</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_plate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-src-text">
+<h3>search_src_text<a class="headerlink" href="#search-src-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_src_text">
+public static final int <code class="descname">search_src_text</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_src_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="search-voice-btn">
+<h3>search_voice_btn<a class="headerlink" href="#search-voice-btn" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.search_voice_btn">
+public static final int <code class="descname">search_voice_btn</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.search_voice_btn" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="select-dialog-listview">
+<h3>select_dialog_listview<a class="headerlink" href="#select-dialog-listview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.select_dialog_listview">
+public static final int <code class="descname">select_dialog_listview</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.select_dialog_listview" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shortcut">
+<h3>shortcut<a class="headerlink" href="#shortcut" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.shortcut">
+public static final int <code class="descname">shortcut</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.shortcut" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="spacer">
+<h3>spacer<a class="headerlink" href="#spacer" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.spacer">
+public static final int <code class="descname">spacer</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.spacer" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="split-action-bar">
+<h3>split_action_bar<a class="headerlink" href="#split-action-bar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.split_action_bar">
+public static final int <code class="descname">split_action_bar</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.split_action_bar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="src-atop">
+<h3>src_atop<a class="headerlink" href="#src-atop" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.src_atop">
+public static final int <code class="descname">src_atop</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.src_atop" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="src-in">
+<h3>src_in<a class="headerlink" href="#src-in" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.src_in">
+public static final int <code class="descname">src_in</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.src_in" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="src-over">
+<h3>src_over<a class="headerlink" href="#src-over" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.src_over">
+public static final int <code class="descname">src_over</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.src_over" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="start">
+<h3>start<a class="headerlink" href="#start" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.start">
+public static final int <code class="descname">start</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.start" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="submenuarrow">
+<h3>submenuarrow<a class="headerlink" href="#submenuarrow" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.submenuarrow">
+public static final int <code class="descname">submenuarrow</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.submenuarrow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="submit-area">
+<h3>submit_area<a class="headerlink" href="#submit-area" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.submit_area">
+public static final int <code class="descname">submit_area</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.submit_area" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tabmode">
+<h3>tabMode<a class="headerlink" href="#tabmode" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.tabMode">
+public static final int <code class="descname">tabMode</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.tabMode" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tag-transition-group">
+<h3>tag_transition_group<a class="headerlink" href="#tag-transition-group" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.tag_transition_group">
+public static final int <code class="descname">tag_transition_group</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.tag_transition_group" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="text">
+<h3>text<a class="headerlink" href="#text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.text">
+public static final int <code class="descname">text</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="text2">
+<h3>text2<a class="headerlink" href="#text2" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.text2">
+public static final int <code class="descname">text2</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.text2" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="textspacernobuttons">
+<h3>textSpacerNoButtons<a class="headerlink" href="#textspacernobuttons" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.textSpacerNoButtons">
+public static final int <code class="descname">textSpacerNoButtons</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.textSpacerNoButtons" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="textspacernotitle">
+<h3>textSpacerNoTitle<a class="headerlink" href="#textspacernotitle" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.textSpacerNoTitle">
+public static final int <code class="descname">textSpacerNoTitle</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.textSpacerNoTitle" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="time">
+<h3>time<a class="headerlink" href="#time" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.time">
+public static final int <code class="descname">time</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.time" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="title">
+<h3>title<a class="headerlink" href="#title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.title">
+public static final int <code class="descname">title</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="titledividernocustom">
+<h3>titleDividerNoCustom<a class="headerlink" href="#titledividernocustom" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.titleDividerNoCustom">
+public static final int <code class="descname">titleDividerNoCustom</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.titleDividerNoCustom" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="title-template">
+<h3>title_template<a class="headerlink" href="#title-template" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.title_template">
+public static final int <code class="descname">title_template</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.title_template" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="top">
+<h3>top<a class="headerlink" href="#top" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.top">
+public static final int <code class="descname">top</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.top" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="toppanel">
+<h3>topPanel<a class="headerlink" href="#toppanel" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.topPanel">
+public static final int <code class="descname">topPanel</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.topPanel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="uniform">
+<h3>uniform<a class="headerlink" href="#uniform" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.uniform">
+public static final int <code class="descname">uniform</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.uniform" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="up">
+<h3>up<a class="headerlink" href="#up" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.up">
+public static final int <code class="descname">up</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.up" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="wrap-content">
+<h3>wrap_content<a class="headerlink" href="#wrap-content" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.id.wrap_content">
+public static final int <code class="descname">wrap_content</code><a class="headerlink" href="#android.support.v7.appcompat.R.id.wrap_content" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="R-integer.html" class="btn btn-neutral float-right" title="R.integer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="R-drawable.html" class="btn btn-neutral" title="R.drawable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

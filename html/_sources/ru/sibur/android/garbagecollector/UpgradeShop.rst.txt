@@ -1,0 +1,34 @@
+.. java:import:: android.content Context
+
+.. java:import:: org.json JSONObject
+
+UpgradeShop
+===========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class UpgradeShop extends Shop
+
+Constructors
+------------
+UpgradeShop
+^^^^^^^^^^^
+
+.. java:constructor::  UpgradeShop(int resourceId, Context context, Storage storage)
+   :outertype: UpgradeShop
+
+Methods
+-------
+createInstance
+^^^^^^^^^^^^^^
+
+.. java:method:: @Override public ShopItem createInstance(JSONObject object, int iterationIndex)
+   :outertype: UpgradeShop
+
+getTag
+^^^^^^
+
+.. java:method:: @Override  String getTag()
+   :outertype: UpgradeShop
+

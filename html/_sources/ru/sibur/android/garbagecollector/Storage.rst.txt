@@ -1,0 +1,86 @@
+.. java:import:: java.math BigInteger
+
+Storage
+=======
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public abstract class Storage
+
+   Created by RedSnail on 23.03.2018.
+
+Methods
+-------
+addMoney
+^^^^^^^^
+
+.. java:method:: abstract void addMoney(BigInteger amount)
+   :outertype: Storage
+
+addOnDBChangeListener
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract void addOnDBChangeListener(String key, OnDBChangeListener listener)
+   :outertype: Storage
+
+enoughMoney
+^^^^^^^^^^^
+
+.. java:method:: abstract boolean enoughMoney(BigInteger price)
+   :outertype: Storage
+
+getMoney
+^^^^^^^^
+
+.. java:method:: abstract BigInteger getMoney()
+   :outertype: Storage
+
+getMusicShouldBe
+^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract boolean getMusicShouldBe()
+   :outertype: Storage
+
+getShopItemCount
+^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract int getShopItemCount(String itemCountKey)
+   :outertype: Storage
+
+getSoundsShouldBe
+^^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract boolean getSoundsShouldBe()
+   :outertype: Storage
+
+getTotalMoney
+^^^^^^^^^^^^^
+
+.. java:method:: abstract BigInteger getTotalMoney()
+   :outertype: Storage
+
+incrementShopItemCount
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract void incrementShopItemCount(String itemCountKey)
+   :outertype: Storage
+
+setMusicShouldBe
+^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract void setMusicShouldBe(boolean shouldBe)
+   :outertype: Storage
+
+setSoundsShouldBe
+^^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract void setSoundsShouldBe(boolean shouldBe)
+   :outertype: Storage
+
+updateAutomataThreadActionTime
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: abstract void updateAutomataThreadActionTime(AutomataMoneyCalculator calculator)
+   :outertype: Storage
+

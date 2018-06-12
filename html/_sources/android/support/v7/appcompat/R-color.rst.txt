@@ -1,0 +1,509 @@
+R.color
+=======
+
+.. java:package:: android.support.v7.appcompat
+   :noindex:
+
+.. java:type:: public static final class color
+   :outertype: R
+
+Fields
+------
+abc_background_cache_hint_selector_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_background_cache_hint_selector_material_dark
+   :outertype: R.color
+
+abc_background_cache_hint_selector_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_background_cache_hint_selector_material_light
+   :outertype: R.color
+
+abc_btn_colored_borderless_text_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_btn_colored_borderless_text_material
+   :outertype: R.color
+
+abc_btn_colored_text_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_btn_colored_text_material
+   :outertype: R.color
+
+abc_color_highlight_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_color_highlight_material
+   :outertype: R.color
+
+abc_hint_foreground_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_hint_foreground_material_dark
+   :outertype: R.color
+
+abc_hint_foreground_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_hint_foreground_material_light
+   :outertype: R.color
+
+abc_input_method_navigation_guard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_input_method_navigation_guard
+   :outertype: R.color
+
+abc_primary_text_disable_only_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_primary_text_disable_only_material_dark
+   :outertype: R.color
+
+abc_primary_text_disable_only_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_primary_text_disable_only_material_light
+   :outertype: R.color
+
+abc_primary_text_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_primary_text_material_dark
+   :outertype: R.color
+
+abc_primary_text_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_primary_text_material_light
+   :outertype: R.color
+
+abc_search_url_text
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_url_text
+   :outertype: R.color
+
+abc_search_url_text_normal
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_url_text_normal
+   :outertype: R.color
+
+abc_search_url_text_pressed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_url_text_pressed
+   :outertype: R.color
+
+abc_search_url_text_selected
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_url_text_selected
+   :outertype: R.color
+
+abc_secondary_text_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_secondary_text_material_dark
+   :outertype: R.color
+
+abc_secondary_text_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_secondary_text_material_light
+   :outertype: R.color
+
+abc_tint_btn_checkable
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tint_btn_checkable
+   :outertype: R.color
+
+abc_tint_default
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tint_default
+   :outertype: R.color
+
+abc_tint_edittext
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tint_edittext
+   :outertype: R.color
+
+abc_tint_seek_thumb
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tint_seek_thumb
+   :outertype: R.color
+
+abc_tint_spinner
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tint_spinner
+   :outertype: R.color
+
+abc_tint_switch_track
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tint_switch_track
+   :outertype: R.color
+
+accent_material_dark
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int accent_material_dark
+   :outertype: R.color
+
+accent_material_light
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int accent_material_light
+   :outertype: R.color
+
+background_floating_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int background_floating_material_dark
+   :outertype: R.color
+
+background_floating_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int background_floating_material_light
+   :outertype: R.color
+
+background_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int background_material_dark
+   :outertype: R.color
+
+background_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int background_material_light
+   :outertype: R.color
+
+bright_foreground_disabled_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int bright_foreground_disabled_material_dark
+   :outertype: R.color
+
+bright_foreground_disabled_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int bright_foreground_disabled_material_light
+   :outertype: R.color
+
+bright_foreground_inverse_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int bright_foreground_inverse_material_dark
+   :outertype: R.color
+
+bright_foreground_inverse_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int bright_foreground_inverse_material_light
+   :outertype: R.color
+
+bright_foreground_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int bright_foreground_material_dark
+   :outertype: R.color
+
+bright_foreground_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int bright_foreground_material_light
+   :outertype: R.color
+
+button_material_dark
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int button_material_dark
+   :outertype: R.color
+
+button_material_light
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int button_material_light
+   :outertype: R.color
+
+dim_foreground_disabled_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int dim_foreground_disabled_material_dark
+   :outertype: R.color
+
+dim_foreground_disabled_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int dim_foreground_disabled_material_light
+   :outertype: R.color
+
+dim_foreground_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int dim_foreground_material_dark
+   :outertype: R.color
+
+dim_foreground_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int dim_foreground_material_light
+   :outertype: R.color
+
+error_color_material
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int error_color_material
+   :outertype: R.color
+
+foreground_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int foreground_material_dark
+   :outertype: R.color
+
+foreground_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int foreground_material_light
+   :outertype: R.color
+
+highlighted_text_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int highlighted_text_material_dark
+   :outertype: R.color
+
+highlighted_text_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int highlighted_text_material_light
+   :outertype: R.color
+
+material_blue_grey_800
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_blue_grey_800
+   :outertype: R.color
+
+material_blue_grey_900
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_blue_grey_900
+   :outertype: R.color
+
+material_blue_grey_950
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_blue_grey_950
+   :outertype: R.color
+
+material_deep_teal_200
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_deep_teal_200
+   :outertype: R.color
+
+material_deep_teal_500
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_deep_teal_500
+   :outertype: R.color
+
+material_grey_100
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_100
+   :outertype: R.color
+
+material_grey_300
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_300
+   :outertype: R.color
+
+material_grey_50
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_50
+   :outertype: R.color
+
+material_grey_600
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_600
+   :outertype: R.color
+
+material_grey_800
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_800
+   :outertype: R.color
+
+material_grey_850
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_850
+   :outertype: R.color
+
+material_grey_900
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int material_grey_900
+   :outertype: R.color
+
+notification_action_color_filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_action_color_filter
+   :outertype: R.color
+
+notification_icon_bg_color
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_icon_bg_color
+   :outertype: R.color
+
+primary_dark_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_dark_material_dark
+   :outertype: R.color
+
+primary_dark_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_dark_material_light
+   :outertype: R.color
+
+primary_material_dark
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_material_dark
+   :outertype: R.color
+
+primary_material_light
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_material_light
+   :outertype: R.color
+
+primary_text_default_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_text_default_material_dark
+   :outertype: R.color
+
+primary_text_default_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_text_default_material_light
+   :outertype: R.color
+
+primary_text_disabled_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_text_disabled_material_dark
+   :outertype: R.color
+
+primary_text_disabled_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int primary_text_disabled_material_light
+   :outertype: R.color
+
+ripple_material_dark
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int ripple_material_dark
+   :outertype: R.color
+
+ripple_material_light
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int ripple_material_light
+   :outertype: R.color
+
+secondary_text_default_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int secondary_text_default_material_dark
+   :outertype: R.color
+
+secondary_text_default_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int secondary_text_default_material_light
+   :outertype: R.color
+
+secondary_text_disabled_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int secondary_text_disabled_material_dark
+   :outertype: R.color
+
+secondary_text_disabled_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int secondary_text_disabled_material_light
+   :outertype: R.color
+
+switch_thumb_disabled_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int switch_thumb_disabled_material_dark
+   :outertype: R.color
+
+switch_thumb_disabled_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int switch_thumb_disabled_material_light
+   :outertype: R.color
+
+switch_thumb_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int switch_thumb_material_dark
+   :outertype: R.color
+
+switch_thumb_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int switch_thumb_material_light
+   :outertype: R.color
+
+switch_thumb_normal_material_dark
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int switch_thumb_normal_material_dark
+   :outertype: R.color
+
+switch_thumb_normal_material_light
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int switch_thumb_normal_material_light
+   :outertype: R.color
+
+tooltip_background_dark
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int tooltip_background_dark
+   :outertype: R.color
+
+tooltip_background_light
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int tooltip_background_light
+   :outertype: R.color
+

@@ -1,0 +1,10 @@
+com.google.android.gms.stats
+============================
+
+.. java:package:: com.google.android.gms.stats
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

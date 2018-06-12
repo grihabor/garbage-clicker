@@ -1,0 +1,23 @@
+R.mipmap
+========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class mipmap
+   :outertype: R
+
+Fields
+------
+ic_launcher
+^^^^^^^^^^^
+
+.. java:field:: public static final int ic_launcher
+   :outertype: R.mipmap
+
+ic_launcher_round
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int ic_launcher_round
+   :outertype: R.mipmap
+

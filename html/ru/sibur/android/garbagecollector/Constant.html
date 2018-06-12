@@ -1,0 +1,589 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Constant &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="ExampleInstrumentedTest" href="ExampleInstrumentedTest.html" />
+    <link rel="prev" title="BuildConfig" href="BuildConfig.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/constraint/package-index.html">android.support.constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/mediacompat/package-index.html">android.support.mediacompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/v7/appcompat/package-index.html">android.support.v7.appcompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">ru.sibur.android.garbagecollector</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Automata.html">Automata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomataMoneyCalculator.html">AutomataMoneyCalculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomataThread.html">AutomataThread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomationShop.html">AutomationShop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildConfig.html">BuildConfig</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Constant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ExampleInstrumentedTest.html">ExampleInstrumentedTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExampleUnitTest.html">ExampleUnitTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GarbageRecyclingFragment.html">GarbageRecyclingFragment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IntroActivity.html">IntroActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JSONLoader.html">JSONLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MainActivity.html">MainActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manifest.html">Manifest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manifest-permission.html">Manifest.permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MyService.html">MyService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OnDBChangeListener.html">OnDBChangeListener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-anim.html">R.anim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-animator.html">R.animator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-array.html">R.array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-attr.html">R.attr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-bool.html">R.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-color.html">R.color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-dimen.html">R.dimen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-drawable.html">R.drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-id.html">R.id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-integer.html">R.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-layout.html">R.layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-mipmap.html">R.mipmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-raw.html">R.raw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-string.html">R.string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-style.html">R.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SettingsActivity.html">SettingsActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Shop.html">Shop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ShopFragment.html">ShopFragment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ShopItem.html">ShopItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StateStorage.html">StateStorage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade.html">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UpgradeShop.html">UpgradeShop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">ru.sibur.android.garbagecollector</a> &raquo;</li>
+        
+      <li>Constant</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/ru/sibur/android/garbagecollector/Constant.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="constant">
+<h1>Constant<a class="headerlink" href="#constant" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="ru.sibur.android.garbagecollector.Constant">
+public final class <code class="descname">Constant</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Содержит константы, нужные нам в разных классах программы</p>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="automata-cost-decrease-multiplier">
+<h3>AUTOMATA_COST_DECREASE_MULTIPLIER<a class="headerlink" href="#automata-cost-decrease-multiplier" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.AUTOMATA_COST_DECREASE_MULTIPLIER">
+public static final double <code class="descname">AUTOMATA_COST_DECREASE_MULTIPLIER</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.AUTOMATA_COST_DECREASE_MULTIPLIER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="automata-cost-increase-multiplier">
+<h3>AUTOMATA_COST_INCREASE_MULTIPLIER<a class="headerlink" href="#automata-cost-increase-multiplier" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.AUTOMATA_COST_INCREASE_MULTIPLIER">
+public static final double <code class="descname">AUTOMATA_COST_INCREASE_MULTIPLIER</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.AUTOMATA_COST_INCREASE_MULTIPLIER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="click-increase-multiplier">
+<h3>CLICK_INCREASE_MULTIPLIER<a class="headerlink" href="#click-increase-multiplier" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.CLICK_INCREASE_MULTIPLIER">
+public static final double <code class="descname">CLICK_INCREASE_MULTIPLIER</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.CLICK_INCREASE_MULTIPLIER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="last-update-name">
+<h3>LAST_UPDATE_NAME<a class="headerlink" href="#last-update-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.LAST_UPDATE_NAME">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">LAST_UPDATE_NAME</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.LAST_UPDATE_NAME" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="math-order-letters">
+<h3>MATH_ORDER_LETTERS<a class="headerlink" href="#math-order-letters" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.MATH_ORDER_LETTERS">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a>[] <code class="descname">MATH_ORDER_LETTERS</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.MATH_ORDER_LETTERS" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="max-streams">
+<h3>MAX_STREAMS<a class="headerlink" href="#max-streams" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.MAX_STREAMS">
+public static final int <code class="descname">MAX_STREAMS</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.MAX_STREAMS" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="money-divisor">
+<h3>MONEY_DIVISOR<a class="headerlink" href="#money-divisor" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.MONEY_DIVISOR">
+public static final int <code class="descname">MONEY_DIVISOR</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.MONEY_DIVISOR" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="money-key">
+<h3>MONEY_KEY<a class="headerlink" href="#money-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.MONEY_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MONEY_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.MONEY_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="music-should-be-key">
+<h3>MUSIC_SHOULD_BE_KEY<a class="headerlink" href="#music-should-be-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.MUSIC_SHOULD_BE_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MUSIC_SHOULD_BE_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.MUSIC_SHOULD_BE_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="performance-increase-multiplier">
+<h3>PERFORMANCE_INCREASE_MULTIPLIER<a class="headerlink" href="#performance-increase-multiplier" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.PERFORMANCE_INCREASE_MULTIPLIER">
+public static final double <code class="descname">PERFORMANCE_INCREASE_MULTIPLIER</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.PERFORMANCE_INCREASE_MULTIPLIER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="pref-name">
+<h3>PREF_NAME<a class="headerlink" href="#pref-name" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.PREF_NAME">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">PREF_NAME</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.PREF_NAME" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="priority">
+<h3>PRIORITY<a class="headerlink" href="#priority" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.PRIORITY">
+public static final int <code class="descname">PRIORITY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.PRIORITY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-attributes">
+<h3>SHOP_ITEM_ATTRIBUTES<a class="headerlink" href="#shop-item-attributes" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_ATTRIBUTES">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a>[] <code class="descname">SHOP_ITEM_ATTRIBUTES</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_ATTRIBUTES" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-count-key">
+<h3>SHOP_ITEM_COUNT_KEY<a class="headerlink" href="#shop-item-count-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_COUNT_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">SHOP_ITEM_COUNT_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_COUNT_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-icon-id-key">
+<h3>SHOP_ITEM_ICON_ID_KEY<a class="headerlink" href="#shop-item-icon-id-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_ICON_ID_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">SHOP_ITEM_ICON_ID_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_ICON_ID_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-name-key">
+<h3>SHOP_ITEM_NAME_KEY<a class="headerlink" href="#shop-item-name-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_NAME_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">SHOP_ITEM_NAME_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_NAME_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-performance-key">
+<h3>SHOP_ITEM_PERFORMANCE_KEY<a class="headerlink" href="#shop-item-performance-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_PERFORMANCE_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">SHOP_ITEM_PERFORMANCE_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_PERFORMANCE_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-price-key">
+<h3>SHOP_ITEM_PRICE_KEY<a class="headerlink" href="#shop-item-price-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_PRICE_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">SHOP_ITEM_PRICE_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_PRICE_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shop-item-views-attrs-ids">
+<h3>SHOP_ITEM_VIEWS_ATTRS_IDS<a class="headerlink" href="#shop-item-views-attrs-ids" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_VIEWS_ATTRS_IDS">
+public static final int[] <code class="descname">SHOP_ITEM_VIEWS_ATTRS_IDS</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SHOP_ITEM_VIEWS_ATTRS_IDS" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sounds-should-be-key">
+<h3>SOUNDS_SHOULD_BE_KEY<a class="headerlink" href="#sounds-should-be-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SOUNDS_SHOULD_BE_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">SOUNDS_SHOULD_BE_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SOUNDS_SHOULD_BE_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sound-one">
+<h3>SOUND_ONE<a class="headerlink" href="#sound-one" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SOUND_ONE">
+public static final int <code class="descname">SOUND_ONE</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SOUND_ONE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sound-quality">
+<h3>SOUND_QUALITY<a class="headerlink" href="#sound-quality" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SOUND_QUALITY">
+public static final int <code class="descname">SOUND_QUALITY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SOUND_QUALITY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sound-two">
+<h3>SOUND_TWO<a class="headerlink" href="#sound-two" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.SOUND_TWO">
+public static final int <code class="descname">SOUND_TWO</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.SOUND_TWO" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="s-pref-numeral-system">
+<h3>S_PREF_NUMERAL_SYSTEM<a class="headerlink" href="#s-pref-numeral-system" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.S_PREF_NUMERAL_SYSTEM">
+public static final int <code class="descname">S_PREF_NUMERAL_SYSTEM</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.S_PREF_NUMERAL_SYSTEM" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="time-unit">
+<h3>TIME_UNIT<a class="headerlink" href="#time-unit" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.TIME_UNIT">
+public static final int <code class="descname">TIME_UNIT</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.TIME_UNIT" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="total-money-earned-key">
+<h3>TOTAL_MONEY_EARNED_KEY<a class="headerlink" href="#total-money-earned-key" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.TOTAL_MONEY_EARNED_KEY">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">TOTAL_MONEY_EARNED_KEY</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.TOTAL_MONEY_EARNED_KEY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="upgrade-cost-decrease-multiplier">
+<h3>UPGRADE_COST_DECREASE_MULTIPLIER<a class="headerlink" href="#upgrade-cost-decrease-multiplier" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.UPGRADE_COST_DECREASE_MULTIPLIER">
+public static final double <code class="descname">UPGRADE_COST_DECREASE_MULTIPLIER</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.UPGRADE_COST_DECREASE_MULTIPLIER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="upgrade-cost-increase-multiplier">
+<h3>UPGRADE_COST_INCREASE_MULTIPLIER<a class="headerlink" href="#upgrade-cost-increase-multiplier" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.UPGRADE_COST_INCREASE_MULTIPLIER">
+public static final double <code class="descname">UPGRADE_COST_INCREASE_MULTIPLIER</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.UPGRADE_COST_INCREASE_MULTIPLIER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="loop">
+<h3>loop<a class="headerlink" href="#loop" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.loop">
+public static final int <code class="descname">loop</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.loop" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="rate">
+<h3>rate<a class="headerlink" href="#rate" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.rate">
+public static final float <code class="descname">rate</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.rate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="volume">
+<h3>volume<a class="headerlink" href="#volume" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.Constant.volume">
+public static final float <code class="descname">volume</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.volume" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="formatmoney">
+<h3>formatMoney<a class="headerlink" href="#formatmoney" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.Constant.formatMoney(BigInteger)">
+public static <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">formatMoney</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> amount</em><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.formatMoney(BigInteger)" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getdrawableresourcefullname">
+<h3>getDrawableResourceFullName<a class="headerlink" href="#getdrawableresourcefullname" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.Constant.getDrawableResourceFullName(String, String)">
+public static <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">getDrawableResourceFullName</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> shortName</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> packageName</em><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.getDrawableResourceFullName(String, String)" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="multiply">
+<h3>multiply<a class="headerlink" href="#multiply" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.Constant.multiply(BigInteger, BigDecimal)">
+public static <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a> <code class="descname">multiply</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> bi</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html" title="java.math.BigDecimal">BigDecimal</a><em> multiplier</em><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.Constant.multiply(BigInteger, BigDecimal)" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ExampleInstrumentedTest.html" class="btn btn-neutral float-right" title="ExampleInstrumentedTest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="BuildConfig.html" class="btn btn-neutral" title="BuildConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

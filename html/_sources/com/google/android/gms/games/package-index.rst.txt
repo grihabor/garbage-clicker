@@ -1,0 +1,10 @@
+com.google.android.gms.games
+============================
+
+.. java:package:: com.google.android.gms.games
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

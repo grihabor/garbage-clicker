@@ -1,0 +1,21 @@
+android.support.mediacompat
+===========================
+
+.. java:package:: android.support.mediacompat
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+   R-attr
+   R-bool
+   R-color
+   R-dimen
+   R-drawable
+   R-id
+   R-integer
+   R-layout
+   R-string
+   R-style
+   R-styleable
+

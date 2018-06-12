@@ -1,0 +1,22 @@
+.. java:import:: org.junit Test
+
+ExampleUnitTest
+===============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class ExampleUnitTest
+
+   Example local unit test, which will execute on the development machine (host).
+
+   **See also:** \ `Testing documentation <http://d.android.com/tools/testing>`_\
+
+Methods
+-------
+addition_isCorrect
+^^^^^^^^^^^^^^^^^^
+
+.. java:method:: @Test public void addition_isCorrect() throws Exception
+   :outertype: ExampleUnitTest
+

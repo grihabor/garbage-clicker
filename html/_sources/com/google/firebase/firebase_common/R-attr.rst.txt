@@ -1,0 +1,65 @@
+R.attr
+======
+
+.. java:package:: com.google.firebase.firebase_common
+   :noindex:
+
+.. java:type:: public static final class attr
+   :outertype: R
+
+Fields
+------
+font
+^^^^
+
+.. java:field:: public static final int font
+   :outertype: R.attr
+
+fontProviderAuthority
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int fontProviderAuthority
+   :outertype: R.attr
+
+fontProviderCerts
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int fontProviderCerts
+   :outertype: R.attr
+
+fontProviderFetchStrategy
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int fontProviderFetchStrategy
+   :outertype: R.attr
+
+fontProviderFetchTimeout
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int fontProviderFetchTimeout
+   :outertype: R.attr
+
+fontProviderPackage
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int fontProviderPackage
+   :outertype: R.attr
+
+fontProviderQuery
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int fontProviderQuery
+   :outertype: R.attr
+
+fontStyle
+^^^^^^^^^
+
+.. java:field:: public static final int fontStyle
+   :outertype: R.attr
+
+fontWeight
+^^^^^^^^^^
+
+.. java:field:: public static final int fontWeight
+   :outertype: R.attr
+

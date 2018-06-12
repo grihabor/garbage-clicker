@@ -1,0 +1,83 @@
+R.style
+=======
+
+.. java:package:: com.google.firebase.firebase_common
+   :noindex:
+
+.. java:type:: public static final class style
+   :outertype: R
+
+Fields
+------
+TextAppearance_Compat_Notification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Info
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Info
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Info_Media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Info_Media
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Line2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Line2
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Line2_Media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Line2_Media
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Media
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Time
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Time
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Time_Media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Time_Media
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Title
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Title
+   :outertype: R.style
+
+TextAppearance_Compat_Notification_Title_Media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int TextAppearance_Compat_Notification_Title_Media
+   :outertype: R.style
+
+Widget_Compat_NotificationActionContainer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int Widget_Compat_NotificationActionContainer
+   :outertype: R.style
+
+Widget_Compat_NotificationActionText
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int Widget_Compat_NotificationActionText
+   :outertype: R.style
+

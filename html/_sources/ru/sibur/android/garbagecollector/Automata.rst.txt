@@ -1,0 +1,64 @@
+.. java:import:: android.content Context
+
+.. java:import:: android.util Log
+
+.. java:import:: org.json JSONException
+
+.. java:import:: org.json JSONObject
+
+.. java:import:: java.math BigDecimal
+
+.. java:import:: java.math BigInteger
+
+.. java:import:: java.util HashMap
+
+Automata
+========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class Automata extends ShopItem
+
+   Класс автомата Этот класс позволяет создавать новые виды автоматов
+
+Constructors
+------------
+Automata
+^^^^^^^^
+
+.. java:constructor::  Automata(JSONObject jsonData, Storage storage, int automataIndex)
+   :outertype: Automata
+
+Methods
+-------
+getPrice
+^^^^^^^^
+
+.. java:method:: @Override  BigInteger getPrice()
+   :outertype: Automata
+
+getTotalPerformance
+^^^^^^^^^^^^^^^^^^^
+
+.. java:method::  BigInteger getTotalPerformance()
+   :outertype: Automata
+
+getUnaryPerformance
+^^^^^^^^^^^^^^^^^^^
+
+.. java:method::  BigInteger getUnaryPerformance()
+   :outertype: Automata
+
+getViewData
+^^^^^^^^^^^
+
+.. java:method:: @Override public HashMap<String, Object> getViewData(Context context)
+   :outertype: Automata
+
+setJsonAttrs
+^^^^^^^^^^^^
+
+.. java:method:: @Override  void setJsonAttrs(JSONObject jsonAttrs) throws JSONException
+   :outertype: Automata
+

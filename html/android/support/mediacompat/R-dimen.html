@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R.dimen &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="R.drawable" href="R-drawable.html" />
+    <link rel="prev" title="R.color" href="R-color.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constraint/package-index.html">android.support.constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">android.support.mediacompat</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-attr.html">R.attr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-bool.html">R.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-color.html">R.color</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">R.dimen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R-drawable.html">R.drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-id.html">R.id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-integer.html">R.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-layout.html">R.layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-string.html">R.string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-style.html">R.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../v7/appcompat/package-index.html">android.support.v7.appcompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ru/sibur/android/garbagecollector/package-index.html">ru.sibur.android.garbagecollector</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">android.support.mediacompat</a> &raquo;</li>
+        
+      <li>R.dimen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/android/support/mediacompat/R-dimen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-dimen">
+<h1>R.dimen<a class="headerlink" href="#r-dimen" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="android.support.mediacompat.R.dimen">
+public static final class <code class="descname">dimen</code><a class="headerlink" href="#android.support.mediacompat.R.dimen" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="compat-button-inset-horizontal-material">
+<h3>compat_button_inset_horizontal_material<a class="headerlink" href="#compat-button-inset-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.compat_button_inset_horizontal_material">
+public static final int <code class="descname">compat_button_inset_horizontal_material</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.compat_button_inset_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-inset-vertical-material">
+<h3>compat_button_inset_vertical_material<a class="headerlink" href="#compat-button-inset-vertical-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.compat_button_inset_vertical_material">
+public static final int <code class="descname">compat_button_inset_vertical_material</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.compat_button_inset_vertical_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-padding-horizontal-material">
+<h3>compat_button_padding_horizontal_material<a class="headerlink" href="#compat-button-padding-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.compat_button_padding_horizontal_material">
+public static final int <code class="descname">compat_button_padding_horizontal_material</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.compat_button_padding_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-padding-vertical-material">
+<h3>compat_button_padding_vertical_material<a class="headerlink" href="#compat-button-padding-vertical-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.compat_button_padding_vertical_material">
+public static final int <code class="descname">compat_button_padding_vertical_material</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.compat_button_padding_vertical_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-control-corner-material">
+<h3>compat_control_corner_material<a class="headerlink" href="#compat-control-corner-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.compat_control_corner_material">
+public static final int <code class="descname">compat_control_corner_material</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.compat_control_corner_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-action-icon-size">
+<h3>notification_action_icon_size<a class="headerlink" href="#notification-action-icon-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_action_icon_size">
+public static final int <code class="descname">notification_action_icon_size</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_action_icon_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-action-text-size">
+<h3>notification_action_text_size<a class="headerlink" href="#notification-action-text-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_action_text_size">
+public static final int <code class="descname">notification_action_text_size</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_action_text_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-big-circle-margin">
+<h3>notification_big_circle_margin<a class="headerlink" href="#notification-big-circle-margin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_big_circle_margin">
+public static final int <code class="descname">notification_big_circle_margin</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_big_circle_margin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-content-margin-start">
+<h3>notification_content_margin_start<a class="headerlink" href="#notification-content-margin-start" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_content_margin_start">
+public static final int <code class="descname">notification_content_margin_start</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_content_margin_start" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-large-icon-height">
+<h3>notification_large_icon_height<a class="headerlink" href="#notification-large-icon-height" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_large_icon_height">
+public static final int <code class="descname">notification_large_icon_height</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_large_icon_height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-large-icon-width">
+<h3>notification_large_icon_width<a class="headerlink" href="#notification-large-icon-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_large_icon_width">
+public static final int <code class="descname">notification_large_icon_width</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_large_icon_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-main-column-padding-top">
+<h3>notification_main_column_padding_top<a class="headerlink" href="#notification-main-column-padding-top" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_main_column_padding_top">
+public static final int <code class="descname">notification_main_column_padding_top</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_main_column_padding_top" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-media-narrow-margin">
+<h3>notification_media_narrow_margin<a class="headerlink" href="#notification-media-narrow-margin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_media_narrow_margin">
+public static final int <code class="descname">notification_media_narrow_margin</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_media_narrow_margin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-right-icon-size">
+<h3>notification_right_icon_size<a class="headerlink" href="#notification-right-icon-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_right_icon_size">
+public static final int <code class="descname">notification_right_icon_size</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_right_icon_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-right-side-padding-top">
+<h3>notification_right_side_padding_top<a class="headerlink" href="#notification-right-side-padding-top" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_right_side_padding_top">
+public static final int <code class="descname">notification_right_side_padding_top</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_right_side_padding_top" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-small-icon-background-padding">
+<h3>notification_small_icon_background_padding<a class="headerlink" href="#notification-small-icon-background-padding" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_small_icon_background_padding">
+public static final int <code class="descname">notification_small_icon_background_padding</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_small_icon_background_padding" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-small-icon-size-as-large">
+<h3>notification_small_icon_size_as_large<a class="headerlink" href="#notification-small-icon-size-as-large" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_small_icon_size_as_large">
+public static final int <code class="descname">notification_small_icon_size_as_large</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_small_icon_size_as_large" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-subtext-size">
+<h3>notification_subtext_size<a class="headerlink" href="#notification-subtext-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_subtext_size">
+public static final int <code class="descname">notification_subtext_size</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_subtext_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-top-pad">
+<h3>notification_top_pad<a class="headerlink" href="#notification-top-pad" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_top_pad">
+public static final int <code class="descname">notification_top_pad</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_top_pad" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-top-pad-large-text">
+<h3>notification_top_pad_large_text<a class="headerlink" href="#notification-top-pad-large-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.mediacompat.R.dimen.notification_top_pad_large_text">
+public static final int <code class="descname">notification_top_pad_large_text</code><a class="headerlink" href="#android.support.mediacompat.R.dimen.notification_top_pad_large_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="R-drawable.html" class="btn btn-neutral float-right" title="R.drawable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="R-color.html" class="btn btn-neutral" title="R.color" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

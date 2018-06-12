@@ -1,0 +1,8 @@
+R
+=
+
+.. java:package:: com.google.android.gms.auth.api.phone
+   :noindex:
+
+.. java:type:: public final class R
+

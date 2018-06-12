@@ -1,0 +1,197 @@
+R.string
+========
+
+.. java:package:: android.support.v7.appcompat
+   :noindex:
+
+.. java:type:: public static final class string
+   :outertype: R
+
+Fields
+------
+abc_action_bar_home_description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_bar_home_description
+   :outertype: R.string
+
+abc_action_bar_up_description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_bar_up_description
+   :outertype: R.string
+
+abc_action_menu_overflow_description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_menu_overflow_description
+   :outertype: R.string
+
+abc_action_mode_done
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_mode_done
+   :outertype: R.string
+
+abc_activity_chooser_view_see_all
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_activity_chooser_view_see_all
+   :outertype: R.string
+
+abc_activitychooserview_choose_application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_activitychooserview_choose_application
+   :outertype: R.string
+
+abc_capital_off
+^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_capital_off
+   :outertype: R.string
+
+abc_capital_on
+^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_capital_on
+   :outertype: R.string
+
+abc_font_family_body_1_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_body_1_material
+   :outertype: R.string
+
+abc_font_family_body_2_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_body_2_material
+   :outertype: R.string
+
+abc_font_family_button_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_button_material
+   :outertype: R.string
+
+abc_font_family_caption_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_caption_material
+   :outertype: R.string
+
+abc_font_family_display_1_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_display_1_material
+   :outertype: R.string
+
+abc_font_family_display_2_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_display_2_material
+   :outertype: R.string
+
+abc_font_family_display_3_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_display_3_material
+   :outertype: R.string
+
+abc_font_family_display_4_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_display_4_material
+   :outertype: R.string
+
+abc_font_family_headline_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_headline_material
+   :outertype: R.string
+
+abc_font_family_menu_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_menu_material
+   :outertype: R.string
+
+abc_font_family_subhead_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_subhead_material
+   :outertype: R.string
+
+abc_font_family_title_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_font_family_title_material
+   :outertype: R.string
+
+abc_search_hint
+^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_hint
+   :outertype: R.string
+
+abc_searchview_description_clear
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_searchview_description_clear
+   :outertype: R.string
+
+abc_searchview_description_query
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_searchview_description_query
+   :outertype: R.string
+
+abc_searchview_description_search
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_searchview_description_search
+   :outertype: R.string
+
+abc_searchview_description_submit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_searchview_description_submit
+   :outertype: R.string
+
+abc_searchview_description_voice
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_searchview_description_voice
+   :outertype: R.string
+
+abc_shareactionprovider_share_with
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_shareactionprovider_share_with
+   :outertype: R.string
+
+abc_shareactionprovider_share_with_application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_shareactionprovider_share_with_application
+   :outertype: R.string
+
+abc_toolbar_collapse_description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_toolbar_collapse_description
+   :outertype: R.string
+
+search_menu_title
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int search_menu_title
+   :outertype: R.string
+
+status_bar_notification_info_overflow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int status_bar_notification_info_overflow
+   :outertype: R.string
+

@@ -1,0 +1,8 @@
+R
+=
+
+.. java:package:: com.google.firebase.firebase_core
+   :noindex:
+
+.. java:type:: public final class R
+

@@ -1,0 +1,41 @@
+R.integer
+=========
+
+.. java:package:: android.support.v7.appcompat
+   :noindex:
+
+.. java:type:: public static final class integer
+   :outertype: R
+
+Fields
+------
+abc_config_activityDefaultDur
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_config_activityDefaultDur
+   :outertype: R.integer
+
+abc_config_activityShortDur
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_config_activityShortDur
+   :outertype: R.integer
+
+cancel_button_image_alpha
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int cancel_button_image_alpha
+   :outertype: R.integer
+
+config_tooltipAnimTime
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int config_tooltipAnimTime
+   :outertype: R.integer
+
+status_bar_notification_info_maxnum
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int status_bar_notification_info_maxnum
+   :outertype: R.integer
+

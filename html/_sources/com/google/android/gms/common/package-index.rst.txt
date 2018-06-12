@@ -1,0 +1,12 @@
+com.google.android.gms.common
+=============================
+
+.. java:package:: com.google.android.gms.common
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+   R-integer
+   R-string
+

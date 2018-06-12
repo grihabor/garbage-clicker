@@ -1,0 +1,161 @@
+R.styleable
+===========
+
+.. java:package:: android.support.fragment
+   :noindex:
+
+.. java:type:: public static final class styleable
+   :outertype: R
+
+Fields
+------
+CoordinatorLayout
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int[] CoordinatorLayout
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int[] CoordinatorLayout_Layout
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_android_layout_gravity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_android_layout_gravity
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_layout_anchor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_layout_anchor
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_layout_anchorGravity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_layout_anchorGravity
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_layout_behavior
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_layout_behavior
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_layout_dodgeInsetEdges
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_layout_insetEdge
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_layout_insetEdge
+   :outertype: R.styleable
+
+CoordinatorLayout_Layout_layout_keyline
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_Layout_layout_keyline
+   :outertype: R.styleable
+
+CoordinatorLayout_keylines
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_keylines
+   :outertype: R.styleable
+
+CoordinatorLayout_statusBarBackground
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int CoordinatorLayout_statusBarBackground
+   :outertype: R.styleable
+
+FontFamily
+^^^^^^^^^^
+
+.. java:field:: public static final int[] FontFamily
+   :outertype: R.styleable
+
+FontFamilyFont
+^^^^^^^^^^^^^^
+
+.. java:field:: public static final int[] FontFamilyFont
+   :outertype: R.styleable
+
+FontFamilyFont_android_font
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamilyFont_android_font
+   :outertype: R.styleable
+
+FontFamilyFont_android_fontStyle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamilyFont_android_fontStyle
+   :outertype: R.styleable
+
+FontFamilyFont_android_fontWeight
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamilyFont_android_fontWeight
+   :outertype: R.styleable
+
+FontFamilyFont_font
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamilyFont_font
+   :outertype: R.styleable
+
+FontFamilyFont_fontStyle
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamilyFont_fontStyle
+   :outertype: R.styleable
+
+FontFamilyFont_fontWeight
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamilyFont_fontWeight
+   :outertype: R.styleable
+
+FontFamily_fontProviderAuthority
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamily_fontProviderAuthority
+   :outertype: R.styleable
+
+FontFamily_fontProviderCerts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamily_fontProviderCerts
+   :outertype: R.styleable
+
+FontFamily_fontProviderFetchStrategy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamily_fontProviderFetchStrategy
+   :outertype: R.styleable
+
+FontFamily_fontProviderFetchTimeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamily_fontProviderFetchTimeout
+   :outertype: R.styleable
+
+FontFamily_fontProviderPackage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamily_fontProviderPackage
+   :outertype: R.styleable
+
+FontFamily_fontProviderQuery
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int FontFamily_fontProviderQuery
+   :outertype: R.styleable
+

@@ -1,0 +1,226 @@
+.. java:import:: java.lang Math
+
+.. java:import:: java.math BigDecimal
+
+.. java:import:: java.math BigInteger
+
+.. java:import:: java.text DecimalFormat
+
+Constant
+========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public final class Constant
+
+   Содержит константы, нужные нам в разных классах программы
+
+Fields
+------
+AUTOMATA_COST_DECREASE_MULTIPLIER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final double AUTOMATA_COST_DECREASE_MULTIPLIER
+   :outertype: Constant
+
+AUTOMATA_COST_INCREASE_MULTIPLIER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final double AUTOMATA_COST_INCREASE_MULTIPLIER
+   :outertype: Constant
+
+CLICK_INCREASE_MULTIPLIER
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final double CLICK_INCREASE_MULTIPLIER
+   :outertype: Constant
+
+LAST_UPDATE_NAME
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String LAST_UPDATE_NAME
+   :outertype: Constant
+
+MATH_ORDER_LETTERS
+^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String[] MATH_ORDER_LETTERS
+   :outertype: Constant
+
+MAX_STREAMS
+^^^^^^^^^^^
+
+.. java:field:: public static final int MAX_STREAMS
+   :outertype: Constant
+
+MONEY_DIVISOR
+^^^^^^^^^^^^^
+
+.. java:field:: public static final int MONEY_DIVISOR
+   :outertype: Constant
+
+MONEY_KEY
+^^^^^^^^^
+
+.. java:field:: public static final String MONEY_KEY
+   :outertype: Constant
+
+MUSIC_SHOULD_BE_KEY
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String MUSIC_SHOULD_BE_KEY
+   :outertype: Constant
+
+PERFORMANCE_INCREASE_MULTIPLIER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final double PERFORMANCE_INCREASE_MULTIPLIER
+   :outertype: Constant
+
+PREF_NAME
+^^^^^^^^^
+
+.. java:field:: public static final String PREF_NAME
+   :outertype: Constant
+
+PRIORITY
+^^^^^^^^
+
+.. java:field:: public static final int PRIORITY
+   :outertype: Constant
+
+SHOP_ITEM_ATTRIBUTES
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String[] SHOP_ITEM_ATTRIBUTES
+   :outertype: Constant
+
+SHOP_ITEM_COUNT_KEY
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String SHOP_ITEM_COUNT_KEY
+   :outertype: Constant
+
+SHOP_ITEM_ICON_ID_KEY
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String SHOP_ITEM_ICON_ID_KEY
+   :outertype: Constant
+
+SHOP_ITEM_NAME_KEY
+^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String SHOP_ITEM_NAME_KEY
+   :outertype: Constant
+
+SHOP_ITEM_PERFORMANCE_KEY
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String SHOP_ITEM_PERFORMANCE_KEY
+   :outertype: Constant
+
+SHOP_ITEM_PRICE_KEY
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String SHOP_ITEM_PRICE_KEY
+   :outertype: Constant
+
+SHOP_ITEM_VIEWS_ATTRS_IDS
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int[] SHOP_ITEM_VIEWS_ATTRS_IDS
+   :outertype: Constant
+
+SOUNDS_SHOULD_BE_KEY
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String SOUNDS_SHOULD_BE_KEY
+   :outertype: Constant
+
+SOUND_ONE
+^^^^^^^^^
+
+.. java:field:: public static final int SOUND_ONE
+   :outertype: Constant
+
+SOUND_QUALITY
+^^^^^^^^^^^^^
+
+.. java:field:: public static final int SOUND_QUALITY
+   :outertype: Constant
+
+SOUND_TWO
+^^^^^^^^^
+
+.. java:field:: public static final int SOUND_TWO
+   :outertype: Constant
+
+S_PREF_NUMERAL_SYSTEM
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int S_PREF_NUMERAL_SYSTEM
+   :outertype: Constant
+
+TIME_UNIT
+^^^^^^^^^
+
+.. java:field:: public static final int TIME_UNIT
+   :outertype: Constant
+
+TOTAL_MONEY_EARNED_KEY
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final String TOTAL_MONEY_EARNED_KEY
+   :outertype: Constant
+
+UPGRADE_COST_DECREASE_MULTIPLIER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final double UPGRADE_COST_DECREASE_MULTIPLIER
+   :outertype: Constant
+
+UPGRADE_COST_INCREASE_MULTIPLIER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final double UPGRADE_COST_INCREASE_MULTIPLIER
+   :outertype: Constant
+
+loop
+^^^^
+
+.. java:field:: public static final int loop
+   :outertype: Constant
+
+rate
+^^^^
+
+.. java:field:: public static final float rate
+   :outertype: Constant
+
+volume
+^^^^^^
+
+.. java:field:: public static final float volume
+   :outertype: Constant
+
+Methods
+-------
+formatMoney
+^^^^^^^^^^^
+
+.. java:method:: public static String formatMoney(BigInteger amount)
+   :outertype: Constant
+
+getDrawableResourceFullName
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public static String getDrawableResourceFullName(String shortName, String packageName)
+   :outertype: Constant
+
+multiply
+^^^^^^^^
+
+.. java:method:: public static BigInteger multiply(BigInteger bi, BigDecimal multiplier)
+   :outertype: Constant
+

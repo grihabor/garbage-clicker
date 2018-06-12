@@ -1,0 +1,10 @@
+android.arch.core
+=================
+
+.. java:package:: android.arch.core
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

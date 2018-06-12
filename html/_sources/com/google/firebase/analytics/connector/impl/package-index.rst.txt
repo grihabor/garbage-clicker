@@ -1,0 +1,10 @@
+com.google.firebase.analytics.connector.impl
+============================================
+
+.. java:package:: com.google.firebase.analytics.connector.impl
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

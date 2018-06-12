@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GarbageRecyclingFragment &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="IntroActivity" href="IntroActivity.html" />
+    <link rel="prev" title="ExampleUnitTest" href="ExampleUnitTest.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/constraint/package-index.html">android.support.constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/mediacompat/package-index.html">android.support.mediacompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../android/support/v7/appcompat/package-index.html">android.support.v7.appcompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">ru.sibur.android.garbagecollector</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Automata.html">Automata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomataMoneyCalculator.html">AutomataMoneyCalculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomataThread.html">AutomataThread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AutomationShop.html">AutomationShop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildConfig.html">BuildConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Constant.html">Constant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExampleInstrumentedTest.html">ExampleInstrumentedTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExampleUnitTest.html">ExampleUnitTest</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GarbageRecyclingFragment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="IntroActivity.html">IntroActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JSONLoader.html">JSONLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MainActivity.html">MainActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manifest.html">Manifest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manifest-permission.html">Manifest.permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MyService.html">MyService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OnDBChangeListener.html">OnDBChangeListener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-anim.html">R.anim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-animator.html">R.animator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-array.html">R.array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-attr.html">R.attr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-bool.html">R.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-color.html">R.color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-dimen.html">R.dimen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-drawable.html">R.drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-id.html">R.id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-integer.html">R.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-layout.html">R.layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-mipmap.html">R.mipmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-raw.html">R.raw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-string.html">R.string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-style.html">R.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SettingsActivity.html">SettingsActivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Shop.html">Shop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ShopFragment.html">ShopFragment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ShopItem.html">ShopItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StateStorage.html">StateStorage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade.html">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UpgradeShop.html">UpgradeShop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">ru.sibur.android.garbagecollector</a> &raquo;</li>
+        
+      <li>GarbageRecyclingFragment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/ru/sibur/android/garbagecollector/GarbageRecyclingFragment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="garbagerecyclingfragment">
+<h1>GarbageRecyclingFragment<a class="headerlink" href="#garbagerecyclingfragment" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="ru.sibur.android.garbagecollector.GarbageRecyclingFragment">
+public class <code class="descname">GarbageRecyclingFragment</code> extends Fragment<a class="headerlink" href="#ru.sibur.android.garbagecollector.GarbageRecyclingFragment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Фрагмент ручной переработки мусора</p>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="storage">
+<h3>storage<a class="headerlink" href="#storage" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="ru.sibur.android.garbagecollector.GarbageRecyclingFragment.storage">
+ <a class="reference internal" href="Storage.html#ru.sibur.android.garbagecollector.Storage" title="ru.sibur.android.garbagecollector.Storage">Storage</a> <code class="descname">storage</code><a class="headerlink" href="#ru.sibur.android.garbagecollector.GarbageRecyclingFragment.storage" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="onattach">
+<h3>onAttach<a class="headerlink" href="#onattach" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onAttach(Activity)">
+public void <code class="descname">onAttach</code><span class="sig-paren">(</span>Activity<em> activity</em><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onAttach(Activity)" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="oncreate">
+<h3>onCreate<a class="headerlink" href="#oncreate" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onCreate(Bundle)">
+public void <code class="descname">onCreate</code><span class="sig-paren">(</span>Bundle<em> savedInstanceState</em><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onCreate(Bundle)" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="oncreateview">
+<h3>onCreateView<a class="headerlink" href="#oncreateview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)">
+public <a class="reference internal" href="../../../../android/support/v7/appcompat/R-styleable.html#android.support.v7.appcompat.R.styleable.View" title="android.support.v7.appcompat.R.styleable.View">View</a> <code class="descname">onCreateView</code><span class="sig-paren">(</span>LayoutInflater<em> inflater</em>, ViewGroup<em> container</em>, Bundle<em> savedInstanceState</em><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="onstart">
+<h3>onStart<a class="headerlink" href="#onstart" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="method">
+<dt id="ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onStart()">
+public void <code class="descname">onStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ru.sibur.android.garbagecollector.GarbageRecyclingFragment.onStart()" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="IntroActivity.html" class="btn btn-neutral float-right" title="IntroActivity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ExampleUnitTest.html" class="btn btn-neutral" title="ExampleUnitTest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

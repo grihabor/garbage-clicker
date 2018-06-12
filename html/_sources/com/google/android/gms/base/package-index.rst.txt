@@ -1,0 +1,16 @@
+com.google.android.gms.base
+===========================
+
+.. java:package:: com.google.android.gms.base
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+   R-attr
+   R-color
+   R-drawable
+   R-id
+   R-string
+   R-styleable
+

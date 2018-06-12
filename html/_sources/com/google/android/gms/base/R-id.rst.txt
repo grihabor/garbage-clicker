@@ -1,0 +1,65 @@
+R.id
+====
+
+.. java:package:: com.google.android.gms.base
+   :noindex:
+
+.. java:type:: public static final class id
+   :outertype: R
+
+Fields
+------
+adjust_height
+^^^^^^^^^^^^^
+
+.. java:field:: public static final int adjust_height
+   :outertype: R.id
+
+adjust_width
+^^^^^^^^^^^^
+
+.. java:field:: public static final int adjust_width
+   :outertype: R.id
+
+auto
+^^^^
+
+.. java:field:: public static final int auto
+   :outertype: R.id
+
+dark
+^^^^
+
+.. java:field:: public static final int dark
+   :outertype: R.id
+
+icon_only
+^^^^^^^^^
+
+.. java:field:: public static final int icon_only
+   :outertype: R.id
+
+light
+^^^^^
+
+.. java:field:: public static final int light
+   :outertype: R.id
+
+none
+^^^^
+
+.. java:field:: public static final int none
+   :outertype: R.id
+
+standard
+^^^^^^^^
+
+.. java:field:: public static final int standard
+   :outertype: R.id
+
+wide
+^^^^
+
+.. java:field:: public static final int wide
+   :outertype: R.id
+

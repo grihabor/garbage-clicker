@@ -1,0 +1,275 @@
+R.attr
+======
+
+.. java:package:: android.support.constraint
+   :noindex:
+
+.. java:type:: public static final class attr
+   :outertype: R
+
+Fields
+------
+constraintSet
+^^^^^^^^^^^^^
+
+.. java:field:: public static final int constraintSet
+   :outertype: R.attr
+
+layout_constraintBaseline_creator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintBaseline_creator
+   :outertype: R.attr
+
+layout_constraintBaseline_toBaselineOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintBaseline_toBaselineOf
+   :outertype: R.attr
+
+layout_constraintBottom_creator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintBottom_creator
+   :outertype: R.attr
+
+layout_constraintBottom_toBottomOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintBottom_toBottomOf
+   :outertype: R.attr
+
+layout_constraintBottom_toTopOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintBottom_toTopOf
+   :outertype: R.attr
+
+layout_constraintDimensionRatio
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintDimensionRatio
+   :outertype: R.attr
+
+layout_constraintEnd_toEndOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintEnd_toEndOf
+   :outertype: R.attr
+
+layout_constraintEnd_toStartOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintEnd_toStartOf
+   :outertype: R.attr
+
+layout_constraintGuide_begin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintGuide_begin
+   :outertype: R.attr
+
+layout_constraintGuide_end
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintGuide_end
+   :outertype: R.attr
+
+layout_constraintGuide_percent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintGuide_percent
+   :outertype: R.attr
+
+layout_constraintHeight_default
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintHeight_default
+   :outertype: R.attr
+
+layout_constraintHeight_max
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintHeight_max
+   :outertype: R.attr
+
+layout_constraintHeight_min
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintHeight_min
+   :outertype: R.attr
+
+layout_constraintHorizontal_bias
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintHorizontal_bias
+   :outertype: R.attr
+
+layout_constraintHorizontal_chainStyle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintHorizontal_chainStyle
+   :outertype: R.attr
+
+layout_constraintHorizontal_weight
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintHorizontal_weight
+   :outertype: R.attr
+
+layout_constraintLeft_creator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintLeft_creator
+   :outertype: R.attr
+
+layout_constraintLeft_toLeftOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintLeft_toLeftOf
+   :outertype: R.attr
+
+layout_constraintLeft_toRightOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintLeft_toRightOf
+   :outertype: R.attr
+
+layout_constraintRight_creator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintRight_creator
+   :outertype: R.attr
+
+layout_constraintRight_toLeftOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintRight_toLeftOf
+   :outertype: R.attr
+
+layout_constraintRight_toRightOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintRight_toRightOf
+   :outertype: R.attr
+
+layout_constraintStart_toEndOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintStart_toEndOf
+   :outertype: R.attr
+
+layout_constraintStart_toStartOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintStart_toStartOf
+   :outertype: R.attr
+
+layout_constraintTop_creator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintTop_creator
+   :outertype: R.attr
+
+layout_constraintTop_toBottomOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintTop_toBottomOf
+   :outertype: R.attr
+
+layout_constraintTop_toTopOf
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintTop_toTopOf
+   :outertype: R.attr
+
+layout_constraintVertical_bias
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintVertical_bias
+   :outertype: R.attr
+
+layout_constraintVertical_chainStyle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintVertical_chainStyle
+   :outertype: R.attr
+
+layout_constraintVertical_weight
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintVertical_weight
+   :outertype: R.attr
+
+layout_constraintWidth_default
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintWidth_default
+   :outertype: R.attr
+
+layout_constraintWidth_max
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintWidth_max
+   :outertype: R.attr
+
+layout_constraintWidth_min
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_constraintWidth_min
+   :outertype: R.attr
+
+layout_editor_absoluteX
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_editor_absoluteX
+   :outertype: R.attr
+
+layout_editor_absoluteY
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_editor_absoluteY
+   :outertype: R.attr
+
+layout_goneMarginBottom
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_goneMarginBottom
+   :outertype: R.attr
+
+layout_goneMarginEnd
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_goneMarginEnd
+   :outertype: R.attr
+
+layout_goneMarginLeft
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_goneMarginLeft
+   :outertype: R.attr
+
+layout_goneMarginRight
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_goneMarginRight
+   :outertype: R.attr
+
+layout_goneMarginStart
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_goneMarginStart
+   :outertype: R.attr
+
+layout_goneMarginTop
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_goneMarginTop
+   :outertype: R.attr
+
+layout_optimizationLevel
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int layout_optimizationLevel
+   :outertype: R.attr
+

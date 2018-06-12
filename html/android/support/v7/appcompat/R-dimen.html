@@ -1,0 +1,1180 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R.dimen &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="R.drawable" href="R-drawable.html" />
+    <link rel="prev" title="R.color" href="R-color.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../constraint/package-index.html">android.support.constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mediacompat/package-index.html">android.support.mediacompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">android.support.v7.appcompat</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-anim.html">R.anim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-attr.html">R.attr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-bool.html">R.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-color.html">R.color</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">R.dimen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R-drawable.html">R.drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-id.html">R.id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-integer.html">R.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-layout.html">R.layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-string.html">R.string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-style.html">R.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ru/sibur/android/garbagecollector/package-index.html">ru.sibur.android.garbagecollector</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">android.support.v7.appcompat</a> &raquo;</li>
+        
+      <li>R.dimen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/android/support/v7/appcompat/R-dimen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-dimen">
+<h1>R.dimen<a class="headerlink" href="#r-dimen" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="android.support.v7.appcompat.R.dimen">
+public static final class <code class="descname">dimen</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="abc-action-bar-content-inset-material">
+<h3>abc_action_bar_content_inset_material<a class="headerlink" href="#abc-action-bar-content-inset-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_content_inset_material">
+public static final int <code class="descname">abc_action_bar_content_inset_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_content_inset_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-content-inset-with-nav">
+<h3>abc_action_bar_content_inset_with_nav<a class="headerlink" href="#abc-action-bar-content-inset-with-nav" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_content_inset_with_nav">
+public static final int <code class="descname">abc_action_bar_content_inset_with_nav</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_content_inset_with_nav" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-default-height-material">
+<h3>abc_action_bar_default_height_material<a class="headerlink" href="#abc-action-bar-default-height-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_default_height_material">
+public static final int <code class="descname">abc_action_bar_default_height_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_default_height_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-default-padding-end-material">
+<h3>abc_action_bar_default_padding_end_material<a class="headerlink" href="#abc-action-bar-default-padding-end-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_default_padding_end_material">
+public static final int <code class="descname">abc_action_bar_default_padding_end_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_default_padding_end_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-default-padding-start-material">
+<h3>abc_action_bar_default_padding_start_material<a class="headerlink" href="#abc-action-bar-default-padding-start-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_default_padding_start_material">
+public static final int <code class="descname">abc_action_bar_default_padding_start_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_default_padding_start_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-elevation-material">
+<h3>abc_action_bar_elevation_material<a class="headerlink" href="#abc-action-bar-elevation-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_elevation_material">
+public static final int <code class="descname">abc_action_bar_elevation_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_elevation_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-icon-vertical-padding-material">
+<h3>abc_action_bar_icon_vertical_padding_material<a class="headerlink" href="#abc-action-bar-icon-vertical-padding-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_icon_vertical_padding_material">
+public static final int <code class="descname">abc_action_bar_icon_vertical_padding_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_icon_vertical_padding_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-overflow-padding-end-material">
+<h3>abc_action_bar_overflow_padding_end_material<a class="headerlink" href="#abc-action-bar-overflow-padding-end-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_overflow_padding_end_material">
+public static final int <code class="descname">abc_action_bar_overflow_padding_end_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_overflow_padding_end_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-overflow-padding-start-material">
+<h3>abc_action_bar_overflow_padding_start_material<a class="headerlink" href="#abc-action-bar-overflow-padding-start-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_overflow_padding_start_material">
+public static final int <code class="descname">abc_action_bar_overflow_padding_start_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_overflow_padding_start_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-progress-bar-size">
+<h3>abc_action_bar_progress_bar_size<a class="headerlink" href="#abc-action-bar-progress-bar-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_progress_bar_size">
+public static final int <code class="descname">abc_action_bar_progress_bar_size</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_progress_bar_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-stacked-max-height">
+<h3>abc_action_bar_stacked_max_height<a class="headerlink" href="#abc-action-bar-stacked-max-height" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_stacked_max_height">
+public static final int <code class="descname">abc_action_bar_stacked_max_height</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_stacked_max_height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-stacked-tab-max-width">
+<h3>abc_action_bar_stacked_tab_max_width<a class="headerlink" href="#abc-action-bar-stacked-tab-max-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_stacked_tab_max_width">
+public static final int <code class="descname">abc_action_bar_stacked_tab_max_width</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_stacked_tab_max_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-subtitle-bottom-margin-material">
+<h3>abc_action_bar_subtitle_bottom_margin_material<a class="headerlink" href="#abc-action-bar-subtitle-bottom-margin-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_subtitle_bottom_margin_material">
+public static final int <code class="descname">abc_action_bar_subtitle_bottom_margin_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_subtitle_bottom_margin_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-bar-subtitle-top-margin-material">
+<h3>abc_action_bar_subtitle_top_margin_material<a class="headerlink" href="#abc-action-bar-subtitle-top-margin-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_bar_subtitle_top_margin_material">
+public static final int <code class="descname">abc_action_bar_subtitle_top_margin_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_bar_subtitle_top_margin_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-button-min-height-material">
+<h3>abc_action_button_min_height_material<a class="headerlink" href="#abc-action-button-min-height-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_button_min_height_material">
+public static final int <code class="descname">abc_action_button_min_height_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_button_min_height_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-button-min-width-material">
+<h3>abc_action_button_min_width_material<a class="headerlink" href="#abc-action-button-min-width-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_button_min_width_material">
+public static final int <code class="descname">abc_action_button_min_width_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_button_min_width_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-action-button-min-width-overflow-material">
+<h3>abc_action_button_min_width_overflow_material<a class="headerlink" href="#abc-action-button-min-width-overflow-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_action_button_min_width_overflow_material">
+public static final int <code class="descname">abc_action_button_min_width_overflow_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_action_button_min_width_overflow_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-alert-dialog-button-bar-height">
+<h3>abc_alert_dialog_button_bar_height<a class="headerlink" href="#abc-alert-dialog-button-bar-height" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_alert_dialog_button_bar_height">
+public static final int <code class="descname">abc_alert_dialog_button_bar_height</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_alert_dialog_button_bar_height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-alert-dialog-button-dimen">
+<h3>abc_alert_dialog_button_dimen<a class="headerlink" href="#abc-alert-dialog-button-dimen" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_alert_dialog_button_dimen">
+public static final int <code class="descname">abc_alert_dialog_button_dimen</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_alert_dialog_button_dimen" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-button-inset-horizontal-material">
+<h3>abc_button_inset_horizontal_material<a class="headerlink" href="#abc-button-inset-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_button_inset_horizontal_material">
+public static final int <code class="descname">abc_button_inset_horizontal_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_button_inset_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-button-inset-vertical-material">
+<h3>abc_button_inset_vertical_material<a class="headerlink" href="#abc-button-inset-vertical-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_button_inset_vertical_material">
+public static final int <code class="descname">abc_button_inset_vertical_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_button_inset_vertical_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-button-padding-horizontal-material">
+<h3>abc_button_padding_horizontal_material<a class="headerlink" href="#abc-button-padding-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_button_padding_horizontal_material">
+public static final int <code class="descname">abc_button_padding_horizontal_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_button_padding_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-button-padding-vertical-material">
+<h3>abc_button_padding_vertical_material<a class="headerlink" href="#abc-button-padding-vertical-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_button_padding_vertical_material">
+public static final int <code class="descname">abc_button_padding_vertical_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_button_padding_vertical_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-cascading-menus-min-smallest-width">
+<h3>abc_cascading_menus_min_smallest_width<a class="headerlink" href="#abc-cascading-menus-min-smallest-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_cascading_menus_min_smallest_width">
+public static final int <code class="descname">abc_cascading_menus_min_smallest_width</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_cascading_menus_min_smallest_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-config-prefdialogwidth">
+<h3>abc_config_prefDialogWidth<a class="headerlink" href="#abc-config-prefdialogwidth" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_config_prefDialogWidth">
+public static final int <code class="descname">abc_config_prefDialogWidth</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_config_prefDialogWidth" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-control-corner-material">
+<h3>abc_control_corner_material<a class="headerlink" href="#abc-control-corner-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_control_corner_material">
+public static final int <code class="descname">abc_control_corner_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_control_corner_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-control-inset-material">
+<h3>abc_control_inset_material<a class="headerlink" href="#abc-control-inset-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_control_inset_material">
+public static final int <code class="descname">abc_control_inset_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_control_inset_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-control-padding-material">
+<h3>abc_control_padding_material<a class="headerlink" href="#abc-control-padding-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_control_padding_material">
+public static final int <code class="descname">abc_control_padding_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_control_padding_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-fixed-height-major">
+<h3>abc_dialog_fixed_height_major<a class="headerlink" href="#abc-dialog-fixed-height-major" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_fixed_height_major">
+public static final int <code class="descname">abc_dialog_fixed_height_major</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_fixed_height_major" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-fixed-height-minor">
+<h3>abc_dialog_fixed_height_minor<a class="headerlink" href="#abc-dialog-fixed-height-minor" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_fixed_height_minor">
+public static final int <code class="descname">abc_dialog_fixed_height_minor</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_fixed_height_minor" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-fixed-width-major">
+<h3>abc_dialog_fixed_width_major<a class="headerlink" href="#abc-dialog-fixed-width-major" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_fixed_width_major">
+public static final int <code class="descname">abc_dialog_fixed_width_major</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_fixed_width_major" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-fixed-width-minor">
+<h3>abc_dialog_fixed_width_minor<a class="headerlink" href="#abc-dialog-fixed-width-minor" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_fixed_width_minor">
+public static final int <code class="descname">abc_dialog_fixed_width_minor</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_fixed_width_minor" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-list-padding-bottom-no-buttons">
+<h3>abc_dialog_list_padding_bottom_no_buttons<a class="headerlink" href="#abc-dialog-list-padding-bottom-no-buttons" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_list_padding_bottom_no_buttons">
+public static final int <code class="descname">abc_dialog_list_padding_bottom_no_buttons</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_list_padding_bottom_no_buttons" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-list-padding-top-no-title">
+<h3>abc_dialog_list_padding_top_no_title<a class="headerlink" href="#abc-dialog-list-padding-top-no-title" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_list_padding_top_no_title">
+public static final int <code class="descname">abc_dialog_list_padding_top_no_title</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_list_padding_top_no_title" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-min-width-major">
+<h3>abc_dialog_min_width_major<a class="headerlink" href="#abc-dialog-min-width-major" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_min_width_major">
+public static final int <code class="descname">abc_dialog_min_width_major</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_min_width_major" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-min-width-minor">
+<h3>abc_dialog_min_width_minor<a class="headerlink" href="#abc-dialog-min-width-minor" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_min_width_minor">
+public static final int <code class="descname">abc_dialog_min_width_minor</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_min_width_minor" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-padding-material">
+<h3>abc_dialog_padding_material<a class="headerlink" href="#abc-dialog-padding-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_padding_material">
+public static final int <code class="descname">abc_dialog_padding_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_padding_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-padding-top-material">
+<h3>abc_dialog_padding_top_material<a class="headerlink" href="#abc-dialog-padding-top-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_padding_top_material">
+public static final int <code class="descname">abc_dialog_padding_top_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_padding_top_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dialog-title-divider-material">
+<h3>abc_dialog_title_divider_material<a class="headerlink" href="#abc-dialog-title-divider-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dialog_title_divider_material">
+public static final int <code class="descname">abc_dialog_title_divider_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dialog_title_divider_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-disabled-alpha-material-dark">
+<h3>abc_disabled_alpha_material_dark<a class="headerlink" href="#abc-disabled-alpha-material-dark" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_disabled_alpha_material_dark">
+public static final int <code class="descname">abc_disabled_alpha_material_dark</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_disabled_alpha_material_dark" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-disabled-alpha-material-light">
+<h3>abc_disabled_alpha_material_light<a class="headerlink" href="#abc-disabled-alpha-material-light" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_disabled_alpha_material_light">
+public static final int <code class="descname">abc_disabled_alpha_material_light</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_disabled_alpha_material_light" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dropdownitem-icon-width">
+<h3>abc_dropdownitem_icon_width<a class="headerlink" href="#abc-dropdownitem-icon-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dropdownitem_icon_width">
+public static final int <code class="descname">abc_dropdownitem_icon_width</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dropdownitem_icon_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dropdownitem-text-padding-left">
+<h3>abc_dropdownitem_text_padding_left<a class="headerlink" href="#abc-dropdownitem-text-padding-left" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dropdownitem_text_padding_left">
+public static final int <code class="descname">abc_dropdownitem_text_padding_left</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dropdownitem_text_padding_left" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-dropdownitem-text-padding-right">
+<h3>abc_dropdownitem_text_padding_right<a class="headerlink" href="#abc-dropdownitem-text-padding-right" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_dropdownitem_text_padding_right">
+public static final int <code class="descname">abc_dropdownitem_text_padding_right</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_dropdownitem_text_padding_right" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-edit-text-inset-bottom-material">
+<h3>abc_edit_text_inset_bottom_material<a class="headerlink" href="#abc-edit-text-inset-bottom-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_edit_text_inset_bottom_material">
+public static final int <code class="descname">abc_edit_text_inset_bottom_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_edit_text_inset_bottom_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-edit-text-inset-horizontal-material">
+<h3>abc_edit_text_inset_horizontal_material<a class="headerlink" href="#abc-edit-text-inset-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_edit_text_inset_horizontal_material">
+public static final int <code class="descname">abc_edit_text_inset_horizontal_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_edit_text_inset_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-edit-text-inset-top-material">
+<h3>abc_edit_text_inset_top_material<a class="headerlink" href="#abc-edit-text-inset-top-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_edit_text_inset_top_material">
+public static final int <code class="descname">abc_edit_text_inset_top_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_edit_text_inset_top_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-floating-window-z">
+<h3>abc_floating_window_z<a class="headerlink" href="#abc-floating-window-z" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_floating_window_z">
+public static final int <code class="descname">abc_floating_window_z</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_floating_window_z" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-list-item-padding-horizontal-material">
+<h3>abc_list_item_padding_horizontal_material<a class="headerlink" href="#abc-list-item-padding-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_list_item_padding_horizontal_material">
+public static final int <code class="descname">abc_list_item_padding_horizontal_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_list_item_padding_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-panel-menu-list-width">
+<h3>abc_panel_menu_list_width<a class="headerlink" href="#abc-panel-menu-list-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_panel_menu_list_width">
+public static final int <code class="descname">abc_panel_menu_list_width</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_panel_menu_list_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-progress-bar-height-material">
+<h3>abc_progress_bar_height_material<a class="headerlink" href="#abc-progress-bar-height-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_progress_bar_height_material">
+public static final int <code class="descname">abc_progress_bar_height_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_progress_bar_height_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-search-view-preferred-height">
+<h3>abc_search_view_preferred_height<a class="headerlink" href="#abc-search-view-preferred-height" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_search_view_preferred_height">
+public static final int <code class="descname">abc_search_view_preferred_height</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_search_view_preferred_height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-search-view-preferred-width">
+<h3>abc_search_view_preferred_width<a class="headerlink" href="#abc-search-view-preferred-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_search_view_preferred_width">
+public static final int <code class="descname">abc_search_view_preferred_width</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_search_view_preferred_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-seekbar-track-background-height-material">
+<h3>abc_seekbar_track_background_height_material<a class="headerlink" href="#abc-seekbar-track-background-height-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_seekbar_track_background_height_material">
+public static final int <code class="descname">abc_seekbar_track_background_height_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_seekbar_track_background_height_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-seekbar-track-progress-height-material">
+<h3>abc_seekbar_track_progress_height_material<a class="headerlink" href="#abc-seekbar-track-progress-height-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_seekbar_track_progress_height_material">
+public static final int <code class="descname">abc_seekbar_track_progress_height_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_seekbar_track_progress_height_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-select-dialog-padding-start-material">
+<h3>abc_select_dialog_padding_start_material<a class="headerlink" href="#abc-select-dialog-padding-start-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_select_dialog_padding_start_material">
+public static final int <code class="descname">abc_select_dialog_padding_start_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_select_dialog_padding_start_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-switch-padding">
+<h3>abc_switch_padding<a class="headerlink" href="#abc-switch-padding" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_switch_padding">
+public static final int <code class="descname">abc_switch_padding</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_switch_padding" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-body-1-material">
+<h3>abc_text_size_body_1_material<a class="headerlink" href="#abc-text-size-body-1-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_body_1_material">
+public static final int <code class="descname">abc_text_size_body_1_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_body_1_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-body-2-material">
+<h3>abc_text_size_body_2_material<a class="headerlink" href="#abc-text-size-body-2-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_body_2_material">
+public static final int <code class="descname">abc_text_size_body_2_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_body_2_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-button-material">
+<h3>abc_text_size_button_material<a class="headerlink" href="#abc-text-size-button-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_button_material">
+public static final int <code class="descname">abc_text_size_button_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_button_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-caption-material">
+<h3>abc_text_size_caption_material<a class="headerlink" href="#abc-text-size-caption-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_caption_material">
+public static final int <code class="descname">abc_text_size_caption_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_caption_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-display-1-material">
+<h3>abc_text_size_display_1_material<a class="headerlink" href="#abc-text-size-display-1-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_display_1_material">
+public static final int <code class="descname">abc_text_size_display_1_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_display_1_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-display-2-material">
+<h3>abc_text_size_display_2_material<a class="headerlink" href="#abc-text-size-display-2-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_display_2_material">
+public static final int <code class="descname">abc_text_size_display_2_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_display_2_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-display-3-material">
+<h3>abc_text_size_display_3_material<a class="headerlink" href="#abc-text-size-display-3-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_display_3_material">
+public static final int <code class="descname">abc_text_size_display_3_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_display_3_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-display-4-material">
+<h3>abc_text_size_display_4_material<a class="headerlink" href="#abc-text-size-display-4-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_display_4_material">
+public static final int <code class="descname">abc_text_size_display_4_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_display_4_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-headline-material">
+<h3>abc_text_size_headline_material<a class="headerlink" href="#abc-text-size-headline-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_headline_material">
+public static final int <code class="descname">abc_text_size_headline_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_headline_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-large-material">
+<h3>abc_text_size_large_material<a class="headerlink" href="#abc-text-size-large-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_large_material">
+public static final int <code class="descname">abc_text_size_large_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_large_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-medium-material">
+<h3>abc_text_size_medium_material<a class="headerlink" href="#abc-text-size-medium-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_medium_material">
+public static final int <code class="descname">abc_text_size_medium_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_medium_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-menu-header-material">
+<h3>abc_text_size_menu_header_material<a class="headerlink" href="#abc-text-size-menu-header-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_menu_header_material">
+public static final int <code class="descname">abc_text_size_menu_header_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_menu_header_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-menu-material">
+<h3>abc_text_size_menu_material<a class="headerlink" href="#abc-text-size-menu-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_menu_material">
+public static final int <code class="descname">abc_text_size_menu_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_menu_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-small-material">
+<h3>abc_text_size_small_material<a class="headerlink" href="#abc-text-size-small-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_small_material">
+public static final int <code class="descname">abc_text_size_small_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_small_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-subhead-material">
+<h3>abc_text_size_subhead_material<a class="headerlink" href="#abc-text-size-subhead-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_subhead_material">
+public static final int <code class="descname">abc_text_size_subhead_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_subhead_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-subtitle-material-toolbar">
+<h3>abc_text_size_subtitle_material_toolbar<a class="headerlink" href="#abc-text-size-subtitle-material-toolbar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_subtitle_material_toolbar">
+public static final int <code class="descname">abc_text_size_subtitle_material_toolbar</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_subtitle_material_toolbar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-title-material">
+<h3>abc_text_size_title_material<a class="headerlink" href="#abc-text-size-title-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_title_material">
+public static final int <code class="descname">abc_text_size_title_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_title_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="abc-text-size-title-material-toolbar">
+<h3>abc_text_size_title_material_toolbar<a class="headerlink" href="#abc-text-size-title-material-toolbar" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.abc_text_size_title_material_toolbar">
+public static final int <code class="descname">abc_text_size_title_material_toolbar</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.abc_text_size_title_material_toolbar" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-inset-horizontal-material">
+<h3>compat_button_inset_horizontal_material<a class="headerlink" href="#compat-button-inset-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.compat_button_inset_horizontal_material">
+public static final int <code class="descname">compat_button_inset_horizontal_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.compat_button_inset_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-inset-vertical-material">
+<h3>compat_button_inset_vertical_material<a class="headerlink" href="#compat-button-inset-vertical-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.compat_button_inset_vertical_material">
+public static final int <code class="descname">compat_button_inset_vertical_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.compat_button_inset_vertical_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-padding-horizontal-material">
+<h3>compat_button_padding_horizontal_material<a class="headerlink" href="#compat-button-padding-horizontal-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.compat_button_padding_horizontal_material">
+public static final int <code class="descname">compat_button_padding_horizontal_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.compat_button_padding_horizontal_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-button-padding-vertical-material">
+<h3>compat_button_padding_vertical_material<a class="headerlink" href="#compat-button-padding-vertical-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.compat_button_padding_vertical_material">
+public static final int <code class="descname">compat_button_padding_vertical_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.compat_button_padding_vertical_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="compat-control-corner-material">
+<h3>compat_control_corner_material<a class="headerlink" href="#compat-control-corner-material" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.compat_control_corner_material">
+public static final int <code class="descname">compat_control_corner_material</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.compat_control_corner_material" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="disabled-alpha-material-dark">
+<h3>disabled_alpha_material_dark<a class="headerlink" href="#disabled-alpha-material-dark" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.disabled_alpha_material_dark">
+public static final int <code class="descname">disabled_alpha_material_dark</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.disabled_alpha_material_dark" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="disabled-alpha-material-light">
+<h3>disabled_alpha_material_light<a class="headerlink" href="#disabled-alpha-material-light" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.disabled_alpha_material_light">
+public static final int <code class="descname">disabled_alpha_material_light</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.disabled_alpha_material_light" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="highlight-alpha-material-colored">
+<h3>highlight_alpha_material_colored<a class="headerlink" href="#highlight-alpha-material-colored" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.highlight_alpha_material_colored">
+public static final int <code class="descname">highlight_alpha_material_colored</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.highlight_alpha_material_colored" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="highlight-alpha-material-dark">
+<h3>highlight_alpha_material_dark<a class="headerlink" href="#highlight-alpha-material-dark" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.highlight_alpha_material_dark">
+public static final int <code class="descname">highlight_alpha_material_dark</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.highlight_alpha_material_dark" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="highlight-alpha-material-light">
+<h3>highlight_alpha_material_light<a class="headerlink" href="#highlight-alpha-material-light" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.highlight_alpha_material_light">
+public static final int <code class="descname">highlight_alpha_material_light</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.highlight_alpha_material_light" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="hint-alpha-material-dark">
+<h3>hint_alpha_material_dark<a class="headerlink" href="#hint-alpha-material-dark" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.hint_alpha_material_dark">
+public static final int <code class="descname">hint_alpha_material_dark</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.hint_alpha_material_dark" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="hint-alpha-material-light">
+<h3>hint_alpha_material_light<a class="headerlink" href="#hint-alpha-material-light" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.hint_alpha_material_light">
+public static final int <code class="descname">hint_alpha_material_light</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.hint_alpha_material_light" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="hint-pressed-alpha-material-dark">
+<h3>hint_pressed_alpha_material_dark<a class="headerlink" href="#hint-pressed-alpha-material-dark" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.hint_pressed_alpha_material_dark">
+public static final int <code class="descname">hint_pressed_alpha_material_dark</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.hint_pressed_alpha_material_dark" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="hint-pressed-alpha-material-light">
+<h3>hint_pressed_alpha_material_light<a class="headerlink" href="#hint-pressed-alpha-material-light" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.hint_pressed_alpha_material_light">
+public static final int <code class="descname">hint_pressed_alpha_material_light</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.hint_pressed_alpha_material_light" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-action-icon-size">
+<h3>notification_action_icon_size<a class="headerlink" href="#notification-action-icon-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_action_icon_size">
+public static final int <code class="descname">notification_action_icon_size</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_action_icon_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-action-text-size">
+<h3>notification_action_text_size<a class="headerlink" href="#notification-action-text-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_action_text_size">
+public static final int <code class="descname">notification_action_text_size</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_action_text_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-big-circle-margin">
+<h3>notification_big_circle_margin<a class="headerlink" href="#notification-big-circle-margin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_big_circle_margin">
+public static final int <code class="descname">notification_big_circle_margin</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_big_circle_margin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-content-margin-start">
+<h3>notification_content_margin_start<a class="headerlink" href="#notification-content-margin-start" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_content_margin_start">
+public static final int <code class="descname">notification_content_margin_start</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_content_margin_start" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-large-icon-height">
+<h3>notification_large_icon_height<a class="headerlink" href="#notification-large-icon-height" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_large_icon_height">
+public static final int <code class="descname">notification_large_icon_height</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_large_icon_height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-large-icon-width">
+<h3>notification_large_icon_width<a class="headerlink" href="#notification-large-icon-width" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_large_icon_width">
+public static final int <code class="descname">notification_large_icon_width</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_large_icon_width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-main-column-padding-top">
+<h3>notification_main_column_padding_top<a class="headerlink" href="#notification-main-column-padding-top" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_main_column_padding_top">
+public static final int <code class="descname">notification_main_column_padding_top</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_main_column_padding_top" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-media-narrow-margin">
+<h3>notification_media_narrow_margin<a class="headerlink" href="#notification-media-narrow-margin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_media_narrow_margin">
+public static final int <code class="descname">notification_media_narrow_margin</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_media_narrow_margin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-right-icon-size">
+<h3>notification_right_icon_size<a class="headerlink" href="#notification-right-icon-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_right_icon_size">
+public static final int <code class="descname">notification_right_icon_size</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_right_icon_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-right-side-padding-top">
+<h3>notification_right_side_padding_top<a class="headerlink" href="#notification-right-side-padding-top" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_right_side_padding_top">
+public static final int <code class="descname">notification_right_side_padding_top</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_right_side_padding_top" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-small-icon-background-padding">
+<h3>notification_small_icon_background_padding<a class="headerlink" href="#notification-small-icon-background-padding" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_small_icon_background_padding">
+public static final int <code class="descname">notification_small_icon_background_padding</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_small_icon_background_padding" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-small-icon-size-as-large">
+<h3>notification_small_icon_size_as_large<a class="headerlink" href="#notification-small-icon-size-as-large" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_small_icon_size_as_large">
+public static final int <code class="descname">notification_small_icon_size_as_large</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_small_icon_size_as_large" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-subtext-size">
+<h3>notification_subtext_size<a class="headerlink" href="#notification-subtext-size" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_subtext_size">
+public static final int <code class="descname">notification_subtext_size</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_subtext_size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-top-pad">
+<h3>notification_top_pad<a class="headerlink" href="#notification-top-pad" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_top_pad">
+public static final int <code class="descname">notification_top_pad</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_top_pad" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notification-top-pad-large-text">
+<h3>notification_top_pad_large_text<a class="headerlink" href="#notification-top-pad-large-text" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.notification_top_pad_large_text">
+public static final int <code class="descname">notification_top_pad_large_text</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.notification_top_pad_large_text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-corner-radius">
+<h3>tooltip_corner_radius<a class="headerlink" href="#tooltip-corner-radius" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_corner_radius">
+public static final int <code class="descname">tooltip_corner_radius</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_corner_radius" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-horizontal-padding">
+<h3>tooltip_horizontal_padding<a class="headerlink" href="#tooltip-horizontal-padding" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_horizontal_padding">
+public static final int <code class="descname">tooltip_horizontal_padding</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_horizontal_padding" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-margin">
+<h3>tooltip_margin<a class="headerlink" href="#tooltip-margin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_margin">
+public static final int <code class="descname">tooltip_margin</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_margin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-precise-anchor-extra-offset">
+<h3>tooltip_precise_anchor_extra_offset<a class="headerlink" href="#tooltip-precise-anchor-extra-offset" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_precise_anchor_extra_offset">
+public static final int <code class="descname">tooltip_precise_anchor_extra_offset</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_precise_anchor_extra_offset" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-precise-anchor-threshold">
+<h3>tooltip_precise_anchor_threshold<a class="headerlink" href="#tooltip-precise-anchor-threshold" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_precise_anchor_threshold">
+public static final int <code class="descname">tooltip_precise_anchor_threshold</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_precise_anchor_threshold" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-vertical-padding">
+<h3>tooltip_vertical_padding<a class="headerlink" href="#tooltip-vertical-padding" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_vertical_padding">
+public static final int <code class="descname">tooltip_vertical_padding</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_vertical_padding" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-y-offset-non-touch">
+<h3>tooltip_y_offset_non_touch<a class="headerlink" href="#tooltip-y-offset-non-touch" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_y_offset_non_touch">
+public static final int <code class="descname">tooltip_y_offset_non_touch</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_y_offset_non_touch" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tooltip-y-offset-touch">
+<h3>tooltip_y_offset_touch<a class="headerlink" href="#tooltip-y-offset-touch" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.v7.appcompat.R.dimen.tooltip_y_offset_touch">
+public static final int <code class="descname">tooltip_y_offset_touch</code><a class="headerlink" href="#android.support.v7.appcompat.R.dimen.tooltip_y_offset_touch" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="R-drawable.html" class="btn btn-neutral float-right" title="R.drawable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="R-color.html" class="btn btn-neutral" title="R.color" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

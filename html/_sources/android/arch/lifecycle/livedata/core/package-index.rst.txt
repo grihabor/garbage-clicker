@@ -1,0 +1,10 @@
+android.arch.lifecycle.livedata.core
+====================================
+
+.. java:package:: android.arch.lifecycle.livedata.core
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

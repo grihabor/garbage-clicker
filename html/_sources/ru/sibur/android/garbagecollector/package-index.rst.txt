@@ -1,0 +1,50 @@
+ru.sibur.android.garbagecollector
+=================================
+
+.. java:package:: ru.sibur.android.garbagecollector
+
+.. toctree::
+   :maxdepth: 1
+
+   Automata
+   AutomataMoneyCalculator
+   AutomataThread
+   AutomationShop
+   BuildConfig
+   Constant
+   ExampleInstrumentedTest
+   ExampleUnitTest
+   GarbageRecyclingFragment
+   IntroActivity
+   JSONLoader
+   MainActivity
+   Manifest
+   Manifest-permission
+   MyService
+   OnDBChangeListener
+   R
+   R-anim
+   R-animator
+   R-array
+   R-attr
+   R-bool
+   R-color
+   R-dimen
+   R-drawable
+   R-id
+   R-integer
+   R-layout
+   R-mipmap
+   R-raw
+   R-string
+   R-style
+   R-styleable
+   SettingsActivity
+   Shop
+   ShopFragment
+   ShopItem
+   StateStorage
+   Storage
+   Upgrade
+   UpgradeShop
+

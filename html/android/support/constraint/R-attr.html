@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R.attr &mdash; Документация Garbage Clicker </title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="R.id" href="R-id.html" />
+    <link rel="prev" title="R" href="R.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Garbage Clicker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../packages.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../arch/core/package-index.html">android.arch.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch/lifecycle/package-index.html">android.arch.lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch/lifecycle/livedata/core/package-index.html">android.arch.lifecycle.livedata.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch/lifecycle/viewmodel/package-index.html">android.arch.lifecycle.viewmodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compat/package-index.html">android.support.compat</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="package-index.html">android.support.constraint</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">R.attr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R-id.html">R.id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R-styleable.html">R.styleable</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../coreui/package-index.html">android.support.coreui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coreutils/package-index.html">android.support.coreutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fragment/package-index.html">android.support.fragment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graphics/drawable/package-index.html">android.support.graphics.drawable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graphics/drawable/animated/package-index.html">android.support.graphics.drawable.animated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mediacompat/package-index.html">android.support.mediacompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../v4/package-index.html">android.support.v4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../v7/appcompat/package-index.html">android.support.v7.appcompat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/ads_identifier/package-index.html">com.google.android.gms.ads_identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/auth/package-index.html">com.google.android.gms.auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/auth/api/package-index.html">com.google.android.gms.auth.api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/auth/api/phone/package-index.html">com.google.android.gms.auth.api.phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/base/package-index.html">com.google.android.gms.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/common/package-index.html">com.google.android.gms.common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/drive/package-index.html">com.google.android.gms.drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/games/package-index.html">com.google.android.gms.games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/measurement_base/package-index.html">com.google.android.gms.measurement_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/stats/package-index.html">com.google.android.gms.stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/android/gms/tasks/package-index.html">com.google.android.gms.tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/analytics/connector/package-index.html">com.google.firebase.analytics.connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/analytics/connector/impl/package-index.html">com.google.firebase.analytics.connector.impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/firebase_common/package-index.html">com.google.firebase.firebase_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/firebase_core/package-index.html">com.google.firebase.firebase_core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/iid/package-index.html">com.google.firebase.iid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/iid/internal/package-index.html">com.google.firebase.iid.internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/measurement/package-index.html">com.google.firebase.measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../com/google/firebase/measurement_impl/package-index.html">com.google.firebase.measurement_impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ru/sibur/android/garbagecollector/package-index.html">ru.sibur.android.garbagecollector</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Garbage Clicker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../packages.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="package-index.html">android.support.constraint</a> &raquo;</li>
+        
+      <li>R.attr</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/android/support/constraint/R-attr.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-attr">
+<h1>R.attr<a class="headerlink" href="#r-attr" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="android.support.constraint.R.attr">
+public static final class <code class="descname">attr</code><a class="headerlink" href="#android.support.constraint.R.attr" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="constraintset">
+<h3>constraintSet<a class="headerlink" href="#constraintset" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.constraintSet">
+public static final int <code class="descname">constraintSet</code><a class="headerlink" href="#android.support.constraint.R.attr.constraintSet" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintbaseline-creator">
+<h3>layout_constraintBaseline_creator<a class="headerlink" href="#layout-constraintbaseline-creator" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintBaseline_creator">
+public static final int <code class="descname">layout_constraintBaseline_creator</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintBaseline_creator" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintbaseline-tobaselineof">
+<h3>layout_constraintBaseline_toBaselineOf<a class="headerlink" href="#layout-constraintbaseline-tobaselineof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintBaseline_toBaselineOf">
+public static final int <code class="descname">layout_constraintBaseline_toBaselineOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintBaseline_toBaselineOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintbottom-creator">
+<h3>layout_constraintBottom_creator<a class="headerlink" href="#layout-constraintbottom-creator" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintBottom_creator">
+public static final int <code class="descname">layout_constraintBottom_creator</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintBottom_creator" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintbottom-tobottomof">
+<h3>layout_constraintBottom_toBottomOf<a class="headerlink" href="#layout-constraintbottom-tobottomof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintBottom_toBottomOf">
+public static final int <code class="descname">layout_constraintBottom_toBottomOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintBottom_toBottomOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintbottom-totopof">
+<h3>layout_constraintBottom_toTopOf<a class="headerlink" href="#layout-constraintbottom-totopof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintBottom_toTopOf">
+public static final int <code class="descname">layout_constraintBottom_toTopOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintBottom_toTopOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintdimensionratio">
+<h3>layout_constraintDimensionRatio<a class="headerlink" href="#layout-constraintdimensionratio" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintDimensionRatio">
+public static final int <code class="descname">layout_constraintDimensionRatio</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintDimensionRatio" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintend-toendof">
+<h3>layout_constraintEnd_toEndOf<a class="headerlink" href="#layout-constraintend-toendof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintEnd_toEndOf">
+public static final int <code class="descname">layout_constraintEnd_toEndOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintEnd_toEndOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintend-tostartof">
+<h3>layout_constraintEnd_toStartOf<a class="headerlink" href="#layout-constraintend-tostartof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintEnd_toStartOf">
+public static final int <code class="descname">layout_constraintEnd_toStartOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintEnd_toStartOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintguide-begin">
+<h3>layout_constraintGuide_begin<a class="headerlink" href="#layout-constraintguide-begin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintGuide_begin">
+public static final int <code class="descname">layout_constraintGuide_begin</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintGuide_begin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintguide-end">
+<h3>layout_constraintGuide_end<a class="headerlink" href="#layout-constraintguide-end" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintGuide_end">
+public static final int <code class="descname">layout_constraintGuide_end</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintGuide_end" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintguide-percent">
+<h3>layout_constraintGuide_percent<a class="headerlink" href="#layout-constraintguide-percent" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintGuide_percent">
+public static final int <code class="descname">layout_constraintGuide_percent</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintGuide_percent" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintheight-default">
+<h3>layout_constraintHeight_default<a class="headerlink" href="#layout-constraintheight-default" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintHeight_default">
+public static final int <code class="descname">layout_constraintHeight_default</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintHeight_default" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintheight-max">
+<h3>layout_constraintHeight_max<a class="headerlink" href="#layout-constraintheight-max" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintHeight_max">
+public static final int <code class="descname">layout_constraintHeight_max</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintHeight_max" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintheight-min">
+<h3>layout_constraintHeight_min<a class="headerlink" href="#layout-constraintheight-min" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintHeight_min">
+public static final int <code class="descname">layout_constraintHeight_min</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintHeight_min" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constrainthorizontal-bias">
+<h3>layout_constraintHorizontal_bias<a class="headerlink" href="#layout-constrainthorizontal-bias" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintHorizontal_bias">
+public static final int <code class="descname">layout_constraintHorizontal_bias</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintHorizontal_bias" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constrainthorizontal-chainstyle">
+<h3>layout_constraintHorizontal_chainStyle<a class="headerlink" href="#layout-constrainthorizontal-chainstyle" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintHorizontal_chainStyle">
+public static final int <code class="descname">layout_constraintHorizontal_chainStyle</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintHorizontal_chainStyle" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constrainthorizontal-weight">
+<h3>layout_constraintHorizontal_weight<a class="headerlink" href="#layout-constrainthorizontal-weight" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintHorizontal_weight">
+public static final int <code class="descname">layout_constraintHorizontal_weight</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintHorizontal_weight" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintleft-creator">
+<h3>layout_constraintLeft_creator<a class="headerlink" href="#layout-constraintleft-creator" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintLeft_creator">
+public static final int <code class="descname">layout_constraintLeft_creator</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintLeft_creator" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintleft-toleftof">
+<h3>layout_constraintLeft_toLeftOf<a class="headerlink" href="#layout-constraintleft-toleftof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintLeft_toLeftOf">
+public static final int <code class="descname">layout_constraintLeft_toLeftOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintLeft_toLeftOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintleft-torightof">
+<h3>layout_constraintLeft_toRightOf<a class="headerlink" href="#layout-constraintleft-torightof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintLeft_toRightOf">
+public static final int <code class="descname">layout_constraintLeft_toRightOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintLeft_toRightOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintright-creator">
+<h3>layout_constraintRight_creator<a class="headerlink" href="#layout-constraintright-creator" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintRight_creator">
+public static final int <code class="descname">layout_constraintRight_creator</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintRight_creator" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintright-toleftof">
+<h3>layout_constraintRight_toLeftOf<a class="headerlink" href="#layout-constraintright-toleftof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintRight_toLeftOf">
+public static final int <code class="descname">layout_constraintRight_toLeftOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintRight_toLeftOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintright-torightof">
+<h3>layout_constraintRight_toRightOf<a class="headerlink" href="#layout-constraintright-torightof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintRight_toRightOf">
+public static final int <code class="descname">layout_constraintRight_toRightOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintRight_toRightOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintstart-toendof">
+<h3>layout_constraintStart_toEndOf<a class="headerlink" href="#layout-constraintstart-toendof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintStart_toEndOf">
+public static final int <code class="descname">layout_constraintStart_toEndOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintStart_toEndOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintstart-tostartof">
+<h3>layout_constraintStart_toStartOf<a class="headerlink" href="#layout-constraintstart-tostartof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintStart_toStartOf">
+public static final int <code class="descname">layout_constraintStart_toStartOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintStart_toStartOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constrainttop-creator">
+<h3>layout_constraintTop_creator<a class="headerlink" href="#layout-constrainttop-creator" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintTop_creator">
+public static final int <code class="descname">layout_constraintTop_creator</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintTop_creator" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constrainttop-tobottomof">
+<h3>layout_constraintTop_toBottomOf<a class="headerlink" href="#layout-constrainttop-tobottomof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintTop_toBottomOf">
+public static final int <code class="descname">layout_constraintTop_toBottomOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintTop_toBottomOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constrainttop-totopof">
+<h3>layout_constraintTop_toTopOf<a class="headerlink" href="#layout-constrainttop-totopof" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintTop_toTopOf">
+public static final int <code class="descname">layout_constraintTop_toTopOf</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintTop_toTopOf" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintvertical-bias">
+<h3>layout_constraintVertical_bias<a class="headerlink" href="#layout-constraintvertical-bias" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintVertical_bias">
+public static final int <code class="descname">layout_constraintVertical_bias</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintVertical_bias" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintvertical-chainstyle">
+<h3>layout_constraintVertical_chainStyle<a class="headerlink" href="#layout-constraintvertical-chainstyle" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintVertical_chainStyle">
+public static final int <code class="descname">layout_constraintVertical_chainStyle</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintVertical_chainStyle" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintvertical-weight">
+<h3>layout_constraintVertical_weight<a class="headerlink" href="#layout-constraintvertical-weight" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintVertical_weight">
+public static final int <code class="descname">layout_constraintVertical_weight</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintVertical_weight" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintwidth-default">
+<h3>layout_constraintWidth_default<a class="headerlink" href="#layout-constraintwidth-default" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintWidth_default">
+public static final int <code class="descname">layout_constraintWidth_default</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintWidth_default" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintwidth-max">
+<h3>layout_constraintWidth_max<a class="headerlink" href="#layout-constraintwidth-max" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintWidth_max">
+public static final int <code class="descname">layout_constraintWidth_max</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintWidth_max" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-constraintwidth-min">
+<h3>layout_constraintWidth_min<a class="headerlink" href="#layout-constraintwidth-min" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_constraintWidth_min">
+public static final int <code class="descname">layout_constraintWidth_min</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_constraintWidth_min" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-editor-absolutex">
+<h3>layout_editor_absoluteX<a class="headerlink" href="#layout-editor-absolutex" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_editor_absoluteX">
+public static final int <code class="descname">layout_editor_absoluteX</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_editor_absoluteX" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-editor-absolutey">
+<h3>layout_editor_absoluteY<a class="headerlink" href="#layout-editor-absolutey" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_editor_absoluteY">
+public static final int <code class="descname">layout_editor_absoluteY</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_editor_absoluteY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-gonemarginbottom">
+<h3>layout_goneMarginBottom<a class="headerlink" href="#layout-gonemarginbottom" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_goneMarginBottom">
+public static final int <code class="descname">layout_goneMarginBottom</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_goneMarginBottom" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-gonemarginend">
+<h3>layout_goneMarginEnd<a class="headerlink" href="#layout-gonemarginend" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_goneMarginEnd">
+public static final int <code class="descname">layout_goneMarginEnd</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_goneMarginEnd" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-gonemarginleft">
+<h3>layout_goneMarginLeft<a class="headerlink" href="#layout-gonemarginleft" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_goneMarginLeft">
+public static final int <code class="descname">layout_goneMarginLeft</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_goneMarginLeft" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-gonemarginright">
+<h3>layout_goneMarginRight<a class="headerlink" href="#layout-gonemarginright" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_goneMarginRight">
+public static final int <code class="descname">layout_goneMarginRight</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_goneMarginRight" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-gonemarginstart">
+<h3>layout_goneMarginStart<a class="headerlink" href="#layout-gonemarginstart" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_goneMarginStart">
+public static final int <code class="descname">layout_goneMarginStart</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_goneMarginStart" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-gonemargintop">
+<h3>layout_goneMarginTop<a class="headerlink" href="#layout-gonemargintop" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_goneMarginTop">
+public static final int <code class="descname">layout_goneMarginTop</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_goneMarginTop" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="layout-optimizationlevel">
+<h3>layout_optimizationLevel<a class="headerlink" href="#layout-optimizationlevel" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="field">
+<dt id="android.support.constraint.R.attr.layout_optimizationLevel">
+public static final int <code class="descname">layout_optimizationLevel</code><a class="headerlink" href="#android.support.constraint.R.attr.layout_optimizationLevel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="R-id.html" class="btn btn-neutral float-right" title="R.id" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="R.html" class="btn btn-neutral" title="R" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Borodin Gregory, Oleg Demianchenko, Dmitry Teterin, Artem Glubshev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'ru',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+.. java:import:: android.content.pm ActivityInfo
+
+.. java:import:: android.os Bundle
+
+.. java:import:: android.support.v7.app AppCompatActivity
+
+.. java:import:: android.view WindowManager
+
+.. java:import:: android.widget CheckBox
+
+SettingsActivity
+================
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class SettingsActivity extends AppCompatActivity
+
+Methods
+-------
+onCreate
+^^^^^^^^
+
+.. java:method:: @Override public void onCreate(Bundle savedInstanceState)
+   :outertype: SettingsActivity
+

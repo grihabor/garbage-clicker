@@ -1,0 +1,23 @@
+R.animator
+==========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class animator
+   :outertype: R
+
+Fields
+------
+buying_fail
+^^^^^^^^^^^
+
+.. java:field:: public static final int buying_fail
+   :outertype: R.animator
+
+buying_success
+^^^^^^^^^^^^^^
+
+.. java:field:: public static final int buying_success
+   :outertype: R.animator
+

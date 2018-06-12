@@ -1,0 +1,10 @@
+com.google.firebase.measurement_impl
+====================================
+
+.. java:package:: com.google.firebase.measurement_impl
+
+.. toctree::
+   :maxdepth: 1
+
+   R
+

@@ -1,0 +1,56 @@
+.. java:import:: android.content Context
+
+.. java:import:: android.util Log
+
+.. java:import:: org.json JSONArray
+
+.. java:import:: org.json JSONException
+
+.. java:import:: org.json JSONObject
+
+.. java:import:: java.io BufferedReader
+
+.. java:import:: java.io IOException
+
+.. java:import:: java.io InputStream
+
+.. java:import:: java.io InputStreamReader
+
+.. java:import:: java.io StringWriter
+
+.. java:import:: java.io UnsupportedEncodingException
+
+.. java:import:: java.io Writer
+
+JSONLoader
+==========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class JSONLoader
+
+Fields
+------
+context
+^^^^^^^
+
+.. java:field::  Context context
+   :outertype: JSONLoader
+
+Constructors
+------------
+JSONLoader
+^^^^^^^^^^
+
+.. java:constructor:: public JSONLoader(Context context)
+   :outertype: JSONLoader
+
+Methods
+-------
+parceJSONResource
+^^^^^^^^^^^^^^^^^
+
+.. java:method:: public JSONObject parceJSONResource(int id)
+   :outertype: JSONLoader
+

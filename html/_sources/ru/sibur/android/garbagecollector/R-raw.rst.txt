@@ -1,0 +1,41 @@
+R.raw
+=====
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class raw
+   :outertype: R
+
+Fields
+------
+automatas
+^^^^^^^^^
+
+.. java:field:: public static final int automatas
+   :outertype: R.raw
+
+background
+^^^^^^^^^^
+
+.. java:field:: public static final int background
+   :outertype: R.raw
+
+coin
+^^^^
+
+.. java:field:: public static final int coin
+   :outertype: R.raw
+
+error
+^^^^^
+
+.. java:field:: public static final int error
+   :outertype: R.raw
+
+upgrades
+^^^^^^^^
+
+.. java:field:: public static final int upgrades
+   :outertype: R.raw
+

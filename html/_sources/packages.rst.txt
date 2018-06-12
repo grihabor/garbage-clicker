@@ -1,0 +1,41 @@
+Javadoc
+=======
+
+.. toctree::
+   :maxdepth: 2
+
+   android/arch/core/package-index
+   android/arch/lifecycle/package-index
+   android/arch/lifecycle/livedata/core/package-index
+   android/arch/lifecycle/viewmodel/package-index
+   android/support/compat/package-index
+   android/support/constraint/package-index
+   android/support/coreui/package-index
+   android/support/coreutils/package-index
+   android/support/fragment/package-index
+   android/support/graphics/drawable/package-index
+   android/support/graphics/drawable/animated/package-index
+   android/support/mediacompat/package-index
+   android/support/v4/package-index
+   android/support/v7/appcompat/package-index
+   com/google/android/gms/ads_identifier/package-index
+   com/google/android/gms/auth/package-index
+   com/google/android/gms/auth/api/package-index
+   com/google/android/gms/auth/api/phone/package-index
+   com/google/android/gms/base/package-index
+   com/google/android/gms/common/package-index
+   com/google/android/gms/drive/package-index
+   com/google/android/gms/games/package-index
+   com/google/android/gms/measurement_base/package-index
+   com/google/android/gms/stats/package-index
+   com/google/android/gms/tasks/package-index
+   com/google/firebase/analytics/connector/package-index
+   com/google/firebase/analytics/connector/impl/package-index
+   com/google/firebase/firebase_common/package-index
+   com/google/firebase/firebase_core/package-index
+   com/google/firebase/iid/package-index
+   com/google/firebase/iid/internal/package-index
+   com/google/firebase/measurement/package-index
+   com/google/firebase/measurement_impl/package-index
+   ru/sibur/android/garbagecollector/package-index
+

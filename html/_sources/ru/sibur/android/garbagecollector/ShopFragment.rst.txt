@@ -1,0 +1,102 @@
+.. java:import:: android.animation Animator
+
+.. java:import:: android.animation AnimatorInflater
+
+.. java:import:: android.animation ArgbEvaluator
+
+.. java:import:: android.animation ObjectAnimator
+
+.. java:import:: android.animation ValueAnimator
+
+.. java:import:: android.app ListFragment
+
+.. java:import:: android.content Context
+
+.. java:import:: android.media AudioAttributes
+
+.. java:import:: android.media AudioManager
+
+.. java:import:: android.media SoundPool
+
+.. java:import:: android.util SparseIntArray
+
+.. java:import:: android.view View
+
+.. java:import:: android.graphics Color
+
+.. java:import:: android.graphics.drawable ColorDrawable
+
+.. java:import:: android.graphics.drawable TransitionDrawable
+
+.. java:import:: android.view ViewPropertyAnimator
+
+.. java:import:: android.view.animation AnimationUtils
+
+.. java:import:: android.view.animation ScaleAnimation
+
+.. java:import:: android.widget ListView
+
+.. java:import:: android.widget SimpleAdapter
+
+.. java:import:: java.util ArrayList
+
+.. java:import:: java.util HashMap
+
+.. java:import:: java9.util.stream IntStream
+
+ShopFragment
+============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class ShopFragment extends ListFragment
+
+   Базовый фрагмент для фрагментов магазинов
+
+Fields
+------
+soundMap
+^^^^^^^^
+
+.. java:field::  SparseIntArray soundMap
+   :outertype: ShopFragment
+
+Methods
+-------
+getListViewAdapter
+^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public SimpleAdapter getListViewAdapter()
+   :outertype: ShopFragment
+
+initListView
+^^^^^^^^^^^^
+
+.. java:method:: protected void initListView()
+   :outertype: ShopFragment
+
+initializeSoundEffects
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public void initializeSoundEffects(Context context)
+   :outertype: ShopFragment
+
+onListItemClick
+^^^^^^^^^^^^^^^
+
+.. java:method:: @Override public void onListItemClick(ListView l, View v, int position, long id)
+   :outertype: ShopFragment
+
+onStart
+^^^^^^^
+
+.. java:method:: @Override public void onStart()
+   :outertype: ShopFragment
+
+setShop
+^^^^^^^
+
+.. java:method::  void setShop(Shop shop)
+   :outertype: ShopFragment
+

@@ -1,0 +1,68 @@
+.. java:import:: android.content Context
+
+.. java:import:: android.os AsyncTask
+
+.. java:import:: java.math BigInteger
+
+.. java:import:: java.util ArrayList
+
+.. java:import:: java9.util.stream StreamSupport
+
+AutomataThread
+==============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class AutomataThread extends AsyncTask<Void, Void, Void> implements AutomataMoneyCalculator
+
+   Поток для работы автоматов
+
+Fields
+------
+context
+^^^^^^^
+
+.. java:field::  Context context
+   :outertype: AutomataThread
+
+storage
+^^^^^^^
+
+.. java:field::  Storage storage
+   :outertype: AutomataThread
+
+Constructors
+------------
+AutomataThread
+^^^^^^^^^^^^^^
+
+.. java:constructor::  AutomataThread(StateStorage storage, Context context)
+   :outertype: AutomataThread
+
+Methods
+-------
+calculateMoney
+^^^^^^^^^^^^^^
+
+.. java:method:: @Override public BigInteger calculateMoney(BigInteger timeDifference)
+   :outertype: AutomataThread
+
+doInBackground
+^^^^^^^^^^^^^^
+
+.. java:method:: @Override protected Void doInBackground(Void... turningOn)
+   :outertype: AutomataThread
+
+getMoneyPerTimeUnit
+^^^^^^^^^^^^^^^^^^^
+
+.. java:method::  BigInteger getMoneyPerTimeUnit()
+   :outertype: AutomataThread
+
+onProgressUpdate
+^^^^^^^^^^^^^^^^
+
+.. java:method:: protected void onProgressUpdate(Void... voids)
+   :outertype: AutomataThread
+

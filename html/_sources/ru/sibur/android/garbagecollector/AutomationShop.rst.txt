@@ -1,0 +1,46 @@
+.. java:import:: android.content Context
+
+.. java:import:: org.json JSONObject
+
+.. java:import:: java.math BigInteger
+
+.. java:import:: java.util ArrayList
+
+.. java:import:: java9.util.stream StreamSupport
+
+AutomationShop
+==============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class AutomationShop extends Shop
+
+Constructors
+------------
+AutomationShop
+^^^^^^^^^^^^^^
+
+.. java:constructor::  AutomationShop(int resourceId, Context context, Storage storage)
+   :outertype: AutomationShop
+
+Methods
+-------
+createInstance
+^^^^^^^^^^^^^^
+
+.. java:method:: @Override public ShopItem createInstance(JSONObject object, int iterationIndex)
+   :outertype: AutomationShop
+
+getTag
+^^^^^^
+
+.. java:method:: @Override  String getTag()
+   :outertype: AutomationShop
+
+getTotalPerformance
+^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public BigInteger getTotalPerformance()
+   :outertype: AutomationShop
+

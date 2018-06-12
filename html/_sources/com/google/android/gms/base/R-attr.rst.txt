@@ -1,0 +1,47 @@
+R.attr
+======
+
+.. java:package:: com.google.android.gms.base
+   :noindex:
+
+.. java:type:: public static final class attr
+   :outertype: R
+
+Fields
+------
+buttonSize
+^^^^^^^^^^
+
+.. java:field:: public static final int buttonSize
+   :outertype: R.attr
+
+circleCrop
+^^^^^^^^^^
+
+.. java:field:: public static final int circleCrop
+   :outertype: R.attr
+
+colorScheme
+^^^^^^^^^^^
+
+.. java:field:: public static final int colorScheme
+   :outertype: R.attr
+
+imageAspectRatio
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int imageAspectRatio
+   :outertype: R.attr
+
+imageAspectRatioAdjust
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int imageAspectRatioAdjust
+   :outertype: R.attr
+
+scopeUris
+^^^^^^^^^
+
+.. java:field:: public static final int scopeUris
+   :outertype: R.attr
+

@@ -1,0 +1,20 @@
+.. java:import:: java.math BigInteger
+
+AutomataMoneyCalculator
+=======================
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public interface AutomataMoneyCalculator
+
+   Created by Олег on 23.03.2018.
+
+Methods
+-------
+calculateMoney
+^^^^^^^^^^^^^^
+
+.. java:method::  BigInteger calculateMoney(BigInteger timeDifference)
+   :outertype: AutomataMoneyCalculator
+

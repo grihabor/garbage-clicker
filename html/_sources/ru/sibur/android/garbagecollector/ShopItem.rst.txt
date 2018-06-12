@@ -1,0 +1,108 @@
+.. java:import:: android.content Context
+
+.. java:import:: android.content.res Resources
+
+.. java:import:: android.util Log
+
+.. java:import:: org.json JSONException
+
+.. java:import:: org.json JSONObject
+
+.. java:import:: java.math BigInteger
+
+.. java:import:: java.util HashMap
+
+ShopItem
+========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public abstract class ShopItem
+
+   Элемент списка в фрагменте магазина
+
+Fields
+------
+basePrice
+^^^^^^^^^
+
+.. java:field::  BigInteger basePrice
+   :outertype: ShopItem
+
+countKey
+^^^^^^^^
+
+.. java:field::  String countKey
+   :outertype: ShopItem
+
+iconName
+^^^^^^^^
+
+.. java:field::  String iconName
+   :outertype: ShopItem
+
+name
+^^^^
+
+.. java:field::  String name
+   :outertype: ShopItem
+
+storage
+^^^^^^^
+
+.. java:field::  Storage storage
+   :outertype: ShopItem
+
+Constructors
+------------
+ShopItem
+^^^^^^^^
+
+.. java:constructor::  ShopItem(JSONObject jsonData, Storage storage, int iterationIndex)
+   :outertype: ShopItem
+
+Methods
+-------
+getCount
+^^^^^^^^
+
+.. java:method::  int getCount()
+   :outertype: ShopItem
+
+getCountKey
+^^^^^^^^^^^
+
+.. java:method::  String getCountKey()
+   :outertype: ShopItem
+
+getPrice
+^^^^^^^^
+
+.. java:method::  BigInteger getPrice()
+   :outertype: ShopItem
+
+getViewData
+^^^^^^^^^^^
+
+.. java:method:: public HashMap<String, Object> getViewData(Context context)
+   :outertype: ShopItem
+
+setJsonAttrs
+^^^^^^^^^^^^
+
+.. java:method::  void setJsonAttrs(JSONObject jsonAttrs) throws JSONException
+   :outertype: ShopItem
+
+setOnCountChangeListener
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method::  void setOnCountChangeListener(OnDBChangeListener listener)
+   :outertype: ShopItem
+
+tryToBuy
+^^^^^^^^
+
+.. java:method::  boolean tryToBuy(Context context, Storage storage)
+   :outertype: ShopItem
+

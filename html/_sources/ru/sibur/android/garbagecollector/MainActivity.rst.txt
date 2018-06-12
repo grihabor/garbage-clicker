@@ -1,0 +1,116 @@
+.. java:import:: android.app Fragment
+
+.. java:import:: android.app FragmentTransaction
+
+.. java:import:: android.content Context
+
+.. java:import:: android.content Intent
+
+.. java:import:: android.content.pm ActivityInfo
+
+.. java:import:: android.media AudioAttributes
+
+.. java:import:: android.media AudioManager
+
+.. java:import:: android.media SoundPool
+
+.. java:import:: android.os Bundle
+
+.. java:import:: android.support.v7.app AppCompatActivity
+
+.. java:import:: android.util SparseIntArray
+
+.. java:import:: android.view View
+
+.. java:import:: android.view WindowManager
+
+.. java:import:: android.widget TextView
+
+.. java:import:: java.math BigInteger
+
+MainActivity
+============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class MainActivity extends AppCompatActivity
+
+   Активити самой игры
+
+Fields
+------
+automataThread
+^^^^^^^^^^^^^^
+
+.. java:field::  AutomataThread automataThread
+   :outertype: MainActivity
+
+moneyDisplay
+^^^^^^^^^^^^
+
+.. java:field::  TextView moneyDisplay
+   :outertype: MainActivity
+
+storage
+^^^^^^^
+
+.. java:field::  StateStorage storage
+   :outertype: MainActivity
+
+Methods
+-------
+onCreate
+^^^^^^^^
+
+.. java:method:: @Override protected void onCreate(Bundle savedInstanceState)
+   :outertype: MainActivity
+
+onPause
+^^^^^^^
+
+.. java:method:: protected void onPause()
+   :outertype: MainActivity
+
+onResume
+^^^^^^^^
+
+.. java:method:: protected void onResume()
+   :outertype: MainActivity
+
+onStart
+^^^^^^^
+
+.. java:method:: protected void onStart()
+   :outertype: MainActivity
+
+switchTo
+^^^^^^^^
+
+.. java:method:: public void switchTo(Fragment fragment)
+   :outertype: MainActivity
+
+switchToAutomationShopFragment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public void switchToAutomationShopFragment(View view)
+   :outertype: MainActivity
+
+switchToGarbageRecyclingFragment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public void switchToGarbageRecyclingFragment(View view)
+   :outertype: MainActivity
+
+switchToUpgradeShopFragment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public void switchToUpgradeShopFragment(View view)
+   :outertype: MainActivity
+
+updateMoney
+^^^^^^^^^^^
+
+.. java:method::  void updateMoney()
+   :outertype: MainActivity
+

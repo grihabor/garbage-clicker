@@ -1,0 +1,18 @@
+OnDBChangeListener
+==================
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public interface OnDBChangeListener
+
+   Created by RedSnail on 07.03.2018.
+
+Methods
+-------
+onDBChange
+^^^^^^^^^^
+
+.. java:method::  void onDBChange()
+   :outertype: OnDBChangeListener
+

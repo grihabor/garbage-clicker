@@ -1,0 +1,65 @@
+R.id
+====
+
+.. java:package:: android.support.constraint
+   :noindex:
+
+.. java:type:: public static final class id
+   :outertype: R
+
+Fields
+------
+all
+^^^
+
+.. java:field:: public static final int all
+   :outertype: R.id
+
+basic
+^^^^^
+
+.. java:field:: public static final int basic
+   :outertype: R.id
+
+chains
+^^^^^^
+
+.. java:field:: public static final int chains
+   :outertype: R.id
+
+none
+^^^^
+
+.. java:field:: public static final int none
+   :outertype: R.id
+
+packed
+^^^^^^
+
+.. java:field:: public static final int packed
+   :outertype: R.id
+
+parent
+^^^^^^
+
+.. java:field:: public static final int parent
+   :outertype: R.id
+
+spread
+^^^^^^
+
+.. java:field:: public static final int spread
+   :outertype: R.id
+
+spread_inside
+^^^^^^^^^^^^^
+
+.. java:field:: public static final int spread_inside
+   :outertype: R.id
+
+wrap
+^^^^
+
+.. java:field:: public static final int wrap
+   :outertype: R.id
+

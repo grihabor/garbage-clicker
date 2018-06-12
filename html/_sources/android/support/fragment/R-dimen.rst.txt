@@ -1,0 +1,131 @@
+R.dimen
+=======
+
+.. java:package:: android.support.fragment
+   :noindex:
+
+.. java:type:: public static final class dimen
+   :outertype: R
+
+Fields
+------
+compat_button_inset_horizontal_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int compat_button_inset_horizontal_material
+   :outertype: R.dimen
+
+compat_button_inset_vertical_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int compat_button_inset_vertical_material
+   :outertype: R.dimen
+
+compat_button_padding_horizontal_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int compat_button_padding_horizontal_material
+   :outertype: R.dimen
+
+compat_button_padding_vertical_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int compat_button_padding_vertical_material
+   :outertype: R.dimen
+
+compat_control_corner_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int compat_control_corner_material
+   :outertype: R.dimen
+
+notification_action_icon_size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_action_icon_size
+   :outertype: R.dimen
+
+notification_action_text_size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_action_text_size
+   :outertype: R.dimen
+
+notification_big_circle_margin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_big_circle_margin
+   :outertype: R.dimen
+
+notification_content_margin_start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_content_margin_start
+   :outertype: R.dimen
+
+notification_large_icon_height
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_large_icon_height
+   :outertype: R.dimen
+
+notification_large_icon_width
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_large_icon_width
+   :outertype: R.dimen
+
+notification_main_column_padding_top
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_main_column_padding_top
+   :outertype: R.dimen
+
+notification_media_narrow_margin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_media_narrow_margin
+   :outertype: R.dimen
+
+notification_right_icon_size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_right_icon_size
+   :outertype: R.dimen
+
+notification_right_side_padding_top
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_right_side_padding_top
+   :outertype: R.dimen
+
+notification_small_icon_background_padding
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_small_icon_background_padding
+   :outertype: R.dimen
+
+notification_small_icon_size_as_large
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_small_icon_size_as_large
+   :outertype: R.dimen
+
+notification_subtext_size
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_subtext_size
+   :outertype: R.dimen
+
+notification_top_pad
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_top_pad
+   :outertype: R.dimen
+
+notification_top_pad_large_text
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_top_pad_large_text
+   :outertype: R.dimen
+

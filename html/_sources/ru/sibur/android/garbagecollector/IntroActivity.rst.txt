@@ -1,0 +1,86 @@
+.. java:import:: android.content Intent
+
+.. java:import:: android.content.pm ActivityInfo
+
+.. java:import:: android.os Bundle
+
+.. java:import:: android.support.v7.app AppCompatActivity
+
+.. java:import:: android.util Log
+
+.. java:import:: android.view View
+
+.. java:import:: android.view WindowManager
+
+.. java:import:: android.widget Button
+
+.. java:import:: android.widget Toast
+
+.. java:import:: com.google.android.gms.auth.api.signin GoogleSignIn
+
+.. java:import:: com.google.android.gms.auth.api.signin GoogleSignInAccount
+
+.. java:import:: com.google.android.gms.auth.api.signin GoogleSignInClient
+
+.. java:import:: com.google.android.gms.auth.api.signin GoogleSignInOptions
+
+.. java:import:: com.google.android.gms.common SignInButton
+
+.. java:import:: com.google.android.gms.common.api ApiException
+
+.. java:import:: com.google.android.gms.games AchievementsClient
+
+.. java:import:: com.google.android.gms.games Games
+
+.. java:import:: com.google.android.gms.tasks Task
+
+IntroActivity
+=============
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public class IntroActivity extends AppCompatActivity
+
+   Главное меню + Играть + Достижения + Выход
+
+Fields
+------
+RC_SIGN_IN
+^^^^^^^^^^
+
+.. java:field:: public static final int RC_SIGN_IN
+   :outertype: IntroActivity
+
+signInClient
+^^^^^^^^^^^^
+
+.. java:field::  GoogleSignInClient signInClient
+   :outertype: IntroActivity
+
+Methods
+-------
+onActivityResult
+^^^^^^^^^^^^^^^^
+
+.. java:method:: @Override public void onActivityResult(int requestCode, int resultCode, Intent data)
+   :outertype: IntroActivity
+
+onCreate
+^^^^^^^^
+
+.. java:method:: @Override protected void onCreate(Bundle savedInstanceState)
+   :outertype: IntroActivity
+
+onStart
+^^^^^^^
+
+.. java:method:: @Override public void onStart()
+   :outertype: IntroActivity
+
+setUI
+^^^^^
+
+.. java:method::  void setUI(GoogleSignInAccount account)
+   :outertype: IntroActivity
+

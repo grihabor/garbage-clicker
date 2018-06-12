@@ -1,0 +1,100 @@
+.. java:import:: android.content Context
+
+.. java:import:: android.util Log
+
+.. java:import:: org.json JSONArray
+
+.. java:import:: org.json JSONException
+
+.. java:import:: org.json JSONObject
+
+.. java:import:: java.util ArrayList
+
+.. java:import:: java.util HashMap
+
+.. java:import:: java9.util.stream Collectors
+
+.. java:import:: java9.util.stream IntStream
+
+.. java:import:: java9.util.stream StreamSupport
+
+Shop
+====
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public abstract class Shop
+
+Fields
+------
+context
+^^^^^^^
+
+.. java:field::  Context context
+   :outertype: Shop
+
+itemLayoutId
+^^^^^^^^^^^^
+
+.. java:field::  int itemLayoutId
+   :outertype: Shop
+
+shopItemArray
+^^^^^^^^^^^^^
+
+.. java:field::  ArrayList<? extends ShopItem> shopItemArray
+   :outertype: Shop
+
+shopItemAttrIds
+^^^^^^^^^^^^^^^
+
+.. java:field::  int[] shopItemAttrIds
+   :outertype: Shop
+
+shopItemAttributes
+^^^^^^^^^^^^^^^^^^
+
+.. java:field::  String[] shopItemAttributes
+   :outertype: Shop
+
+storage
+^^^^^^^
+
+.. java:field::  Storage storage
+   :outertype: Shop
+
+Constructors
+------------
+Shop
+^^^^
+
+.. java:constructor::  Shop(int resourceId, Context context, Storage storage)
+   :outertype: Shop
+
+Methods
+-------
+createInstance
+^^^^^^^^^^^^^^
+
+.. java:method:: public abstract ShopItem createInstance(JSONObject object, int iterationIndex)
+   :outertype: Shop
+
+getShopFragment
+^^^^^^^^^^^^^^^
+
+.. java:method:: public ShopFragment getShopFragment(int shopItemLayoutId, String[] shopItemAttributes, int[] shopItemAttrIds)
+   :outertype: Shop
+
+getTag
+^^^^^^
+
+.. java:method:: abstract String getTag()
+   :outertype: Shop
+
+getViewDataArray
+^^^^^^^^^^^^^^^^
+
+.. java:method::  ArrayList<HashMap<String, Object>> getViewDataArray()
+   :outertype: Shop
+

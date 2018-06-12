@@ -1,0 +1,323 @@
+R.layout
+========
+
+.. java:package:: ru.sibur.android.garbagecollector
+   :noindex:
+
+.. java:type:: public static final class layout
+   :outertype: R
+
+Fields
+------
+abc_action_bar_title_item
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_bar_title_item
+   :outertype: R.layout
+
+abc_action_bar_up_container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_bar_up_container
+   :outertype: R.layout
+
+abc_action_menu_item_layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_menu_item_layout
+   :outertype: R.layout
+
+abc_action_menu_layout
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_menu_layout
+   :outertype: R.layout
+
+abc_action_mode_bar
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_mode_bar
+   :outertype: R.layout
+
+abc_action_mode_close_item_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_action_mode_close_item_material
+   :outertype: R.layout
+
+abc_activity_chooser_view
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_activity_chooser_view
+   :outertype: R.layout
+
+abc_activity_chooser_view_list_item
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_activity_chooser_view_list_item
+   :outertype: R.layout
+
+abc_alert_dialog_button_bar_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_alert_dialog_button_bar_material
+   :outertype: R.layout
+
+abc_alert_dialog_material
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_alert_dialog_material
+   :outertype: R.layout
+
+abc_alert_dialog_title_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_alert_dialog_title_material
+   :outertype: R.layout
+
+abc_dialog_title_material
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_dialog_title_material
+   :outertype: R.layout
+
+abc_expanded_menu_layout
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_expanded_menu_layout
+   :outertype: R.layout
+
+abc_list_menu_item_checkbox
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_list_menu_item_checkbox
+   :outertype: R.layout
+
+abc_list_menu_item_icon
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_list_menu_item_icon
+   :outertype: R.layout
+
+abc_list_menu_item_layout
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_list_menu_item_layout
+   :outertype: R.layout
+
+abc_list_menu_item_radio
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_list_menu_item_radio
+   :outertype: R.layout
+
+abc_popup_menu_header_item_layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_popup_menu_header_item_layout
+   :outertype: R.layout
+
+abc_popup_menu_item_layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_popup_menu_item_layout
+   :outertype: R.layout
+
+abc_screen_content_include
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_screen_content_include
+   :outertype: R.layout
+
+abc_screen_simple
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_screen_simple
+   :outertype: R.layout
+
+abc_screen_simple_overlay_action_mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_screen_simple_overlay_action_mode
+   :outertype: R.layout
+
+abc_screen_toolbar
+^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_screen_toolbar
+   :outertype: R.layout
+
+abc_search_dropdown_item_icons_2line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_dropdown_item_icons_2line
+   :outertype: R.layout
+
+abc_search_view
+^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_search_view
+   :outertype: R.layout
+
+abc_select_dialog_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int abc_select_dialog_material
+   :outertype: R.layout
+
+abc_tooltip
+^^^^^^^^^^^
+
+.. java:field:: public static final int abc_tooltip
+   :outertype: R.layout
+
+activity_garbage_recycling_fragment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int activity_garbage_recycling_fragment
+   :outertype: R.layout
+
+activity_intro
+^^^^^^^^^^^^^^
+
+.. java:field:: public static final int activity_intro
+   :outertype: R.layout
+
+activity_main
+^^^^^^^^^^^^^
+
+.. java:field:: public static final int activity_main
+   :outertype: R.layout
+
+activity_settings
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int activity_settings
+   :outertype: R.layout
+
+automata_item_view
+^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int automata_item_view
+   :outertype: R.layout
+
+notification_action
+^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_action
+   :outertype: R.layout
+
+notification_action_tombstone
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_action_tombstone
+   :outertype: R.layout
+
+notification_media_action
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_media_action
+   :outertype: R.layout
+
+notification_media_cancel_action
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_media_cancel_action
+   :outertype: R.layout
+
+notification_template_big_media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_big_media
+   :outertype: R.layout
+
+notification_template_big_media_custom
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_big_media_custom
+   :outertype: R.layout
+
+notification_template_big_media_narrow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_big_media_narrow
+   :outertype: R.layout
+
+notification_template_big_media_narrow_custom
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_big_media_narrow_custom
+   :outertype: R.layout
+
+notification_template_custom_big
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_custom_big
+   :outertype: R.layout
+
+notification_template_icon_group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_icon_group
+   :outertype: R.layout
+
+notification_template_lines_media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_lines_media
+   :outertype: R.layout
+
+notification_template_media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_media
+   :outertype: R.layout
+
+notification_template_media_custom
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_media_custom
+   :outertype: R.layout
+
+notification_template_part_chronometer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_part_chronometer
+   :outertype: R.layout
+
+notification_template_part_time
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int notification_template_part_time
+   :outertype: R.layout
+
+select_dialog_item_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int select_dialog_item_material
+   :outertype: R.layout
+
+select_dialog_multichoice_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int select_dialog_multichoice_material
+   :outertype: R.layout
+
+select_dialog_singlechoice_material
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int select_dialog_singlechoice_material
+   :outertype: R.layout
+
+support_simple_spinner_dropdown_item
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int support_simple_spinner_dropdown_item
+   :outertype: R.layout
+
+upgrade_item_view
+^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int upgrade_item_view
+   :outertype: R.layout
+
