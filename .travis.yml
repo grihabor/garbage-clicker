@@ -42,12 +42,6 @@ script:
   - javasphinx-apidoc -o docs/src .
   - cd docs; make html
   
-cache: 
-  directories: 
-    - $HOME/.gradle/caches/ 
-    - $HOME/.gradle/wrapper/ 
-    - $HOME/.android/build-cache
-  
 before_deploy:
   - export VERSION=$(make travis-version)
   - export COMMIT_MESSAGE=$(make commit-message)
