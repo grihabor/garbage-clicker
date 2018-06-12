@@ -40,7 +40,7 @@ script:
   - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
   - javasphinx-apidoc -o docs/src .
-  - cd docs; make html
+  - cd docs; make html; cd ..
   
 before_deploy:
   - export VERSION=$(make travis-version)
