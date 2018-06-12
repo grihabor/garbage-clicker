@@ -39,7 +39,7 @@ script:
   - ./gradlew assemble
   - find . -name '*.apk'
   - ./gradlew checkstyleAndroid
-  - javasphinx-apidoc -o docs/src .
+  - javasphinx-apidoc --update --cache-dir=.javasphinx-apidoc-cache -o docs/src .
   - cd docs; make html; cd ..
   - touch docs/build/html/.nojekyll
   
@@ -75,6 +75,7 @@ cache:
     - $HOME/.gradle/wrapper/ 
     - $HOME/.android/build-cache
     - venv
+    - .javasphinx-apidoc-cache
 
 deploy:
   - provider: releases
