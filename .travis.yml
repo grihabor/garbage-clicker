@@ -1,4 +1,6 @@
-language: android 
+language: 
+  - android 
+  - python
 android: 
   components: 
     - build-tools-27.0.3
@@ -22,7 +24,7 @@ before_install:
   - mv app/secrets/raw/google-services.json app/
 
 install:
-  - pip3 install sphinx javasphinx
+  - pip install sphinx javasphinx
   
 before_script:
   - make travis-version
