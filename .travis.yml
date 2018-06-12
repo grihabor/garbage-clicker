@@ -1,6 +1,5 @@
-language: 
-  - android 
-  - python
+sudo: required 
+language: android 
 android: 
   components: 
     - build-tools-27.0.3
@@ -16,6 +15,8 @@ addons:
     packages:
       - git
       - make
+      - python3
+      - python3-pip
 
 before_install: 
   - mkdir -p app/secrets/raw
@@ -24,6 +25,9 @@ before_install:
   - mv app/secrets/raw/google-services.json app/
 
 install:
+  - pip3 install virtualenv
+  - python3 -m virtualenv venv
+  - source venv/bin/activate
   - pip install sphinx javasphinx
   
 before_script:
