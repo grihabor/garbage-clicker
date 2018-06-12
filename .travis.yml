@@ -103,5 +103,3 @@ deploy:
     on:
       branch:
         - master
-        - setup-travis-deploy-to-github-pages
-    
