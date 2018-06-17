@@ -56,10 +56,13 @@ before_deploy:
   - export ART_CHECKSTYLE=${VERSION}_checkstyle.html
   - export ART_LINT=${VERSION}_lint.html
   
+  - export ART_DEBUG_APK_PATH=$(find . -name '*debug.apk')
+  - export ART_RELEASE_APK_PATH=$(find . -name '*release.apk')
+  
   - printenv | grep ART
   
-  - mv app/build/outputs/apk/dev/debug/app-dev-debug.apk $ART_DEBUG_APK
-  - mv app/build/outputs/apk/dev/release/app-dev-release.apk $ART_RELEASE_APK
+  - mv ${ART_DEBUG_APK_PATH} ${ART_DEBUG_APK}
+  - mv ${ART_RELEASE_APK_PATH} ${ART_RELEASE_APK}
   - mv app/build/reports/checkstyle/android.html $ART_CHECKSTYLE
   
   - git config --local user.name "Travis Bot"
