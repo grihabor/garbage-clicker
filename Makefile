@@ -1,4 +1,4 @@
-include Makefile.version
+include version/Makefile.version
 
 all: next-micro
 
