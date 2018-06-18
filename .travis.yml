@@ -58,7 +58,7 @@ before_deploy:
   
   - export ART_DEBUG_APK_PATH=$(find . -name '*debug.apk')
   - export ART_RELEASE_APK_PATH=$(find . -name '*release.apk')
-  
+
   - printenv | grep ART
   
   - mv ${ART_DEBUG_APK_PATH} ${ART_DEBUG_APK}
