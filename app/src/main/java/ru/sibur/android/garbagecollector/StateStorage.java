@@ -15,7 +15,6 @@ import java.util.Date;
 public class StateStorage extends Storage implements SharedPreferences.OnSharedPreferenceChangeListener {
     SharedPreferences sPref;
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
-    static Context context;
 
     StateStorage (Context context) {
         sPref = context.getSharedPreferences(Constant.PREF_NAME, Context.MODE_PRIVATE);
