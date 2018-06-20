@@ -3,8 +3,6 @@ package ru.sibur.android.garbagecollector;
 import android.content.Context;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -14,10 +12,12 @@ import java9.util.stream.Collectors;
 import java9.util.stream.IntStream;
 import java9.util.stream.StreamSupport;
 
-public abstract class Shop {
+public class Shop <ShopItemType extends ShopItem> {
+    private static String TAG = "Shop";
     Storage storage;
+    ShopItemFactory<ShopItemType> factory;
 
-    ArrayList<? extends ShopItem> shopItemArray;
+    ArrayList<ShopItemType> shopItemArray;
 
     int itemLayoutId;
     String[] shopItemAttributes;
@@ -25,19 +25,19 @@ public abstract class Shop {
 
     Context context;
 
-    abstract String getTag();
 
-    Shop (int resourceId, Context context, Storage storage) {
-        this.storage = storage;
+    Shop (int resourceId, Context context, ShopItemFactory<ShopItemType> factory) {
+        this.storage = new StateStorage(context);
+        this.factory = factory;
         this.context = context;
         shopItemArray = getShopItemList(resourceId);
     }
 
-    private ArrayList<? extends ShopItem> getShopItemList (int resourceId) {
+    private ArrayList<ShopItemType> getShopItemList (int resourceId) {
         JSONLoader loader = new JSONLoader(context);
         JSONObject jsonObject = loader.parceJSONResource(resourceId);
 
-        ArrayList<? extends ShopItem> shopItemAttrArray = null;
+        ArrayList<ShopItemType> shopItemAttrArray = null;
 
         if(jsonObject != null) {
             shopItemAttrArray = IntStream
@@ -45,7 +45,7 @@ public abstract class Shop {
                     .mapToObj(i -> createInstance(jsonObject, i))
                     .collect(Collectors.toCollection(ArrayList::new));
         } else {
-            Log.e(getTag(), "Unable to load data from json: id=" + resourceId);
+            Log.e(TAG, "Unable to load data from json: id=" + resourceId);
         }
 
         return shopItemAttrArray;
@@ -68,5 +68,8 @@ public abstract class Shop {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    abstract public ShopItem createInstance(JSONObject object, int iterationIndex);
+    public ShopItemType createInstance(JSONObject object, int iterationIndex) {
+        return factory.factory(object, storage, iterationIndex);
+    }
 }
+

@@ -17,8 +17,8 @@ public class StateStorage extends Storage implements SharedPreferences.OnSharedP
     ArrayMap<String, OnDBChangeListener> listenerMap = new ArrayMap<>();
     static Context context;
 
-    StateStorage (Context context, String prefName) {
-        sPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+    StateStorage (Context context) {
+        sPref = context.getSharedPreferences(Constant.PREF_NAME, Context.MODE_PRIVATE);
         // see details in onSharedPreferenceChanged method
         sPref.registerOnSharedPreferenceChangeListener(this);
     }

@@ -2,22 +2,13 @@ package ru.sibur.android.garbagecollector;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.SparseIntArray;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
-
-import java.math.BigInteger;
-
-import static ru.sibur.android.garbagecollector.Constant.SOUND_QUALITY;
 
 
 /**
@@ -48,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         switchToGarbageRecyclingFragment(null);
 
         moneyDisplay = findViewById(R.id.moneyDisplay);
-        storage = new StateStorage(this, Constant.PREF_NAME);
+        storage = new StateStorage(this);
         storage.addOnDBChangeListener(Constant.MONEY_KEY, this::updateMoney);
     }
     protected void onStart(){
@@ -58,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
-        automataThread = new AutomataThread(storage, this);
+        automataThread = new AutomataThread(this);
         automataThread.execute();
         updateMoney();
     }
@@ -72,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToUpgradeShopFragment(View view) {
-        UpgradeShop upgradeShop = new UpgradeShop(R.raw.upgrades, this, storage);
+        Shop<Upgrade> upgradeShop = new Shop<>(R.raw.upgrades, this, new Upgrade.Factory());
         switchTo(upgradeShop.getShopFragment(
                 R.layout.upgrade_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,
@@ -81,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToAutomationShopFragment(View view) {
-        AutomationShop automationShop = new AutomationShop(R.raw.automatas, this, storage);
+        Shop<Automata> automationShop = new Shop<>(R.raw.automatas, this, new Automata.Factory());
         switchTo(automationShop.getShopFragment(
                 R.layout.automata_item_view,
                 Constant.SHOP_ITEM_ATTRIBUTES,

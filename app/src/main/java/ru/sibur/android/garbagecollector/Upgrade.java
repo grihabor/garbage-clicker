@@ -5,8 +5,6 @@ import org.json.JSONObject;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import static java.lang.Math.pow;
-
 /**
  * Базовый класс для улучшений
  */ 
@@ -30,5 +28,11 @@ public class Upgrade extends ShopItem {
 
         BigDecimal multiplier = increaseMultiplier.multiply(decreaseMultiplier);
         return Constant.multiply(basePrice, multiplier);
+    }
+
+    public static class Factory implements ShopItemFactory<Upgrade> {
+        public Upgrade factory(JSONObject jsonData, Storage storage, int iterationIndex) {
+            return new Upgrade(jsonData, storage, iterationIndex);
+        }
     }
 }

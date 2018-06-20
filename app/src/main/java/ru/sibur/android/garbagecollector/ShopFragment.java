@@ -1,9 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
-import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.ListFragment;
 import android.content.Context;
@@ -12,14 +9,6 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.SparseIntArray;
 import android.view.View;
-
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.TransitionDrawable;
-
-import android.view.ViewPropertyAnimator;
-import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -66,7 +55,7 @@ public class ShopFragment extends ListFragment {
                 shop.shopItemAttrIds);
 
         IntStream.range(0, shop.shopItemArray.size()).forEach(i -> {
-            ShopItem item = shop.shopItemArray.get(i);
+            ShopItem item = (ShopItem) shop.shopItemArray.get(i);
             item.setOnCountChangeListener(() -> {
                 viewDataArray.set(i, item.getViewData(getActivity()));
                 adapter.notifyDataSetChanged();
@@ -83,7 +72,7 @@ public class ShopFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        ShopItem current = shop.shopItemArray.get(position);
+        ShopItem current = (ShopItem) shop.shopItemArray.get(position);
         ValueAnimator animator;
         if(current.tryToBuy(shop.context, shop.storage)) {
 
