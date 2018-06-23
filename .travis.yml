@@ -61,9 +61,9 @@ before_deploy:
 
   - printenv | grep ART
   
-  - mv ${ART_DEBUG_APK_PATH} ${ART_DEBUG_APK}
-  - mv ${ART_RELEASE_APK_PATH} ${ART_RELEASE_APK}
-  - mv app/build/reports/checkstyle/android.html $ART_CHECKSTYLE
+  - mv ${ART_DEBUG_APK_PATH} ${ART_DEBUG_APK} || true
+  - mv ${ART_RELEASE_APK_PATH} ${ART_RELEASE_APK} || true
+  - mv app/build/reports/checkstyle/android.html $ART_CHECKSTYLE || true
   
   - git config --local user.name "Travis Bot"
   - git config --local user.email "travis@gmail.com"
