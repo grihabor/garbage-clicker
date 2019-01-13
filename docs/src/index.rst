@@ -10,6 +10,7 @@ Welcome to Garbage Clicker's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   privacy_policy
    packages
 
 Indices and tables
