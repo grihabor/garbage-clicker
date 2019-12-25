@@ -1,7 +1,6 @@
 package ru.sibur.android.garbagecollector;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,8 +8,6 @@ import org.json.JSONObject;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
-
-import static java.lang.Math.pow;
 
 /**
  * Класс автомата
@@ -69,5 +66,11 @@ public class Automata extends ShopItem {
         multiplier = multiplier.pow(performanceUpgradeCount);
 
         return Constant.multiply(basePerformance, multiplier);
+    }
+
+    public static class Factory implements ShopItemFactory<Automata> {
+        public Automata factory(JSONObject jsonData, Storage storage, int iterationIndex) {
+            return new Automata(jsonData, storage, iterationIndex);
+        }
     }
 }

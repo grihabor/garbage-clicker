@@ -4,11 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 
 import java9.util.stream.StreamSupport;
-
-import static java.lang.Math.pow;
 
 
 /**
@@ -21,8 +18,8 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
     Context context;
 
 
-    AutomataThread(StateStorage storage, Context context) {
-        this.storage = storage;
+    AutomataThread(Context context) {
+        this.storage = new StateStorage(context);
         this.context = context;
     }
 
@@ -62,8 +59,12 @@ public class AutomataThread extends AsyncTask<Void, Void, Void> implements Autom
 
     BigInteger getMoneyPerTimeUnit() {
 
-        AutomationShop automationShop = new AutomationShop(R.raw.automatas, context, storage);
-        BigInteger sum = automationShop.getTotalPerformance();
+        Shop<Automata> automationShop = new Shop<>(R.raw.automatas, context, new Automata.Factory());
+        BigInteger sum = StreamSupport
+                .stream(automationShop.shopItemArray)
+                .map(Automata::getTotalPerformance)
+                .reduce((s1, s2) -> s1.add(s2))
+                .orElse(BigInteger.ZERO);
 
         return sum;
     }

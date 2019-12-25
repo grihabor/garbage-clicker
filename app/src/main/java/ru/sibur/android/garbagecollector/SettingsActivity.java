@@ -21,7 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        StateStorage storage = new StateStorage(this, Constant.PREF_NAME);
+        StateStorage storage = new StateStorage(this);
 
         CheckBox musicBox = findViewById(R.id.musicCheckBox);
         CheckBox soundBox = findViewById(R.id.soundCheckBox);
