@@ -25,4 +25,19 @@ Development
     export PATH="$PATH:$HOME/.android/cmdline-tools/latest/bin/"
     export ANDROID_HOME=$HOME/.android/
     ```
+4. Inspect keystore:
+    ```bash
+    fd --no-ignore keystore | xargs keytool -v -list -keystore
+    ```
+5. Set secret env vars in `.env`:
+    ```bash
+    export KEY_ALIAS=
+    export KEY_PASSWORD=
+    export KEYSTORE_PASSWORD=
+    ```
+6. Then build:
+    ```bash
+    . .env
+    ./gradlew assemble
+    ```
 
