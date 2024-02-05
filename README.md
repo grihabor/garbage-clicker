@@ -1,22 +1,10 @@
-Garbage Clicker
-===============
-
-|build|
+# Garbage Clicker
 
 Garbage Clicker = Переработка мусора + Cookie Clicker
 
-`Github Pages`_ 
+[Github Pages](https://grihabor.github.io/garbage-clicker)
 
-.. _`Github Pages`: https://grihabor.github.io/garbage-clicker
-
-.. |build| image:: https://travis-ci.org/grihabor/garbage-clicker.svg?branch=master
-    :target: https://travis-ci.org/grihabor/garbage-clicker
-
-.. |docker-image| image:: https://img.shields.io/docker/pulls/grihabor/garbage.clicker.svg
-    :target: https://hub.docker.com/r/grihabor/garbage.clicker
-    
-Development
------------
+## Development
 
 1. Download [android cli tools](https://developer.android.com/tools/sdkmanager).
 2. Put them in `~/.android/cmdline-tools/`.
