@@ -108,4 +108,3 @@ deploy:
         - master
       tags: false
       condition: $TRAVIS_PULL_REQUEST = false
-
